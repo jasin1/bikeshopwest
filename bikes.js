@@ -1,6 +1,6 @@
 console.log("We are in!!");
 
-let openBtn = document.querySelector(".bike-img-wrapper");
+let openBtn = document.getElementsByClassName(".bike-img-wrapper");
 let modalContainer = document.getElementById("bike-modal-wrapper");
 let modal = document.getElementById("modal-content");
 let closeBtn = document.getElementById("modal-close-wrapper");
