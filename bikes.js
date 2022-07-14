@@ -17,6 +17,7 @@ let closeBtn = document.getElementById("modal-close-wrapper");
 for (const btn of bikeBtns){
   btn.addEventListener('click', function(){
     modalContainer.style.display = 'block';
+    document.body.style.overflow = 'hidden';
     console.log("bike clicked");
       
   })
@@ -25,6 +26,7 @@ for (const btn of bikeBtns){
 
 closeBtn.addEventListener('click', function(){
  modalContainer.style.display = 'none';
+ document.body.style.overflow = 'auto';
 });
 
 window.addEventListener('click', function(){
