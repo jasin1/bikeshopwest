@@ -12,19 +12,25 @@ let modalContainer = document.getElementById("bike-modal-wrapper");
 let modal = document.getElementById("modal-content");
 let closeBtn = document.getElementById("modal-close-wrapper");
 
+// for (const btn of bikeBtns){
+//   btn.addEventListener('click', function(){
+
+//   })
+// }
+
 
   openBtn1.addEventListener('click', function(){
-    //modalContainer.style.display = 'block';
+    modalContainer.style.display = 'block';
     console.log("bike 1 clicked");
   });
 
   openBtn2.addEventListener('click', function(){
-    //modalContainer.style.display = 'block';
+    modalContainer.style.display = 'block';
     console.log("bike 2 clicked");
   });
 
   openBtn3.addEventListener('click', function(){
-    //modalContainer.style.display = 'block';
+    modalContainer.style.display = 'block';
     console.log("bike 3 clicked");
   });
 
