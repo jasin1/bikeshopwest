@@ -27,12 +27,17 @@ closeBtn.addEventListener('click', function(){
  modalContainer.style.display = 'none';
 });
 
-window.addEventListener('click', function(e){
-  if(e.target === modalContainer){
-    modalContainer.style.display = 'none';
-    console.log("Modal clicked");
-  }
+window.addEventListener('click', function(){
+  console.log("window clicked");
 });
+
+// window.addEventListener('click', function(e){
+//   console.log("window clicked");
+//   if(e.target === modalContainer){
+//     modalContainer.style.display = 'none';
+//     console.log("Modal clicked");
+//   }
+// });
 
 
 //------------ Tabs---------------
