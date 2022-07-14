@@ -4,15 +4,14 @@ console.log("We are in!!");
 let openBtn1 = document.querySelector(".bike-img-wrapper-1");
 let openBtn2 = document.querySelector(".bike-img-wrapper-2");
 let openBtn3 = document.querySelector(".bike-img-wrapper-3");
-
-//--------- Modal-----------------
-
 const bikeBtns = [openBtn1, openBtn2, openBtn3];
 console.log(bikeBtns);
 
 let modalContainer = document.getElementById("bike-modal-wrapper");
 let modal = document.getElementById("modal-content");
 let closeBtn = document.getElementById("modal-close-wrapper");
+
+//--------- Modal-----------------
 
 for (const btn of bikeBtns){
   btn.addEventListener('click', function(){
@@ -29,8 +28,11 @@ closeBtn.addEventListener('click', function(){
  document.body.style.overflow = 'auto';
 });
 
-window.addEventListener('click', function(){
-  console.log("window clicked");
+window.addEventListener('click', function(e){
+  //console.log("window clicked");
+  if(e.target === modalContainer){
+    console.log("modal clicked");
+  }
 });
 
 // window.addEventListener('click', function(e){
