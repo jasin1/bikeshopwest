@@ -47,9 +47,9 @@ window.addEventListener('click', function(e){
 
 //------------ Tabs---------------
 
-let bookBtn1 = document.querySelector("button-book-1");
-let bookBtn2 = document.querySelector("button-book-2");
-let bookBtn3 = document.querySelector("button-book-3");
+let bookBtn1 = document.querySelector(".button-book-1");
+let bookBtn2 = document.querySelector(".button-book-2");
+let bookBtn3 = document.querySelector(".button-book-3");
 const bookBtns = [bookBtn1, bookBtn2, bookBtn3];
 let currentTab = 0;
 showTab(currentTab);
