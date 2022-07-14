@@ -1,19 +1,22 @@
 console.log("We are in!!");
 
-const openButtons = document.querySelectorAll(".bike-img-wrapper");
+//const openButtons = document.querySelectorAll(".bike-img-wrapper");
+let openBtn1 = document.querySelector(".bike-img-wrapper-1");
+let openBtn2 = document.querySelector(".bike-img-wrapper-2");
+let openBtn3 = document.querySelector(".bike-img-wrapper-3");
 let modalContainer = document.getElementById("bike-modal-wrapper");
 let modal = document.getElementById("modal-content");
 let closeBtn = document.getElementById("modal-close-wrapper");
 
-console.log(openButtons);
 
-openButtons.forEach(btn => {
-  btn.addEventListener('click', function handleClick(event){
+
+
+  openBtn1.addEventListener('click', function(){
     //modalContainer.style.display = 'block';
-    console.log("bike clicked", event);
+    console.log("bike 1 clicked");
   });
 
-});
+
 
 
 
