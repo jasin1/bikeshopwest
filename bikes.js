@@ -59,4 +59,5 @@ multiStepForm.addEventListener("click", e => {
   } else if(e.target.matches("[data-prev]")){
     currentStep -= 1;
   }
+  console.log(currentStep);
 })
