@@ -48,7 +48,8 @@ let currentStep = formSteps.findIndex(step =>{
 
 if(currentStep < 0){
   currentStep = 0;
-  formSteps[currentStep].classList.add("active");
+  // formSteps[currentStep].classList.add("active");
+  showCurrentStep();
 };
 
 //console.log(currentStep);
@@ -59,5 +60,11 @@ multiStepForm.addEventListener("click", e => {
   } else if(e.target.matches("[data-prev]")){
     currentStep -= 1;
   }
-  console.log(currentStep);
+  showCurrentStep();
 })
+
+function showCurrentStep(){
+  formSteps.forEach((step, index) => {
+    step.classList.toggle("active", index === currentStep);
+  })
+}
