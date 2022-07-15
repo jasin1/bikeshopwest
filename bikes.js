@@ -47,21 +47,3 @@ window.addEventListener('click', function(e){
 
 //------------ Tabs---------------
 
-let bookBtn1 = document.querySelector(".button-book-1");
-let bookBtn2 = document.querySelector(".button-book-2");
-let bookBtn3 = document.querySelector(".button-book-3");
-const bookBtns = [bookBtn1, bookBtn2, bookBtn3];
-let currentTab = 0;
-showTab(currentTab);
-
-function showTab(n){
- let x = document.getElementsByClassName("tab");
- x[n].style.display = "block";
-}
-
-for (const bookBtn of bookBtns){
-  bookBtn.addEventListener('click', function(){
-  currentTab = 1;
-  console.log("bookBtn clicked");     
-  })
-}
