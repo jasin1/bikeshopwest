@@ -6,7 +6,7 @@ let openBtn1 = document.querySelector(".bike-img-wrapper-1");
 let openBtn2 = document.querySelector(".bike-img-wrapper-2");
 let openBtn3 = document.querySelector(".bike-img-wrapper-3");
 const bikeBtns = [openBtn1, openBtn2, openBtn3];
-console.log(bikeBtns);
+// console.log(bikeBtns);
 
 let modalContainer = document.getElementById("bike-modal-wrapper");
 let modal = document.getElementById("modal-content");
@@ -66,5 +66,6 @@ multiStepForm.addEventListener("click", e => {
 function showCurrentStep(){
   formSteps.forEach((step, index) => {
     step.classList.toggle("active", index === currentStep);
+    console.log("stepping");
   })
 }
