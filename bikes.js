@@ -51,4 +51,12 @@ if(currentStep < 0){
   formSteps[currentStep].classList.add("active");
 };
 
-console.log(currentStep);
+//console.log(currentStep);
+
+multiStepForm.addEventListener("click", e => {
+  if(e.target.matches("[data-next")){
+    currentStep += 1;
+  } else if(e.target.matches("[data-prev]")){
+    currentStep -= 1;
+  }
+})
