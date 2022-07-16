@@ -52,6 +52,14 @@ nextBtn.forEach(btn =>{
   });
 });
 
+prevBtn.forEach(btn =>{
+  btn.addEventListener("click",()=>{
+    formStepsNum--;
+    updateFormSteps();
+  });
+});
+
+
 function updateFormSteps(){
   formSteps.forEach((formStep) =>{
     formStep.classList.contains("active") && formStep.classList.remove("active");
