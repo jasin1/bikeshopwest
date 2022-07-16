@@ -53,5 +53,8 @@ nextBtn.forEach(btn =>{
 });
 
 function updateFormSteps(){
+  formSteps.forEach((formStep) =>{
+    formStep.classList.contains("active") && formStep.classList.remove("active");
+  });
   formSteps[formStepsNum].classList.add("active");
 }
