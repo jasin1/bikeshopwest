@@ -39,33 +39,19 @@ window.addEventListener('click', function(e){
 
 //------------ Tabs---------------
 
-// const multiStepForm = document.querySelector("[data-multi-step]");
-// const formSteps = [...multiStepForm.querySelectorAll("[data-step]")];
+const prevBtn = document.querySelectorAll(".button-prev");
+const nextBtn = document.querySelectorAll(".button-next");
+const formSteps = document.querySelectorAll(".tab");
 
-// let currentStep = formSteps.findIndex(step =>{
-//   return step.classList.contains("active")
-// });
+let formStepsNum = 0;
 
-// if(currentStep < 0){
-//   currentStep = 0;
-//   // formSteps[currentStep].classList.add("active");
-//   showCurrentStep();
-// };
+nextBtn.forEach(btn =>{
+  btn.addEventListener("click",()=>{
+    formStepsNum++;
+    updateFormSteps();
+  });
+});
 
-// //console.log(currentStep);
-
-// multiStepForm.addEventListener("click", e => {
-//   if(e.target.matches("[data-next")){
-//     currentStep += 1;
-//   } else if(e.target.matches("[data-prev]")){
-//     currentStep -= 1;
-//   }
-//   showCurrentStep();
-// })
-
-// function showCurrentStep(){
-//   formSteps.forEach((step, index) => {
-//     step.classList.toggle("active", index === currentStep);
-//    // console.log("stepping");
-//   })
-// }
+function updateFormSteps(){
+  formSteps[formStepsNum].classList.add("active");
+}
