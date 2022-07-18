@@ -109,14 +109,14 @@ window.addEventListener('click', function(e){
 //------------ Tabs -------------------------------------
 
 nextBtn.forEach(btn =>{
-  const a = nextBtn.indexOf(btn);
+  // const a = nextBtn.indexOf(btn);
   btn.addEventListener("click",()=>{
     // a = nextBtn.indexOf(btn);
-    newHeading.innerText = bikeItemsData[a].name;
+    // newHeading.innerText = bikeItemsData[a].name;
     // bikeHeading.innerHTML = "test";
     // console.log(nextBtn.indexOf(btn));
-    console.log(bikeHeading.innerText);
-    console.log(bikeItemsData[a].name);
+    // console.log(bikeHeading.innerText);
+    // console.log(bikeItemsData[a].name);
   
     formStepsNum++;
     updateFormSteps();
@@ -138,4 +138,9 @@ function updateFormSteps(){
   });
   formSteps[formStepsNum].classList.add("active");
   // bikeHeading.innerHTML = bikeItemsData[formStepsNum].name;
+  newHeading.innerText = bikeItemsData[formStepsNum].name;
 }
+
+
+//---------------- FlatPickr---------------------------------------
+
