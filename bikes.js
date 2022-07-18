@@ -42,6 +42,40 @@ window.addEventListener('click', function(e){
 const prevBtn = document.querySelectorAll(".button-prev");
 const nextBtn = document.querySelectorAll(".button-next");
 const formSteps = document.querySelectorAll(".tab");
+const bikeHeading = document.querySelector(".step-1-heading");
+
+let bikeItemsData = [
+  {
+    id:"bike01",
+    name:"Handbrake Bike",
+    price1:12,
+    price2:8,
+    descShort:"Luxury bike with 7 speed hub and hand-operated hand rakes",
+    descLong:"Consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+    img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62c687a7edcb7f2c57d8af9b_hand-bike_optimized.jpg",
+    features:["feat 01", "feat 02", "feat 03"],
+  },
+  {
+    id:"bike02",
+    name:"Electric Bike",
+    price1:00,
+    price2:00,
+    descShort:"Duis cursus, mi quis viverra ornare",
+    descLong:"Consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+    img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62c68727357c53a029780361_e-bike_optimized.jpg",
+    features:["feat 01", "feat 02", "feat 03", "feat 04"],
+  },
+  {
+    id:"bike03",
+    name:"Cargo Bike",
+    price1:25,
+    price2:20,
+    descShort:"The cargo bike comes with 7 gears and is suitable for the maximum of 2 children",
+    descLong:"Consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+    img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62c687269e35636ce449e59d_cargo-bike_optimized.jpg",
+    features:["feat 01", "feat 02", "feat 03", "feat 04"],
+  },
+];
 
 let formStepsNum = 0;
 
@@ -66,4 +100,5 @@ function updateFormSteps(){
     console.log("formStep update");
   });
   formSteps[formStepsNum].classList.add("active");
+  bikeHeading.innerHTML = bikeItemsData[formStepsNum].name;
 }
