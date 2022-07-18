@@ -72,7 +72,7 @@ for (let i =0; i < bikeBtns.length; i++){
     document.body.style.overflow = 'hidden';
     bikeHeading.innerHTML = bikeItemsData[i].name;
     modalTxt.innerHTML = bikeItemsData[i].descLong;
-    // modalImg.innerHTML = bikeItemsData[i].img;
+    modalImg = bikeItemsData[i].img;
     console.log(modalImg);
   })
 };
