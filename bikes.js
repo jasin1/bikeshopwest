@@ -88,7 +88,7 @@ for (let i =0; i < bikeBtns.length; i++){
     document.body.style.overflow = 'hidden';
     bikeHeading.innerHTML = bikeItemsData[i].name;
     modalTxt.innerHTML = bikeItemsData[i].descLong;
-    modalImg.src = 'https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62c687a7edcb7f2c57d8af9b_hand-bike_optimized.jpg';
+    modalImg.src = bikeItemsData[i].img;
     console.log(modalImg.src);
   })
 };
