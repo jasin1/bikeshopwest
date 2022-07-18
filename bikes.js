@@ -22,6 +22,9 @@ const modalImg = document.querySelector(".modal-main-img");
 // const bookBtns = [bookBtn1, bookBtn2, bookBtn3];
 
 const bikeHeading = document.querySelector(".step-1-heading");
+
+const newHeading = document.querySelector(".new-selected-heading");
+
 const bikeSelectedImg = document.querySelector(".selected-bike-img");
 const bikePrice1 = document.querySelector(".step-1-price-1");
 const bikePrice2 = document.querySelector(".step-1-price-2");
@@ -114,7 +117,7 @@ nextBtn.forEach(btn =>{
   const a = nextBtn.indexOf(btn);
   btn.addEventListener("click",()=>{
     // a = nextBtn.indexOf(btn);
-    bikeHeading.innerText = bikeItemsData[a].name;
+    newHeading.innerText = bikeItemsData[a].name;
     // bikeHeading.innerHTML = "test";
     // console.log(nextBtn.indexOf(btn));
     console.log(bikeHeading.innerText);
