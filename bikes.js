@@ -111,10 +111,12 @@ window.addEventListener('click', function(e){
 
 nextBtn.forEach(btn =>{
   btn.addEventListener("click",()=>{
-    for (let i =0; i < nextBtn.length; i++){
-    // bikeHeading.innerHTML = bikeItemsData[i].name;
-    console.log("bike" + i + " is selected");
-    };
+    // selectedBikeNum === nextBtn[btn];
+    console.log(nextBtn.indexOf(btn));
+    // for (let i =0; i < bikeItemsData.length; i++){
+    // // bikeHeading.innerHTML = bikeItemsData[i].name;
+    // console.log("bike" + i + " is selected");
+    // };
     formStepsNum++;
     updateFormSteps();
   });
