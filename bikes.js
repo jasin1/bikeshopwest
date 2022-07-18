@@ -59,7 +59,7 @@ for (const btn of bikeBtns){
     modalContainer.style.display = 'block';
     document.body.style.overflow = 'hidden';
     console.log("bike clicked");
-    console.log("btn number", bikeBtns[btn]); 
+    console.log("btn number", btn); 
   })
 }
 
