@@ -7,7 +7,7 @@ let openBtn2 = document.querySelector(".bike-img-wrapper-2");
 let openBtn3 = document.querySelector(".bike-img-wrapper-3");
 const bikeBtns = [openBtn1, openBtn2, openBtn3];
 
-const bookBtn = [...document.querySelectorAll(".book-btn")];
+//const bookBtn = [...document.querySelectorAll(".book-btn")];
 
 const prevBtn = document.querySelectorAll(".button-prev");
 const nextBtn = [...document.querySelectorAll(".button-next")];
@@ -139,6 +139,7 @@ function updateFormSteps(){
   formSteps[formStepsNum].classList.add("active");
   // bikeHeading.innerHTML = bikeItemsData[formStepsNum].name;
   newHeading.innerText = bikeItemsData[formStepsNum].name;
+  console.log("the number is " + formStepsNum);
 }
 
 
