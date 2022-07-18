@@ -115,7 +115,7 @@ nextBtn.forEach(btn =>{
   btn.addEventListener("click",()=>{
     // a = nextBtn.indexOf(btn);
     // bikeHeading.innerHTML = bikeItemsData[a].name;
-    bikeHeading.innerHTML = "test";
+    // bikeHeading.innerHTML = "test";
     // console.log(nextBtn.indexOf(btn));
     console.log(bikeHeading.innerHTML);
   
