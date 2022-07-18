@@ -8,7 +8,7 @@ let openBtn3 = document.querySelector(".bike-img-wrapper-3");
 const bikeBtns = [openBtn1, openBtn2, openBtn3];
 
 const prevBtn = document.querySelectorAll(".button-prev");
-const nextBtn = document.querySelectorAll(".button-next");
+const nextBtn = [...document.querySelectorAll(".button-next")];
 const formSteps = document.querySelectorAll(".tab");
 
 const modalTxt = document.querySelector(".modal-txt-wrapper");
