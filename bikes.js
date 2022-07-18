@@ -110,13 +110,13 @@ window.addEventListener('click', function(e){
 //------------ Tabs -------------------------------------
 
 nextBtn.forEach(btn =>{
+  const a = Number;
   btn.addEventListener("click",()=>{
-    // selectedBikeNum === nextBtn[btn];
-    console.log(nextBtn.indexOf(btn));
-    // for (let i =0; i < bikeItemsData.length; i++){
-    // // bikeHeading.innerHTML = bikeItemsData[i].name;
-    // console.log("bike" + i + " is selected");
-    // };
+    a = nextBtn.indexOf(btn) - 1;
+    // bikeHeading.innerHTML = bikeItemsData[a].name;
+    // console.log(nextBtn.indexOf(btn));
+    console.log(a);
+  
     formStepsNum++;
     updateFormSteps();
   });
@@ -133,7 +133,7 @@ prevBtn.forEach(btn =>{
 function updateFormSteps(){
   formSteps.forEach((formStep) =>{
     formStep.classList.contains("active") && formStep.classList.remove("active");
-    console.log("formStep update");
+   // console.log("formStep update");
   });
   formSteps[formStepsNum].classList.add("active");
   // bikeHeading.innerHTML = bikeItemsData[formStepsNum].name;
