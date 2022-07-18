@@ -117,7 +117,8 @@ nextBtn.forEach(btn =>{
     // bikeHeading.innerHTML = bikeItemsData[a].name;
     // bikeHeading.innerHTML = "test";
     // console.log(nextBtn.indexOf(btn));
-    console.log(bikeHeading.innerHTML);
+    console.log(bikeHeading.innerText);
+    console.log(bikeItemsData[a].name);
   
     formStepsNum++;
     updateFormSteps();
