@@ -18,6 +18,7 @@ const modalImg = document.querySelector(".modal-main-img");
 
 // --------- Steps variables ----------------------
 
+const bikeHeading = document.querySelector(".step-1-heading");
 const newHeading = document.querySelector(".new-selected-heading");
 
 const bikeSelectedImg = document.querySelector(".selected-bike-img");
