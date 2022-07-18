@@ -46,6 +46,7 @@ let bikeItemsData = [
 ];
 
 let formStepsNum = 0;
+let selectedBikeNum = 0;
 
 
 let modalContainer = document.getElementById("bike-modal-wrapper");
@@ -54,13 +55,20 @@ let closeBtn = document.getElementById("modal-close-wrapper");
 
 //--------- Modal-----------------
 
-for (const btn of bikeBtns){
-  btn.addEventListener('click', function(){
-    modalContainer.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-    console.log("bike clicked");
-    console.log("btn number", btn); 
-  })
+// for (const btn of bikeBtns){
+//   btn.addEventListener('click', function(){
+//     modalContainer.style.display = 'block';
+//     document.body.style.overflow = 'hidden';
+//     // console.log("bike clicked");
+//     // console.log("btn number", btn); 
+//   })
+// }
+
+for (let i =0; i < bikeBtns.length; i++){
+  bikeBtns[i].addEventListener('click', function(){
+  modalContainer.style.display = 'block';
+  document.body.style.overflow = 'hidden';
+  bikeHeading.innerHTML = bikeItemsData[i].name;
 }
 
 
