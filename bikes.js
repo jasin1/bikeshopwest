@@ -28,6 +28,8 @@ const totalPrice = document.querySelector(".total-price-calc");
 const selectedDate = document.querySelector(".step-2-date");
 const selectedDays = document.querySelector(".step-2-duration");
 
+let numBike = Number;
+
 //-------------------------------
 
 let bikeItemsData = [
@@ -133,13 +135,15 @@ prevBtn.forEach(btn =>{
 
 function updateFormSteps(){
   formSteps.forEach((formStep) =>{
+    numBike = formSteps.indexOf(formStep);
     formStep.classList.contains("active") && formStep.classList.remove("active");
    // console.log("formStep update");
   });
   formSteps[formStepsNum].classList.add("active");
   // bikeHeading.innerHTML = bikeItemsData[formStepsNum].name;
   newHeading.innerText = bikeItemsData[formStepsNum].name;
-  console.log("the number is " + formStepsNum);
+  console.log("the number is " + numBike);
+
 }
 
 
