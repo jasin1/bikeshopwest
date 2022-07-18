@@ -7,6 +7,8 @@ let openBtn2 = document.querySelector(".bike-img-wrapper-2");
 let openBtn3 = document.querySelector(".bike-img-wrapper-3");
 const bikeBtns = [openBtn1, openBtn2, openBtn3];
 
+const bookBtn = [...document.querySelectorAll(".book-btn")];
+
 const prevBtn = document.querySelectorAll(".button-prev");
 const nextBtn = [...document.querySelectorAll(".button-next")];
 const formSteps = document.querySelectorAll(".tab");
@@ -15,13 +17,6 @@ const modalTxt = document.querySelector(".modal-txt-wrapper");
 const modalImg = document.querySelector(".modal-main-img");
 
 // --------- Steps variables ----------------------
-
-// let bookBtn1 = document.querySelector(".button-book-1");
-// let bookBtn2 = document.querySelector(".button-book-2");
-// let bookBtn3 = document.querySelector(".button-book-3");
-// const bookBtns = [bookBtn1, bookBtn2, bookBtn3];
-
-const bikeHeading = document.querySelector(".step-1-heading");
 
 const newHeading = document.querySelector(".new-selected-heading");
 
