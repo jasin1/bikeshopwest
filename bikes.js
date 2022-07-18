@@ -12,6 +12,7 @@ const nextBtn = document.querySelectorAll(".button-next");
 const formSteps = document.querySelectorAll(".tab");
 const bikeHeading = document.querySelector(".step-1-heading");
 const modalTxt = document.querySelector(".modal-txt-wrapper");
+const modalImg = document.querySelector(".modal-main-img").src;
 
 let bikeItemsData = [
   {
@@ -20,7 +21,7 @@ let bikeItemsData = [
     price1:12,
     price2:8,
     descShort:"Handbrake bike with 7 speed hub and hand-operated hand rakes",
-    descLong:"Consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+    descLong:"Handbrake bike elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
     img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62c687a7edcb7f2c57d8af9b_hand-bike_optimized.jpg",
     features:["feat 01", "feat 02", "feat 03"],
   },
@@ -71,6 +72,8 @@ for (let i =0; i < bikeBtns.length; i++){
     document.body.style.overflow = 'hidden';
     bikeHeading.innerHTML = bikeItemsData[i].name;
     modalTxt.innerHTML = bikeItemsData[i].descLong;
+    // modalImg.innerHTML = bikeItemsData[i].img;
+    console.log(modalImg);
   })
 };
 
