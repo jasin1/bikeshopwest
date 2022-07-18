@@ -30,7 +30,6 @@ const selectedDays = document.querySelector(".step-2-duration");
 //-------------------------------
 
 let bikeItemsData = [
-  {id:"empty"},
   {
     id:"bike01",
     name:"Handbrake Bike",
