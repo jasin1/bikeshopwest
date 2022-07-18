@@ -12,7 +12,7 @@ const nextBtn = document.querySelectorAll(".button-next");
 const formSteps = document.querySelectorAll(".tab");
 const bikeHeading = document.querySelector(".step-1-heading");
 const modalTxt = document.querySelector(".modal-txt-wrapper");
-const modalImg = document.querySelector(".modal-main-img").src;
+const modalImg = document.querySelector(".modal-main-img");
 
 let bikeItemsData = [
   {
@@ -72,8 +72,8 @@ for (let i =0; i < bikeBtns.length; i++){
     document.body.style.overflow = 'hidden';
     bikeHeading.innerHTML = bikeItemsData[i].name;
     modalTxt.innerHTML = bikeItemsData[i].descLong;
-    modalImg.innerHTML = bikeItemsData[i].img;
-    console.log(modalImg);
+    // modalImg.innerHTML = bikeItemsData[i].img;
+    console.log(modalImg.src);
   })
 };
 
