@@ -1,6 +1,6 @@
 console.log("We are in!!");
 
-//----- variables----------------
+//----- Modal variables---------------------------
 
 let openBtn1 = document.querySelector(".bike-img-wrapper-1");
 let openBtn2 = document.querySelector(".bike-img-wrapper-2");
@@ -10,9 +10,26 @@ const bikeBtns = [openBtn1, openBtn2, openBtn3];
 const prevBtn = document.querySelectorAll(".button-prev");
 const nextBtn = document.querySelectorAll(".button-next");
 const formSteps = document.querySelectorAll(".tab");
-const bikeHeading = document.querySelector(".step-1-heading");
+
 const modalTxt = document.querySelector(".modal-txt-wrapper");
 const modalImg = document.querySelector(".modal-main-img");
+
+// --------- Steps variables ----------------------
+
+// let bookBtn1 = document.querySelector(".button-book-1");
+// let bookBtn2 = document.querySelector(".button-book-2");
+// let bookBtn3 = document.querySelector(".button-book-3");
+// const bookBtns = [bookBtn1, bookBtn2, bookBtn3];
+
+const bikeHeading = document.querySelector(".step-1-heading");
+const bikeSelectedImg = document.querySelector(".selected-bike-img");
+const bikePrice1 = document.querySelector(".step-1-price-1");
+const bikePrice2 = document.querySelector(".step-1-price-2");
+const totalPrice = document.querySelector(".total-price-calc");
+const selectedDate = document.querySelector(".step-2-date");
+const selectedDays = document.querySelector(".step-2-duration");
+
+//-------------------------------
 
 let bikeItemsData = [
   {
@@ -72,7 +89,7 @@ for (let i =0; i < bikeBtns.length; i++){
     document.body.style.overflow = 'hidden';
     bikeHeading.innerHTML = bikeItemsData[i].name;
     modalTxt.innerHTML = bikeItemsData[i].descLong;
-    modalImg.src = bikeItemsData[i].img;
+    modalImg.src = 'https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62c687a7edcb7f2c57d8af9b_hand-bike_optimized.jpg';
     console.log(modalImg.src);
   })
 };
@@ -84,17 +101,20 @@ closeBtn.addEventListener('click', function(){
 });
 
 window.addEventListener('click', function(e){
-  //console.log("window clicked");
   if(e.target === modalContainer){
     console.log("modal clicked");
   }
 });
 
 
-//------------ Tabs---------------
+//------------ Tabs -------------------------------------
 
 nextBtn.forEach(btn =>{
   btn.addEventListener("click",()=>{
+    for (let i =0; i < nextBtn.length; i++){
+    bikeHeading.innerHTML = bikeItemsData[i].name;
+    console.log("bike" + i + " is selected");
+    };
     formStepsNum++;
     updateFormSteps();
   });
@@ -114,5 +134,5 @@ function updateFormSteps(){
     console.log("formStep update");
   });
   formSteps[formStepsNum].classList.add("active");
-  bikeHeading.innerHTML = bikeItemsData[formStepsNum].name;
+  // bikeHeading.innerHTML = bikeItemsData[formStepsNum].name;
 }
