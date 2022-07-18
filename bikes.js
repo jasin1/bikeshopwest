@@ -65,11 +65,12 @@ let closeBtn = document.getElementById("modal-close-wrapper");
 // }
 
 for (let i =0; i < bikeBtns.length; i++){
-  bikeBtns[i].addEventListener('click', function(){
-  modalContainer.style.display = 'block';
-  document.body.style.overflow = 'hidden';
-  bikeHeading.innerHTML = bikeItemsData[i].name;
-}
+    bikeBtns[i].addEventListener('click', function(){
+    modalContainer.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    bikeHeading.innerHTML = bikeItemsData[i].name;
+  })
+};
 
 
 closeBtn.addEventListener('click', function(){
