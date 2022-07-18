@@ -32,6 +32,7 @@ const selectedDays = document.querySelector(".step-2-duration");
 //-------------------------------
 
 let bikeItemsData = [
+  {id:"empty"},
   {
     id:"bike01",
     name:"Handbrake Bike",
@@ -113,7 +114,7 @@ nextBtn.forEach(btn =>{
   const a = nextBtn.indexOf(btn);
   btn.addEventListener("click",()=>{
     // a = nextBtn.indexOf(btn);
-    // bikeHeading.innerHTML = bikeItemsData[a].name;
+    bikeHeading.innerHTML = bikeItemsData[a].name;
     // console.log(nextBtn.indexOf(btn));
     console.log(a);
   
