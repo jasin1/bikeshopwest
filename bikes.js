@@ -110,9 +110,9 @@ window.addEventListener('click', function(e){
 //------------ Tabs -------------------------------------
 
 nextBtn.forEach(btn =>{
-  const a = Number;
+  const a = nextBtn.indexOf(btn);
   btn.addEventListener("click",()=>{
-    a = nextBtn.indexOf(btn) - 1;
+    // a = nextBtn.indexOf(btn);
     // bikeHeading.innerHTML = bikeItemsData[a].name;
     // console.log(nextBtn.indexOf(btn));
     console.log(a);
