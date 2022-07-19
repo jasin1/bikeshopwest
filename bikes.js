@@ -180,8 +180,8 @@ for (let i =0; i < bookBtns.length; i++){
 
 //---------------- FlatPickr---------------------------------------
 
-let chosenDate = String;
-let freshDate = String;
+// let chosenDate = "";
+// let freshDate = "";
 
 config = {
   minDate:"today",
@@ -201,8 +201,8 @@ config = {
     "firstDayOfWeek": 1
   },
   onChange: function(dateStr){
-      chosenDate = dateStr;
-      freshDate = chosenDate.substring(24,64);
+      let chosenDate = dateStr;
+      let freshDate = chosenDate.substring(24,64);
       console.log(freshDate);     
   }
 };
