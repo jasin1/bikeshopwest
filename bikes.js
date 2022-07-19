@@ -211,7 +211,7 @@ config = {
       newDatum = freshDate.substring(0,21);
       stepTwoDate.innerText = newDatum;
       dateCollected.setAttribute('value', newDatum);
-      console.log(newDatum);     
+      console.log(dateCollected);     
   }
 };
 
