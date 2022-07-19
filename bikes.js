@@ -175,15 +175,14 @@ for (let i =0; i < bookBtns.length; i++){
     stepTwoImg.src = bikeItemsData[i].step2img;
     stepThreeImg.src = bikeItemsData[i].step3img;
   });
-}
+};
 
 
 //---------------- FlatPickr---------------------------------------
 
 config = {
   enableTime: true,
-  dateFormat: "Y-m-d H:i",
-  
-}
+  dateFormat: "Y-m-d H:i", 
+};
 
-flatpickr(".input-date", {config});	
+flatpickr(".input-date", config);	
