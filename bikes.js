@@ -181,7 +181,10 @@ for (let i =0; i < bookBtns.length; i++){
 //---------------- FlatPickr---------------------------------------
 
 config = {
+  minDate:"today",
   enableTime: true,
+  altInput: true,
+  altFormat:"F j, Y",
   dateFormat: "Y-m-d H:i", 
 };
 
