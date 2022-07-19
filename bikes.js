@@ -24,7 +24,8 @@ const modalImg = document.querySelector(".modal-main-img");
 // --------- Steps variables ----------------------
 
 const bikeHeading = document.querySelector(".step-1-heading");
-const newHeading = document.querySelectorAll(".new-selected-heading");
+const newHeading = document.querySelector(".new-selected-heading");
+const newHeading2 = document.querySelector(".new-selected-heading2");
 
 const bikeSelectedImg = document.querySelector(".selected-bike-img");
 const bikePrice1 = document.querySelector(".step-1-price-1");
@@ -149,6 +150,7 @@ function updateFormSteps(){
 for (let i =0; i < bookBtns.length; i++){
   bookBtns[i].addEventListener('click', function(){
     newHeading.innerText = bikeItemsData[i].name;
+    newHeading2.innerText = bikeItemsData[i].name;
   });
 }
 
