@@ -28,6 +28,7 @@ const newHeading = document.querySelector(".new-selected-heading");
 const newHeading2 = document.querySelector(".new-selected-heading2");
 
 const stepTwoImg = document.querySelector(".step-2-img");
+const stepThreeImg = document.querySelector(".step-3-img");
 
 const bikeSelectedImg = document.querySelector(".selected-bike-img");
 const bikePrice1 = document.querySelector(".step-1-price-1");
@@ -49,6 +50,7 @@ let bikeItemsData = [
     descShort:"Handbrake bike with 7 speed hub and hand-operated hand rakes",
     descLong:"Handbrake bike elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
     step2img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62d64522e934bfc4c0661b99_handbrake-second.jpg",
+    step3img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62c687a7edcb7f2c57d8af9b_hand-bike_optimized.jpg",
     features:["feat 01", "feat 02", "feat 03"],
   },
   {
@@ -59,6 +61,7 @@ let bikeItemsData = [
     descShort:"Duis cursus, mi quis viverra ornare",
     descLong:"Electric bike adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
     step2img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62d6452269615ac0b9717c00_electric-second.jpg",
+    step3img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62c68727357c53a029780361_e-bike_optimized.jpg",
     features:["feat 01", "feat 02", "feat 03", "feat 04"],
   },
   {
@@ -69,6 +72,7 @@ let bikeItemsData = [
     descShort:"The cargo bike comes with 7 gears and is suitable for the maximum of 2 children",
     descLong:"Cargo Bike adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
     step2img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62d6452295111531b12f75d4_cargo-second.jpg",
+    step3img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62c687269e35636ce449e59d_cargo-bike_optimized.jpg",
     features:["feat 01", "feat 02", "feat 03", "feat 04"],
   },
 ];
@@ -156,6 +160,7 @@ for (let i =0; i < bookBtns.length; i++){
     bikePrice1.innerText = bikeItemsData[i].price1;
     bikePrice2.innerText = bikeItemsData[i].price2;
     stepTwoImg.src = bikeItemsData[i].step2img;
+    stepThreeImg.src = bikeItemsData[i].step3img;
   });
 }
 
