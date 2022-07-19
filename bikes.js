@@ -184,8 +184,16 @@ config = {
   minDate:"today",
   enableTime: true,
   altInput: true,
-  altFormat:"j F, Y",
-  dateFormat: "Y-m-d H:i", 
+  altFormat:"F j, Y",
+  dateFormat: "Y-m-d H:i",
+  "disable":[
+    function(date){
+      return (date.getDay() ===0 || date.getDay() === 7);
+    }
+  ],
+  "locale":{
+    "firstDayOfWeek": 1
+  },
 };
 
 flatpickr(".input-date", config);	
