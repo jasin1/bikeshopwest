@@ -197,12 +197,15 @@ config = {
   "locale":{
     "firstDayOfWeek": 1
   },
+  onChange: function(dateStr){
+      console.log(dateStr);
+  }
 };
 
 const fp = flatpickr(".input-date", config);
 
 // console.log(fp.formatDate(new Date(), "Y-m-d h:i K"));
 
-fp.config.onChange.push(function(){
-  console.log("it is working");
-});
+// fp.config.onChange.push(function(dateStr){
+//   console.log(dateStr);
+// });
