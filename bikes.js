@@ -200,7 +200,7 @@ config = {
     "firstDayOfWeek": 1
   },
   onChange: function(dateStr){
-      chosenDate = dateStr.toString();
+      chosenDate = dateStr;
       console.log(chosenDate);
       
   }
