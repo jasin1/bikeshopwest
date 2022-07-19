@@ -38,9 +38,12 @@ const bikePrice1 = document.querySelector(".step-1-price-1");
 const bikePrice2 = document.querySelector(".step-1-price-2");
 const totalPrice = document.querySelector(".total-price-calc");
 const selectedDate = document.querySelector(".step-2-date");
-const selectedDays = document.querySelector(".step-2-duration");
+const selectedDays = document.getElementById("form-select-input");
 const dateCollected = document.querySelector(".date-colect-input");
 const priceCollected = document.querySelector(".price-colect-input");
+
+let dayValue = selectedDays.options[selectedDays.selectedIndex].value;
+console.log(dayValue);
 
 
 let numBike = Number;
