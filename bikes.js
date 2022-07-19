@@ -180,4 +180,4 @@ for (let i =0; i < bookBtns.length; i++){
 
 //---------------- FlatPickr---------------------------------------
 
-flatpickr("input[type=time]", {});	
+flatpickr(".input-date", {});	
