@@ -184,7 +184,7 @@ config = {
   minDate:"today",
   enableTime: true,
   altInput: true,
-  altFormat:"F j, Y",
+  altFormat:"j F, Y",
   dateFormat: "Y-m-d H:i", 
 };
 
