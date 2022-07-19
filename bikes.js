@@ -202,3 +202,5 @@ config = {
 const fp = flatpickr(".input-date", config);
 
 console.log(fp.formatDate(new Date(), "Y-m-d h:i K"));
+
+console.log("test");
