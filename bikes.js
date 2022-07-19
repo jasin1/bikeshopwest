@@ -202,7 +202,7 @@ config = {
   },
   onChange: function(dateStr){
       let chosenDate = dateStr;
-      let freshDate = chosenDate.substring(24,64);
+      let freshDate = chosenDate.toString();
       console.log(freshDate);     
   }
 };
