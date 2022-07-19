@@ -42,6 +42,7 @@ const selectedDays = document.getElementById("form-select-input");
 const dateCollected = document.querySelector(".date-colect-input");
 const priceCollected = document.querySelector(".price-colect-input");
 
+
 // let dayValue = selectedDays.options[select.selectedIndex].value;
 console.log(selectedDays);
 
