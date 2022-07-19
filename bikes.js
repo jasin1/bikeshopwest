@@ -7,6 +7,8 @@ let openBtn2 = document.querySelector(".bike-img-wrapper-2");
 let openBtn3 = document.querySelector(".bike-img-wrapper-3");
 const bikeBtns = [openBtn1, openBtn2, openBtn3];
 
+const modalBookBtn = document.querySelector(".button-book-4");
+
 
 const prevBtn = document.querySelectorAll(".button-prev");
 const nextBtn = [...document.querySelectorAll(".button-next")];
@@ -103,9 +105,20 @@ for (let i =0; i < bikeBtns.length; i++){
     bikeHeading.innerHTML = bikeItemsData[i].name;
     modalTxt.innerHTML = bikeItemsData[i].descLong;
     modalImg.src = bikeItemsData[i].step2img;
-    //console.log(modalImg.src);
+    //--------- steps Update--------
+    newHeading.innerText = bikeItemsData[i].name;
+    newHeading2.innerText = bikeItemsData[i].name;
+    bikePrice1.innerText = bikeItemsData[i].price1;
+    bikePrice2.innerText = bikeItemsData[i].price2;
+    stepTwoImg.src = bikeItemsData[i].step2img;
+    stepThreeImg.src = bikeItemsData[i].step3img;
   })
 };
+
+modalBookBtn.addEventListener('click', function(){
+  modalContainer.style.display = 'none';
+  document.body.style.overflow = 'auto';
+});
 
 
 closeBtn.addEventListener('click', function(){
