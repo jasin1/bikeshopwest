@@ -182,6 +182,7 @@ for (let i =0; i < bookBtns.length; i++){
 
 // let chosenDate = "";
 // let freshDate = "";
+let newDatum = "";
 
 config = {
   minDate:"today",
@@ -203,7 +204,8 @@ config = {
   onChange: function(dateStr){
       let chosenDate = dateStr;
       let freshDate = chosenDate.toString();
-      console.log(freshDate);     
+      newDatum = freshDate.substring(0,24);
+      console.log(newDatum);     
   }
 };
 
