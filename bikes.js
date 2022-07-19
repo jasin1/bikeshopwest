@@ -210,7 +210,7 @@ config = {
       let freshDate = chosenDate.toString();
       newDatum = freshDate.substring(0,21);
       stepTwoDate.innerText = newDatum;
-      dateCollected.value = newDatum;
+      dateCollected.innerText = newDatum;
       console.log(newDatum);     
   }
 };
