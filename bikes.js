@@ -181,6 +181,7 @@ for (let i =0; i < bookBtns.length; i++){
 //---------------- FlatPickr---------------------------------------
 
 let chosenDate;
+let freshDate;
 
 config = {
   minDate:"today",
@@ -200,14 +201,14 @@ config = {
     "firstDayOfWeek": 1
   },
   onChange: function(dateStr){
-      chosenDate = dateStr;
+      chosenDate = dateStr.substring(24,64);
       console.log(chosenDate);     
   }
 };
 
 const fp = flatpickr(".input-date", config);
 
-
+//Wed Jul 20 2022 12:00:00 GMT+0200 (Central European Summer Time)
 
 // console.log(fp.formatDate(new Date(), "Y-m-d h:i K"));
 
