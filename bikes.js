@@ -7,11 +7,16 @@ let openBtn2 = document.querySelector(".bike-img-wrapper-2");
 let openBtn3 = document.querySelector(".bike-img-wrapper-3");
 const bikeBtns = [openBtn1, openBtn2, openBtn3];
 
-//const bookBtn = [...document.querySelectorAll(".book-btn")];
 
 const prevBtn = document.querySelectorAll(".button-prev");
 const nextBtn = [...document.querySelectorAll(".button-next")];
 const formSteps = [...document.querySelectorAll(".tab")];
+
+const bookBtn1 = document.querySelector(".button-book-1");
+const bookBtn2 = document.querySelector(".button-book-2");
+const bookBtn3 = document.querySelector(".button-book-3");
+
+const bookBtns = [bookBtn1, bookBtn2, bookBtn3];
 
 const modalTxt = document.querySelector(".modal-txt-wrapper");
 const modalImg = document.querySelector(".modal-main-img");
@@ -113,13 +118,6 @@ window.addEventListener('click', function(e){
 nextBtn.forEach(btn =>{
   // const a = nextBtn.indexOf(btn);
   btn.addEventListener("click",()=>{
-    // a = nextBtn.indexOf(btn);
-    // newHeading.innerText = bikeItemsData[a].name;
-    // bikeHeading.innerHTML = "test";
-    // console.log(nextBtn.indexOf(btn));
-    // console.log(bikeHeading.innerText);
-    // console.log(bikeItemsData[a].name);
-  
     formStepsNum++;
     updateFormSteps();
   });
@@ -135,15 +133,23 @@ prevBtn.forEach(btn =>{
 
 function updateFormSteps(){
   formSteps.forEach((formStep) =>{
-    numBike = formSteps.indexOf(formStep);
     formStep.classList.contains("active") && formStep.classList.remove("active");
    // console.log("formStep update");
   });
   formSteps[formStepsNum].classList.add("active");
   // bikeHeading.innerHTML = bikeItemsData[formStepsNum].name;
-  newHeading.innerText = bikeItemsData[formStepsNum].name;
-  console.log("the number is " + numBike);
 
+}
+
+// function updateFormContent(){
+//   newHeading.innerText = bikeItemsData[formStepsNum].name;
+//   console.log("the number is " + formStepsNum);
+// }
+
+for (let i =0; i < bookBtns.length; i++){
+  bookBtns[i].addEventListener('click', function(){
+    newHeading.innerText = bikeItemsData[i].name;
+  });
 }
 
 
