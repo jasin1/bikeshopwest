@@ -205,7 +205,7 @@ config = {
   onChange: function(dateStr){
       let chosenDate = dateStr;
       let freshDate = chosenDate.toString();
-      newDatum = freshDate.substring(0,24);
+      newDatum = freshDate.substring(0,21);
       stepTwoDate.innerText = newDatum;
       console.log(newDatum);     
   }
