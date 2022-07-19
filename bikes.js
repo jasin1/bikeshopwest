@@ -151,6 +151,8 @@ for (let i =0; i < bookBtns.length; i++){
   bookBtns[i].addEventListener('click', function(){
     newHeading.innerText = bikeItemsData[i].name;
     newHeading2.innerText = bikeItemsData[i].name;
+    bikePrice1.innerText = bikeItemsData[i].price1;
+    bikePrice2.innerText = bikeItemsData[i].price2;
   });
 }
 
