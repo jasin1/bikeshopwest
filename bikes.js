@@ -203,4 +203,6 @@ const fp = flatpickr(".input-date", config);
 
 // console.log(fp.formatDate(new Date(), "Y-m-d h:i K"));
 
-console.log(fp.selectedDates);
+fp.config.onChange(function(){
+  console.log("it is working");
+});
