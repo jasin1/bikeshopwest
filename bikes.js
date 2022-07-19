@@ -30,6 +30,7 @@ const newHeading = document.querySelector(".new-selected-heading");
 const newHeading2 = document.querySelector(".new-selected-heading2");
 
 const stepTwoImg = document.querySelector(".step-2-img");
+const stepTwoDate = document.querySelector(".step-2-date");
 const stepThreeImg = document.querySelector(".step-3-img");
 
 const bikeSelectedImg = document.querySelector(".selected-bike-img");
@@ -205,6 +206,7 @@ config = {
       let chosenDate = dateStr;
       let freshDate = chosenDate.toString();
       newDatum = freshDate.substring(0,24);
+      stepTwoDate.innerText = newDatum;
       console.log(newDatum);     
   }
 };
