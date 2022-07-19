@@ -200,13 +200,14 @@ config = {
     "firstDayOfWeek": 1
   },
   onChange: function(dateStr){
-      chosenDate = dateStr;     
+      chosenDate = dateStr;
+      console.log(chosenDate);     
   }
 };
 
 const fp = flatpickr(".input-date", config);
 
-console.log(chosenDate);
+
 
 // console.log(fp.formatDate(new Date(), "Y-m-d h:i K"));
 
