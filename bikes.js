@@ -183,6 +183,7 @@ for (let i =0; i < bookBtns.length; i++){
 config = {
   minDate:"today",
   enableTime: true,
+  time_24h: true,
   minTime:"10:30",
   maxTime:"17:45",
   altInput: true,
