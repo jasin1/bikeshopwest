@@ -203,6 +203,6 @@ const fp = flatpickr(".input-date", config);
 
 // console.log(fp.formatDate(new Date(), "Y-m-d h:i K"));
 
-fp.config.onChange(function(){
+fp.config.onChange.push(function(){
   console.log("it is working");
 });
