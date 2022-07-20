@@ -66,8 +66,8 @@ let bikeItemsData = [
   {
     id:"bike02",
     name:"Electric Bike",
-    price1:45,
-    price2:40,
+    price1:0.0,
+    price2:0.0,
     descShort:"Duis cursus, mi quis viverra ornare",
     descLong:"Electric bike adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
     step2img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62d6452269615ac0b9717c00_electric-second.jpg",
