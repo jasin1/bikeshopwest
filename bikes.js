@@ -163,8 +163,6 @@ prevBtn.forEach(btn =>{
   btn.addEventListener("click",()=>{
     formStepsNum--;
     updateFormSteps();
-    totalPrice.innerText = 0;
-    selectedBikeNum = 0;
   });
 });
 
@@ -216,10 +214,11 @@ selectedDays.addEventListener('change', function(){
   if(theValue === 1){
   console.log("ONE day");
   totalPrice.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
-
+  priceCollected.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
   }else{
     console.log("more days");  
-    totalPrice.innerText = theValue * bikeItemsData[selectedBikeNum].price2;  
+    totalPrice.innerText = theValue * bikeItemsData[selectedBikeNum].price2;
+    priceCollected.innerText = theValue * bikeItemsData[selectedBikeNum].price2;      
   }
 });
 
