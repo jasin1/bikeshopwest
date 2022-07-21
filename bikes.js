@@ -67,8 +67,8 @@ let bikeItemsData = [
   {
     id:"bike02",
     name:"Electric Bike",
-    price1:0.0,
-    price2:0.0,
+    price1:0,
+    price2:0,
     descShort:"Duis cursus, mi quis viverra ornare",
     descLong:"Electric bike adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
     step2img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62d6452269615ac0b9717c00_electric-second.jpg",
@@ -109,6 +109,7 @@ let closeBtn = document.getElementById("modal-close-wrapper");
 
 
 for (let i =0; i < bikeBtns.length; i++){
+    selectedBikeNum = i;
     bikeBtns[i].addEventListener('click', function(){
     modalContainer.style.display = 'block';
     document.body.style.overflow = 'hidden';
@@ -193,19 +194,21 @@ let theValue = Number;
 //totalPrice2
 //priceCollected
 
+//bikeItemsData[i].price1;
+
+//selectedBikeNum
+
 selectedDays.addEventListener('change', function(){
-  //console.log(typeof selectedDays.value);
-  //selectedDayValue = selectedDays.value;
   theValue = parseInt(selectedDays.value);
-  console.log(theValue);
+  // console.log(theValue);
   if(theValue === 1){
-  console.log("ONE day");    
+  console.log("ONE day");
+  totalPrice.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
   }else{
     console.log("more days");    
   }
 });
 
-console.log(theValue);
 
 
 
