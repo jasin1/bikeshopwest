@@ -5,7 +5,9 @@ console.log("We are in!!");
 let openBtn1 = document.querySelector(".bike-img-wrapper-1");
 let openBtn2 = document.querySelector(".bike-img-wrapper-2");
 let openBtn3 = document.querySelector(".bike-img-wrapper-3");
-const bikeBtns = [openBtn1, openBtn2, openBtn3];
+let openBtn4 = document.querySelector(".bike-img-wrapper-4");
+
+const bikeBtns = [openBtn1, openBtn2, openBtn3, openBtn4];
 
 const modalBookBtn = document.querySelector(".button-book-4");
 
@@ -85,6 +87,15 @@ let bikeItemsData = [
     step3img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62c687269e35636ce449e59d_cargo-bike_optimized.jpg",
     features:["feat 01", "feat 02", "feat 03", "feat 04"],
   },
+  {
+    id:"otherBikes",
+    name:"Other bike",
+    descShort:"In addition we have special bicycles for rent such as parent- child tandems, regular tandems and more Bikes....",
+    descLong:"We have bicycles in all shapes and sizes. We Rent City Bikes with backpedal brake and with handbrake and gears. In addition we have special bicycles for rent such as parent- child tandems, regular tandems and Cargo bikes. In order to make sure that the little ones can also take part, we also rent out bikes with child seats.",
+    step2img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62d8f4183816d7762aa90555_other-bikes-second.jpg",
+    step3img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62d8dbb66a9b17027453895e_other-bikes-small.jpg",
+    features:["", "", "", ""]
+  },
 ];
 
 let formStepsNum = 0;
@@ -97,14 +108,6 @@ let closeBtn = document.getElementById("modal-close-wrapper");
 
 //--------- Modal-----------------
 
-// for (const btn of bikeBtns){
-//   btn.addEventListener('click', function(){
-//     modalContainer.style.display = 'block';
-//     document.body.style.overflow = 'hidden';
-//     // console.log("bike clicked");
-//     // console.log("btn number", btn); 
-//   })
-// }
 
 for (let i =0; i < bikeBtns.length; i++){
     bikeBtns[i].addEventListener('click', function(){
