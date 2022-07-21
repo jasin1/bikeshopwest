@@ -195,6 +195,8 @@ for (let i =0; i < bookBtns.length; i++){
     selectedBikeNum = i;
     console.log(selectedBikeNum);
     totalPrice.innerText = 0;
+    totalPrice2.innerText = 0;
+    priceCollected.value = 0;
   });
 };
 
