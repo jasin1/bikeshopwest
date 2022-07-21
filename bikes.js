@@ -123,8 +123,8 @@ for (let i =0; i < bikeBtns.length; i++){
     bikePrice2.innerText = bikeItemsData[i].price2;
     stepTwoImg.src = bikeItemsData[i].step2img;
     stepThreeImg.src = bikeItemsData[i].step3img;
-    
-    selectedBikeNum = parseInt(i);
+
+    selectedBikeNum = i;
   })
 };
 
