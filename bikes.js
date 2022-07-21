@@ -163,6 +163,8 @@ prevBtn.forEach(btn =>{
   btn.addEventListener("click",()=>{
     formStepsNum--;
     updateFormSteps();
+    totalPrice.innerText = 0;
+    selectedBikeNum = 0;
   });
 });
 
