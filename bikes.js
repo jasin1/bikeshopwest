@@ -197,7 +197,7 @@ selectedDays.addEventListener('change', function(){
   //console.log(typeof selectedDays.value);
   if(selectedDayValue === 1){
   console.log("ONE day");    
-  }else{
+  }else if(selectedDayValue > 1){
     console.log("more days");    
   }
 });
