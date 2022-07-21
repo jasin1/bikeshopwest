@@ -193,8 +193,8 @@ let selectedDayValue = selectedDays.value;
 //priceCollected
 
 selectedDays.addEventListener('change', function(){
-  if(selectedDayValue === 1){
-  console.log("one day");    
+  if(selectedDayValue = selectedDays[1].value){
+  console.log("ONE day");    
   }else{
     console.log("more days");    
   }
