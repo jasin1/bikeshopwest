@@ -187,7 +187,7 @@ for (let i =0; i < bookBtns.length; i++){
   });
 };
 
-let selectedDayValue = parseInt(selectedDays.value);
+let selectedDayValue = selectedDays.value;
 
 //totalPrice
 //totalPrice2
@@ -195,9 +195,10 @@ let selectedDayValue = parseInt(selectedDays.value);
 
 selectedDays.addEventListener('change', function(){
   //console.log(typeof selectedDays.value);
-  if(selectedDayValue === 1){
+  let theValue = parseInt(selectedDayValue);
+  if(theValue === 1){
   console.log("ONE day");    
-  }else if(selectedDayValue > 1){
+  }else{
     console.log("more days");    
   }
 });
