@@ -188,7 +188,7 @@ for (let i =0; i < bookBtns.length; i++){
 };
 
 let selectedDayValue = selectedDays.value;
-console.log(typeof selectedDayValue);
+console.log(typeof selectedDays.value);
 //totalPrice
 //totalPrice2
 //priceCollected
