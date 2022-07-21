@@ -181,13 +181,13 @@ function updateFormSteps(){
 
 for (let i =0; i < bookBtns.length; i++){
   bookBtns[i].addEventListener('click', function(){
+    console.log("bike selected");
     newHeading.innerText = bikeItemsData[i].name;
     newHeading2.innerText = bikeItemsData[i].name;
     bikePrice1.innerText = bikeItemsData[i].price1;
     bikePrice2.innerText = bikeItemsData[i].price2;
     stepTwoImg.src = bikeItemsData[i].step2img;
     stepThreeImg.src = bikeItemsData[i].step3img;
-
     console.log("selected bike number is ");
   });
 };
