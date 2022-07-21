@@ -195,7 +195,7 @@ let selectedDayValue = parseInt(selectedDays.value);
 
 selectedDays.addEventListener('change', function(){
   //console.log(typeof selectedDays.value);
-  if(selectedDayValue = 1){
+  if(selectedDayValue === 1){
   console.log("ONE day");    
   }else{
     console.log("more days");    
