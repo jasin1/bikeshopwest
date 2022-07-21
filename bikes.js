@@ -184,6 +184,7 @@ function updateFormSteps(){
 
 for (let i =0; i < bookBtns.length; i++){
   bookBtns[i].addEventListener('click', function(){
+    selectedDays.selectedIndex = "0";
     console.log("bike selected");
     newHeading.innerText = bikeItemsData[i].name;
     newHeading2.innerText = bikeItemsData[i].name;
@@ -213,9 +214,9 @@ selectedDays.addEventListener('change', function(){
   step2duration.innerText = theValue + " days";
   if(theValue === 1){
   console.log("ONE day");
-  totalPrice.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
-  totalPrice2.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
-  priceCollected.value = theValue * bikeItemsData[selectedBikeNum].price1;
+    totalPrice.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
+    totalPrice2.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
+    priceCollected.value = theValue * bikeItemsData[selectedBikeNum].price1;
   }else{
     console.log("more days");  
     totalPrice.innerText = theValue * bikeItemsData[selectedBikeNum].price2;
