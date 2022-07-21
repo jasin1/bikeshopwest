@@ -212,7 +212,7 @@ let bikeNum = Number;
 
 selectedDays.addEventListener('change', function(){
   theValue = parseInt(selectedDays.value);
-  step2duration.innerText = theValue;
+  step2duration.innerText = theValue + " days";
   if(theValue === 1){
   console.log("ONE day");
   totalPrice.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
