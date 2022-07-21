@@ -192,6 +192,7 @@ for (let i =0; i < bookBtns.length; i++){
     stepThreeImg.src = bikeItemsData[i].step3img;
     selectedBikeNum = i;
     console.log(selectedBikeNum);
+    totalPrice.innerText = 0;
   });
 };
 
