@@ -190,7 +190,8 @@ for (let i =0; i < bookBtns.length; i++){
     bikePrice2.innerText = bikeItemsData[i].price2;
     stepTwoImg.src = bikeItemsData[i].step2img;
     stepThreeImg.src = bikeItemsData[i].step3img;
-   console.log(i);
+    selectedBikeNum = i;
+    console.log(selectedBikeNum);
   });
 };
 
@@ -212,10 +213,11 @@ selectedDays.addEventListener('change', function(){
   if(theValue === 1){
   console.log("ONE day");
  // console.log(selectedBikeNum);
-  //totalPrice.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
+  totalPrice.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
 
   }else{
-    console.log("more days");    
+    console.log("more days");  
+    totalPrice.innerText = theValue * bikeItemsData[selectedBikeNum].price2;  
   }
 });
 
