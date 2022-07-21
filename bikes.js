@@ -124,7 +124,7 @@ for (let i =0; i < bikeBtns.length; i++){
     stepTwoImg.src = bikeItemsData[i].step2img;
     stepThreeImg.src = bikeItemsData[i].step3img;
 
-    console.log("selected bike number is " + i);
+
   })
 };
 
@@ -187,6 +187,8 @@ for (let i =0; i < bookBtns.length; i++){
     bikePrice2.innerText = bikeItemsData[i].price2;
     stepTwoImg.src = bikeItemsData[i].step2img;
     stepThreeImg.src = bikeItemsData[i].step3img;
+
+    console.log("selected bike number is " + i);
   });
 };
 
