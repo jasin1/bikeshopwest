@@ -109,7 +109,7 @@ let closeBtn = document.getElementById("modal-close-wrapper");
 
 
 for (let i =0; i < bikeBtns.length; i++){
-    selectedBikeNum = parseInt(i);
+    
     bikeBtns[i].addEventListener('click', function(){
     modalContainer.style.display = 'block';
     document.body.style.overflow = 'hidden';
@@ -123,6 +123,8 @@ for (let i =0; i < bikeBtns.length; i++){
     bikePrice2.innerText = bikeItemsData[i].price2;
     stepTwoImg.src = bikeItemsData[i].step2img;
     stepThreeImg.src = bikeItemsData[i].step3img;
+    
+    selectedBikeNum = parseInt(i);
   })
 };
 
@@ -205,7 +207,9 @@ selectedDays.addEventListener('change', function(){
   // console.log(theValue);
   if(theValue === 1){
   console.log("ONE day");
-  totalPrice.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
+  console.log(selectedBikeNum);
+  //totalPrice.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
+
   }else{
     console.log("more days");    
   }
