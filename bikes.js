@@ -46,7 +46,10 @@ const priceCollected = document.querySelector(".price-colect-input");
 
 
 // let dayValue = selectedDays.options[select.selectedIndex].value;
-console.log(selectedDays.value);
+selectedDays.addEventListener('change', function(){
+  console.log(selectedDays.value);
+});
+
 
 
 let numBike = Number;
