@@ -44,6 +44,7 @@ const selectedDate = document.querySelector(".step-2-date");
 const selectedDays = document.getElementById("form-select-input");
 const dateCollected = document.querySelector(".date-colect-input");
 const priceCollected = document.querySelector(".price-colect-input");
+const step2duration = document.querySelector(".step-2-duration");
 
 // let dayValue = selectedDays.options[select.selectedIndex].value;
 
@@ -209,11 +210,9 @@ let bikeNum = Number;
 
 selectedDays.addEventListener('change', function(){
   theValue = parseInt(selectedDays.value);
-  //bikeNum =  parseInt(selectedBikeNum);
-  // console.log(theValue);
+  step2duration.innerText = theValue;
   if(theValue === 1){
   console.log("ONE day");
- // console.log(selectedBikeNum);
   totalPrice.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
 
   }else{
