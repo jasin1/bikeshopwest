@@ -188,12 +188,13 @@ for (let i =0; i < bookBtns.length; i++){
 };
 
 let selectedDayValue = selectedDays.value;
-console.log(typeof selectedDays.value);
+
 //totalPrice
 //totalPrice2
 //priceCollected
 
 selectedDays.addEventListener('change', function(){
+  console.log(typeof selectedDays.value);
   if(selectedDayValue === "1"){
   console.log("ONE day");    
   }else{
