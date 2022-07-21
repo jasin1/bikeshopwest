@@ -124,7 +124,7 @@ for (let i =0; i < bikeBtns.length; i++){
     stepTwoImg.src = bikeItemsData[i].step2img;
     stepThreeImg.src = bikeItemsData[i].step3img;
 
-    selectedBikeNum = i;
+    console.log("selected bike number is " + i);
   })
 };
 
@@ -207,7 +207,7 @@ selectedDays.addEventListener('change', function(){
   // console.log(theValue);
   if(theValue === 1){
   console.log("ONE day");
-  console.log(selectedBikeNum);
+ // console.log(selectedBikeNum);
   //totalPrice.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
 
   }else{
