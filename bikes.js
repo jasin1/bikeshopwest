@@ -109,7 +109,7 @@ let closeBtn = document.getElementById("modal-close-wrapper");
 
 
 for (let i =0; i < bikeBtns.length; i++){
-    selectedBikeNum = i;
+    selectedBikeNum = parseInt(i);
     bikeBtns[i].addEventListener('click', function(){
     modalContainer.style.display = 'block';
     document.body.style.overflow = 'hidden';
@@ -190,6 +190,7 @@ for (let i =0; i < bookBtns.length; i++){
 
 let selectedDayValue;
 let theValue = Number;
+let bikeNum = Number;
 //totalPrice
 //totalPrice2
 //priceCollected
@@ -200,6 +201,7 @@ let theValue = Number;
 
 selectedDays.addEventListener('change', function(){
   theValue = parseInt(selectedDays.value);
+  //bikeNum =  parseInt(selectedBikeNum);
   // console.log(theValue);
   if(theValue === 1){
   console.log("ONE day");
