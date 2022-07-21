@@ -44,12 +44,7 @@ const selectedDays = document.getElementById("form-select-input");
 const dateCollected = document.querySelector(".date-colect-input");
 const priceCollected = document.querySelector(".price-colect-input");
 
-
 // let dayValue = selectedDays.options[select.selectedIndex].value;
-selectedDays.addEventListener('change', function(){
-  console.log(selectedDays.value);
-});
-
 
 
 let numBike = Number;
@@ -190,6 +185,13 @@ for (let i =0; i < bookBtns.length; i++){
     stepThreeImg.src = bikeItemsData[i].step3img;
   });
 };
+
+let selectedDayValue = selectedDays.value;
+
+selectedDays.addEventListener('change', function(){
+  console.log(selectedDayValue);
+});
+
 
 
 //---------------- FlatPickr---------------------------------------
