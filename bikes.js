@@ -89,6 +89,8 @@ let bikeItemsData = [
   {
     id:"otherBikes",
     name:"Other bike",
+    price1:0,
+    price2:0,
     descShort:"In addition we have special bicycles for rent such as parent- child tandems, regular tandems and more Bikes....",
     descLong:"We have bicycles in all shapes and sizes. We Rent City Bikes with backpedal brake and with handbrake and gears. In addition we have special bicycles for rent such as parent- child tandems, regular tandems and Cargo bikes. In order to make sure that the little ones can also take part, we also rent out bikes with child seats.",
     step2img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62d8f6ffc4ed336a8e95915b_handbrake-second.jpg",
