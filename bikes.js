@@ -188,7 +188,7 @@ for (let i =0; i < bookBtns.length; i++){
     stepTwoImg.src = bikeItemsData[i].step2img;
     stepThreeImg.src = bikeItemsData[i].step3img;
 
-    console.log("selected bike number is " + i);
+    console.log("selected bike number is ");
   });
 };
 
