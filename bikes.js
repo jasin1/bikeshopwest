@@ -39,6 +39,7 @@ const bikeSelectedImg = document.querySelector(".selected-bike-img");
 const bikePrice1 = document.querySelector(".step-1-price-1");
 const bikePrice2 = document.querySelector(".step-1-price-2");
 const totalPrice = document.querySelector(".total-price-calc");
+const totalPrice2 = document.querySelector(".total-price-calc-2");
 const selectedDate = document.querySelector(".step-2-date");
 const selectedDays = document.getElementById("form-select-input");
 const dateCollected = document.querySelector(".date-colect-input");
@@ -187,6 +188,9 @@ for (let i =0; i < bookBtns.length; i++){
 };
 
 let selectedDayValue = selectedDays.value;
+//totalPrice
+//totalPrice2
+//priceCollected
 
 selectedDays.addEventListener('change', function(){
   console.log(selectedDayValue);
