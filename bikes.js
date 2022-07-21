@@ -214,11 +214,11 @@ selectedDays.addEventListener('change', function(){
   if(theValue === 1){
   console.log("ONE day");
   totalPrice.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
-  priceCollected.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
+  totalPrice2.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
   }else{
     console.log("more days");  
     totalPrice.innerText = theValue * bikeItemsData[selectedBikeNum].price2;
-    priceCollected.innerText = theValue * bikeItemsData[selectedBikeNum].price2;      
+    totalPrice2.innerText = theValue * bikeItemsData[selectedBikeNum].price2;      
   }
 });
 
