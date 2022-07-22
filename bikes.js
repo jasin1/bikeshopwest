@@ -144,7 +144,7 @@ closeBtn.addEventListener('click', function(){
 
 window.addEventListener('click', function(e){
   if(e.target === modalContainer){
-    console.log("modal clicked");
+    //console.log("modal clicked");
   }
 });
 
@@ -186,7 +186,7 @@ function updateFormSteps(){
 for (let i =0; i < bookBtns.length; i++){
   bookBtns[i].addEventListener('click', function(){
     selectedDays.selectedIndex = "0";
-    console.log("bike selected");
+    //console.log("bike selected");
     newHeading.innerText = bikeItemsData[i].name;
     newHeading2.innerText = bikeItemsData[i].name;
     bikePrice1.innerText = bikeItemsData[i].price1;
@@ -216,12 +216,12 @@ selectedDays.addEventListener('change', function(){
   theValue = parseInt(selectedDays.value);
   step2duration.innerText = theValue + " days";
   if(theValue === 1){
-  console.log("ONE day");
+  //console.log("ONE day");
     totalPrice.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
     totalPrice2.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
     priceCollected.value = theValue * bikeItemsData[selectedBikeNum].price1;
   }else{
-    console.log("more days");  
+    //console.log("more days");  
     totalPrice.innerText = theValue * bikeItemsData[selectedBikeNum].price2;
     totalPrice2.innerText = theValue * bikeItemsData[selectedBikeNum].price2;
     priceCollected.value = theValue * bikeItemsData[selectedBikeNum].price2;      
@@ -260,7 +260,7 @@ config = {
       newDatum = freshDate.substring(0,21);
       stepTwoDate.innerText = newDatum;
       dateCollected.setAttribute('value', freshDate);
-      console.log(dateCollected.value);     
+      //console.log(dateCollected.value);     
   }
 };
 
