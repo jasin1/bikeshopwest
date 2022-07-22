@@ -185,7 +185,7 @@ function updateFormSteps(){
 
 for (let i =0; i < bookBtns.length; i++){
   bookBtns[i].addEventListener('click', function(){
-    formSteps[i].scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+    formSteps[selectedBikeNum].scrollIntoView({behavior: "smooth", block: "end", inline: "center"});
     console.log(formSteps[i]);
     selectedDays.selectedIndex = "0";
     //console.log("bike selected");
