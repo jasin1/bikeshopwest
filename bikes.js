@@ -156,6 +156,7 @@ nextBtn.forEach(btn =>{
   btn.addEventListener("click",()=>{
     formStepsNum++;
     updateFormSteps();
+    formSteps.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
   });
 });
 
