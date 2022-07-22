@@ -156,7 +156,7 @@ nextBtn.forEach(btn =>{
   btn.addEventListener("click",()=>{
     formStepsNum++;
     updateFormSteps();
-    formSteps.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+    //formSteps.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
   });
 });
 
@@ -185,6 +185,7 @@ function updateFormSteps(){
 
 for (let i =0; i < bookBtns.length; i++){
   bookBtns[i].addEventListener('click', function(){
+    formSteps[i].scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
     selectedDays.selectedIndex = "0";
     //console.log("bike selected");
     newHeading.innerText = bikeItemsData[i].name;
