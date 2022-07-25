@@ -162,6 +162,8 @@ nextBtn.forEach(btn =>{
     if(btn == nextBtn[0]){
       console.log("first book btn ");
       fp.clear();
+    }else{
+      console.log("not the button");
     }
     //formSteps.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
   });
