@@ -241,7 +241,7 @@ selectedDays.addEventListener('change', function(){
 // let freshDate = "";
 let newDatum = "";
 let newTime = "";
-const toDay = "today";
+const toDay = "Select a date";
 
 config = {
   defaultDate:toDay,
