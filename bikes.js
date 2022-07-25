@@ -188,7 +188,7 @@ function updateFormSteps(){
 for (let i =0; i < bookBtns.length; i++){
   bookBtns[i].addEventListener('click', function(){
     formSteps[selectedBikeNum].scrollIntoView({behavior: "smooth", block: "end", inline: "center"});
-    console.log(formSteps[i]);
+    //console.log(formSteps[i]);
     selectedDays.selectedIndex = "0";
     //console.log("bike selected");
     newHeading.innerText = bikeItemsData[i].name;
@@ -198,7 +198,7 @@ for (let i =0; i < bookBtns.length; i++){
     stepTwoImg.src = bikeItemsData[i].step2img;
     stepThreeImg.src = bikeItemsData[i].step3img;
     selectedBikeNum = i;
-    console.log(selectedBikeNum);
+    //console.log(selectedBikeNum);
     totalPrice.innerText = 0;
     totalPrice2.innerText = 0;
     priceCollected.value = 0;
