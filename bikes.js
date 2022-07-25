@@ -159,15 +159,19 @@ nextBtn.forEach(btn =>{
   btn.addEventListener("click",()=>{
     formStepsNum++;
     updateFormSteps();
-    fp.clear();
     //formSteps.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
   });
+});
+
+nextBtn[0].addEventListener("click",()=>{
+    fp.clear();
 });
 
 prevBtn.forEach(btn =>{
   btn.addEventListener("click",()=>{
     formStepsNum--;
     updateFormSteps();
+    // fp.clear();
   });
 });
 
