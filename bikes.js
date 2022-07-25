@@ -161,7 +161,7 @@ nextBtn.forEach(btn =>{
     updateFormSteps();
     if(btn == nextBtn[0] ||btn == nextBtn[1] || btn == nextBtn[2] ){
       console.log("btn clicked");
-      // fp.clear();
+      fp.clear();
     }else{
       console.log("not the button");
     }
