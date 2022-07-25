@@ -160,7 +160,7 @@ nextBtn.forEach(btn =>{
     formStepsNum++;
     updateFormSteps();
     if(btn == nextBtn[0]){
-      console.log("first book btn ");
+      console.log(btn);
       fp.clear();
     }else{
       console.log("not the button");
