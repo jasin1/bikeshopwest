@@ -45,6 +45,7 @@ const selectedDays = document.getElementById("form-select-input");
 const dateCollected = document.querySelector(".date-colect-input");
 const priceCollected = document.querySelector(".price-colect-input");
 const step2duration = document.querySelector(".step-2-duration");
+const step2Time = document.querySelector(".step-2-time");
 
 // let dayValue = selectedDays.options[select.selectedIndex].value;
 
@@ -265,6 +266,7 @@ config = {
       console.log("time is ", newTime);
       console.log(dateStr);
       stepTwoDate.innerText = newDatum;
+      step2Time.innerText = newTime;
       dateCollected.setAttribute('value', freshDate);
       //console.log(dateCollected.value);     
   }
