@@ -159,6 +159,9 @@ nextBtn.forEach(btn =>{
   btn.addEventListener("click",()=>{
     formStepsNum++;
     updateFormSteps();
+    if(btn = nextBtn[0]){
+      console.log("first book btn ")
+    }
     //formSteps.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
   });
 });
@@ -174,7 +177,7 @@ prevBtn.forEach(btn =>{
 
 
 function updateFormSteps(){
-  fp.clear();
+  // fp.clear();
   formSteps.forEach((formStep) =>{
     formStep.classList.contains("active") && formStep.classList.remove("active");
    // console.log("formStep update");
