@@ -160,7 +160,8 @@ nextBtn.forEach(btn =>{
     formStepsNum++;
     updateFormSteps();
     if(btn = nextBtn[0]){
-      console.log("first book btn ")
+      console.log("first book btn ");
+      fp.clear();
     }
     //formSteps.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
   });
