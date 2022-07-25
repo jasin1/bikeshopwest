@@ -238,6 +238,7 @@ selectedDays.addEventListener('change', function(){
 // let chosenDate = "";
 // let freshDate = "";
 let newDatum = "";
+let newTime = "";
 
 config = {
   minDate:"today",
@@ -260,6 +261,9 @@ config = {
       let chosenDate = dateStr;
       let freshDate = chosenDate.toString();
       newDatum = freshDate.substring(0,21);
+      newTime = freshDate.substring(22);
+      console.log("time is ", newTime);
+      console.log(dateStr);
       stepTwoDate.innerText = newDatum;
       dateCollected.setAttribute('value', freshDate);
       //console.log(dateCollected.value);     
