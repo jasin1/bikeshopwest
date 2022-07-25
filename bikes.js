@@ -159,7 +159,7 @@ nextBtn.forEach(btn =>{
   btn.addEventListener("click",()=>{
     formStepsNum++;
     updateFormSteps();
-    if(btn = nextBtn[0]){
+    if(btn == nextBtn[0]){
       console.log("first book btn ");
       fp.clear();
     }
