@@ -157,10 +157,9 @@ window.addEventListener('click', function(e){
 nextBtn.forEach(btn =>{
   // const a = nextBtn.indexOf(btn);
   btn.addEventListener("click",()=>{
-    console.log(nextBtn[btn]);
     formStepsNum++;
     updateFormSteps();
-    if(btn == nextBtn[0]){
+    if(btn == nextBtn[0] ||btn == nextBtn[1] || btn == nextBtn[2] ){
       console.log("btn clicked");
       // fp.clear();
     }else{
