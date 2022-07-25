@@ -159,7 +159,7 @@ nextBtn.forEach(btn =>{
   btn.addEventListener("click",()=>{
     formStepsNum++;
     updateFormSteps();
-    toDay = "Jul 27, 2022 at 10:30";
+    toDay = "today";
     //formSteps.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
   });
 });
