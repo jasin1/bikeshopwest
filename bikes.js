@@ -47,7 +47,7 @@ const priceCollected = document.querySelector(".price-colect-input");
 const timeCollected = document.querySelector(".time-colect-input");
 const step2duration = document.querySelector(".step-2-duration");
 const step2Time = document.querySelector(".step-2-time");
-const toDay = "today";
+let toDay = "today";
 
 // let dayValue = selectedDays.options[select.selectedIndex].value;
 
