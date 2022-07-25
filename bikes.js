@@ -157,11 +157,12 @@ window.addEventListener('click', function(e){
 nextBtn.forEach(btn =>{
   // const a = nextBtn.indexOf(btn);
   btn.addEventListener("click",()=>{
+    console.log(nextBtn[btn]);
     formStepsNum++;
     updateFormSteps();
     if(btn == nextBtn[0]){
-      console.log(btn);
-      fp.clear();
+      console.log("btn clicked");
+      // fp.clear();
     }else{
       console.log("not the button");
     }
