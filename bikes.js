@@ -241,8 +241,10 @@ selectedDays.addEventListener('change', function(){
 // let freshDate = "";
 let newDatum = "";
 let newTime = "";
+const toDay = "today";
 
 config = {
+  defaultDate:toDay,
   minDate:"today",
   enableTime: true,
   time_24h: true,
