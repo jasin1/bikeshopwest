@@ -159,7 +159,7 @@ nextBtn.forEach(btn =>{
   btn.addEventListener("click",()=>{
     formStepsNum++;
     updateFormSteps();
-    toDay = "Pick a date";
+    toDay = "today";
     //formSteps.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
   });
 });
