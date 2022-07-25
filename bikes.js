@@ -163,9 +163,6 @@ nextBtn.forEach(btn =>{
   });
 });
 
-nextBtn[0].addEventListener("click",()=>{
-    fp.clear();
-});
 
 prevBtn.forEach(btn =>{
   btn.addEventListener("click",()=>{
@@ -177,6 +174,7 @@ prevBtn.forEach(btn =>{
 
 
 function updateFormSteps(){
+  fp.clear();
   formSteps.forEach((formStep) =>{
     formStep.classList.contains("active") && formStep.classList.remove("active");
    // console.log("formStep update");
