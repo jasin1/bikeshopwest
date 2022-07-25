@@ -261,7 +261,7 @@ config = {
       let chosenDate = dateStr;
       let freshDate = chosenDate.toString();
       newDatum = freshDate.substring(0,21);
-      newTime = freshDate.substring(17,22);
+      newTime = freshDate.substring(16,21);
       console.log("time is ", newTime);
       console.log(dateStr);
       stepTwoDate.innerText = newDatum;
