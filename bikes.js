@@ -47,6 +47,7 @@ const priceCollected = document.querySelector(".price-colect-input");
 const timeCollected = document.querySelector(".time-colect-input");
 const step2duration = document.querySelector(".step-2-duration");
 const step2Time = document.querySelector(".step-2-time");
+const toDay = "today";
 
 // let dayValue = selectedDays.options[select.selectedIndex].value;
 
@@ -158,6 +159,7 @@ nextBtn.forEach(btn =>{
   btn.addEventListener("click",()=>{
     formStepsNum++;
     updateFormSteps();
+    toDay = "Jul 27, 2022 at 10:30";
     //formSteps.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
   });
 });
@@ -241,7 +243,7 @@ selectedDays.addEventListener('change', function(){
 // let freshDate = "";
 let newDatum = "";
 let newTime = "";
-const toDay = "Select a date";
+
 
 config = {
   defaultDate:toDay,
