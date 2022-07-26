@@ -329,26 +329,26 @@ let checkedValue = 0;
 //   return myNum;
 // }
 
-//   checks.forEach(check =>{
-//     check.addEventListener("change",()=>{
-//       if(check.checked){
-//         checkedValue = (check.value * 1);
-//         myNum += checkedValue;
-//         console.log("checkedPrice is ", myNum);
-//         //bigTotal += checkedPrice;
-//       // console.log("checkbox ", check.dataset.index);
-//       } else if(myNum > 0) {
-//         myNum -= (check.value * 1);
-//         console.log("checkedPrice is ", myNum);
-//         //bigTotal -= checkedPrice;
-//       }      
-//       bigTotal += myNum;
+  checks.forEach(check =>{
+    check.addEventListener("change",()=>{
+      if(check.checked){
+        checkedValue = (check.value * 1);
+        checkedPrice += checkedValue;
+        console.log("checkedPrice is ", checkedPrice);
+        //bigTotal += checkedPrice;
+      // console.log("checkbox ", check.dataset.index);
+      } else if(checkedPrice > 0) {
+        checkedPrice -= (check.value * 1);
+        console.log("checkedPrice is ", checkedPrice);
+        //bigTotal -= checkedPrice;
+      }      
+      // bigTotal += checkedPrice;
 
-//       totalPrice.innerText = bigTotal;
-//       totalPrice2.innerText = bigTotal;
-//       priceCollected.value = bigTotal;
-//     });
-//   });
+      // totalPrice.innerText = bigTotal;
+      // totalPrice2.innerText = bigTotal;
+      // priceCollected.value = bigTotal;
+    });
+  });
 
 
 
