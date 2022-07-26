@@ -329,13 +329,13 @@ checks.forEach(check =>{
   check.addEventListener("change",()=>{
     if(check.checked && checkedPrice == 0){
       checkedPrice += (check.value * 1 );
-      console.log(checkedPrice);
-      bigTotal += parseInt(check.value);
+      console.log("checkedPrice is ", checkedPrice);
+      bigTotal += checkedPrice;
     // console.log("checkbox ", check.dataset.index);
     } else if(checkedPrice > 0){
       checkedPrice -= (check.value * 1 );
-      console.log("price is ", checkedPrice);
-      bigTotal -= parseInt(check.value);
+      console.log("checkedPrice is ", checkedPrice);
+      bigTotal -= checkedPrice;
     } else{
       checkedPrice = 0;
     }
