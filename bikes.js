@@ -343,19 +343,19 @@ function subCheck(d1, d2){
         console.log("checkedPrice is ", checkedPrice);
         console.log("bigTotal is ", addCheck(bigTotal , checkedPrice));
         numtje = addCheck(bigTotal , checkedPrice);
-        bigTotal = numtje;
+        bigTotal += numtje;
       // console.log("checkbox ", check.dataset.index);
       } else if(checkedPrice > 0) {
         checkedPrice -= (check.value * 1);
         console.log("checkedPrice is ", checkedPrice);
         console.log("bigTotal is ", subCheck(bigTotal ,checkedPrice));
         numtje = subCheck(bigTotal ,checkedPrice);
-        bigTotal = numtje;
+        bigTotal -= numtje;
       }      
       //bigTotal = numtje;
 
-      // totalPrice.innerText = bigTotal;
-      // totalPrice2.innerText = bigTotal;
-      // priceCollected.value = bigTotal;
+      totalPrice.innerText = bigTotal;
+      totalPrice2.innerText = bigTotal;
+      priceCollected.value = bigTotal;
     });
   });
