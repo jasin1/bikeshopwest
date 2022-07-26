@@ -318,7 +318,9 @@ let checkedPrice = 0;
 checks.forEach(check =>{
   check.addEventListener("change",()=>{
     if(check.checked){
-    console.log("checkbox ", check.dataset.index);
+      checkedPrice += check.value;
+      console.log(checkedPrice);
+    // console.log("checkbox ", check.dataset.index);
     }
   });
 });
