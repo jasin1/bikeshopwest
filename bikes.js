@@ -234,7 +234,7 @@ selectedDays.addEventListener('change', function(){
   step2duration.innerText = theValue + " days";
   if(theValue === 1){
   //console.log("ONE day");
-    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price1) + checkedPrice;
+    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price1);
     totalPrice.innerText = bigTotal;
     totalPrice2.innerText = bigTotal;
     priceCollected.value = bigTotal;
@@ -244,7 +244,7 @@ selectedDays.addEventListener('change', function(){
     // priceCollected.value = theValue * bikeItemsData[selectedBikeNum].price1;
   }else{
     //console.log("more days"); 
-    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2) + checkedPrice;
+    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2);
     totalPrice.innerText = bigTotal;
     totalPrice2.innerText = bigTotal;
     priceCollected.value = bigTotal;
@@ -330,15 +330,16 @@ checks.forEach(check =>{
     if(check.checked && checkedPrice == 0){
       checkedPrice += (check.value * 1 );
       console.log("checkedPrice is ", checkedPrice);
-      bigTotal += checkedPrice;
+      //bigTotal += checkedPrice;
     // console.log("checkbox ", check.dataset.index);
     } else if(checkedPrice > 0){
       checkedPrice -= (check.value * 1 );
       console.log("checkedPrice is ", checkedPrice);
-      bigTotal -= checkedPrice;
-    } else{
-      checkedPrice = 0;
+      //bigTotal -= checkedPrice;
     }
+    
+    bigTotal += checkedPrice;
+
     totalPrice.innerText = bigTotal;
     totalPrice2.innerText = bigTotal;
     priceCollected.value = bigTotal;
