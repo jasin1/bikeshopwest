@@ -218,6 +218,8 @@ for (let i =0; i < bookBtns.length; i++){
 let selectedDayValue;
 let theValue = Number;
 let bikeNum = Number;
+
+let bigTotal = Number;
 //totalPrice
 //totalPrice2
 //priceCollected
@@ -231,14 +233,21 @@ selectedDays.addEventListener('change', function(){
   step2duration.innerText = theValue + " days";
   if(theValue === 1){
   //console.log("ONE day");
-    totalPrice.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
-    totalPrice2.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
-    priceCollected.value = theValue * bikeItemsData[selectedBikeNum].price1;
+    bigTotal = theValue * bikeItemsData[selectedBikeNum].price1;
+    totalPrice.innerText = bigTotal;
+    totalPrice2.innerText = bigTotal;
+    priceCollected.value = bigTotal;
+    console.log(bigTotal);
+    // totalPrice.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
+    // totalPrice2.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
+    // priceCollected.value = theValue * bikeItemsData[selectedBikeNum].price1;
   }else{
-    //console.log("more days");  
-    totalPrice.innerText = theValue * bikeItemsData[selectedBikeNum].price2;
-    totalPrice2.innerText = theValue * bikeItemsData[selectedBikeNum].price2;
-    priceCollected.value = theValue * bikeItemsData[selectedBikeNum].price2;      
+    //console.log("more days"); 
+    bigTotal = theValue * bikeItemsData[selectedBikeNum].price2;
+    totalPrice.innerText = bigTotal;
+    totalPrice2.innerText = bigTotal;
+    priceCollected.value = bigTotal;
+    console.log(bigTotal);      
   }
 });
 
