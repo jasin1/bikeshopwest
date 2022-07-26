@@ -219,6 +219,7 @@ let selectedDayValue;
 let theValue = Number;
 let bikeNum = Number;
 
+let checkedPrice = 0;
 let bigTotal = 0;
 //totalPrice
 //totalPrice2
@@ -233,7 +234,7 @@ selectedDays.addEventListener('change', function(){
   step2duration.innerText = theValue + " days";
   if(theValue === 1){
   //console.log("ONE day");
-    bigTotal = theValue * bikeItemsData[selectedBikeNum].price1;
+    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price1) + checkedPrice;
     totalPrice.innerText = bigTotal;
     totalPrice2.innerText = bigTotal;
     priceCollected.value = bigTotal;
@@ -243,7 +244,7 @@ selectedDays.addEventListener('change', function(){
     // priceCollected.value = theValue * bikeItemsData[selectedBikeNum].price1;
   }else{
     //console.log("more days"); 
-    bigTotal = theValue * bikeItemsData[selectedBikeNum].price2;
+    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2) + checkedPrice;
     totalPrice.innerText = bigTotal;
     totalPrice2.innerText = bigTotal;
     priceCollected.value = bigTotal;
@@ -322,7 +323,7 @@ const addOnPrice3 = document.querySelector(".add-on-price3");
 
 const addOnPrices = [addOnPrice1, addOnPrice2, addOnPrice3];
 
-let checkedPrice = 0;
+
 
 checks.forEach(check =>{
   check.addEventListener("change",()=>{
