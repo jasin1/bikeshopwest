@@ -322,8 +322,8 @@ checks.forEach(check =>{
       console.log(checkedPrice);
     // console.log("checkbox ", check.dataset.index);
     } else if(checkedPrice > 0){
-      console.log("price is bigger");
       checkedPrice -= (check.value * 1 );
+      console.log("price is ", checkedPrice);
     }
   });
 });
