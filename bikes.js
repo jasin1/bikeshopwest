@@ -350,8 +350,8 @@ function subCheck(d1, d2){
       } else if(checkedPrice > 0) {
         checkedPrice -= (check.value * 1);
         console.log("checkedPrice is ", checkedPrice);
-        sumtje = subCheck(bigTotal ,checkedPrice);
-        console.log("numtje is ", sumtje);
+        numtje = subCheck(bigTotal ,checkedPrice);
+        console.log("numtje is ", numtje);
         //bigTotal = subCheck(bigTotal ,checkedPrice);
         //bigTotal += numtje;
       }      
