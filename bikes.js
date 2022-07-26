@@ -327,15 +327,15 @@ const addOnPrices = [addOnPrice1, addOnPrice2, addOnPrice3];
 
 checks.forEach(check =>{
   check.addEventListener("change",()=>{
-    if(check.checked){
+    if(check.checked && checkedPrice == 0){
       checkedPrice += (check.value * 1 );
       console.log(checkedPrice);
-      bigTotal += checkedPrice;
+      bigTotal += parseInt(check.value);
     // console.log("checkbox ", check.dataset.index);
     } else if(checkedPrice > 0){
       checkedPrice -= (check.value * 1 );
       console.log("price is ", checkedPrice);
-      bigTotal -= (check.value * 1);
+      bigTotal -= parseInt(check.value);
     } else{
       checkedPrice = 0;
     }
