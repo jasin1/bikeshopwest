@@ -350,7 +350,7 @@ function subCheck(d1, d2){
         console.log("checkedPrice is ", checkedPrice);
         console.log("bigTotal is ", subCheck(bigTotal ,checkedPrice));
         numtje = subCheck(bigTotal ,checkedPrice);
-        bigTotal -= numtje;
+        bigTotal += numtje;
       }      
       //bigTotal = numtje;
 
