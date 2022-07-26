@@ -341,8 +341,8 @@ function subCheck(d1, d2){
         checkedValue = (check.value * 1);
         checkedPrice += checkedValue;
         console.log("checkedPrice is ", checkedPrice);
-        numtje = addCheck(bigTotal , checkedPrice)
-        console.log("bigTotal is ", numtje);
+        numtje = addCheck(bigTotal , checkedPrice);
+        console.log("numtje is ", numtje);
 
         //bigTotal = addCheck(bigTotal , checkedPrice);
         //bigTotal += numtje;
@@ -351,7 +351,7 @@ function subCheck(d1, d2){
         checkedPrice -= (check.value * 1);
         console.log("checkedPrice is ", checkedPrice);
         sumtje = subCheck(bigTotal ,checkedPrice);
-        console.log("bigTotal is ", numtje);
+        console.log("numtje is ", sumtje);
         //bigTotal = subCheck(bigTotal ,checkedPrice);
         //bigTotal += numtje;
       }      
