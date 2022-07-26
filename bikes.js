@@ -324,6 +324,7 @@ const addOnPrice3 = document.querySelector(".add-on-price3");
 const addOnPrices = [addOnPrice1, addOnPrice2, addOnPrice3];
 
 let checkedValue = 0;
+let numtje = 0;
 
 function addCheck(n1, n2){
   return n1 + n2;
@@ -335,7 +336,6 @@ function subCheck(d1, d2){
 
 
   checks.forEach(check =>{
-    let numtje = 0;
     check.addEventListener("change",()=>{
       if(check.checked){
         checkedValue = (check.value * 1);
