@@ -330,19 +330,16 @@ checks.forEach(check =>{
       checkedPrice += (check.value * 1 );
       console.log(checkedPrice);
       bigTotal += checkedPrice;
-      totalPrice.innerText = bigTotal;
-      totalPrice2.innerText = bigTotal;
-      priceCollected.value = bigTotal;
     // console.log("checkbox ", check.dataset.index);
     } else if(checkedPrice > 0 && bigTotal > 0){
       checkedPrice -= (check.value * 1 );
       console.log("price is ", checkedPrice);
       bigTotal -= checkedPrice;
-      totalPrice.innerText = bigTotal;
-      totalPrice2.innerText = bigTotal;
-      priceCollected.value = bigTotal;   
     } else{
       checkedPrice = 0;
     }
+    totalPrice.innerText = bigTotal;
+    totalPrice2.innerText = bigTotal;
+    priceCollected.value = bigTotal;
   });
 });
