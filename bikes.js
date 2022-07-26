@@ -334,7 +334,7 @@ checks.forEach(check =>{
     } else if(checkedPrice > 0 && bigTotal > 0){
       checkedPrice -= (check.value * 1 );
       console.log("price is ", checkedPrice);
-      bigTotal -= checkedPrice;
+      bigTotal -= (check.value * 1);
     } else{
       checkedPrice = 0;
     }
