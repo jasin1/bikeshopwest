@@ -318,11 +318,12 @@ let checkedPrice = 0;
 checks.forEach(check =>{
   check.addEventListener("change",()=>{
     if(check.checked){
-      checkedPrice += parseInt(check.value);
+      checkedPrice += (check.value * 1 );
       console.log(checkedPrice);
     // console.log("checkbox ", check.dataset.index);
-    } else{
-      checkedPrice = 0;
+    } else if(checkedPrice > 0){
+      console.log("price is bigger");
+      checkedPrice -= (check.value * 1 );
     }
   });
 });
