@@ -340,12 +340,12 @@ function subCheck(d1, d2){
         checkedValue = (check.value * 1);
         checkedPrice += checkedValue;
         console.log("checkedPrice is ", checkedPrice);
-        console.log(addCheck(bigTotal , checkedPrice));
+        console.log("bigTotal is ", addCheck(bigTotal , checkedPrice));
       // console.log("checkbox ", check.dataset.index);
       } else if(check.checked && checkedPrice > 0) {
         checkedPrice -= (check.value * 1);
         console.log("checkedPrice is ", checkedPrice);
-        //console.log(subCheck(bigTotal ,checkedPrice));
+        console.log("bigTotal is ", subCheck(bigTotal ,checkedPrice));
       }      
       //bigTotal = checkedPrice;
 
