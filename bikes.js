@@ -299,10 +299,24 @@ const check3 = document.getElementById("check3");
 
 const checks = [check1, check2, check3];
 
-console.log("check 1 value is ", check1.value);
+//console.log("check 1 value is ", check1.value);
 
 const selectedCheck1 = document.querySelector(".addon-selected-helmet");
 const selectedCheck2 = document.querySelector(".addon-selected-mount");
 const selectedCheck3 = document.querySelector(".addon-selected-bag");
 
 const selectedChecks = [selectedCheck1, selectedCheck2, selectedCheck3];
+
+const addOnPrice1 = document.querySelector(".add-on-price1");
+const addOnPrice2 = document.querySelector(".add-on-price2");
+const addOnPrice3 = document.querySelector(".add-on-price3");
+
+const addOnPrices = [addOnPrice1, addOnPrice2, addOnPrice3];
+
+let checkedPrice = 0;
+
+checks.forEach(check =>{
+  check.addEventListener("click",()=>{
+    console.log("checkbox ", check.dataset.index);
+  });
+});
