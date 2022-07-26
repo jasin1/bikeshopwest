@@ -332,7 +332,7 @@ checks.forEach(check =>{
       console.log(checkedPrice);
       bigTotal += checkedPrice;
     // console.log("checkbox ", check.dataset.index);
-    } else if(checkedPrice > 0 && bigTotal > 0){
+    } else if(checkedPrice > 0){
       checkedPrice -= (check.value * 1 );
       console.log("price is ", checkedPrice);
       bigTotal -= (check.value * 1);
