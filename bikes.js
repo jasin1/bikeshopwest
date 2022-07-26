@@ -331,15 +331,15 @@ checks.forEach(check =>{
       checkedValue = (check.value * 1);
       checkedPrice += checkedValue;
       console.log("checkedPrice is ", checkedPrice);
-      bigTotal += checkedPrice;
+      //bigTotal += checkedPrice;
     // console.log("checkbox ", check.dataset.index);
     } else if(checkedPrice > 0) {
-      checkedPrice = -(check.value * 1);
+      checkedPrice -= (check.value * 1);
       console.log("checkedPrice is ", checkedPrice);
-      bigTotal -= checkedPrice;
+      //bigTotal -= checkedPrice;
     }
     
-    // bigTotal += checkedPrice;
+    bigTotal += checkedPrice;
 
     totalPrice.innerText = bigTotal;
     totalPrice2.innerText = bigTotal;
