@@ -341,14 +341,17 @@ function subCheck(d1, d2){
         checkedValue = (check.value * 1);
         checkedPrice += checkedValue;
         console.log("checkedPrice is ", checkedPrice);
-        console.log("bigTotal is ", addCheck(bigTotal , checkedPrice));
+        numtje = addCheck(bigTotal , checkedPrice)
+        console.log("bigTotal is ", numtje);
+
         //bigTotal = addCheck(bigTotal , checkedPrice);
         //bigTotal += numtje;
       // console.log("checkbox ", check.dataset.index);
-      } else if(checkedPrice > 0) {
+      } else if(checkedPrice > 0 && bigTotal > 0) {
         checkedPrice -= (check.value * 1);
         console.log("checkedPrice is ", checkedPrice);
-        console.log("bigTotal is ", subCheck(bigTotal ,checkedPrice));
+        sumtje = subCheck(bigTotal ,checkedPrice);
+        console.log("bigTotal is ", numtje);
         //bigTotal = subCheck(bigTotal ,checkedPrice);
         //bigTotal += numtje;
       }      
