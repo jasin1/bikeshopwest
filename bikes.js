@@ -219,7 +219,7 @@ let selectedDayValue;
 let theValue = Number;
 let bikeNum = Number;
 
-let bigTotal = Number;
+let bigTotal = 0;
 //totalPrice
 //totalPrice2
 //priceCollected
