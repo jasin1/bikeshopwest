@@ -345,7 +345,7 @@ function subCheck(d1, d2){
         //bigTotal = addCheck(bigTotal , checkedPrice);
         //bigTotal += numtje;
       // console.log("checkbox ", check.dataset.index);
-      } else if(checkedPrice > 0 && bigTotal > 0) {
+      } else if(checkedPrice > 0) {
         checkedPrice -= (check.value * 1);
         console.log("checkedPrice is ", checkedPrice);
         console.log("bigTotal is ", subCheck(bigTotal ,checkedPrice));
