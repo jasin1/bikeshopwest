@@ -325,9 +325,14 @@ const addOnPrices = [addOnPrice1, addOnPrice2, addOnPrice3];
 
 let checkedValue = 0;
 
-// function checkUpdate(myNum){
-//   return myNum;
-// }
+function addCheck(n1, n2){
+  return n1 + n2;
+}
+
+function subCheck(d1, d2){
+  return d1 - d2;
+}
+
 
   checks.forEach(check =>{
     check.addEventListener("change",()=>{
@@ -335,11 +340,13 @@ let checkedValue = 0;
         checkedValue = (check.value * 1);
         checkedPrice += checkedValue;
         console.log("checkedPrice is ", checkedPrice);
+        addCheck(bigTotal , checkedPrice);
         //bigTotal += checkedPrice;
       // console.log("checkbox ", check.dataset.index);
       } else if(checkedPrice > 0) {
         checkedPrice -= (check.value * 1);
         console.log("checkedPrice is ", checkedPrice);
+        subCheck(bigTotal ,checkedPrice)
         //bigTotal -= checkedPrice;
       }      
       // bigTotal += checkedPrice;
@@ -349,27 +356,3 @@ let checkedValue = 0;
       // priceCollected.value = bigTotal;
     });
   });
-
-
-
-// checks.forEach(check =>{
-//   check.addEventListener("change",()=>{
-//     if(check.checked){
-//       checkedValue = (check.value * 1);
-//       checkedPrice += checkedValue;
-//       console.log("checkedPrice is ", checkedPrice);
-//       //bigTotal += checkedPrice;
-//     // console.log("checkbox ", check.dataset.index);
-//     } else if(checkedPrice > 0) {
-//       checkedPrice -= (check.value * 1);
-//       console.log("checkedPrice is ", checkedPrice);
-//       //bigTotal -= checkedPrice;
-//     }
-    
-//     bigTotal += checkedPrice;
-
-//     totalPrice.innerText = bigTotal;
-//     totalPrice2.innerText = bigTotal;
-//     priceCollected.value = bigTotal;
-//   });
-// });
