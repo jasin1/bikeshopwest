@@ -341,6 +341,8 @@ checks.forEach(check =>{
       totalPrice.innerText = bigTotal;
       totalPrice2.innerText = bigTotal;
       priceCollected.value = bigTotal;   
+    } else{
+      checkedPrice = 0;
     }
   });
 });
