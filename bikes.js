@@ -330,15 +330,18 @@ checks.forEach(check =>{
     if(check.checked && checkedPrice == 0){
       checkedPrice += (check.value * 1 );
       console.log("checkedPrice is ", checkedPrice);
-      //bigTotal += checkedPrice;
+      bigTotal += checkedPrice;
     // console.log("checkbox ", check.dataset.index);
-    } else{
+    } else if(check.checked && checkedPrice > 0){
       checkedPrice -= (check.value * 1 );
       console.log("checkedPrice is ", checkedPrice);
-      //bigTotal -= checkedPrice;
+      bigTotal -= checkedPrice;
+    } else{
+      checkedPrice = 0;
+      bigTotal += checkedPrice;
     }
     
-    bigTotal += checkedPrice;
+    // bigTotal += checkedPrice;
 
     totalPrice.innerText = bigTotal;
     totalPrice2.innerText = bigTotal;
