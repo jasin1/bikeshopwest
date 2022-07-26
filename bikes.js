@@ -160,10 +160,10 @@ nextBtn.forEach(btn =>{
     formStepsNum++;
     updateFormSteps();
     if(btn == nextBtn[0] ||btn == nextBtn[1] || btn == nextBtn[2] ){
-      console.log("btn clicked");
+      //console.log("btn clicked");
       fp.clear();
     }else{
-      console.log("not the button");
+      //console.log("not the button");
     }
     //formSteps.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
   });
@@ -276,8 +276,8 @@ config = {
       let freshDate = chosenDate.toString();
       newDatum = freshDate.substring(0,15);
       newTime = freshDate.substring(16,21);
-      console.log("time is ", newTime);
-      console.log(dateStr);
+      //console.log("time is ", newTime);
+      //console.log(dateStr);
       stepTwoDate.innerText = newDatum;
       step2Time.innerText = newTime;
       dateCollected.setAttribute('value', newDatum);
@@ -320,10 +320,12 @@ checks.forEach(check =>{
     if(check.checked){
       checkedPrice += (check.value * 1 );
       console.log(checkedPrice);
+      totalPrice += checkedPrice;
     // console.log("checkbox ", check.dataset.index);
     } else if(checkedPrice > 0){
       checkedPrice -= (check.value * 1 );
       console.log("price is ", checkedPrice);
+      totalPrice -= checkedPrice;    
     }
   });
 });
