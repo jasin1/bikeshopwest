@@ -320,12 +320,12 @@ checks.forEach(check =>{
     if(check.checked){
       checkedPrice += (check.value * 1 );
       console.log(checkedPrice);
-      totalPrice += checkedPrice;
+      totalPrice.innerText = parseInt(totalPrice) + checkedPrice;
     // console.log("checkbox ", check.dataset.index);
     } else if(checkedPrice > 0){
       checkedPrice -= (check.value * 1 );
       console.log("price is ", checkedPrice);
-      totalPrice -= checkedPrice;    
+      totalPrice.innerText = parseInt(totalPrice) - checkedPrice;   
     }
   });
 });
