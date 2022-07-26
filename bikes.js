@@ -316,7 +316,9 @@ const addOnPrices = [addOnPrice1, addOnPrice2, addOnPrice3];
 let checkedPrice = 0;
 
 checks.forEach(check =>{
-  check.addEventListener("click",()=>{
+  check.addEventListener("change",()=>{
+    if(check.checked){
     console.log("checkbox ", check.dataset.index);
+    }
   });
 });
