@@ -341,13 +341,11 @@ function subCheck(d1, d2){
         checkedPrice += checkedValue;
         console.log("checkedPrice is ", checkedPrice);
         console.log(addCheck(bigTotal , checkedPrice));
-        bigTotal += addCheck(bigTotal , checkedPrice);
       // console.log("checkbox ", check.dataset.index);
       } else if(checkedPrice > 0) {
         checkedPrice -= (check.value * 1);
         console.log("checkedPrice is ", checkedPrice);
         console.log(subCheck(bigTotal ,checkedPrice));
-        bigTotal += subCheck(bigTotal , checkedPrice);
       }      
       //bigTotal = checkedPrice;
 
