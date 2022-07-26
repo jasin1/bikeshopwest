@@ -290,10 +290,19 @@ config = {
 
 const fp = flatpickr(".input-date", config);
 
-//Wed Jul 20 2022 12:00:00 GMT+0200 (Central European Summer Time)
 
-// console.log(fp.formatDate(new Date(), "Y-m-d h:i K"));
+//------------------ add-ons --------------------//
 
-// fp.config.onChange.push(function(dateStr){
-//   console.log(dateStr);
-// });
+const check1 = document.getElementById("check1");
+const check2 = document.getElementById("check2");
+const check3 = document.getElementById("check3");
+
+const checks = [check1, check2, check3];
+
+console.log("check 1 value is ", check1.value);
+
+const selectedCheck1 = document.querySelector(".addon-selected-helmet");
+const selectedCheck2 = document.querySelector(".addon-selected-mount");
+const selectedCheck3 = document.querySelector(".addon-selected-bag");
+
+const selectedChecks = [selectedCheck1, selectedCheck2, selectedCheck3];
