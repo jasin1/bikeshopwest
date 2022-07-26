@@ -325,47 +325,48 @@ const addOnPrices = [addOnPrice1, addOnPrice2, addOnPrice3];
 
 let checkedValue = 0;
 
-checks.forEach(check =>{
-  check.addEventListener("change",()=>{
-    if(check.checked){
-      checkedValue = (check.value * 1);
-      checkedPrice += checkedValue;
-      console.log("checkedPrice is ", checkedPrice);
-      //bigTotal += checkedPrice;
-    // console.log("checkbox ", check.dataset.index);
-    } else if(checkedPrice > 0) {
-      checkedPrice -= (check.value * 1);
-      console.log("checkedPrice is ", checkedPrice);
-      //bigTotal -= checkedPrice;
-    }
-    
-    bigTotal += checkedPrice;
+// function checkUpdate(myNum){
+//   return myNum;
+// }
 
-    totalPrice.innerText = bigTotal;
-    totalPrice2.innerText = bigTotal;
-    priceCollected.value = bigTotal;
-  });
-});
+//   checks.forEach(check =>{
+//     check.addEventListener("change",()=>{
+//       if(check.checked){
+//         checkedValue = (check.value * 1);
+//         myNum += checkedValue;
+//         console.log("checkedPrice is ", myNum);
+//         //bigTotal += checkedPrice;
+//       // console.log("checkbox ", check.dataset.index);
+//       } else if(myNum > 0) {
+//         myNum -= (check.value * 1);
+//         console.log("checkedPrice is ", myNum);
+//         //bigTotal -= checkedPrice;
+//       }      
+//       bigTotal += myNum;
+
+//       totalPrice.innerText = bigTotal;
+//       totalPrice2.innerText = bigTotal;
+//       priceCollected.value = bigTotal;
+//     });
+//   });
 
 
 
 // checks.forEach(check =>{
 //   check.addEventListener("change",()=>{
-//     if(check.checked && checkedPrice == 0){
-//       checkedPrice += (check.value * 1 );
+//     if(check.checked){
+//       checkedValue = (check.value * 1);
+//       checkedPrice += checkedValue;
 //       console.log("checkedPrice is ", checkedPrice);
-//       bigTotal += checkedPrice;
+//       //bigTotal += checkedPrice;
 //     // console.log("checkbox ", check.dataset.index);
-//     } else if(check.checked && checkedPrice > 0){
-//       checkedPrice -= (check.value * 1 );
+//     } else if(checkedPrice > 0) {
+//       checkedPrice -= (check.value * 1);
 //       console.log("checkedPrice is ", checkedPrice);
-//       bigTotal -= checkedPrice;
-//     } else{
-//       checkedPrice = 0;
-//       bigTotal += checkedPrice;
+//       //bigTotal -= checkedPrice;
 //     }
     
-//     // bigTotal += checkedPrice;
+//     bigTotal += checkedPrice;
 
 //     totalPrice.innerText = bigTotal;
 //     totalPrice2.innerText = bigTotal;
