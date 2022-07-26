@@ -340,16 +340,16 @@ function subCheck(d1, d2){
         checkedValue = (check.value * 1);
         checkedPrice += checkedValue;
         console.log("checkedPrice is ", checkedPrice);
-        addCheck(bigTotal , checkedPrice);
+        bigTotal = addCheck(bigTotal , checkedPrice);
         //bigTotal += checkedPrice;
       // console.log("checkbox ", check.dataset.index);
       } else if(checkedPrice > 0) {
         checkedPrice -= (check.value * 1);
         console.log("checkedPrice is ", checkedPrice);
-        subCheck(bigTotal ,checkedPrice)
+        bigTotal = subCheck(bigTotal ,checkedPrice)
         //bigTotal -= checkedPrice;
       }      
-      // bigTotal += checkedPrice;
+      //bigTotal = checkedPrice;
 
       // totalPrice.innerText = bigTotal;
       // totalPrice2.innerText = bigTotal;
