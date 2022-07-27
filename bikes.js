@@ -257,6 +257,9 @@ selectedDays.addEventListener('change', function(){
 
 const preventNext = document.getElementById("step-1-nxt");
 
+preventNext.addEventListener('click', function(){
+  console.log("step 1 next button clicked");
+})
 
 
 
