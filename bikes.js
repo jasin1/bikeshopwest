@@ -161,6 +161,9 @@ let bikeNum = Number;
 let checkedPrice = 0;
 let bigTotal = 0;
 
+let checkedValue = 0;
+let numtje = 0;
+
 
 nextBtn.forEach(btn =>{
   // const a = nextBtn.indexOf(btn);
@@ -206,6 +209,8 @@ function updateFormSteps(){
 for (let i =0; i < bookBtns.length; i++){
   bookBtns[i].addEventListener('click', function(){
     theValue = 0;
+    checkedValue = 0;
+    numtje = 0;
     formSteps[selectedBikeNum].scrollIntoView({behavior: "smooth", block: "end", inline: "center"});
     //console.log(formSteps[i]);
     selectedDays.selectedIndex = "0";
@@ -271,6 +276,67 @@ selectedDays.addEventListener('change', function(){
   console.log("The selected value is " , theValue);
 });
 
+//------------------ add-ons --------------------//
+
+const check1 = document.getElementById("check1");
+const check2 = document.getElementById("check2");
+const check3 = document.getElementById("check3");
+
+const checks = [check1, check2, check3];
+
+//console.log("check 1 value is ", check1.value);
+
+const selectedCheck1 = document.querySelector(".addon-selected-helmet");
+const selectedCheck2 = document.querySelector(".addon-selected-mount");
+const selectedCheck3 = document.querySelector(".addon-selected-bag");
+
+const selectedChecks = [selectedCheck1, selectedCheck2, selectedCheck3];
+
+const addOnPrice1 = document.querySelector(".add-on-price1");
+const addOnPrice2 = document.querySelector(".add-on-price2");
+const addOnPrice3 = document.querySelector(".add-on-price3");
+
+const addOnPrices = [addOnPrice1, addOnPrice2, addOnPrice3];
+
+
+
+function addCheck(n1, n2){
+  return n1 + n2;
+}
+
+function subCheck(d1, d2){
+  return d1 - d2;
+}
+
+
+  checks.forEach(check =>{
+    check.addEventListener("change",()=>{
+      if(check.checked){
+        checkedValue = (check.value * 1);
+        checkedPrice += checkedValue;
+        console.log("checkedPrice is ", checkedPrice);
+        numtje = addCheck(bigTotal , checkedPrice);
+        console.log("numtje is ", numtje);
+
+        //bigTotal = addCheck(bigTotal , checkedPrice);
+        //bigTotal += numtje;
+      // console.log("checkbox ", check.dataset.index);
+      } else if(checkedPrice > 0) {
+        checkedPrice -= (check.value * 1);
+        console.log("checkedPrice is ", checkedPrice);
+        numtje = subCheck(bigTotal ,checkedPrice);
+        console.log("numtje is ", numtje);
+        //bigTotal = subCheck(bigTotal ,checkedPrice);
+        //bigTotal += numtje;
+      }      
+      //bigTotal = numtje;
+
+      // totalPrice.innerText = bigTotal;
+      // totalPrice2.innerText = bigTotal;
+      // priceCollected.value = bigTotal;
+    });
+  });
+
 
 
 
@@ -320,64 +386,4 @@ config = {
 const fp = flatpickr(".input-date", config);
 
 
-//------------------ add-ons --------------------//
 
-const check1 = document.getElementById("check1");
-const check2 = document.getElementById("check2");
-const check3 = document.getElementById("check3");
-
-const checks = [check1, check2, check3];
-
-//console.log("check 1 value is ", check1.value);
-
-const selectedCheck1 = document.querySelector(".addon-selected-helmet");
-const selectedCheck2 = document.querySelector(".addon-selected-mount");
-const selectedCheck3 = document.querySelector(".addon-selected-bag");
-
-const selectedChecks = [selectedCheck1, selectedCheck2, selectedCheck3];
-
-const addOnPrice1 = document.querySelector(".add-on-price1");
-const addOnPrice2 = document.querySelector(".add-on-price2");
-const addOnPrice3 = document.querySelector(".add-on-price3");
-
-const addOnPrices = [addOnPrice1, addOnPrice2, addOnPrice3];
-
-let checkedValue = 0;
-let numtje = 0;
-
-function addCheck(n1, n2){
-  return n1 + n2;
-}
-
-function subCheck(d1, d2){
-  return d1 - d2;
-}
-
-
-  checks.forEach(check =>{
-    check.addEventListener("change",()=>{
-      if(check.checked){
-        checkedValue = (check.value * 1);
-        checkedPrice += checkedValue;
-        console.log("checkedPrice is ", checkedPrice);
-        numtje = addCheck(bigTotal , checkedPrice);
-        console.log("numtje is ", numtje);
-
-        //bigTotal = addCheck(bigTotal , checkedPrice);
-        //bigTotal += numtje;
-      // console.log("checkbox ", check.dataset.index);
-      } else if(checkedPrice > 0) {
-        checkedPrice -= (check.value * 1);
-        console.log("checkedPrice is ", checkedPrice);
-        numtje = subCheck(bigTotal ,checkedPrice);
-        console.log("numtje is ", numtje);
-        //bigTotal = subCheck(bigTotal ,checkedPrice);
-        //bigTotal += numtje;
-      }      
-      //bigTotal = numtje;
-
-      // totalPrice.innerText = bigTotal;
-      // totalPrice2.innerText = bigTotal;
-      // priceCollected.value = bigTotal;
-    });
-  });
