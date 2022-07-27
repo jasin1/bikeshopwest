@@ -229,9 +229,22 @@ let bigTotal = 0;
 
 //selectedBikeNum
 
+//----- prevent Next button------------------------
+console.log("The selected value is " , theValue);
+const preventNext = document.getElementById("step-1-nxt");
+
+preventNext.addEventListener('click', function(){
+  console.log("step 1 next button clicked");
+  if(theValue == 0){
+    console.log("no selection");
+  }
+})
+
+//---------------------------------------------------------------------
+
+
 selectedDays.addEventListener('change', function(){
   theValue = parseInt(selectedDays.value);
-  console.log(selectedDays.value);
   step2duration.innerText = theValue + " days";
   if(theValue === 1){
   //console.log("ONE day");
@@ -251,18 +264,9 @@ selectedDays.addEventListener('change', function(){
     priceCollected.value = bigTotal;
     console.log(bigTotal);      
   }
+  console.log("The selected value is " , theValue);
 });
 
-//----- prevent Next button-----
-
-const preventNext = document.getElementById("step-1-nxt");
-
-preventNext.addEventListener('click', function(){
-  console.log("step 1 next button clicked");
-  if(theValue < 10){
-    console.log("no selection");
-  }
-})
 
 
 
