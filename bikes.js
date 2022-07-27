@@ -154,6 +154,14 @@ window.addEventListener('click', function(e){
 
 //------------ Tabs -------------------------------------
 
+let selectedDayValue;
+let theValue = 0;
+let bikeNum = Number;
+
+let checkedPrice = 0;
+let bigTotal = 0;
+
+
 nextBtn.forEach(btn =>{
   // const a = nextBtn.indexOf(btn);
   btn.addEventListener("click",()=>{
@@ -197,6 +205,7 @@ function updateFormSteps(){
 
 for (let i =0; i < bookBtns.length; i++){
   bookBtns[i].addEventListener('click', function(){
+    theValue = 0;
     formSteps[selectedBikeNum].scrollIntoView({behavior: "smooth", block: "end", inline: "center"});
     //console.log(formSteps[i]);
     selectedDays.selectedIndex = "0";
@@ -215,12 +224,7 @@ for (let i =0; i < bookBtns.length; i++){
   });
 };
 
-let selectedDayValue;
-let theValue = 0;
-let bikeNum = Number;
 
-let checkedPrice = 0;
-let bigTotal = 0;
 //totalPrice
 //totalPrice2
 //priceCollected
