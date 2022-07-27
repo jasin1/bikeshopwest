@@ -259,6 +259,9 @@ const preventNext = document.getElementById("step-1-nxt");
 
 preventNext.addEventListener('click', function(){
   console.log("step 1 next button clicked");
+  if(selectedDays.value < 10){
+    console.log("no selection");
+  }
 })
 
 
