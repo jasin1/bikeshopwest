@@ -231,10 +231,11 @@ let bigTotal = 0;
 
 selectedDays.addEventListener('change', function(){
   theValue = parseInt(selectedDays.value);
+  console.log(selectedDays.value);
   step2duration.innerText = theValue + " days";
   if(theValue === 1){
   //console.log("ONE day");
-    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price1) + numtje;
+    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price1);
     totalPrice.innerText = bigTotal;
     totalPrice2.innerText = bigTotal;
     priceCollected.value = bigTotal;
@@ -244,13 +245,17 @@ selectedDays.addEventListener('change', function(){
     // priceCollected.value = theValue * bikeItemsData[selectedBikeNum].price1;
   }else{
     //console.log("more days"); 
-    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2) + numtje;
+    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2);
     totalPrice.innerText = bigTotal;
     totalPrice2.innerText = bigTotal;
     priceCollected.value = bigTotal;
     console.log(bigTotal);      
   }
 });
+
+//----- prevent Next button-----
+
+const preventNext = document.getElementById("step-1-nxt");
 
 
 
