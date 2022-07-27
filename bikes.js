@@ -234,7 +234,7 @@ selectedDays.addEventListener('change', function(){
   step2duration.innerText = theValue + " days";
   if(theValue === 1){
   //console.log("ONE day");
-    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price1);
+    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price1) + numtje;
     totalPrice.innerText = bigTotal;
     totalPrice2.innerText = bigTotal;
     priceCollected.value = bigTotal;
@@ -244,7 +244,7 @@ selectedDays.addEventListener('change', function(){
     // priceCollected.value = theValue * bikeItemsData[selectedBikeNum].price1;
   }else{
     //console.log("more days"); 
-    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2);
+    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2) + numtje;
     totalPrice.innerText = bigTotal;
     totalPrice2.innerText = bigTotal;
     priceCollected.value = bigTotal;
@@ -357,8 +357,8 @@ function subCheck(d1, d2){
       }      
       //bigTotal = numtje;
 
-      totalPrice.innerText = bigTotal;
-      totalPrice2.innerText = bigTotal;
-      priceCollected.value = bigTotal;
+      // totalPrice.innerText = bigTotal;
+      // totalPrice2.innerText = bigTotal;
+      // priceCollected.value = bigTotal;
     });
   });
