@@ -64,7 +64,7 @@ let bikeItemsData = [
     price2:9,
     descShort:"Handbrake bike with 7 speed hub and hand-operated hand rakes",
     descLong:"Handbrake bike elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
-    step2img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62d64522e934bfc4c0661b99_handbrake-second.jpg",
+    step2img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62c687a7edcb7f2c57d8af9b_hand-bike_optimized.jpg",
     step3img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62c687a7edcb7f2c57d8af9b_hand-bike_optimized.jpg",
     features:["feat 01", "feat 02", "feat 03"],
   },
