@@ -295,7 +295,9 @@ const addOnPrices = [addOnPrice1, addOnPrice2, addOnPrice3];
         console.log("btn is unchecked");
         totalVal -= val;
         console.log("totalVal is ", totalVal);
-        totalPrice.innerText = bigTotal - val; 
+        if(bigTotal>0){
+        totalPrice.innerText = bigTotal - totalVal;
+        } 
         //priceCollected.value = bigTotal - val;             
       }
     })
