@@ -315,12 +315,14 @@ function checkTotal(){
   checks.forEach(check =>{
     if(check.checked){
       sum = sum + parseInt(check.value);
+      console.log("sum is ", sum);
     } else{
       sum = sum - parseInt(check.value);
+      console.log("sum is ", sum);
     }
 
   });
-  console.log("sum is ", sum);
+
 }
 
 
