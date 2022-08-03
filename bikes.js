@@ -284,6 +284,9 @@ const check3 = document.getElementById("check3");
 
 const checks = [check1, check2, check3];
 
+let sum = 0;
+let totalVal = 0;
+
 //console.log("check 1 value is ", check1.value);
 
 const selectedCheck1 = document.querySelector(".addon-selected-helmet");
@@ -312,6 +315,8 @@ function subCheck(d1, d2){
   checks.forEach(check =>{
     check.addEventListener("change",()=>{
       if(check.checked){
+        sum = sum + parseInt(check.value);
+        console.log(sum);
         checkedValue = (check.value * 1);
         checkedPrice += checkedValue;
         console.log("checkedPrice is ", checkedPrice);
