@@ -164,6 +164,9 @@ let bigTotal = 0;
 let checkedValue = 0;
 let numtje = 0;
 
+let sum = 0;
+let totalVal = 0;
+
 
 nextBtn.forEach(btn =>{
   // const a = nextBtn.indexOf(btn);
@@ -173,6 +176,9 @@ nextBtn.forEach(btn =>{
     if(btn == nextBtn[0] ||btn == nextBtn[1] || btn == nextBtn[2] ){
       //console.log("btn clicked");
       fp.clear();
+      sum = 0;
+      totalVal = 0;
+      bigTotal = 0;
     }else{
       //console.log("not the button");
     }
@@ -257,8 +263,7 @@ const check3 = document.getElementById("check3");
 
 const checks = [check1, check2, check3];
 
-let sum = 0;
-let totalVal = 0;
+
 
 //console.log("check 1 value is ", check1.value);
 
@@ -284,12 +289,14 @@ const addOnPrices = [addOnPrice1, addOnPrice2, addOnPrice3];
           console.log("btn is checked");
           totalVal += val;
           totalPrice.innerText = bigTotal + totalVal;
+          priceCollected.value = bigTotal + totalVal;
           console.log("totalVal is ", totalVal);
       } else{
         console.log("btn is unchecked");
         totalVal -= val;
         console.log("totalVal is ", totalVal);
-        totalPrice.innerText = bigTotal - val;              
+        totalPrice.innerText = bigTotal - val; 
+        priceCollected.value = bigTotal - val;             
       }
     })
 
