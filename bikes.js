@@ -296,7 +296,7 @@ const addOnPrices = [addOnPrice1, addOnPrice2, addOnPrice3];
         totalVal -= val;
         console.log("totalVal is ", totalVal);
         if(bigTotal>0){
-        totalPrice.innerText = bigTotal - parseInt(check.value);
+        totalPrice.innerText = bigTotal - totalVal;
         } 
         //priceCollected.value = bigTotal - val;             
       }
