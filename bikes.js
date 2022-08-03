@@ -274,6 +274,14 @@ const addOnPrice3 = document.querySelector(".add-on-price3");
 
 const addOnPrices = [addOnPrice1, addOnPrice2, addOnPrice3];
 
+function updatePrijs(val1, val2){
+  return val1 + val2;
+}
+
+const ping = updatePrijs(1, 2);
+
+console.log("prijs function ", ping);
+
 
 
   checks.forEach(check =>{
