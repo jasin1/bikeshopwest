@@ -317,10 +317,10 @@ function checkTotal(){
       totalVal = sum + parseInt(check.value);
       console.log("sum is ", totalVal);
     } 
-    // else{
-    //   totalVal = sum - parseInt(check.value);
-    //   console.log("sum is ", totalVal);
-    // }
+    else{
+      //totalVal = sum - parseInt(check.value);
+      console.log("sum is ", totalVal);
+    }
 
   });
 
