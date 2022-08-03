@@ -303,28 +303,39 @@ const addOnPrices = [addOnPrice1, addOnPrice2, addOnPrice3];
 
 
 
-function addCheck(n1, n2){
-  return n1 + n2;
-}
+// function addCheck(n1, n2){
+//   return n1 + n2;
+// }
 
-function subCheck(d1, d2){
-  return d1 - d2;
-}
+// function subCheck(d1, d2){
+//   return d1 - d2;
+// }
 
-function checkTotal(){
+// function checkTotal(){
+//   checks.forEach(check =>{
+//     val = parseInt(check.value);
+//     if(check.checked){
+//       totalVal += val;
+//     } 
+//     else {
+//       totalVal -= val;
+//     }
+//     console.log("sum is ", totalVal);
+
+//   });
+
+// }
+
   checks.forEach(check =>{
-    val = parseInt(check.value);
-    if(check.checked){
-      totalVal += val;
-    } 
-    else {
-      totalVal -= val;
-    }
-    console.log("sum is ", totalVal);
+    check.addEventListener("change",()=>{
+      if(check.checked){
+          console.log("btn is checked");
+      } else{
+        console.log("btn is unchecked");      
+      }
+    })
 
-  });
-
-}
+  })
 
 
   // checks.forEach(check =>{
