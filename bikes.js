@@ -311,36 +311,46 @@ function subCheck(d1, d2){
   return d1 - d2;
 }
 
-
+function checkTotal(){
   checks.forEach(check =>{
-    check.addEventListener("change",()=>{
-      if(check.checked){
-        sum = sum + parseInt(check.value);
-        console.log("sum is ", sum);
-        checkedValue = (check.value * 1);
-        checkedPrice += checkedValue;
-        console.log("checkedPrice is ", checkedPrice);
-        numtje = addCheck(bigTotal , checkedPrice);
-        console.log("numtje is ", numtje);
+    if(check.checked){
+      sum = sum + parseInt(check.value);
+    }
 
-        //bigTotal = addCheck(bigTotal , checkedPrice);
-        //bigTotal += numtje;
-      // console.log("checkbox ", check.dataset.index);
-      } else if(checkedPrice > 0) {
-        checkedPrice -= (check.value * 1);
-        console.log("checkedPrice is ", checkedPrice);
-        numtje = subCheck(bigTotal ,checkedPrice);
-        console.log("numtje is ", numtje);
-        //bigTotal = subCheck(bigTotal ,checkedPrice);
-        //bigTotal += numtje;
-      }      
-      //bigTotal = numtje;
-
-      // totalPrice.innerText = bigTotal;
-      // totalPrice2.innerText = bigTotal;
-      // priceCollected.value = bigTotal;
-    });
   });
+  console.log("sum is ", sum);
+}
+
+
+  // checks.forEach(check =>{
+  //   check.addEventListener("change",()=>{
+  //     if(check.checked){
+  //       sum = sum + parseInt(check.value);
+  //       console.log("sum is ", sum);
+  //       checkedValue = (check.value * 1);
+  //       checkedPrice += checkedValue;
+  //       console.log("checkedPrice is ", checkedPrice);
+  //       numtje = addCheck(bigTotal , checkedPrice);
+  //       console.log("numtje is ", numtje);
+
+  //       //bigTotal = addCheck(bigTotal , checkedPrice);
+  //       //bigTotal += numtje;
+  //     // console.log("checkbox ", check.dataset.index);
+  //     } else if(checkedPrice > 0) {
+  //       checkedPrice -= (check.value * 1);
+  //       console.log("checkedPrice is ", checkedPrice);
+  //       numtje = subCheck(bigTotal ,checkedPrice);
+  //       console.log("numtje is ", numtje);
+  //       //bigTotal = subCheck(bigTotal ,checkedPrice);
+  //       //bigTotal += numtje;
+  //     }      
+  //     //bigTotal = numtje;
+
+  //     // totalPrice.innerText = bigTotal;
+  //     // totalPrice2.innerText = bigTotal;
+  //     // priceCollected.value = bigTotal;
+  //   });
+  // });
 
 
 
