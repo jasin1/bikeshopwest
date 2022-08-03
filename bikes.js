@@ -274,13 +274,6 @@ const addOnPrice3 = document.querySelector(".add-on-price3");
 
 const addOnPrices = [addOnPrice1, addOnPrice2, addOnPrice3];
 
-function updatePrijs(val1, val2){
-  return val1 + val2;
-}
-
-const ping = updatePrijs(1, 2);
-
-console.log("prijs function ", ping);
 
 
 
@@ -290,11 +283,13 @@ console.log("prijs function ", ping);
       if(check.checked){
           console.log("btn is checked");
           totalVal += val;
+          totalPrice.innerText = bigTotal + totalVal;
           console.log("totalVal is ", totalVal);
       } else{
         console.log("btn is unchecked");
         totalVal -= val;
-        console.log("totalVal is ", totalVal);              
+        console.log("totalVal is ", totalVal);
+        totalPrice.innerText = bigTotal - totalVal;              
       }
     })
 
@@ -309,7 +304,7 @@ selectedDays.addEventListener('change', function(){
   if(theValue === 1){
     step2duration.innerText = theValue + " day";
   //console.log("ONE day");
-    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price1) + totalVal;
+    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price1);
     totalPrice.innerText = bigTotal;
     totalPrice2.innerText = bigTotal;
     priceCollected.value = bigTotal;
@@ -319,7 +314,7 @@ selectedDays.addEventListener('change', function(){
     // priceCollected.value = theValue * bikeItemsData[selectedBikeNum].price1;
   }else{
     //console.log("more days"); 
-    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2) + totalVal;
+    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2);
     totalPrice.innerText = bigTotal;
     totalPrice2.innerText = bigTotal;
     priceCollected.value = bigTotal;
