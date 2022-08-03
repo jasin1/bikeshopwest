@@ -289,14 +289,14 @@ const addOnPrices = [addOnPrice1, addOnPrice2, addOnPrice3];
           console.log("btn is checked");
           totalVal += val;
           totalPrice.innerText = bigTotal + totalVal;
-          priceCollected.value = bigTotal + totalVal;
+          //priceCollected.value = bigTotal + totalVal;
           console.log("totalVal is ", totalVal);
       } else{
         console.log("btn is unchecked");
         totalVal -= val;
         console.log("totalVal is ", totalVal);
         totalPrice.innerText = bigTotal - val; 
-        priceCollected.value = bigTotal - val;             
+        //priceCollected.value = bigTotal - val;             
       }
     })
 
