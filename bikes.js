@@ -317,8 +317,8 @@ function checkTotal(){
       totalVal = sum + parseInt(check.value);
       console.log("sum is ", totalVal);
     } 
-    else{
-      //totalVal = sum - parseInt(check.value);
+    else if(!check.checked){
+      totalVal = sum - parseInt(check.value);
       console.log("sum is ", totalVal);
     }
 
