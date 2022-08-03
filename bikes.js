@@ -211,7 +211,7 @@ for (let i =0; i < bookBtns.length; i++){
     theValue = 0;
     checkedValue = 0;
     numtje = 0;
-    formSteps[selectedBikeNum].scrollIntoView({behavior: "smooth", block: "end", inline: "center"});
+    //formSteps[selectedBikeNum].scrollIntoView({behavior: "smooth", block: "end", inline: "center"});
     //console.log(formSteps[i]);
     selectedDays.selectedIndex = "0";
     //console.log("bike selected");
