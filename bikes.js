@@ -315,6 +315,8 @@ function checkTotal(){
   checks.forEach(check =>{
     if(check.checked){
       sum = sum + parseInt(check.value);
+    } else{
+      sum = sum - parseInt(check.value);
     }
 
   });
