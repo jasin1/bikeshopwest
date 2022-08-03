@@ -114,42 +114,42 @@ let closeBtn = document.getElementById("modal-close-wrapper");
 //--------- Modal-----------------
 
 
-for (let i =0; i < bikeBtns.length; i++){
+// for (let i =0; i < bikeBtns.length; i++){
     
-    bikeBtns[i].addEventListener('click', function(){
-    modalContainer.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-    bikeHeading.innerHTML = bikeItemsData[i].name;
-    modalTxt.innerHTML = bikeItemsData[i].descLong;
-    modalImg.src = bikeItemsData[i].step2img;
-    //--------- steps Update--------
-    newHeading.innerText = bikeItemsData[i].name;
-    newHeading2.innerText = bikeItemsData[i].name;
-    bikePrice1.innerText = bikeItemsData[i].price1;
-    bikePrice2.innerText = bikeItemsData[i].price2;
-    stepTwoImg.src = bikeItemsData[i].step2img;
-    stepThreeImg.src = bikeItemsData[i].step3img;
+//     bikeBtns[i].addEventListener('click', function(){
+//     modalContainer.style.display = 'block';
+//     document.body.style.overflow = 'hidden';
+//     bikeHeading.innerHTML = bikeItemsData[i].name;
+//     modalTxt.innerHTML = bikeItemsData[i].descLong;
+//     modalImg.src = bikeItemsData[i].step2img;
+//     //--------- steps Update--------
+//     newHeading.innerText = bikeItemsData[i].name;
+//     newHeading2.innerText = bikeItemsData[i].name;
+//     bikePrice1.innerText = bikeItemsData[i].price1;
+//     bikePrice2.innerText = bikeItemsData[i].price2;
+//     stepTwoImg.src = bikeItemsData[i].step2img;
+//     stepThreeImg.src = bikeItemsData[i].step3img;
 
 
-  })
-};
+//   })
+// };
 
-modalBookBtn.addEventListener('click', function(){
-  modalContainer.style.display = 'none';
-  document.body.style.overflow = 'auto';
-});
+// modalBookBtn.addEventListener('click', function(){
+//   modalContainer.style.display = 'none';
+//   document.body.style.overflow = 'auto';
+// });
 
 
-closeBtn.addEventListener('click', function(){
- modalContainer.style.display = 'none';
- document.body.style.overflow = 'auto';
-});
+// closeBtn.addEventListener('click', function(){
+//  modalContainer.style.display = 'none';
+//  document.body.style.overflow = 'auto';
+// });
 
-window.addEventListener('click', function(e){
-  if(e.target === modalContainer){
-    //console.log("modal clicked");
-  }
-});
+// window.addEventListener('click', function(e){
+//   if(e.target === modalContainer){
+//     //console.log("modal clicked");
+//   }
+// });
 
 
 //------------ Tabs -------------------------------------
@@ -384,6 +384,9 @@ config = {
 };
 
 const fp = flatpickr(".input-date", config);
+
+
+
 
 
 
