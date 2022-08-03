@@ -176,9 +176,9 @@ nextBtn.forEach(btn =>{
     if(btn == nextBtn[0] ||btn == nextBtn[1] || btn == nextBtn[2] ){
       //console.log("btn clicked");
       fp.clear();
-      sum = 0;
-      totalVal = 0;
-      bigTotal = 0;
+      //sum = 0;
+      //totalVal = 0;
+      //bigTotal = 0;
     }else{
       //console.log("not the button");
     }
