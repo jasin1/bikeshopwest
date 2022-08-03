@@ -249,33 +249,6 @@ preventNext.addEventListener('click', function(){
   }
 })
 
-//---------------------------------------------------------------------
-
-
-selectedDays.addEventListener('change', function(){
-  theValue = parseInt(selectedDays.value);
-  step2duration.innerText = theValue + " days";
-  if(theValue === 1){
-  //console.log("ONE day");
-    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price1);
-    totalPrice.innerText = bigTotal;
-    totalPrice2.innerText = bigTotal;
-    priceCollected.value = bigTotal;
-    console.log(bigTotal);
-    // totalPrice.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
-    // totalPrice2.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
-    // priceCollected.value = theValue * bikeItemsData[selectedBikeNum].price1;
-  }else{
-    //console.log("more days"); 
-    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2);
-    totalPrice.innerText = bigTotal;
-    totalPrice2.innerText = bigTotal;
-    priceCollected.value = bigTotal;
-    console.log(bigTotal);      
-  }
-  console.log("The selected value is " , theValue);
-});
-
 //------------------ add-ons --------------------//
 
 const check1 = document.getElementById("check1");
@@ -309,17 +282,45 @@ const addOnPrices = [addOnPrice1, addOnPrice2, addOnPrice3];
       if(check.checked){
           console.log("btn is checked");
           totalVal += val;
-          bigTotal += totalVal;
           console.log("totalVal is ", totalVal);
       } else{
         console.log("btn is unchecked");
         totalVal -= val;
-        bigTotal -= totalVal;
         console.log("totalVal is ", totalVal);              
       }
     })
 
   })
+
+//---------------------------------------------------------------------
+
+
+selectedDays.addEventListener('change', function(){
+  theValue = parseInt(selectedDays.value);
+  step2duration.innerText = theValue + " days";
+  if(theValue === 1){
+    step2duration.innerText = theValue + " day";
+  //console.log("ONE day");
+    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price1) + totalVal;
+    totalPrice.innerText = bigTotal;
+    totalPrice2.innerText = bigTotal;
+    priceCollected.value = bigTotal;
+    console.log(bigTotal);
+    // totalPrice.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
+    // totalPrice2.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
+    // priceCollected.value = theValue * bikeItemsData[selectedBikeNum].price1;
+  }else{
+    //console.log("more days"); 
+    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2) + totalVal;
+    totalPrice.innerText = bigTotal;
+    totalPrice2.innerText = bigTotal;
+    priceCollected.value = bigTotal;
+    console.log(bigTotal);      
+  }
+  console.log("The selected value is " , theValue);
+});
+
+
 
 
   // checks.forEach(check =>{
