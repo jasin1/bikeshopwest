@@ -313,12 +313,12 @@ function subCheck(d1, d2){
 
 function checkTotal(){
   checks.forEach(check =>{
-    if(!check.checked){
-      sum = sum + parseInt(check.value);
-      console.log("sum is ", sum);
+    if(check.checked){
+      totalVal = sum + parseInt(check.value);
+      console.log("sum is ", totalVal);
     } else{
-      sum = sum - parseInt(check.value);
-      console.log("sum is ", sum);
+      totalVal = sum - parseInt(check.value);
+      console.log("sum is ", totalVal);
     }
 
   });
