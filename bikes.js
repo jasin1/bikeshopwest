@@ -316,7 +316,7 @@ function subCheck(d1, d2){
     check.addEventListener("change",()=>{
       if(check.checked){
         sum = sum + parseInt(check.value);
-        console.log(sum);
+        console.log("sum is ", sum);
         checkedValue = (check.value * 1);
         checkedPrice += checkedValue;
         console.log("checkedPrice is ", checkedPrice);
