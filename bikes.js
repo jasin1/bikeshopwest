@@ -328,10 +328,15 @@ const addOnPrices = [addOnPrice1, addOnPrice2, addOnPrice3];
 
   checks.forEach(check =>{
     check.addEventListener("change",()=>{
+      val = parseInt(check.value);
       if(check.checked){
           console.log("btn is checked");
+          totalVal += val;
+          console.log("totalVal is ", totalVal);
       } else{
-        console.log("btn is unchecked");      
+        console.log("btn is unchecked");
+        totalVal -= val;
+        console.log("totalVal is ", totalVal);              
       }
     })
 
