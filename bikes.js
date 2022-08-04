@@ -168,6 +168,31 @@ let sum = 0;
 let totalVal = 0;
 let totalCheckedVal = 0;
 
+//------------------ add-ons --------------------------------------------//
+
+const check1 = document.getElementById("check1");
+const check2 = document.getElementById("check2");
+const check3 = document.getElementById("check3");
+
+const checks = [check1, check2, check3];
+
+const checksValues = [check1.value, check2.value, check3.value];
+console.log("the values van checks in array ", checksValues);
+
+const selectedCheck1 = document.querySelector(".addon-selected-helmet");
+const selectedCheck2 = document.querySelector(".addon-selected-mount");
+const selectedCheck3 = document.querySelector(".addon-selected-bag");
+
+const selectedChecks = [selectedCheck1, selectedCheck2, selectedCheck3];
+
+const addOnPrice1 = document.querySelector(".add-on-price1");
+const addOnPrice2 = document.querySelector(".add-on-price2");
+const addOnPrice3 = document.querySelector(".add-on-price3");
+
+const addOnPrices = [addOnPrice1, addOnPrice2, addOnPrice3];
+
+//----------------------------------------------------------------------//
+
 
 nextBtn.forEach(btn =>{
   // const a = nextBtn.indexOf(btn);
@@ -235,6 +260,9 @@ for (let i =0; i < bookBtns.length; i++){
     priceCollected.value = 0;
     totalVal = 0;
     bigTotal = 0;
+    checks.forEach(check =>{
+      check.checked = false;
+    });
   });
 };
 
@@ -258,28 +286,7 @@ preventNext.addEventListener('click', function(){
   }
 })
 
-//------------------ add-ons --------------------//
 
-const check1 = document.getElementById("check1");
-const check2 = document.getElementById("check2");
-const check3 = document.getElementById("check3");
-
-const checks = [check1, check2, check3];
-
-const checksValues = [check1.value, check2.value, check3.value];
-console.log("the values van checks in array ", checksValues);
-
-const selectedCheck1 = document.querySelector(".addon-selected-helmet");
-const selectedCheck2 = document.querySelector(".addon-selected-mount");
-const selectedCheck3 = document.querySelector(".addon-selected-bag");
-
-const selectedChecks = [selectedCheck1, selectedCheck2, selectedCheck3];
-
-const addOnPrice1 = document.querySelector(".add-on-price1");
-const addOnPrice2 = document.querySelector(".add-on-price2");
-const addOnPrice3 = document.querySelector(".add-on-price3");
-
-const addOnPrices = [addOnPrice1, addOnPrice2, addOnPrice3];
 
 //------------------------ nieuwe berekening -------------------------------------------------
 //--------------------------------------------------------------------------------------------
@@ -288,6 +295,8 @@ function addingCalcs(calc1, calc2){
   let total = calc1 + calc2;
   return total;
 }
+
+
 
   checks.forEach(check =>{
     check.addEventListener("change",()=>{
