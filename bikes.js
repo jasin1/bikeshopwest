@@ -200,9 +200,9 @@ nextBtn.forEach(btn =>{
   btn.addEventListener("click",()=>{
     formStepsNum++;
     updateFormSteps();
+    btn.disabled = true;
     if(btn == nextBtn[0] ||btn == nextBtn[1] || btn == nextBtn[2] ){
       fp.clear();
-      btn.disabled = true;
     }else{
       //console.log("not the button");
     }
