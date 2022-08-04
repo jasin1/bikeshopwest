@@ -280,10 +280,22 @@ const addOnPrice3 = document.querySelector(".add-on-price3");
 const addOnPrices = [addOnPrice1, addOnPrice2, addOnPrice3];
 
 //------------------------ nieuwe berekening -------------------------------------------------
+
+function addingCalcs(calc1, calc2){
+  let total = calc1 + calc2;
+  return total;
+}
+
   checks.forEach(check =>{
     check.addEventListener("change",()=>{
       console.log("addOn checked");
+      val = parseInt(check.value);
+      if(check.checked){
+        console.log("btn is checked");
 
+      } else{
+        console.log("btn is unchecked");         
+      }
     })
 
   })
