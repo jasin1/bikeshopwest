@@ -317,12 +317,16 @@ function addingCalcs(calc1, calc2){
     if(theValue === 1){
       step2duration.innerText = theValue + " day";
       bigTotal = (theValue * bikeItemsData[selectedBikeNum].price1);
+      totalPrice.innerText = addingCalcs(bigTotal, totalVal);
+      totalPrice2.innerText = addingCalcs(bigTotal, totalVal);
+      priceCollected.value = addingCalcs(bigTotal, totalVal); 
     }else{
-      bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2);   
+      bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2);
+      totalPrice.innerText = addingCalcs(bigTotal, totalVal);
+      totalPrice2.innerText = addingCalcs(bigTotal, totalVal);
+      priceCollected.value = addingCalcs(bigTotal, totalVal);    
     }
-    totalPrice.innerText = addingCalcs(bigTotal, totalVal);
-    totalPrice2.innerText = addingCalcs(bigTotal, totalVal);
-    priceCollected.value = addingCalcs(bigTotal, totalVal);    
+   
 });
 
 // totalPrice.innerText = addingCalcs(bigTotal, totalVal);
