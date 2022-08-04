@@ -263,9 +263,8 @@ const check3 = document.getElementById("check3");
 
 const checks = [check1, check2, check3];
 
-
-
-//console.log("check 1 value is ", check1.value);
+const checksValues = [check1.valueAsNumber, check2.valueAsNumber, check3.valueAsNumber];
+console.log("the values van checks in array ", checksValues);
 
 const selectedCheck1 = document.querySelector(".addon-selected-helmet");
 const selectedCheck2 = document.querySelector(".addon-selected-mount");
@@ -279,6 +278,7 @@ const addOnPrice3 = document.querySelector(".add-on-price3");
 
 const addOnPrices = [addOnPrice1, addOnPrice2, addOnPrice3];
 
+let valArray = [];
 
 
 
