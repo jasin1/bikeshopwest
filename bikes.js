@@ -298,6 +298,7 @@ function addingCalcs(calc1, calc2){
         totalVal -= val;
         console.log("totalVal is  ", totalVal);      
       }
+      totalPrice.innerText = addingCalcs(bigTotal, totalVal); 
     })
 
   })
@@ -312,7 +313,7 @@ function addingCalcs(calc1, calc2){
     }else{
       bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2);   
     }
-    totalPrice.innerText = addingCalcs(bigTotal, totalVal);    
+    totalPrice.innerText = bigTotal;    
 });
 
 // totalPrice.innerText = addingCalcs(bigTotal, totalVal);
