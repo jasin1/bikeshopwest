@@ -263,7 +263,7 @@ const check3 = document.getElementById("check3");
 
 const checks = [check1, check2, check3];
 
-const checksValues = [check1.valueAsNumber, check2.valueAsNumber, check3.valueAsNumber];
+const checksValues = [check1.value, check2.value, check3.value];
 console.log("the values van checks in array ", checksValues);
 
 const selectedCheck1 = document.querySelector(".addon-selected-helmet");
