@@ -262,6 +262,7 @@ for (let i =0; i < bookBtns.length; i++){
     bigTotal = 0;
     checks.forEach(check =>{
       check.checked = false;
+      check.disabled = true;
     });
   });
 };
@@ -320,6 +321,9 @@ function addingCalcs(calc1, calc2){
   })
 
   selectedDays.addEventListener('change', function(){
+    checks.forEach(check =>{
+      check.disabled = false;
+    });
     console.log("days chosen");
     console.log("totalVal is  ", totalVal);
     theValue = parseInt(selectedDays.value);
