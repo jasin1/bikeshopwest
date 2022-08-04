@@ -297,8 +297,8 @@ function addingCalcs(calc1, calc2){
         totalPrice.innerText = addingCalcs(bigTotal, totalVal); 
       } else{
         totalVal -= val;
-        numtje = (-val);
-        console.log("totalVal is  ", totalVal);
+        numtje = (-totalVal);
+        console.log("totalVal is  ", numtje);
         totalPrice.innerText = addingCalcs(bigTotal, numtje);       
       }
 
