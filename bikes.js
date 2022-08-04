@@ -279,49 +279,61 @@ const addOnPrice3 = document.querySelector(".add-on-price3");
 
 const addOnPrices = [addOnPrice1, addOnPrice2, addOnPrice3];
 
-
-//------------------------ Eerste berekening -------------------------------------------------
-
+//------------------------ nieuwe berekening -------------------------------------------------
   checks.forEach(check =>{
     check.addEventListener("change",()=>{
-      val = parseInt(check.value);
-      if(check.checked){
-          console.log("btn is checked");
-          totalVal += val;
-          totalPrice.innerText = bigTotal + totalVal;
-          console.log("totalVal is ", totalVal);
-      } else{
-        console.log("btn is unchecked");
-        totalVal -= val;
-        console.log("totalVal is ", totalVal);
-        totalPrice.innerText = bigTotal - totalVal;          
-      }
+      console.log("addOn checked");
+
     })
 
   })
 
-//---------------------------------------------------------------------
-
-
-selectedDays.addEventListener('change', function(){
-  theValue = parseInt(selectedDays.value);
-  step2duration.innerText = theValue + " days";
-  if(theValue === 1){
-    step2duration.innerText = theValue + " day";
-    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price1);
-    totalPrice.innerText = bigTotal;
-    totalPrice2.innerText = bigTotal;
-    priceCollected.value = bigTotal;
-    console.log(bigTotal);
-  }else{
-    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2);
-    totalPrice.innerText = bigTotal;
-    totalPrice2.innerText = bigTotal;
-    priceCollected.value = bigTotal;
-    console.log(bigTotal);      
-  }
-  console.log("The selected value is " , theValue);
+  selectedDays.addEventListener('change', function(){
+    console.log("days chosen");
 });
+
+//------------------------ Eerste berekening -------------------------------------------------
+
+//   checks.forEach(check =>{
+//     check.addEventListener("change",()=>{
+//       val = parseInt(check.value);
+//       if(check.checked){
+//           console.log("btn is checked");
+//           totalVal += val;
+//           totalPrice.innerText = bigTotal + totalVal;
+//           console.log("totalVal is ", totalVal);
+//       } else{
+//         console.log("btn is unchecked");
+//         totalVal -= val;
+//         console.log("totalVal is ", totalVal);
+//         totalPrice.innerText = bigTotal - totalVal;          
+//       }
+//     })
+
+//   })
+
+// //---------------------------------------------------------------------
+
+
+// selectedDays.addEventListener('change', function(){
+//   theValue = parseInt(selectedDays.value);
+//   step2duration.innerText = theValue + " days";
+//   if(theValue === 1){
+//     step2duration.innerText = theValue + " day";
+//     bigTotal = (theValue * bikeItemsData[selectedBikeNum].price1);
+//     totalPrice.innerText = bigTotal;
+//     totalPrice2.innerText = bigTotal;
+//     priceCollected.value = bigTotal;
+//     console.log(bigTotal);
+//   }else{
+//     bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2);
+//     totalPrice.innerText = bigTotal;
+//     totalPrice2.innerText = bigTotal;
+//     priceCollected.value = bigTotal;
+//     console.log(bigTotal);      
+//   }
+//   console.log("The selected value is " , theValue);
+// });
 
 
 
