@@ -47,6 +47,8 @@ const priceCollected = document.querySelector(".price-colect-input");
 const timeCollected = document.querySelector(".time-colect-input");
 const step2duration = document.querySelector(".step-2-duration");
 const step2Time = document.querySelector(".step-2-time");
+const checksWrapper = document.querySelector(".accessoires-select-wrapper");
+
 let toDay = "";
 
 // let dayValue = selectedDays.options[select.selectedIndex].value;
@@ -264,6 +266,7 @@ for (let i =0; i < bookBtns.length; i++){
       check.checked = false;
       check.disabled = true;
     });
+    checksWrapper.style.opacity = "0.5";
   });
 };
 
@@ -321,6 +324,7 @@ function addingCalcs(calc1, calc2){
   })
 
   selectedDays.addEventListener('change', function(){
+    checksWrapper.style.opacity = "1";
     checks.forEach(check =>{
       check.disabled = false;
     });
