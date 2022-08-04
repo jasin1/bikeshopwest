@@ -288,10 +288,9 @@ function addingCalcs(calc1, calc2){
 
   checks.forEach(check =>{
     check.addEventListener("change",()=>{
-      console.log("addOn checked");
       val = parseInt(check.value);
       if(check.checked){
-        console.log("btn is checked");
+        console.log("btn is checked, value ", val);
 
       } else{
         console.log("btn is unchecked");         
