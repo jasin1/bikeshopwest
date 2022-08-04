@@ -234,6 +234,7 @@ for (let i =0; i < bookBtns.length; i++){
     totalPrice2.innerText = 0;
     priceCollected.value = 0;
     totalVal = 0;
+    bigTotal = 0;
   });
 };
 
