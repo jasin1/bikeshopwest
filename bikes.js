@@ -178,8 +178,8 @@ const check3 = document.getElementById("check3");
 
 const checks = [check1, check2, check3];
 
-const checksValues = [check1.value, check2.value, check3.value];
-console.log("the values van checks in array ", checksValues);
+//const checksValues = [check1.value, check2.value, check3.value];
+//console.log("the values van checks in array ", checksValues);
 
 const selectedCheck1 = document.querySelector(".addon-selected-helmet");
 const selectedCheck2 = document.querySelector(".addon-selected-mount");
@@ -197,20 +197,15 @@ const addOnPrices = [addOnPrice1, addOnPrice2, addOnPrice3];
 
 
 nextBtn.forEach(btn =>{
-  // const a = nextBtn.indexOf(btn);
   btn.addEventListener("click",()=>{
     formStepsNum++;
     updateFormSteps();
     if(btn == nextBtn[0] ||btn == nextBtn[1] || btn == nextBtn[2] ){
-      //console.log("btn clicked");
       fp.clear();
-      //sum = 0;
-      //totalVal = 0;
-      //bigTotal = 0;
+      btn.disabled = true;
     }else{
       //console.log("not the button");
     }
-    //formSteps.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
   });
 });
 
