@@ -304,8 +304,18 @@ function addingCalcs(calc1, calc2){
 
   selectedDays.addEventListener('change', function(){
     console.log("days chosen");
-    console.log("totalVal is  ", totalVal);    
+    console.log("totalVal is  ", totalVal);
+    theValue = parseInt(selectedDays.value);
+    if(theValue === 1){
+      step2duration.innerText = theValue + " day";
+      bigTotal = (theValue * bikeItemsData[selectedBikeNum].price1);
+    }else{
+      bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2);   
+    }
+    totalPrice.innerText = addingCalcs(bigTotal, totalVal);    
 });
+
+// totalPrice.innerText = addingCalcs(bigTotal, totalVal);
 
 //------------------------ Eerste berekening -------------------------------------------------
 
