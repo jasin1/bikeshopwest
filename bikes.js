@@ -232,6 +232,7 @@ for (let i =0; i < bookBtns.length; i++){
     totalPrice.innerText = 0;
     totalPrice2.innerText = 0;
     priceCollected.value = 0;
+    totalVal = 0;
   });
 };
 
@@ -278,9 +279,8 @@ const addOnPrice3 = document.querySelector(".add-on-price3");
 
 const addOnPrices = [addOnPrice1, addOnPrice2, addOnPrice3];
 
-let valArray = [];
 
-
+//------------------------ Eerste berekening -------------------------------------------------
 
   checks.forEach(check =>{
     check.addEventListener("change",()=>{
@@ -289,14 +289,12 @@ let valArray = [];
           console.log("btn is checked");
           totalVal += val;
           totalPrice.innerText = bigTotal + totalVal;
-          //priceCollected.value = bigTotal + totalVal;
           console.log("totalVal is ", totalVal);
       } else{
         console.log("btn is unchecked");
         totalVal -= val;
         console.log("totalVal is ", totalVal);
-        totalPrice.innerText = bigTotal - totalVal; 
-        //priceCollected.value = bigTotal - val;             
+        totalPrice.innerText = bigTotal - totalVal;          
       }
     })
 
@@ -310,17 +308,12 @@ selectedDays.addEventListener('change', function(){
   step2duration.innerText = theValue + " days";
   if(theValue === 1){
     step2duration.innerText = theValue + " day";
-  //console.log("ONE day");
     bigTotal = (theValue * bikeItemsData[selectedBikeNum].price1);
     totalPrice.innerText = bigTotal;
     totalPrice2.innerText = bigTotal;
     priceCollected.value = bigTotal;
     console.log(bigTotal);
-    // totalPrice.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
-    // totalPrice2.innerText = theValue * bikeItemsData[selectedBikeNum].price1;
-    // priceCollected.value = theValue * bikeItemsData[selectedBikeNum].price1;
   }else{
-    //console.log("more days"); 
     bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2);
     totalPrice.innerText = bigTotal;
     totalPrice2.innerText = bigTotal;
@@ -331,37 +324,6 @@ selectedDays.addEventListener('change', function(){
 });
 
 
-
-
-  // checks.forEach(check =>{
-  //   check.addEventListener("change",()=>{
-  //     if(check.checked){
-  //       sum = sum + parseInt(check.value);
-  //       console.log("sum is ", sum);
-  //       checkedValue = (check.value * 1);
-  //       checkedPrice += checkedValue;
-  //       console.log("checkedPrice is ", checkedPrice);
-  //       numtje = addCheck(bigTotal , checkedPrice);
-  //       console.log("numtje is ", numtje);
-
-  //       //bigTotal = addCheck(bigTotal , checkedPrice);
-  //       //bigTotal += numtje;
-  //     // console.log("checkbox ", check.dataset.index);
-  //     } else if(checkedPrice > 0) {
-  //       checkedPrice -= (check.value * 1);
-  //       console.log("checkedPrice is ", checkedPrice);
-  //       numtje = subCheck(bigTotal ,checkedPrice);
-  //       console.log("numtje is ", numtje);
-  //       //bigTotal = subCheck(bigTotal ,checkedPrice);
-  //       //bigTotal += numtje;
-  //     }      
-  //     //bigTotal = numtje;
-
-  //     // totalPrice.innerText = bigTotal;
-  //     // totalPrice2.innerText = bigTotal;
-  //     // priceCollected.value = bigTotal;
-  //   });
-  // });
 
 
 
