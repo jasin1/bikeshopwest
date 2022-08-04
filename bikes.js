@@ -156,6 +156,8 @@ let closeBtn = document.getElementById("modal-close-wrapper");
 
 //------------ Tabs -------------------------------------
 
+
+
 let selectedDayValue;
 let theValue = 0;
 let bikeNum = Number;
@@ -200,7 +202,6 @@ nextBtn.forEach(btn =>{
   btn.addEventListener("click",()=>{
     formStepsNum++;
     updateFormSteps();
-    btn.disabled = true;
     if(btn == nextBtn[0] ||btn == nextBtn[1] || btn == nextBtn[2] ){
       fp.clear();
     }else{
@@ -220,30 +221,23 @@ prevBtn.forEach(btn =>{
 
 
 function updateFormSteps(){
-  // fp.clear();
+  nextBtn.forEach(btn =>{
+    btn.disabled = true;
+  });
   formSteps.forEach((formStep) =>{
     formStep.classList.contains("active") && formStep.classList.remove("active");
-   // console.log("formStep update");
   });
   formSteps[formStepsNum].classList.add("active");
-  // bikeHeading.innerHTML = bikeItemsData[formStepsNum].name;
-
 }
 
-// function updateFormContent(){
-//   newHeading.innerText = bikeItemsData[formStepsNum].name;
-//   console.log("the number is " + formStepsNum);
-// }
 
 for (let i =0; i < bookBtns.length; i++){
   bookBtns[i].addEventListener('click', function(){
     theValue = 0;
     checkedValue = 0;
     numtje = 0;
-    //formSteps[selectedBikeNum].scrollIntoView({behavior: "smooth", block: "end", inline: "center"});
-    //console.log(formSteps[i]);
+
     selectedDays.selectedIndex = "0";
-    //console.log("bike selected");
     newHeading.innerText = bikeItemsData[i].name;
     newHeading2.innerText = bikeItemsData[i].name;
     bikePrice1.innerText = bikeItemsData[i].price1;
@@ -251,7 +245,6 @@ for (let i =0; i < bookBtns.length; i++){
     stepTwoImg.src = bikeItemsData[i].step2img;
     stepThreeImg.src = bikeItemsData[i].step3img;
     selectedBikeNum = i;
-    //console.log(selectedBikeNum);
     totalPrice.innerText = 0;
     totalPrice2.innerText = 0;
     priceCollected.value = 0;
@@ -265,14 +258,6 @@ for (let i =0; i < bookBtns.length; i++){
   });
 };
 
-
-//totalPrice
-//totalPrice2
-//priceCollected
-
-//bikeItemsData[i].price1;
-
-//selectedBikeNum
 
 //----- prevent Next button------------------------
 console.log("The selected value is " , theValue);
