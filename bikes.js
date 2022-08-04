@@ -294,11 +294,14 @@ function addingCalcs(calc1, calc2){
       if(check.checked){
         totalVal += val;
         console.log("totalVal is  ", totalVal);
+        totalPrice.innerText = addingCalcs(bigTotal, totalVal); 
       } else{
         totalVal -= val;
-        console.log("totalVal is  ", totalVal);      
+        numtje = (-val);
+        console.log("totalVal is  ", totalVal);
+        totalPrice.innerText = addingCalcs(bigTotal, numtje);       
       }
-      totalPrice.innerText = addingCalcs(bigTotal, totalVal); 
+
     })
 
   })
