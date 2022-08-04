@@ -295,12 +295,15 @@ function addingCalcs(calc1, calc2){
       if(check.checked){
         totalVal += val;
         console.log("totalVal is  ", totalVal);
-        totalPrice.innerText = addingCalcs(bigTotal, totalVal); 
+        totalPrice.innerText = addingCalcs(bigTotal, totalVal);
+        totalPrice2.innerText = addingCalcs(bigTotal, totalVal);
+        priceCollected.value = addingCalcs(bigTotal, totalVal);
       } else{
         totalVal -= val;
-        //numtje = (-totalVal);
         console.log("totalVal is  ", totalVal);
-        totalPrice.innerText = addingCalcs(bigTotal, totalVal);       
+        totalPrice.innerText = addingCalcs(bigTotal, totalVal);
+        totalPrice2.innerText = addingCalcs(bigTotal, totalVal);
+        priceCollected.value = addingCalcs(bigTotal, totalVal);       
       }
 
     })
@@ -317,7 +320,9 @@ function addingCalcs(calc1, calc2){
     }else{
       bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2);   
     }
-    totalPrice.innerText = bigTotal;    
+    totalPrice.innerText = bigTotal;
+    totalPrice2.innerText = bigTotal;
+    priceCollected.value = bigTotal;    
 });
 
 // totalPrice.innerText = addingCalcs(bigTotal, totalVal);
