@@ -166,6 +166,7 @@ let numtje = 0;
 
 let sum = 0;
 let totalVal = 0;
+let totalCheckedVal = 0;
 
 
 nextBtn.forEach(btn =>{
@@ -280,6 +281,7 @@ const addOnPrice3 = document.querySelector(".add-on-price3");
 const addOnPrices = [addOnPrice1, addOnPrice2, addOnPrice3];
 
 //------------------------ nieuwe berekening -------------------------------------------------
+//--------------------------------------------------------------------------------------------
 
 function addingCalcs(calc1, calc2){
   let total = calc1 + calc2;
@@ -290,10 +292,11 @@ function addingCalcs(calc1, calc2){
     check.addEventListener("change",()=>{
       val = parseInt(check.value);
       if(check.checked){
-        console.log("btn is checked, value ", val);
-
+        totalVal += val;
+        console.log("totalVal is  ", totalVal);
       } else{
-        console.log("btn is unchecked");         
+        totalVal -= val;
+        console.log("totalVal is  ", totalVal);      
       }
     })
 
@@ -301,6 +304,7 @@ function addingCalcs(calc1, calc2){
 
   selectedDays.addEventListener('change', function(){
     console.log("days chosen");
+    console.log("totalVal is  ", totalVal);    
 });
 
 //------------------------ Eerste berekening -------------------------------------------------
