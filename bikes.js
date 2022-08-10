@@ -49,6 +49,11 @@ const step2duration = document.querySelector(".step-2-duration");
 const step2Time = document.querySelector(".step-2-time");
 const checksWrapper = document.querySelector(".accessoires-select-wrapper");
 
+
+
+
+
+
 let toDay = "";
 
 // let dayValue = selectedDays.options[select.selectedIndex].value;
@@ -195,6 +200,13 @@ const addOnPrice3 = document.querySelector(".add-on-price3");
 
 const addOnPrices = [addOnPrice1, addOnPrice2, addOnPrice3];
 
+const Selected_addOnsWrapper = document.querySelector(".addons-selected-wrapper");
+const selected_addOn_helmet = document.querySelector(".addon-selected-helmet");
+const selected_addOn_mount = document.querySelector(".addon-selected-imount");
+const selected_addOn_bag = document.querySelector(".addon-selected-bag");
+
+const selected_addOns = [selected_addOn_helmet, selected_addOn_mount, selected_addOn_bag];
+
 //----------------------------------------------------------------------//
 
 
@@ -291,12 +303,14 @@ function addingCalcs(calc1, calc2){
         totalPrice.innerText = addingCalcs(bigTotal, totalVal);
         totalPrice2.innerText = addingCalcs(bigTotal, totalVal);
         priceCollected.value = addingCalcs(bigTotal, totalVal);
+        selected_addOns[check].style.display = "block";
       } else{
         totalVal -= val;
         console.log("totalVal is  ", totalVal);
         totalPrice.innerText = addingCalcs(bigTotal, totalVal);
         totalPrice2.innerText = addingCalcs(bigTotal, totalVal);
-        priceCollected.value = addingCalcs(bigTotal, totalVal);       
+        priceCollected.value = addingCalcs(bigTotal, totalVal);
+        selected_addOns[check].style.display = "none";               
       }
 
     })
