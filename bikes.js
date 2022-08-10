@@ -207,6 +207,8 @@ const selected_addOn_bag = document.querySelector(".addon-selected-bag");
 
 const selected_addOns = [selected_addOn_helmet, selected_addOn_mount, selected_addOn_bag];
 
+console.log(selected_addOns);
+
 //----------------------------------------------------------------------//
 
 
@@ -303,6 +305,7 @@ function addingCalcs(calc1, calc2){
         totalPrice.innerText = addingCalcs(bigTotal, totalVal);
         totalPrice2.innerText = addingCalcs(bigTotal, totalVal);
         priceCollected.value = addingCalcs(bigTotal, totalVal);
+
         selected_addOns[check].style.display = "block";
       } else{
         totalVal -= val;
@@ -310,6 +313,7 @@ function addingCalcs(calc1, calc2){
         totalPrice.innerText = addingCalcs(bigTotal, totalVal);
         totalPrice2.innerText = addingCalcs(bigTotal, totalVal);
         priceCollected.value = addingCalcs(bigTotal, totalVal);
+
         selected_addOns[check].style.display = "none";               
       }
 
