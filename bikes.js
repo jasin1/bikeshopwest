@@ -306,8 +306,8 @@ function addingCalcs(calc1, calc2){
         totalPrice2.innerText = addingCalcs(bigTotal, totalVal);
         priceCollected.value = addingCalcs(bigTotal, totalVal);
 
-        //selected_addOns[check].style.display = "block";
-        console.log(checks.indexOf(check));
+        selected_addOns[checks.indexOf(check)].style.display = "block";
+        //console.log(checks.indexOf(check));
       } else{
         totalVal -= val;
         console.log("totalVal is  ", totalVal);
@@ -315,7 +315,7 @@ function addingCalcs(calc1, calc2){
         totalPrice2.innerText = addingCalcs(bigTotal, totalVal);
         priceCollected.value = addingCalcs(bigTotal, totalVal);
 
-        //selected_addOns[check].style.display = "none";               
+        selected_addOns[checks.indexOf(check)].style.display = "none";               
       }
 
     })
