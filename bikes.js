@@ -307,7 +307,7 @@ function addingCalcs(calc1, calc2){
         priceCollected.value = addingCalcs(bigTotal, totalVal);
 
         //selected_addOns[check].style.display = "block";
-        console.log(check);
+        console.log(checks.indexOf(check));
       } else{
         totalVal -= val;
         console.log("totalVal is  ", totalVal);
