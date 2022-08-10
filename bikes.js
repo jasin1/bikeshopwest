@@ -306,7 +306,8 @@ function addingCalcs(calc1, calc2){
         totalPrice2.innerText = addingCalcs(bigTotal, totalVal);
         priceCollected.value = addingCalcs(bigTotal, totalVal);
 
-        selected_addOns[check].style.display = "block";
+        //selected_addOns[check].style.display = "block";
+        console.log(selected_addOns[check].style.display);
       } else{
         totalVal -= val;
         console.log("totalVal is  ", totalVal);
