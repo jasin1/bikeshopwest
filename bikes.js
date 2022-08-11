@@ -49,6 +49,8 @@ const step2duration = document.querySelector(".step-2-duration");
 const step2Time = document.querySelector(".step-2-time");
 const checksWrapper = document.querySelector(".accessoires-select-wrapper");
 
+const rentalTop = document.querySelector(".rental-top-text");
+
 
 
 
@@ -224,7 +226,9 @@ nextBtn.forEach(btn =>{
 prevBtn.forEach(btn =>{
   btn.addEventListener("click",()=>{
     formStepsNum--;
+    rentalTop.style.display = "block";
     updateFormSteps();
+
     // fp.clear();
   });
 });
@@ -265,6 +269,7 @@ for (let i =0; i < bookBtns.length; i++){
       check.disabled = true;
     });
     checksWrapper.style.opacity = "0.5";
+    rentalTop.style.display = "none"; 
     selected_addOns.forEach(addOn =>{
       addOn.style.display = "none";  
     });
@@ -273,11 +278,11 @@ for (let i =0; i < bookBtns.length; i++){
 
 
 //----- prevent Next button------------------------
-console.log("The selected value is " , theValue);
+//console.log("The selected value is " , theValue);
 const preventNext = document.getElementById("step-1-nxt");
 
 preventNext.addEventListener('click', function(){
-  console.log("step 1 next button clicked");
+  //console.log("step 1 next button clicked");
   if(theValue == 0){
     console.log("no selection");
   }
