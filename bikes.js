@@ -226,7 +226,6 @@ nextBtn.forEach(btn =>{
 prevBtn.forEach(btn =>{
   btn.addEventListener("click",()=>{
     formStepsNum--;
-    rentalTop.style.display = "block";
     updateFormSteps();
 
     // fp.clear();
@@ -269,7 +268,6 @@ for (let i =0; i < bookBtns.length; i++){
       check.disabled = true;
     });
     checksWrapper.style.opacity = "0.5";
-    rentalTop.style.display = "none"; 
     selected_addOns.forEach(addOn =>{
       addOn.style.display = "none";  
     });
