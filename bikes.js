@@ -265,6 +265,9 @@ for (let i =0; i < bookBtns.length; i++){
       check.disabled = true;
     });
     checksWrapper.style.opacity = "0.5";
+    selected_addOns.forEach(addOn =>{
+      addOn.style.display = "none";  
+    });
   });
 };
 
