@@ -359,10 +359,10 @@ let bikeCountNum = 0;
 countAmount.innerHTML = bikeCountNum;
 
 countMinus.addEventListener("click",()=>{
-  if(bikeCountNum > 0){
+
    bikeCountNum -= 1;
    countAmount.innerHTML = bikeCountNum;    
-  }
+  
 });
 
 countMinus.addEventListener("click",()=>{
