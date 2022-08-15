@@ -306,6 +306,8 @@ bikeCountPlus.addEventListener("click", ()=>{
     BikeCounter++;
     BikeCounter = (BikeCounter < 10) ? "0" + BikeCounter : BikeCounter;
     bikeCountNum.innerText = BikeCounter;
+    bigTotal *= BikeCounter;
+
     //console.log("NUmber of bikes is ", BikeCounter);
   }
 });
