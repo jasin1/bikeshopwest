@@ -291,7 +291,22 @@ preventNext.addEventListener('click', function(){
 
 
 //------------------------ nieuwe berekening -------------------------------------------------
-//--------------------------------------------------------------------------------------------
+
+
+//------------------ Adding bikes amount ------------------------
+
+const bikeCountPlus = document.querySelector(".counter-plus");
+const bikeCountMinus = document.querySelector(".counter-minus");
+const bikeCountNum = document.querySelector(".count-num");
+
+let BikeCounter = 1; 
+
+bikeCountPlus.addEventListener("click", ()=>{
+  BikeCounter++;
+  console.log("NUmber of bikes is ", BikeCounter);
+});
+
+//-------------------------------------------------------
 
 function addingCalcs(calc1, calc2){
   let total = calc1 + calc2;
@@ -349,28 +364,10 @@ function addingCalcs(calc1, calc2){
    
 });
 
-//----------- bike counter -----
-const countMinus = document.querySelector(".counter-minus");
-const countPlus =  document.querySelector(".counter-plus");
-const countAmount = document.querySelector(".count-num");
 
-let bikeCountNum = 0;
-
-countAmount.innerHTML = bikeCountNum;
-
-countMinus.addEventListener("click",()=>{
-
-   bikeCountNum -= 1;
-   countAmount.innerHTML = bikeCountNum;    
-  
-});
-
-countMinus.addEventListener("click",()=>{
-   bikeCountNum += 1;
-   countAmount.innerHTML = bikeCountNum;    
-});
  
- 
+//-------------------------------------------------------------------------------------------- 
+
 //---------------- FlatPickr---------------------------------------
 
 // let chosenDate = "";
@@ -415,9 +412,6 @@ config = {
 };
 
 const fp = flatpickr(".input-date", config);
-
-
-
 
 
 
