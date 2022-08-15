@@ -302,9 +302,20 @@ const bikeCountNum = document.querySelector(".count-num");
 let BikeCounter = 1; 
 
 bikeCountPlus.addEventListener("click", ()=>{
-  BikeCounter++;
-  console.log("NUmber of bikes is ", BikeCounter);
+  if(BikeCounter <10){  
+    BikeCounter++;
+    bikeCountNum.innerText = BikeCounter;
+    console.log("NUmber of bikes is ", BikeCounter);
+  }
 });
+
+bikeCountMinus.addEventListener("click", ()=>{
+  if(BikeCounter >1){
+    BikeCounter--;
+    bikeCountNum.innerText = BikeCounter;    
+  }
+});
+
 
 //-------------------------------------------------------
 
