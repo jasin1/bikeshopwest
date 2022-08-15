@@ -477,8 +477,8 @@ config = {
   // minTime:"10:30",
   // maxTime:"17:45",
   altInput: true,
-  altFormat:"M j, Y at H:i",
-  dateFormat: "Y-m-d H:i",
+  altFormat:"M j, Y",
+  dateFormat: "Y-m-d",
   "disable":[
     function(date){
       return (date.getDay() ===0 || date.getDay() === 7);
