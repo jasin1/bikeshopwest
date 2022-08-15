@@ -306,7 +306,10 @@ bikeCountPlus.addEventListener("click", ()=>{
     BikeCounter++;
     BikeCounter = (BikeCounter < 10) ? "0" + BikeCounter : BikeCounter;
     bikeCountNum.innerText = BikeCounter;
-    bigTotal *= BikeCounter;
+    //bigTotal *= BikeCounter;
+    totalPrice.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
+    totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
+    priceCollected.value = updateBigTotal(bigTotal, totalVal, BikeCounter);
 
     //console.log("NUmber of bikes is ", BikeCounter);
   }
@@ -316,7 +319,10 @@ bikeCountMinus.addEventListener("click", ()=>{
   if(BikeCounter >1){
     BikeCounter--;
     BikeCounter = (BikeCounter < 10) ? "0" + BikeCounter : BikeCounter;    
-    bikeCountNum.innerText = BikeCounter;    
+    bikeCountNum.innerText = BikeCounter; 
+    totalPrice.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
+    totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
+    priceCollected.value = updateBigTotal(bigTotal, totalVal, BikeCounter);   
   }
 });
 
@@ -328,56 +334,113 @@ function addingCalcs(calc1, calc2){
   return total;
 }
 
+function updateBigTotal(cal1, cal2, cal3){
+  let SubTotal = addingCalcs(cal1,cal2);
+  let MainTotal = SubTotal*cal3;
+  return MainTotal;
+}
 
 
-  checks.forEach(check =>{
-    check.addEventListener("change",()=>{
-      val = parseInt(check.value);
-      if(check.checked){
-        totalVal += val;
-        console.log("totalVal is  ", totalVal);
-        totalPrice.innerText = addingCalcs(bigTotal, totalVal);
-        totalPrice2.innerText = addingCalcs(bigTotal, totalVal);
-        priceCollected.value = addingCalcs(bigTotal, totalVal);
 
-        selected_addOns[checks.indexOf(check)].style.display = "block";
-        //console.log(checks.indexOf(check));
-      } else{
-        totalVal -= val;
-        console.log("totalVal is  ", totalVal);
-        totalPrice.innerText = addingCalcs(bigTotal, totalVal);
-        totalPrice2.innerText = addingCalcs(bigTotal, totalVal);
-        priceCollected.value = addingCalcs(bigTotal, totalVal);
+checks.forEach(check =>{
+  check.addEventListener("change",()=>{
+    val = parseInt(check.value);
+    if(check.checked){
+      totalVal += val;
+      console.log("totalVal is  ", totalVal);
+      totalPrice.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
+      totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
+      priceCollected.value = updateBigTotal(bigTotal, totalVal, BikeCounter);
 
-        selected_addOns[checks.indexOf(check)].style.display = "none";               
-      }
+      selected_addOns[checks.indexOf(check)].style.display = "block";
+      //console.log(checks.indexOf(check));
+    } else{
+      totalVal -= val;
+      console.log("totalVal is  ", totalVal);
+      totalPrice.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
+      totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
+      priceCollected.value = updateBigTotal(bigTotal, totalVal, BikeCounter);
 
-    })
+      selected_addOns[checks.indexOf(check)].style.display = "none";               
+    }
 
   })
 
-  selectedDays.addEventListener('change', function(){
-    checksWrapper.style.opacity = "1";
-    checks.forEach(check =>{
-      check.disabled = false;
-    });
-    console.log("days chosen");
-    console.log("totalVal is  ", totalVal);
-    theValue = parseInt(selectedDays.value);
-    if(theValue === 1){
-      step2duration.innerText = theValue + " day";
-      bigTotal = (theValue * bikeItemsData[selectedBikeNum].price1);
-      totalPrice.innerText = addingCalcs(bigTotal, totalVal);
-      totalPrice2.innerText = addingCalcs(bigTotal, totalVal);
-      priceCollected.value = addingCalcs(bigTotal, totalVal); 
-    }else{
-      bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2);
-      totalPrice.innerText = addingCalcs(bigTotal, totalVal);
-      totalPrice2.innerText = addingCalcs(bigTotal, totalVal);
-      priceCollected.value = addingCalcs(bigTotal, totalVal);    
-    }
-   
+})
+
+selectedDays.addEventListener('change', function(){
+  checksWrapper.style.opacity = "1";
+  checks.forEach(check =>{
+    check.disabled = false;
+  });
+  console.log("days chosen");
+  console.log("totalVal is  ", totalVal);
+  theValue = parseInt(selectedDays.value);
+  if(theValue === 1){
+    step2duration.innerText = theValue + " day";
+    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price1);
+    totalPrice.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
+    totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
+    priceCollected.value = updateBigTotal(bigTotal, totalVal, BikeCounter); 
+  }else{
+    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2);
+    totalPrice.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
+    totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
+    priceCollected.value = updateBigTotal(bigTotal, totalVal, BikeCounter);    
+  }
+ 
 });
+
+
+
+//   checks.forEach(check =>{
+//     check.addEventListener("change",()=>{
+//       val = parseInt(check.value);
+//       if(check.checked){
+//         totalVal += val;
+//         console.log("totalVal is  ", totalVal);
+//         totalPrice.innerText = addingCalcs(bigTotal, totalVal);
+//         totalPrice2.innerText = addingCalcs(bigTotal, totalVal);
+//         priceCollected.value = addingCalcs(bigTotal, totalVal);
+
+//         selected_addOns[checks.indexOf(check)].style.display = "block";
+//         //console.log(checks.indexOf(check));
+//       } else{
+//         totalVal -= val;
+//         console.log("totalVal is  ", totalVal);
+//         totalPrice.innerText = addingCalcs(bigTotal, totalVal);
+//         totalPrice2.innerText = addingCalcs(bigTotal, totalVal);
+//         priceCollected.value = addingCalcs(bigTotal, totalVal);
+
+//         selected_addOns[checks.indexOf(check)].style.display = "none";               
+//       }
+
+//     })
+
+//   })
+
+//   selectedDays.addEventListener('change', function(){
+//     checksWrapper.style.opacity = "1";
+//     checks.forEach(check =>{
+//       check.disabled = false;
+//     });
+//     console.log("days chosen");
+//     console.log("totalVal is  ", totalVal);
+//     theValue = parseInt(selectedDays.value);
+//     if(theValue === 1){
+//       step2duration.innerText = theValue + " day";
+//       bigTotal = (theValue * bikeItemsData[selectedBikeNum].price1);
+//       totalPrice.innerText = addingCalcs(bigTotal, totalVal);
+//       totalPrice2.innerText = addingCalcs(bigTotal, totalVal);
+//       priceCollected.value = addingCalcs(bigTotal, totalVal); 
+//     }else{
+//       bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2);
+//       totalPrice.innerText = addingCalcs(bigTotal, totalVal);
+//       totalPrice2.innerText = addingCalcs(bigTotal, totalVal);
+//       priceCollected.value = addingCalcs(bigTotal, totalVal);    
+//     }
+   
+// });
 
 
  
