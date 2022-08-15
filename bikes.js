@@ -304,14 +304,16 @@ let BikeCounter = 1;
 bikeCountPlus.addEventListener("click", ()=>{
   if(BikeCounter <10){  
     BikeCounter++;
+    BikeCounter = (BikeCounter < 10) ? "0" + BikeCounter : BikeCounter;
     bikeCountNum.innerText = BikeCounter;
-    console.log("NUmber of bikes is ", BikeCounter);
+    //console.log("NUmber of bikes is ", BikeCounter);
   }
 });
 
 bikeCountMinus.addEventListener("click", ()=>{
   if(BikeCounter >1){
     BikeCounter--;
+    BikeCounter = (BikeCounter < 10) ? "0" + BikeCounter : BikeCounter;    
     bikeCountNum.innerText = BikeCounter;    
   }
 });
