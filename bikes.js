@@ -340,13 +340,13 @@ function updateBigTotal(cal1, cal2, cal3){
   return MainTotal;
 }
 
-
+//---------- addOns checks berekening -----------------------
 
 checks.forEach(check =>{
   check.addEventListener("change",()=>{
     val = parseInt(check.value);
     if(check.checked){
-      totalVal += val;
+      totalVal += (val*theValue);
       console.log("totalVal is  ", totalVal);
       totalPrice.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
       totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
@@ -355,7 +355,7 @@ checks.forEach(check =>{
       selected_addOns[checks.indexOf(check)].style.display = "block";
       //console.log(checks.indexOf(check));
     } else{
-      totalVal -= val;
+      totalVal -= (val*theValue);
       console.log("totalVal is  ", totalVal);
       totalPrice.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
       totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
@@ -368,13 +368,15 @@ checks.forEach(check =>{
 
 })
 
+//------------ Duration Berekening -----------------------
+
 selectedDays.addEventListener('change', function(){
   checksWrapper.style.opacity = "1";
   checks.forEach(check =>{
     check.disabled = false;
   });
-  console.log("days chosen");
-  console.log("totalVal is  ", totalVal);
+  //console.log("days chosen");
+  //console.log("totalVal is  ", totalVal);
   theValue = parseInt(selectedDays.value);
   if(theValue === 1){
     step2duration.innerText = theValue + " day";
