@@ -41,10 +41,15 @@ const bikePrice2 = document.querySelector(".step-1-price-2");
 const totalPrice = document.querySelector(".total-price-calc");
 const totalPrice2 = document.querySelector(".total-price-calc-2");
 const selectedDate = document.querySelector(".step-2-date");
+
+//------------- Collecting inputs to send with form---------------------
 const selectedDays = document.getElementById("form-select-input");
 const dateCollected = document.querySelector(".date-colect-input");
 const priceCollected = document.querySelector(".price-colect-input");
 const timeCollected = document.querySelector(".time-colect-input");
+const DurationCollected = document.querySelector(".duration-input");
+const BikeAmountCollected = document.querySelector(".bike-amount-input");
+//-----------------------------------------------------------------------
 const step2duration = document.querySelector(".step-2-duration");
 const step2Time = document.querySelector(".step-2-time");
 const checksWrapper = document.querySelector(".accessoires-select-wrapper");
@@ -310,6 +315,7 @@ bikeCountPlus.addEventListener("click", ()=>{
     BikeCounter++;
     BikeCounter = (BikeCounter < 10) ? "0" + BikeCounter : BikeCounter;
     bikeCountNum.innerText = BikeCounter;
+    BikeAmountCollected.value = BikeCounter;
     //bigTotal *= BikeCounter;
     totalPrice.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
     totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
@@ -324,6 +330,7 @@ bikeCountMinus.addEventListener("click", ()=>{
     BikeCounter--;
     BikeCounter = (BikeCounter < 10) ? "0" + BikeCounter : BikeCounter;    
     bikeCountNum.innerText = BikeCounter; 
+    BikeAmountCollected.value = BikeCounter;
     totalPrice.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
     totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
     priceCollected.value = updateBigTotal(bigTotal, totalVal, BikeCounter);   
@@ -331,7 +338,7 @@ bikeCountMinus.addEventListener("click", ()=>{
 });
 
 
-//-------------------------------------------------------
+//------------------------ Calculation functions -------------------------------
 
 function addingCalcs(calc1, calc2){
   let total = calc1 + calc2;
@@ -382,6 +389,7 @@ selectedDays.addEventListener('change', function(){
   //console.log("days chosen");
   //console.log("totalVal is  ", totalVal);
   theValue = parseInt(selectedDays.value);
+  DurationCollected.value = theValue;
   if(theValue === 1){
     step2duration.innerText = theValue + " day";
     bigTotal = (theValue * bikeItemsData[selectedBikeNum].price1);
@@ -389,6 +397,7 @@ selectedDays.addEventListener('change', function(){
     totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
     priceCollected.value = updateBigTotal(bigTotal, totalVal, BikeCounter); 
   }else{
+    step2duration.innerText = theValue + " days";
     bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2) + bikeItemsData[selectedBikeNum].dif;
     totalPrice.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
     totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
