@@ -472,7 +472,7 @@ let newTime = "";
 config = {
   defaultDate:toDay,
   minDate:"today",
-  enableTime: false,
+  // enableTime: false,
   // time_24h: true,
   // minTime:"10:30",
   // maxTime:"17:45",
@@ -510,6 +510,8 @@ const fp = flatpickr(".input-date", config);
 
 const tp = flatpickr(".input-time",{  
   enableTime: true,
+  noCalendar: true,
+  dateFormat: "H:i",
   time_24h: true,
   minTime:"10:30",
   maxTime:"17:45",
