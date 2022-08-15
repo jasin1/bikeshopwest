@@ -71,6 +71,7 @@ let bikeItemsData = [
     name:"Handbrake Bike",
     price1:13,
     price2:9,
+    dif:4,
     descShort:"Handbrake bike with 7 speed hub and hand-operated hand rakes",
     descLong:"Handbrake bike elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
     step2img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62e92b671a593f0066953f63_big-footbrake.jpg",
@@ -81,6 +82,7 @@ let bikeItemsData = [
     name:"Electric Bike",
     price1:35,
     price2:30,
+    dif:5,
     descShort:"Duis cursus, mi quis viverra ornare",
     descLong:"Electric bike adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
     step2img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62d6452269615ac0b9717c00_electric-second.jpg",
@@ -91,6 +93,7 @@ let bikeItemsData = [
     name:"Cargo Bike",
     price1:25,
     price2:22,
+    dif:3,
     descShort:"The cargo bike comes with 7 gears and is suitable for the maximum of 2 children",
     descLong:"Cargo Bike adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
     step2img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62d6452295111531b12f75d4_cargo-second.jpg",
@@ -385,7 +388,7 @@ selectedDays.addEventListener('change', function(){
     totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
     priceCollected.value = updateBigTotal(bigTotal, totalVal, BikeCounter); 
   }else{
-    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2);
+    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2) + bikeItemsData[selectedBikeNum].dif;
     totalPrice.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
     totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
     priceCollected.value = updateBigTotal(bigTotal, totalVal, BikeCounter);    
