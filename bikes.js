@@ -52,6 +52,7 @@ const BikeAmountCollected = document.querySelector(".bike-amount-input");
 //-----------------------------------------------------------------------
 const step2duration = document.querySelector(".step-2-duration");
 const step2Time = document.querySelector(".step-2-time");
+const step2Bikes = document.querySelector(".step-2-total-bikes");
 const checksWrapper = document.querySelector(".accessoires-select-wrapper");
 
 const rentalTop = document.querySelector(".rental-top-text");
@@ -316,6 +317,7 @@ bikeCountPlus.addEventListener("click", ()=>{
     BikeCounter = (BikeCounter < 10) ? "0" + BikeCounter : BikeCounter;
     bikeCountNum.innerText = BikeCounter;
     BikeAmountCollected.value = BikeCounter;
+    step2Bikes.innerText = BikeCounter;
     //bigTotal *= BikeCounter;
     totalPrice.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
     totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
@@ -331,6 +333,7 @@ bikeCountMinus.addEventListener("click", ()=>{
     BikeCounter = (BikeCounter < 10) ? "0" + BikeCounter : BikeCounter;    
     bikeCountNum.innerText = BikeCounter; 
     BikeAmountCollected.value = BikeCounter;
+    step2Bikes.innerText = BikeCounter;
     totalPrice.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
     totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
     priceCollected.value = updateBigTotal(bigTotal, totalVal, BikeCounter);   
