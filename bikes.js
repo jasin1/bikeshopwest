@@ -472,10 +472,10 @@ let newTime = "";
 config = {
   defaultDate:toDay,
   minDate:"today",
-  enableTime: true,
-  time_24h: true,
-  minTime:"10:30",
-  maxTime:"17:45",
+  enableTime: false,
+  // time_24h: true,
+  // minTime:"10:30",
+  // maxTime:"17:45",
   altInput: true,
   altFormat:"M j, Y at H:i",
   dateFormat: "Y-m-d H:i",
@@ -491,13 +491,13 @@ config = {
       let chosenDate = dateStr;
       let freshDate = chosenDate.toString();
       newDatum = freshDate.substring(0,15);
-      newTime = freshDate.substring(16,21);
+      //newTime = freshDate.substring(16,21);
       //console.log("time is ", newTime);
       //console.log(dateStr);
       stepTwoDate.innerText = newDatum;
-      step2Time.innerText = newTime;
+      //step2Time.innerText = newTime;
       dateCollected.setAttribute('value', newDatum);
-      timeCollected.setAttribute('value', newTime);
+      // timeCollected.setAttribute('value', newTime);
       //console.log(dateCollected.value);
       //priceCollected
       //timeCollected     
@@ -505,6 +505,24 @@ config = {
 };
 
 const fp = flatpickr(".input-date", config);
+
+
+
+const tp = flatpickr(".input-time",{  
+  enableTime: true,
+  time_24h: true,
+  minTime:"10:30",
+  maxTime:"17:45",
+  onChange: function(dateStr){
+    let newchosenDate = dateStr;
+    let newfreshDate = newchosenDate.toString();
+    newTime = newfreshDate.substring(16,21);  
+    step2Time.innerText = newTime;
+    timeCollected.setAttribute('value', newTime);    
+  }  
+});
+
+
 
 
 
