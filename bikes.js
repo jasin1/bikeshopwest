@@ -236,7 +236,7 @@ nextBtn.forEach(btn =>{
 prevBtn.forEach(btn =>{
   btn.addEventListener("click",()=>{
     formStepsNum--;
-    rentalTop.style.display = "block";
+    //rentalTop.style.display = "block";
     updateFormSteps();
 
     // fp.clear();
@@ -530,4 +530,8 @@ const tp = flatpickr(".input-time",{
 
 
 
+/*
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://jasin1.github.io/bikeshopwest/bikes.js"></script>
 
+*/
