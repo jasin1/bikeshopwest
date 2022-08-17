@@ -518,6 +518,7 @@ const tp = flatpickr(".input-time",{
   time_24h: true,
   minTime:"10:30",
   maxTime:"17:45",
+  disableMobile: "true",
   onChange: function(dateStr){
     let newchosenDate = dateStr;
     let newfreshDate = newchosenDate.toString();
