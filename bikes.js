@@ -289,8 +289,8 @@ for (let i =0; i < bookBtns.length; i++){
     checksWrapper.style.opacity = "0.5";
     rentalTop.style.display = "none";
 
-    preventNext.style.opacity = "0.5";
-    preventNext.disabled = true; 
+
+    preventNext.display = "none"; 
 
     selected_addOns.forEach(addOn =>{
       addOn.style.display = "none";  
@@ -397,8 +397,7 @@ checks.forEach(check =>{
 //------------ Duration Calculation -----------------------
 
 selectedDays.addEventListener('change', function(){
-  checksWrapper.style.opacity = "1";
-  preventNext.disabled = false;
+  preventNext.display = "block"; 
   preventNext.opacity = "1";
   checks.forEach(check =>{
     check.disabled = false;
