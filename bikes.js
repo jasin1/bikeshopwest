@@ -218,6 +218,8 @@ const selected_addOns = [selected_addOn_helmet, selected_addOn_mount, selected_a
 
 const btn_parent_step2 = document.querySelector(".button-row-next");
 
+const addOns_selected_wrapper = document.querySelector(".accessoires-wrapper");
+
 
 //console.log(btn_parent_step2.children[1]);
 
@@ -375,6 +377,7 @@ checks.forEach(check =>{
       totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
       priceCollected.value = updateBigTotal(bigTotal, totalVal, BikeCounter);
 
+      addOns_selected_wrapper.style.display = "block";
       selected_addOns[checks.indexOf(check)].style.display = "block";
       //console.log(checks.indexOf(check));
     } else{
@@ -384,6 +387,7 @@ checks.forEach(check =>{
       totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
       priceCollected.value = updateBigTotal(bigTotal, totalVal, BikeCounter);
 
+      addOns_selected_wrapper.style.display = "none";
       selected_addOns[checks.indexOf(check)].style.display = "none";               
     }
 
