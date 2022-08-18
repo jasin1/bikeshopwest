@@ -216,7 +216,8 @@ const selected_addOn_bag = document.querySelector(".addon-selected-bag");
 
 const selected_addOns = [selected_addOn_helmet, selected_addOn_mount, selected_addOn_bag];
 
-const btn_parent_step2 = document.querySelector(".process-btn-wrapper-1");
+const btn_parent_step2 = document.querySelector(".button-row-next");
+
 
 //console.log(btn_parent_step2.children[1]);
 
@@ -286,7 +287,8 @@ for (let i =0; i < bookBtns.length; i++){
       check.disabled = true;
     });
     checksWrapper.style.opacity = "0.5";
-    rentalTop.style.display = "none"; 
+    rentalTop.style.display = "none";
+    btn_parent_step2.style.display = "none"; 
     selected_addOns.forEach(addOn =>{
       addOn.style.display = "none";  
     });
@@ -393,6 +395,7 @@ checks.forEach(check =>{
 
 selectedDays.addEventListener('change', function(){
   checksWrapper.style.opacity = "1";
+  btn_parent_step2.style.display = "block"; 
   checks.forEach(check =>{
     check.disabled = false;
   });
