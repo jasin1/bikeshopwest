@@ -95,8 +95,8 @@ let bikeItemsData = [
     dif:5,
     descShort:"Duis cursus, mi quis viverra ornare",
     descLong:"Electric bike adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
-    step2img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62d6452269615ac0b9717c00_electric-second.jpg",
-    step3img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62c68727357c53a029780361_e-bike_optimized.jpg",
+    step2img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62fe3698752f7db84c5f6ed8_elec_proper.jpg",
+    step3img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62fe3698752f7db84c5f6ed8_elec_proper.jpg",
   },
   {
     id:"bike03",
@@ -106,8 +106,8 @@ let bikeItemsData = [
     dif:3,
     descShort:"The cargo bike comes with 7 gears and is suitable for the maximum of 2 children",
     descLong:"Cargo Bike adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
-    step2img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62d6452295111531b12f75d4_cargo-second.jpg",
-    step3img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62c687269e35636ce449e59d_cargo-bike_optimized.jpg",
+    step2img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62fe3698563383740e6d473e_cargo_proper.jpg",
+    step3img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62fe3698563383740e6d473e_cargo_proper.jpg",
   },
   {
     id:"otherBikes",
