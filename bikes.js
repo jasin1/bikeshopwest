@@ -218,7 +218,7 @@ const selected_addOns = [selected_addOn_helmet, selected_addOn_mount, selected_a
 
 const btn_parent_step2 = document.querySelector(".process-btn-wrapper-1");
 
-console.log(btn_parent_step2.children[0]);
+console.log(btn_parent_step2.children[1]);
 
 console.log(selected_addOns);
 
