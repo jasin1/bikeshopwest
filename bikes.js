@@ -261,7 +261,8 @@ for (let i =0; i < bookBtns.length; i++){
     theValue = 0;
     checkedValue = 0;
     numtje = 0;
-    BikeCounter = 1; 
+    BikeCounter = 1;
+    bikeCountNum.innerText = BikeCounter; 
 
     selectedDays.selectedIndex = "0";
     newHeading.innerText = bikeItemsData[i].name;
