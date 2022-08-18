@@ -218,7 +218,7 @@ const selected_addOns = [selected_addOn_helmet, selected_addOn_mount, selected_a
 
 const btn_parent_step2 = document.querySelector(".button-row-next");
 
-const addOns_selected_wrapper = document.querySelector(".accessoires-wrapper");
+const addOns_selected_wrapper = document.querySelector(".accessoires-wrapper-2");
 
 
 //console.log(btn_parent_step2.children[1]);
