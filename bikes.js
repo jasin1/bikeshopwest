@@ -80,8 +80,12 @@ let bikeItemsData = [
     dif:4,
     descShort:"Handbrake bike with 7 speed hub and hand-operated hand rakes",
     descLong:"Handbrake bike elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
-    step2img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62e92b671a593f0066953f63_big-footbrake.jpg",
-    step3img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62c687a7edcb7f2c57d8af9b_hand-bike_optimized.jpg",
+    step2img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62fe36981365fab92022f3a6_hand_break_proper.jpg",
+    step3img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62fe36981365fab92022f3a6_hand_break_proper.jpg",
+    //https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62fe36981365fab92022f3a6_hand_break_proper.jpg
+
+    //https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62e92b671a593f0066953f63_big-footbrake.jpg
+    //https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62c687a7edcb7f2c57d8af9b_hand-bike_optimized.jpg
   },
   {
     id:"bike02",
