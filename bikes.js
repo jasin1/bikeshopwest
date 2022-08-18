@@ -184,6 +184,7 @@ let numtje = 0;
 let sum = 0;
 let totalVal = 0;
 let totalCheckedVal = 0;
+let BikeCounter = 1; 
 
 //------------------ add-ons --------------------------------------------//
 
@@ -260,6 +261,7 @@ for (let i =0; i < bookBtns.length; i++){
     theValue = 0;
     checkedValue = 0;
     numtje = 0;
+    BikeCounter = 1; 
 
     selectedDays.selectedIndex = "0";
     newHeading.innerText = bikeItemsData[i].name;
@@ -309,7 +311,7 @@ const bikeCountPlus = document.querySelector(".counter-plus");
 const bikeCountMinus = document.querySelector(".counter-minus");
 const bikeCountNum = document.querySelector(".count-num");
 
-let BikeCounter = 1; 
+
 
 bikeCountPlus.addEventListener("click", ()=>{
   if(BikeCounter <10){  
@@ -382,15 +384,14 @@ checks.forEach(check =>{
 
 })
 
-//------------ Duration Berekening -----------------------
+//------------ Duration Calculation -----------------------
 
 selectedDays.addEventListener('change', function(){
   checksWrapper.style.opacity = "1";
   checks.forEach(check =>{
     check.disabled = false;
   });
-  //console.log("days chosen");
-  //console.log("totalVal is  ", totalVal);
+
   theValue = parseInt(selectedDays.value);
   DurationCollected.value = theValue;
   if(theValue === 1){
@@ -409,65 +410,11 @@ selectedDays.addEventListener('change', function(){
  
 });
 
-
-
-//   checks.forEach(check =>{
-//     check.addEventListener("change",()=>{
-//       val = parseInt(check.value);
-//       if(check.checked){
-//         totalVal += val;
-//         console.log("totalVal is  ", totalVal);
-//         totalPrice.innerText = addingCalcs(bigTotal, totalVal);
-//         totalPrice2.innerText = addingCalcs(bigTotal, totalVal);
-//         priceCollected.value = addingCalcs(bigTotal, totalVal);
-
-//         selected_addOns[checks.indexOf(check)].style.display = "block";
-//         //console.log(checks.indexOf(check));
-//       } else{
-//         totalVal -= val;
-//         console.log("totalVal is  ", totalVal);
-//         totalPrice.innerText = addingCalcs(bigTotal, totalVal);
-//         totalPrice2.innerText = addingCalcs(bigTotal, totalVal);
-//         priceCollected.value = addingCalcs(bigTotal, totalVal);
-
-//         selected_addOns[checks.indexOf(check)].style.display = "none";               
-//       }
-
-//     })
-
-//   })
-
-//   selectedDays.addEventListener('change', function(){
-//     checksWrapper.style.opacity = "1";
-//     checks.forEach(check =>{
-//       check.disabled = false;
-//     });
-//     console.log("days chosen");
-//     console.log("totalVal is  ", totalVal);
-//     theValue = parseInt(selectedDays.value);
-//     if(theValue === 1){
-//       step2duration.innerText = theValue + " day";
-//       bigTotal = (theValue * bikeItemsData[selectedBikeNum].price1);
-//       totalPrice.innerText = addingCalcs(bigTotal, totalVal);
-//       totalPrice2.innerText = addingCalcs(bigTotal, totalVal);
-//       priceCollected.value = addingCalcs(bigTotal, totalVal); 
-//     }else{
-//       bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2);
-//       totalPrice.innerText = addingCalcs(bigTotal, totalVal);
-//       totalPrice2.innerText = addingCalcs(bigTotal, totalVal);
-//       priceCollected.value = addingCalcs(bigTotal, totalVal);    
-//     }
-   
-// });
-
-
- 
 //-------------------------------------------------------------------------------------------- 
 
 //---------------- FlatPickr---------------------------------------
 
-// let chosenDate = "";
-// let freshDate = "";
+
 let newDatum = "";
 let newTime = "";
 
