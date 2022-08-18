@@ -217,6 +217,7 @@ const selected_addOn_bag = document.querySelector(".addon-selected-bag");
 const selected_addOns = [selected_addOn_helmet, selected_addOn_mount, selected_addOn_bag];
 
 const btn_parent_step2 = document.querySelector(".process-btn-wrapper-1");
+const preventNext = btn_parent_step2.children[1];
 
 //console.log(btn_parent_step2.children[1]);
 
@@ -286,7 +287,11 @@ for (let i =0; i < bookBtns.length; i++){
       check.disabled = true;
     });
     checksWrapper.style.opacity = "0.5";
-    rentalTop.style.display = "none"; 
+    rentalTop.style.display = "none";
+
+    preventNext.style.opacity = "0.5";
+    preventNext.disabled = true; 
+
     selected_addOns.forEach(addOn =>{
       addOn.style.display = "none";  
     });
@@ -298,7 +303,7 @@ for (let i =0; i < bookBtns.length; i++){
 //console.log("The selected value is " , theValue);
 //const preventNext = document.getElementById("step-1-nxt");
 
-const preventNext = btn_parent_step2.children[1];
+
 
 preventNext.addEventListener('click', function(){
   console.log("step 1 next button clicked");
@@ -393,6 +398,8 @@ checks.forEach(check =>{
 
 selectedDays.addEventListener('change', function(){
   checksWrapper.style.opacity = "1";
+  preventNext.disabled = false;
+  preventNext.opacity = "1";
   checks.forEach(check =>{
     check.disabled = false;
   });
