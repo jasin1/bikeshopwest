@@ -374,6 +374,8 @@ function updateBigTotal(cal1, cal2, cal3){
 //---------- addOns checks berekening -----------------------
 
 let addOn_items = [];
+let addOns_to_send = String;
+
 
 checks.forEach(check =>{
   check.addEventListener("change",()=>{
@@ -391,8 +393,9 @@ checks.forEach(check =>{
       //console.log(checks.indexOf(check));
       addOn_items.push(check.dataset.item);
       console.log(addOn_items);
+      //addOns_to_send = addOn_items.toString;
 
-      addOns_toSend.value = addOn_items.toString;
+      addOns_toSend.value = addOn_items;
 
 
     } else{
@@ -408,7 +411,7 @@ checks.forEach(check =>{
       addOn_items.pop(check.dataset.item);
       console.log(addOn_items);
 
-      addOns_toSend.value = addOn_items.toString;      
+      addOns_toSend.value = addOn_items;      
     }
 
   })
