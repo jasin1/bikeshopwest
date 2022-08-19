@@ -224,6 +224,8 @@ const btn_parent_step2 = document.querySelector(".button-row-next");
 
 const addOns_selected_wrapper = document.querySelector(".accessoires-wrapper-2");
 
+const addOns_toSend = document.querySelector(".selected-acc");
+
 
 //console.log(btn_parent_step2.children[1]);
 
@@ -382,12 +384,15 @@ checks.forEach(check =>{
       totalPrice.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
       totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
       priceCollected.value = updateBigTotal(bigTotal, totalVal, BikeCounter);
+      
 
       addOns_selected_wrapper.style.display = "block";
       selected_addOns[checks.indexOf(check)].style.display = "block";
       //console.log(checks.indexOf(check));
       addOn_items.push(check.dataset.item);
       console.log(addOn_items);
+
+      addOns_toSend.innerText = addOn_items;
 
 
     } else{
@@ -402,6 +407,8 @@ checks.forEach(check =>{
       
       addOn_items.pop(check.dataset.item);
       console.log(addOn_items);
+
+      addOns_toSend.innerText = addOn_items;      
     }
 
   })
