@@ -385,7 +385,7 @@ checks.forEach(check =>{
       selected_addOns[checks.indexOf(check)].style.display = "block";
       //console.log(checks.indexOf(check));
 
-      console.log(check.dataset);
+      console.log(check.dataset.item);
 
     } else{
       totalVal -= (val*theValue);
