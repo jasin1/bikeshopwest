@@ -371,6 +371,8 @@ function updateBigTotal(cal1, cal2, cal3){
 
 //---------- addOns checks berekening -----------------------
 
+let addOn_items = [];
+
 checks.forEach(check =>{
   check.addEventListener("change",()=>{
     val = parseInt(check.value);
@@ -384,8 +386,9 @@ checks.forEach(check =>{
       addOns_selected_wrapper.style.display = "block";
       selected_addOns[checks.indexOf(check)].style.display = "block";
       //console.log(checks.indexOf(check));
+      addOn_items.push(check.dataset.item);
+      console.log(addOn_items);
 
-      console.log(check.dataset.item);
 
     } else{
       totalVal -= (val*theValue);
@@ -395,7 +398,10 @@ checks.forEach(check =>{
       priceCollected.value = updateBigTotal(bigTotal, totalVal, BikeCounter);
 
       addOns_selected_wrapper.style.display = "none";
-      selected_addOns[checks.indexOf(check)].style.display = "none";               
+      selected_addOns[checks.indexOf(check)].style.display = "none";
+      
+      addOn_items.pop(check.dataset.item);
+      console.log(addOn_items);
     }
 
   })
