@@ -392,7 +392,7 @@ checks.forEach(check =>{
       addOn_items.push(check.dataset.item);
       console.log(addOn_items);
 
-      addOns_toSend.innerText = addOn_items;
+      addOns_toSend.innerText = addOn_items.toString;
 
 
     } else{
@@ -408,7 +408,7 @@ checks.forEach(check =>{
       addOn_items.pop(check.dataset.item);
       console.log(addOn_items);
 
-      addOns_toSend.innerText = addOn_items;      
+      addOns_toSend.innerText = addOn_items.toString;      
     }
 
   })
