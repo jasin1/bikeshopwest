@@ -384,6 +384,9 @@ checks.forEach(check =>{
       addOns_selected_wrapper.style.display = "block";
       selected_addOns[checks.indexOf(check)].style.display = "block";
       //console.log(checks.indexOf(check));
+
+      console.log(check.dataset.data-item);
+
     } else{
       totalVal -= (val*theValue);
       console.log("totalVal is  ", totalVal);
