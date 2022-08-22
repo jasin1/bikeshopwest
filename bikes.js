@@ -48,7 +48,7 @@ const dateCollected = document.querySelector(".date-colect-input");
 const priceCollected = document.querySelector(".price-colect-input");
 const timeCollected = document.querySelector(".time-colect-input");
 const DurationCollected = document.querySelector(".duration-input");
-const BikeAmountCollected = document.querySelector(".bike-amount-input");
+//const BikeAmountCollected = document.querySelector(".bike-amount-input");
 //-----------------------------------------------------------------------
 const step2duration = document.querySelector(".step-2-duration");
 const step2Time = document.querySelector(".step-2-time");
@@ -338,11 +338,11 @@ bikeCountPlus.addEventListener("click", ()=>{
     BikeCounter++;
     BikeCounter = (BikeCounter < 10) ? "0" + BikeCounter : BikeCounter;
     bikeCountNum.innerText = BikeCounter;
-    BikeAmountCollected.value = BikeCounter;
+    //BikeAmountCollected.value = BikeCounter;
     bike_selected_amount.value = BikeCounter;
 
     console.log("bike amount is ", bike_selected_amount.value);
-    
+
     step2Bikes.innerText = BikeCounter;
     //bigTotal *= BikeCounter;
     totalPrice.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
@@ -358,7 +358,9 @@ bikeCountMinus.addEventListener("click", ()=>{
     BikeCounter--;
     BikeCounter = (BikeCounter < 10) ? "0" + BikeCounter : BikeCounter;    
     bikeCountNum.innerText = BikeCounter; 
-    BikeAmountCollected.value = BikeCounter;
+    //BikeAmountCollected.value = BikeCounter;
+    bike_selected_amount.value = BikeCounter;
+    
     step2Bikes.innerText = BikeCounter;
     totalPrice.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
     totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
