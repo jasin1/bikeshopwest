@@ -226,6 +226,8 @@ const addOns_selected_wrapper = document.querySelector(".accessoires-wrapper-2")
 
 const addOns_toSend = document.querySelector(".selected-acc");
 
+const bike_selected_name = document.getElementById("selected-bike");
+
 
 //console.log(btn_parent_step2.children[1]);
 
@@ -280,6 +282,7 @@ for (let i =0; i < bookBtns.length; i++){
     selectedDays.selectedIndex = "0";
     newHeading.innerText = bikeItemsData[i].name;
     newHeading2.innerText = bikeItemsData[i].name;
+    bike_selected_name.value = bikeItemsData[i].name;
     bikePrice1.innerText = bikeItemsData[i].price1;
     bikePrice2.innerText = bikeItemsData[i].price2;
     stepTwoImg.src = bikeItemsData[i].step2img;
