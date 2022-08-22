@@ -230,6 +230,8 @@ const bike_selected_name = document.getElementById("selected-bike");
 
 const bike_selected_amount = document.getElementById("bike-amount");
 
+const bike_unit_price = document.getElementById("unit-price");
+
 
 //console.log(btn_parent_step2.children[1]);
 
@@ -285,6 +287,7 @@ for (let i =0; i < bookBtns.length; i++){
     newHeading.innerText = bikeItemsData[i].name;
     newHeading2.innerText = bikeItemsData[i].name;
     bike_selected_name.value = bikeItemsData[i].name;
+    bike_unit_price.value = bikeItemsData[i].price2;
     bikePrice1.innerText = bikeItemsData[i].price1;
     bikePrice2.innerText = bikeItemsData[i].price2;
     stepTwoImg.src = bikeItemsData[i].step2img;
@@ -360,7 +363,7 @@ bikeCountMinus.addEventListener("click", ()=>{
     bikeCountNum.innerText = BikeCounter; 
     //BikeAmountCollected.value = BikeCounter;
     bike_selected_amount.value = BikeCounter;
-    
+
     step2Bikes.innerText = BikeCounter;
     totalPrice.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
     totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
