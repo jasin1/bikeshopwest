@@ -340,6 +340,9 @@ bikeCountPlus.addEventListener("click", ()=>{
     bikeCountNum.innerText = BikeCounter;
     BikeAmountCollected.value = BikeCounter;
     bike_selected_amount.value = BikeCounter;
+
+    console.log("bike amount is ", bike_selected_amount.value);
+    
     step2Bikes.innerText = BikeCounter;
     //bigTotal *= BikeCounter;
     totalPrice.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
