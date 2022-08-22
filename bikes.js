@@ -228,6 +228,8 @@ const addOns_toSend = document.querySelector(".selected-acc");
 
 const bike_selected_name = document.getElementById("selected-bike");
 
+const bike_selected_amount = document.getElementById("bike-amount");
+
 
 //console.log(btn_parent_step2.children[1]);
 
@@ -337,6 +339,7 @@ bikeCountPlus.addEventListener("click", ()=>{
     BikeCounter = (BikeCounter < 10) ? "0" + BikeCounter : BikeCounter;
     bikeCountNum.innerText = BikeCounter;
     BikeAmountCollected.value = BikeCounter;
+    bike_selected_amount.value = BikeCounter;
     step2Bikes.innerText = BikeCounter;
     //bigTotal *= BikeCounter;
     totalPrice.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
