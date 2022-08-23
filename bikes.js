@@ -232,6 +232,8 @@ const bike_selected_amount = document.getElementById("bike-amount");
 
 const bike_unit_price = document.getElementById("unit-price");
 
+const desk_bike_name = document.getElementById("desk-bike-name");
+
 
 //console.log(btn_parent_step2.children[1]);
 
@@ -287,6 +289,7 @@ for (let i =0; i < bookBtns.length; i++){
     newHeading.innerText = bikeItemsData[i].name;
     newHeading2.innerText = bikeItemsData[i].name;
     bike_selected_name.value = bikeItemsData[i].name;
+    desk_bike_name.value = bikeItemsData[i].name;
     bike_unit_price.value = bikeItemsData[i].price2;
     bikePrice1.innerText = bikeItemsData[i].price1;
     bikePrice2.innerText = bikeItemsData[i].price2;
