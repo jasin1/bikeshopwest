@@ -451,7 +451,7 @@ selectedDays.addEventListener('change', function(){
   if(theValue === 1){
     step2duration.innerText = theValue + " day";
     //bigTotal = (theValue * bikeItemsData[selectedBikeNum].price1);
-    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2) + bikeItemsData[selectedBikeNum].dif;
+    bigTotal = ((theValue * bikeItemsData[selectedBikeNum].price2) + bikeItemsData[selectedBikeNum].dif);
     totalPrice.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
     totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
     priceCollected.value = updateBigTotal(bigTotal, totalVal, BikeCounter);
@@ -462,7 +462,7 @@ selectedDays.addEventListener('change', function(){
     console.log("Berekening is nu ",bigTotal); 
   }else{
     step2duration.innerText = theValue + " days";
-    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2) + bikeItemsData[selectedBikeNum].dif;
+    bigTotal = ((theValue * bikeItemsData[selectedBikeNum].price2) + bikeItemsData[selectedBikeNum].dif);
     totalPrice.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
     totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
     priceCollected.value = updateBigTotal(bigTotal, totalVal, BikeCounter);  
