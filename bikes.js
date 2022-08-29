@@ -289,7 +289,9 @@ for (let i =0; i < bookBtns.length; i++){
     newHeading.innerText = bikeItemsData[i].name;
     newHeading2.innerText = bikeItemsData[i].name;
     bike_selected_name.value = bikeItemsData[i].name;
+    //pay at desk--------------------------------------------
     desk_bike_name.value = bikeItemsData[i].name;
+    //-------------------------------------------------------
     bike_unit_price.value = bikeItemsData[i].price2;
     bikePrice1.innerText = bikeItemsData[i].price1;
     bikePrice2.innerText = bikeItemsData[i].price2;
@@ -448,16 +450,23 @@ selectedDays.addEventListener('change', function(){
   DurationCollected.value = theValue;
   if(theValue === 1){
     step2duration.innerText = theValue + " day";
-    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price1);
+    //bigTotal = (theValue * bikeItemsData[selectedBikeNum].price1);
+    bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2) + bikeItemsData[selectedBikeNum].dif;
     totalPrice.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
     totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
-    priceCollected.value = updateBigTotal(bigTotal, totalVal, BikeCounter); 
+    priceCollected.value = updateBigTotal(bigTotal, totalVal, BikeCounter);
+
+    console.log("difference is ", bikeItemsData[selectedBikeNum].dif);
+    console.log("Berekening is nu ",bigTotal); 
   }else{
     step2duration.innerText = theValue + " days";
     bigTotal = (theValue * bikeItemsData[selectedBikeNum].price2) + bikeItemsData[selectedBikeNum].dif;
     totalPrice.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
     totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
-    priceCollected.value = updateBigTotal(bigTotal, totalVal, BikeCounter);    
+    priceCollected.value = updateBigTotal(bigTotal, totalVal, BikeCounter);  
+
+    console.log("difference is ", bikeItemsData[selectedBikeNum].dif);
+    console.log("Berekening is nu ",bigTotal);   
   }
  
 });
