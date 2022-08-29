@@ -456,6 +456,8 @@ selectedDays.addEventListener('change', function(){
     totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
     priceCollected.value = updateBigTotal(bigTotal, totalVal, BikeCounter);
 
+
+    console.log(" bigTotal eerste deel is ",theValue * bikeItemsData[selectedBikeNum].price2);
     console.log("difference is ", bikeItemsData[selectedBikeNum].dif);
     console.log("Berekening is nu ",bigTotal); 
   }else{
@@ -465,6 +467,7 @@ selectedDays.addEventListener('change', function(){
     totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
     priceCollected.value = updateBigTotal(bigTotal, totalVal, BikeCounter);  
 
+    console.log(" bigTotal eerste deel is ",theValue * bikeItemsData[selectedBikeNum].price2);
     console.log("difference is ", bikeItemsData[selectedBikeNum].dif);
     console.log("Berekening is nu ",bigTotal);   
   }
