@@ -78,7 +78,7 @@ let bikeItemsData = [
     price1:13,
     price2:9,
     dif:4,
-    descShort:"Handbrake bike with 7 speed hub and hand-operated hand rakes",
+    descShort:"Handbrake bike with 7 speed hub and hand-oparated hand rakes",
     descLong:"Handbrake bike elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
     step2img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62fe36981365fab92022f3a6_hand_break_proper.jpg",
     step3img:"https://uploads-ssl.webflow.com/62c46b823c4abf96a1029d64/62fe36981365fab92022f3a6_hand_break_proper.jpg",
@@ -456,10 +456,11 @@ selectedDays.addEventListener('change', function(){
     totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
     priceCollected.value = updateBigTotal(bigTotal, totalVal, BikeCounter);
 
-
+    /*
     console.log(" bigTotal eerste deel is ",theValue * bikeItemsData[selectedBikeNum].price2);
     console.log("difference is ", bikeItemsData[selectedBikeNum].dif);
     console.log("Berekening is nu ",bigTotal); 
+    */
   }else{
     step2duration.innerText = theValue + " days";
     bigTotal = ((theValue * bikeItemsData[selectedBikeNum].price2) + bikeItemsData[selectedBikeNum].dif);
@@ -467,9 +468,11 @@ selectedDays.addEventListener('change', function(){
     totalPrice2.innerText = updateBigTotal(bigTotal, totalVal, BikeCounter);
     priceCollected.value = updateBigTotal(bigTotal, totalVal, BikeCounter);  
 
+    /*
     console.log(" bigTotal eerste deel is ",theValue * bikeItemsData[selectedBikeNum].price2);
     console.log("difference is ", bikeItemsData[selectedBikeNum].dif);
-    console.log("Berekening is nu ",bigTotal);   
+    console.log("Berekening is nu ",bigTotal); 
+    */  
   }
  
 });
