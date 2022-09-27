@@ -257,7 +257,7 @@ for (let i = 0; i < bookBtns.length; i++) {
     desk_bike_name.value = bikeItemsData[i].name;
     //-------------------------------------------------------
     bike_unit_price.value = bikeItemsData[i].price2;
-    console.log("bike price is ": bike_unit_price.value);
+    console.log("bike price is " + bike_unit_price.value);
     bikePrice1.innerText = bikeItemsData[i].price1;
     bikePrice2.innerText = bikeItemsData[i].price2;
     stepTwoImg.src = bikeItemsData[i].step2img;
