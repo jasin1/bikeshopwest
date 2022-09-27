@@ -253,7 +253,7 @@ nextBtn.forEach((btn) => {
   btn.addEventListener("click", () => {
     formStepsNum++;
     updateFormSteps();
-    if (btn == nextBtn[0] || btn == nextBtn[1] || btn == nextBtn[2]) {
+    if (btn == nextBtn[0] || btn == nextBtn[1] || btn == nextBtn[2] || btn == nextBtn[3]) {
       fp.clear();
     } else {
       //console.log("not the button");
