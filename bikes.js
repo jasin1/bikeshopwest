@@ -18,7 +18,7 @@ const formSteps = [...document.querySelectorAll(".tab")];
 const bookBtn1 = document.querySelector(".button-book-1");
 const bookBtn2 = document.querySelector(".button-book-2");
 const bookBtn3 = document.querySelector(".button-book-3");
-const bookBtn4 = document.querySelector(".button-book-4");
+const bookBtn4 = document.querySelector(".button-book-new");
 
 const bookBtns = [bookBtn1, bookBtn2, bookBtn3, bookBtn4];
 
