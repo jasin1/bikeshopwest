@@ -137,42 +137,7 @@ let modalContainer = document.getElementById("bike-modal-wrapper");
 let modal = document.getElementById("modal-content");
 let closeBtn = document.getElementById("modal-close-wrapper");
 
-//--------- Modal-----------------
 
-// for (let i =0; i < bikeBtns.length; i++){
-
-//     bikeBtns[i].addEventListener('click', function(){
-//     modalContainer.style.display = 'block';
-//     document.body.style.overflow = 'hidden';
-//     bikeHeading.innerHTML = bikeItemsData[i].name;
-//     modalTxt.innerHTML = bikeItemsData[i].descLong;
-//     modalImg.src = bikeItemsData[i].step2img;
-//     //--------- steps Update--------
-//     newHeading.innerText = bikeItemsData[i].name;
-//     newHeading2.innerText = bikeItemsData[i].name;
-//     bikePrice1.innerText = bikeItemsData[i].price1;
-//     bikePrice2.innerText = bikeItemsData[i].price2;
-//     stepTwoImg.src = bikeItemsData[i].step2img;
-//     stepThreeImg.src = bikeItemsData[i].step3img;
-
-//   })
-// };
-
-// modalBookBtn.addEventListener('click', function(){
-//   modalContainer.style.display = 'none';
-//   document.body.style.overflow = 'auto';
-// });
-
-// closeBtn.addEventListener('click', function(){
-//  modalContainer.style.display = 'none';
-//  document.body.style.overflow = 'auto';
-// });
-
-// window.addEventListener('click', function(e){
-//   if(e.target === modalContainer){
-//     //console.log("modal clicked");
-//   }
-// });
 
 //------------ Tabs -------------------------------------
 
@@ -199,8 +164,6 @@ const check3 = document.getElementById("check3");
 
 const checks = [check1, check2, check3];
 
-//const checksValues = [check1.value, check2.value, check3.value];
-//console.log("the values van checks in array ", checksValues);
 
 const selectedCheck1 = document.querySelector(".addon-selected-helmet");
 const selectedCheck2 = document.querySelector(".addon-selected-mount");
@@ -242,10 +205,6 @@ const bike_selected_amount = document.getElementById("bike-amount");
 const bike_unit_price = document.getElementById("unit-price");
 
 const desk_bike_name = document.getElementById("desk-bike-name");
-
-//console.log(btn_parent_step2.children[1]);
-
-//console.log(selected_addOns);
 
 //----------------------------------------------------------------------//
 
