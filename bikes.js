@@ -18,8 +18,9 @@ const formSteps = [...document.querySelectorAll(".tab")];
 const bookBtn1 = document.querySelector(".button-book-1");
 const bookBtn2 = document.querySelector(".button-book-2");
 const bookBtn3 = document.querySelector(".button-book-3");
+const bookBtn5 = document.querySelector(".button-book-5");
 
-const bookBtns = [bookBtn1, bookBtn2, bookBtn3];
+const bookBtns = [bookBtn1, bookBtn2, bookBtn3, bookBtn5];
 
 const modalTxt = document.querySelector(".modal-txt-wrapper");
 const modalImg = document.querySelector(".modal-main-img");
