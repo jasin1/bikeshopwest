@@ -155,6 +155,7 @@ let sum = 0;
 let totalVal = 0;
 let totalCheckedVal = 0;
 let BikeCounter = 1;
+totalPrice.value = 0;
 
 //------------------ add-ons --------------------------------------------//
 
