@@ -116,9 +116,9 @@ let bikeItemsData = [
   {
     id: "bike04",
     name: "Touring bike",
-    price1: 10,
+    price1: 18,
     price2: 12,
-    dif: 7,
+    dif: 6,
     descShort:
       "In addition we have special bicycles for rent such as parent- child tandems, regular tandems and more Bikes....",
     descLong:
@@ -155,7 +155,7 @@ let sum = 0;
 let totalVal = 0;
 let totalCheckedVal = 0;
 let BikeCounter = 1;
-totalPrice.value = 0;
+
 
 //------------------ add-ons --------------------------------------------//
 
