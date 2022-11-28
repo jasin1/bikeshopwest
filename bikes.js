@@ -68,7 +68,7 @@ let numBike = Number;
 let bikeItemsData = [
   {
     id: "bike01",
-    name: "Handbrake Bike",
+    name: "City Bike",
     price1: 13,
     price2: 9,
     dif: 4,
@@ -115,7 +115,7 @@ let bikeItemsData = [
   },
   {
     id: "bike04",
-    name: "Touring bike",
+    name: "Mother's bike",
     price1: 18,
     price2: 12,
     dif: 6,
