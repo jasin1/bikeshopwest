@@ -68,7 +68,7 @@ let numBike = Number;
 let bikeItemsData = [
   {
     id: "bike01",
-    name: "City Bike",
+    name: "Touring Bike",
     price1: 13,
     price2: 9,
     dif: 4,
@@ -497,5 +497,9 @@ const tp = flatpickr(".input-time", {
 /*
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="https://jasin1.github.io/bikeshopwest/bikes.js"></script>
+
+https://jasin1.github.io/bikeshopwest/bikes.js
+
+https://cdn.jsdelivr.net/gh/jasin1/bikeshopwest@d6956590c997ee18222b5f3cf94e4175f946bf4c/bikes.js
 
 */
