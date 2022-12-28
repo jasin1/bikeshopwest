@@ -7,7 +7,6 @@ flatpickr(".input-time", {
 
 
 flatpickr(".input-date", {
-  defaultDate: toDay,
   minDate: "today",
   altInput: true,
   altFormat: "M j, Y",
