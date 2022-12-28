@@ -500,6 +500,6 @@ const tp = flatpickr(".input-time", {
 
 https://jasin1.github.io/bikeshopwest/bikes.js
 
-https://cdn.jsdelivr.net/gh/jasin1/bikeshopwest@d6956590c997ee18222b5f3cf94e4175f946bf4c/bikes.js
+https://cdn.jsdelivr.net/gh/jasin1/bikeshopwest@6f584ffc5bb0815273c8e5a363de2b6fe2bff685/bikes.js
 
 */
