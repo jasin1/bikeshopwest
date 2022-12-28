@@ -1,6 +1,10 @@
 const inputDate = document.querySelector('#input-date');
 const inputTime = document.querySelector('#input-time');
 
+if (inputTime === null) {
+  console.error('Error: inputTime element not found');
+}
+
 const openingTimes = {
   'Monday': {
     minDate: '14:00',
@@ -36,7 +40,8 @@ inputDate.addEventListener('change', (event) => {
 
 // initialize Flatpickr for both input fields
 flatpickr(inputDate, {
-  
+  altFormat: "M j, Y",
+  dateFormat: "Y-m-d",
 });
 
 flatpickr(inputTime, {
