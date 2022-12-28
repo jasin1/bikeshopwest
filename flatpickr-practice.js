@@ -40,7 +40,8 @@ document.getElementById('input-date').addEventListener('change', function() {
     // Check if the shop is open on the selected day
     if (open && close) {
       // Create Date objects from the opening and closing times
-      const minTime = new Date(Date.parse(open));
+      const minTime = new
+      Date(Date.parse(open));
       const maxTime = new Date(Date.parse(close));
       // Update the minTime and maxTime options of the time input field
       flatpickr('#input-time', {
@@ -49,4 +50,13 @@ document.getElementById('input-date').addEventListener('change', function() {
       });
     }
   }
+  // Set the minDate and maxDate options of the date input field to exclude Sundays
+  flatpickr('#input-date', {
+    minDate: "Monday",
+    maxDate: "Saturday"
+  });
 });
+
+
+
+
