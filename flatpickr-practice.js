@@ -12,6 +12,14 @@ const openingTimes = {
 
 flatpickr('.input-date', {
   // other configuration options
+  minDate: "today",
+  maxDate: "Saturday",
+  altInput: true,
+  altFormat: "M j, Y",
+  dateFormat: "Y-m-d",
+  locale: {
+    firstDayOfWeek: 1,
+  }
 });
 
 flatpickr('.input-time', {
