@@ -30,28 +30,28 @@ document.querySelector('.input-date').addEventListener('change', function(event)
   // Set the minTime and maxTime options based on the selected day
   switch (day) {
     case 'Monday':
-      instance.setAttribute('minTime', '14:00');
-      instance.setAttribute('maxTime', '17:45');
-      instance.setAttribute('defaultHour', 14);
-      instance.setAttribute('defaultMinute', 0);
+      instance.set('minTime', '14:00');
+      instance.set('maxTime', '17:45');
+      instance.set('defaultHour', 14);
+      instance.set('defaultMinute', 0);
       break;
     case 'Friday':
-      instance.setAttribute('minTime', '15:00');
-      instance.setAttribute('maxTime', '17:45');
-      instance.setAttribute('defaultHour', 15);
-      instance.setAttribute('defaultMinute', 0);
+      instance.set('minTime', '15:00');
+      instance.set('maxTime', '17:45');
+      instance.set('defaultHour', 15);
+      instance.set('defaultMinute', 0);
       break;
     case 'Saturday':
-      instance.setAttribute('minTime', '10:00');
-      instance.setAttribute('maxTime', '16:45');
-      instance.setAttribute('defaultHour', 10);
-      instance.setAttribute('defaultMinute', 0);
+      instance.set('minTime', '10:00');
+      instance.set('maxTime', '16:45');
+      instance.set('defaultHour', 10);
+      instance.set('defaultMinute', 0);
       break;
     default:
-      instance.setAttribute('minTime', '10:00');
-      instance.setAttribute('maxTime', '17:45');
-      instance.setAttribute('defaultHour', 10);
-      timeInput.setAttribute('defaultMinute', 0);
+      instance.set('minTime', '10:00');
+      instance.set('maxTime', '17:45');
+      instance.set('defaultHour', 10);
+      timeInput.set('defaultMinute', 0);
       break;
   }
 });
