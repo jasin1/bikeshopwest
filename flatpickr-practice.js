@@ -1,53 +1,49 @@
 
-const inputDate = document.querySelector('#input-date');
-const inputTime = document.querySelector('#input-time');
+  // Create a Flatpickr instance for the #input-date element
+  var inputDate = flatpickr('#input-date', {
+    // Set the onChange option to a function that updates the #input-time element
+    onChange: function(selectedDates, dateStr, instance) {
+      // Get the value of the selected day
+      var selectedDay = dateStr.split(' ')[0];
 
-if (inputTime === null) {
-  console.error('Error: inputTime element not found');
-}
+      // Update the enableTime and time_24hr options of the #input-time element's Flatpickr instance
+      switch(selectedDay) {
+        case 'Monday':
+          inputTime.set('enableTime', true);
+          inputTime.set('time_24hr', true);
+          inputTime.set('minTime', '14:00');
+          inputTime.set('maxTime', '17:45');
+          break;
+        case 'Friday':
+          inputTime.set('enableTime', true);
+          inputTime.set('time_24hr', true);
+          inputTime.set('minTime', '15:00');
+          inputTime.set('maxTime', '17:45');
+          break;
+        case 'Saturday':
+          inputTime.set('enableTime', true);
+          inputTime.set('time_24hr', true);
+          inputTime.set('minTime', '10:00');
+          inputTime.set('maxTime', '16:45');
+          break;
+        case 'Sunday':
+          inputTime.set('enableTime', false);
+          break;
+        default:
+          inputTime.set('enableTime', true);
+          inputTime.set('time_24hr', true);
+          inputTime.set('minTime', '10:00');
+          inputTime.set('maxTime', '17:45');
+      }
+    }
+  });
 
-const openingTimes = {
-  'Monday': {
-    minDate: '14:00',
-    maxDate: '17:45'
-  },
-  'Friday': {
-    minDate: '15:00',
-    maxDate: '17:45'
-  },
-  'Saturday': {
-    minDate: '10:00',
-    maxDate: '16:45'
-  },
-  'default': {
-    minDate: '10:00',
-    maxDate: '17:45'
-  }
-};
+  // Create a Flatpickr instance for the #input-time element
+  var inputTime = flatpickr('#input-time', {
+    enableTime: true,
+    time_24hr: true,
+    minTime: '10:00',
+    maxTime: '17:45'
+  });
 
-const setOpeningTimes = (day) => {
-  let minDate = openingTimes[day]?.minDate || openingTimes['default'].minDate;
-  let maxDate = openingTimes[day]?.maxDate || openingTimes['default'].maxDate;
-
-  // update the minDate and maxDate properties of the inputTime Flatpickr instance
-  inputTime.flatpickr.set('minDate', minDate);
-  inputTime.flatpickr.set('maxDate', maxDate);
-};
-
-inputDate.addEventListener('change', (event) => {
-  const day = event.target.value;
-  setOpeningTimes(day);
-});
-
-// initialize Flatpickr for both input fields
-flatpickr(inputDate, {
-  altFormat: "M j, Y",
-  dateFormat: "Y-m-d",
-});
-
-flatpickr(inputTime, {
-  enableTime: true,
-  noCalendar: true,
-  dateFormat: "H:i",
-  time_24h: true,
-});
+  
