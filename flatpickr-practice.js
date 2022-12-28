@@ -20,7 +20,7 @@ const openingTimes = {
   // other days of the week
 }
 
-document.getElementById('input-date').addEventListener('change', function() {
+document.querySelector('.input-date').addEventListener('change', function() {
   // Get the selected date
   const selectedDate = this.value;
   // Check if the openingTimes object has a key for the selected date
@@ -31,7 +31,7 @@ document.getElementById('input-date').addEventListener('change', function() {
     const minTime = new Date(Date.parse(open));
     const maxTime = new Date(Date.parse(close));
     // Update the minTime and maxTime options of the time input field
-    flatpickr('#input-time', {
+    flatpickr('.input-time', {
       minTime: minTime,
       maxTime: maxTime
     });
