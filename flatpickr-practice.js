@@ -1,43 +1,20 @@
-let MydayPickr = document.querySelector(".input-date");
-let MytimePickr = document.querySelector(".input-time");
-
-flatpickr(MydayPickr, {
+flatpickr(".input-date", {
+  // other options here
   onChange: function(selectedDates, dateStr, instance) {
-    // Set the data-day attribute to the name of the day
-    instance.input.setAttribute('data-day', instance.formatDate(selectedDates[0], 'dddd'));
+    // get the day of the week for the selected date
+    let dayOfWeek = instance.formatDate(selectedDates[0], "N");
+    let startTime = "10:00"; // default start time
 
-    // Get the selected day from the data-day attribute
-    let day = instance.input.getAttribute('data-day');
-
-    // Set the minTime and maxTime options based on the selected day
-    let timeOptions = {
-      enableTime: true,
-      noCalendar: true,
-    };
-    switch (day) {
-      case 'Monday':
-        timeOptions.minTime = '14:00';
-        timeOptions.maxTime = '17:45';
-        timeOptions.defaultDate = '14:00';
-        break;
-      case 'Friday':
-        timeOptions.minTime = '15:00';
-        timeOptions.maxTime = '17:45';
-        timeOptions.defaultDate = '15:00';
-        break;
-      case 'Saturday':
-        timeOptions.minTime = '10:00';
-        timeOptions.maxTime = '16:45';
-        timeOptions.defaultDate = '10:00';
-        break;
-      default:
-        timeOptions.minTime = '10:00';
-        timeOptions.maxTime = '17:45';
-        timeOptions.defaultDate = '10:00';
-        break;
+    // update start time based on the day of the week
+    if (dayOfWeek == 1) { // Monday
+      startTime = "14:00";
+    } else if (dayOfWeek == 5) { // Friday
+      startTime = "15:00";
+    } else if (dayOfWeek == 6) { // Saturday
+      startTime = "10:00";
     }
 
-    // Create a new Flatpickr instance for the time picker
-    flatpickr(MytimePickr , timeOptions);
+    // update the start time in the time input field
+    document.querySelector(".input-time").value = startTime;
   }
 });
