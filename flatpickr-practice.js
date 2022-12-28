@@ -1,3 +1,15 @@
+ // Define the opening times for each day of the week
+ const openingTimes = {
+  "Monday": { "open": "14:00", "close": "17:45" },
+  "Tuesday": { "open": "10:00", "close": "17:45" },
+  "Wednesday": { "open": "10:00", "close": "17:45" },  
+  "Thursday": { "open": "10:00", "close": "17:45" }, 
+  "Friday": { "open": "15:00", "close": "17:45" },
+  "Saturday": { "open": "10:00", "close": "16:45" },
+  "Sunday": { "open": null, "close": null },
+  // other days of the week
+}
+
 // Initialize the Pikaday date picker
 const datePicker = new Pikaday({
   field: document.getElementById('input-date'),
@@ -28,7 +40,3 @@ datePicker.on('change', function() {
     }
   }
 });
-
-
-
-
