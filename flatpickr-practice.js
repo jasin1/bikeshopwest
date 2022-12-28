@@ -1,8 +1,8 @@
 console.log("faltpickr practice");
 
 
-let MydayPickr = document.querySelector(".input-time");
-let MytimePickr = document.querySelector(".input-date");
+let MydayPickr = document.querySelector(".input-date");
+let MytimePickr = document.querySelector(".input-time");
 
 flatpickr(MydayPickr, {
   // your options here
