@@ -1,31 +1,31 @@
 console.log("faltpickr practice");
 
 
-flatpickr('.input-date', {
+const MydayPickr = document.querySelector(".input-time");
+const MytimePickr = document.querySelector(".input-date");
+
+flatpickr(MydayPickr, {
   // your options here
 });
 
-flatpickr('.input-time', {
+flatpickr(MytimePickr , {
   enableTime: true,
   noCalendar: true,
   // other options here
 });
 
-document.querySelector('.input-time').addEventListener('change', function(event) {
+document.querySelector(MytimePickr).addEventListener('change', function(event) {
   console.log("time change");
 
 });
 
-document.querySelector('.input-date').addEventListener('change', function(event) {
+document.querySelector(MydayPickr).addEventListener('change', function(event) {
   console.log("day change");
   // Get the selected day from the event
   let day = event.target.value;
 
-  // Get the time input element
-  let timeInput = document.querySelector('.input-time');
-
   // Get the Flatpickr instance for the time input element
-  let instance = flatpickr.getInstance(timeInput);
+  let instance = flatpickr.getInstance(MytimePickr);
 
   // Set the minTime and maxTime options based on the selected day
   switch (day) {
