@@ -11,7 +11,7 @@ const openingTimes = {
 
 
 
-flatpickr('.input-date', {
+flatpickr('#input-date', {
   dateFormat: "Y-m-d",
   locale: {
     firstDayOfWeek: 1,
@@ -19,7 +19,7 @@ flatpickr('.input-date', {
 });
 
 
-flatpickr('.input-time', {
+flatpickr('#input-time', {
   enableTime: true,
   noCalendar: true,
   dateFormat: "H:i",
