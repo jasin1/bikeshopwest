@@ -1,33 +1,51 @@
-
-flatpickr(".input-time", {
-  enableTime: true,
-  noCalendar: true,
-  // other options here
-});
+var timePicker = flatpickr('.input-time');
 
 
-flatpickr(".input-date", {
-  minDate: "today",
-  altInput: true,
-  altFormat: "M j, Y",
-  dateFormat: "Y-m-d",
-  // other options here
+var datePicker = flatpickr('.input-date', {
   onChange: function(selectedDates, dateStr, instance) {
-    console.log("date picked");
-    // get the day of the week for the selected date
-    let dayOfWeek = instance.formatDate(selectedDates[0], "N");
-    let startTime = "10:00"; // default start time
+    // Get the selected date
+    var selectedDate = new Date(dateStr);
 
-    // update start time based on the day of the week
-    if (dayOfWeek == 1) { // Monday
-      startTime = "14:00";
-    } else if (dayOfWeek == 5) { // Friday
-      startTime = "15:00";
-    } else if (dayOfWeek == 6) { // Saturday
-      startTime = "10:00";
+    // Set the time picker options based on the selected date
+    if (selectedDate.getDay() == 1) { // Monday
+      timePicker.set({
+        enable: [
+          {
+            from: "14:00",
+            to: "17:45",
+            daysOfWeek: [1]
+          }
+        ]
+      });
+    } else if (selectedDate.getDay() == 5) { // Friday
+      timePicker.set({
+        enable: [
+          {
+            from: "15:00",
+            to: "17:45",
+            daysOfWeek: [5]
+          }
+        ]
+      });
+    } else if (selectedDate.getDay() == 6) { // Saturday
+      timePicker.set({
+        enable: [
+          {
+            from: "10:00",
+            to: "17:00",
+            daysOfWeek: [6]
+          }
+        ]
+      });
+    } else { // Other days
+      timePicker.set({
+        enable: [
+          {
+            from: "10:00",
+            to: "17:45"
+          }
+        ]
+      });
     }
-
-    // update the start time in the time input field
-    document.querySelector(".input-time").value = startTime;
   }
 });
