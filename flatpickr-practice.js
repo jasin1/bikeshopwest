@@ -8,9 +8,6 @@ flatpickr('.input-date', {
 flatpickr('.input-time', {
   enableTime: true,
   noCalendar: true,
-  dateFormat: "H:i",
-  time_24h: true,
-  disableMobile: "true",
   // other options here
 });
 
