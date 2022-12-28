@@ -1,6 +1,6 @@
 console.log("faltpickr practice");
 
-flatpickr('.input-day', {
+const fp = flatpickr('.input-day', {
   onChange: function(selectedDates, dateStr, instance) {
     // Get the selected day of the week (0-6, with 0 being Sunday)
     var dayOfWeek = instance.selectedDates[0].getDay();
