@@ -3,7 +3,6 @@ console.log("faltpickr practice");
 
 const fp = flatpickr('.input-date', {
   // your options here
-  defaultDate: toDay,
   minDate: "today",
   altInput: true,
   altFormat: "M j, Y",
