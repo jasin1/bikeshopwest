@@ -1,9 +1,7 @@
 console.log("faltpickr practice");
 
-
 let MydayPickr = document.querySelector(".input-date");
 let MytimePickr = document.querySelector(".input-time");
-
 
 flatpickr(MydayPickr, {
   // your options here
@@ -15,44 +13,44 @@ flatpickr(MytimePickr , {
   // other options here
 });
 
-MytimePickr.addEventListener('change', function(event) {
-  console.log("time change");
-
-});
-
-MydayPickr.addEventListener('change', function(event) {
+MydayPickr.addEventListener('onChange', function(selectedDates, dateStr, instance) {
   console.log("day change");
-  // Get the selected day from the event
-  let day = event.target.value;
+  // Get the selected day from the instance
+  let day = instance.input.getAttribute('data-day');
+
+  // Get the time input element
+  let timeInput = document.querySelector('.input-time');
 
   // Get the Flatpickr instance for the time input element
-  let instance = flatpickr.getInstance(MytimePickr);
+  let timeInstance = flatpickr.getInstance(timeInput);
 
   // Set the minTime and maxTime options based on the selected day
   switch (day) {
     case 'Monday':
-      instance.set('minTime', '14:00');
-      instance.set('maxTime', '17:45');
-      instance.set('defaultHour', 14);
-      instance.set('defaultMinute', 0);
+      timeInstance.set('minTime', '14:00');
+      timeInstance.set('maxTime', '17:45');
+      timeInstance.set('defaultHour', 14);
+      timeInstance.set('defaultMinute', 0);
       break;
     case 'Friday':
-      instance.set('minTime', '15:00');
-      instance.set('maxTime', '17:45');
-      instance.set('defaultHour', 15);
-      instance.set('defaultMinute', 0);
+      timeInstance.set('minTime', '15:00');
+      timeInstance.set('maxTime', '17:45');
+      timeInstance.set('defaultHour', 15);
+      timeInstance.set('defaultMinute', 0);
       break;
     case 'Saturday':
-      instance.set('minTime', '10:00');
-      instance.set('maxTime', '16:45');
-      instance.set('defaultHour', 10);
-      instance.set('defaultMinute', 0);
+      timeInstance.set('minTime', '10:00');
+      timeInstance.set('maxTime', '16:45');
+      timeInstance.set('defaultHour', 10);
+      timeInstance.set('defaultMinute', 0);
       break;
     default:
-      instance.set('minTime', '10:00');
-      instance.set('maxTime', '17:45');
-      instance.set('defaultHour', 10);
-      timeInput.set('defaultMinute', 0);
+      timeInstance.set('minTime', '10:00');
+      timeInstance.set('maxTime', '17:45');
+      timeInstance.set('defaultHour', 10);
+      timeInstance.set('defaultMinute', 0);
       break;
   }
 });
+
+
