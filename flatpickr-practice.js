@@ -11,7 +11,7 @@ const openingTimes = {
 
 
 
-flatpickr('#input-date', {
+flatpickr('.input-date', {
   // other configuration options
   altInput: true,
   altFormat: "M j, Y",
@@ -31,7 +31,11 @@ flatpickr('.input-time', {
 
 document.getElementById('input-date').addEventListener('change', function() {
   // Get the selected date
-  const selectedDate = this.value;
+  let selectedDate = this.value;
+  // Parse the selected date into a Date object
+  selectedDate = flatpickr.parseDate(selectedDate, flatpickr.altFormat);
+  // Format the Date object into the dateFormat format
+  selectedDate = flatpickr.formatDate(selectedDate, flatpickr.dateFormat);
   // Check if the openingTimes object has a key for the selected date
   if (openingTimes.hasOwnProperty(selectedDate)) {
     // Get the opening and closing times for the selected day
@@ -39,8 +43,7 @@ document.getElementById('input-date').addEventListener('change', function() {
     // Check if the shop is open on the selected day
     if (open && close) {
       // Create Date objects from the opening and closing times
-      const minTime = new
-      Date(Date.parse(open));
+      const minTime = new Date(Date.parse(open));
       const maxTime = new Date(Date.parse(close));
       // Update the minTime and maxTime options of the time input field
       flatpickr('#input-time', {
