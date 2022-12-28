@@ -1,34 +1,48 @@
 console.log("faltpickr practice");
 
+
 const fp = flatpickr('.input-date', {
-  onChange: function(selectedDates, dateStr, instance) {
-    // Get the selected day of the week (0-6, with 0 being Sunday)
-    var dayOfWeek = instance.selectedDates[0].getDay();
+  // your options here
+  defaultDate: toDay,
+  minDate: "today",
+  altInput: true,
+  altFormat: "M j, Y",
+  dateFormat: "Y-m-d",
+});
 
-    // Set the min and max time options based on the selected day
-    var minTime, maxTime;
-    if (dayOfWeek == 1) {  // Monday
-      minTime = "14:00";
-      maxTime = "17:45";
-    } else if (dayOfWeek == 5) {  // Friday
-      minTime = "15:00";
-      maxTime = "17:45";
-    } else if (dayOfWeek == 6) {  // Saturday
-      minTime = "10:00";
-      maxTime = "16:45";
-    } else {  // Other days
-      minTime = "10:00";
-      maxTime = "17:45";
-    }
+const tp = flatpickr('.input-time', {
+  enableTime: true,
+  noCalendar: true,
+  dateFormat: "H:i",
+  time_24h: true,
+  disableMobile: "true",
+  // other options here
+});
 
-    // Update the input-time field with the new min and max times
-    flatpickr('.input-time', {
-      enableTime: true,
-      noCalendar: true,
-      dateFormat: "H:i",
-      time_24h: true,
-      minTime: minTime,
-      maxTime: maxTime
-    });
+document.querySelector('.input-date').addEventListener('change', function(event) {
+  // Get the selected day from the event
+  let day = event.target.value;
+
+  // Get the time input element
+  let timeInput = document.querySelector('.input-time');
+
+  // Set the minTime and maxTime options based on the selected day
+  switch (day) {
+    case 'Monday':
+      timeInput.setAttribute('minTime', '14:00');
+      timeInput.setAttribute('maxTime', '17:45');
+      break;
+    case 'Friday':
+      timeInput.setAttribute('minTime', '15:00');
+      timeInput.setAttribute('maxTime', '17:45');
+      break;
+    case 'Saturday':
+      timeInput.setAttribute('minTime', '10:00');
+      timeInput.setAttribute('maxTime', '17:00');
+      break;
+    default:
+      timeInput.setAttribute('minTime', '10:00');
+      timeInput.setAttribute('maxTime', '17:45');
+      break;
   }
 });
