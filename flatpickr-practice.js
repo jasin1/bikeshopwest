@@ -1,51 +1,33 @@
-var timePicker = flatpickr('.input-time');
+flatpickr('.input-date', {
+  // other configuration options
+});
+
+flatpickr('.input-time', {
+  enableTime: true,
+  noCalendar: true,
+  dateFormat: "H:i",
+  // other configuration options
+});
 
 
-var datePicker = flatpickr('.input-date', {
-  onChange: function(selectedDates, dateStr, instance) {
-    // Get the selected date
-    var selectedDate = new Date(dateStr);
+const openingTimes = {
+  "Monday": { "open": "14:00", "close": "17:45" },
+  "Tuesday": { "open": "10:00", "close": "17:45" },
+  "Wednesday": { "open": "10:00", "close": "17:45" },  
+  "Thursday": { "open": "10:00", "close": "17:45" }, 
+  "Friday": { "open": "15:00", "close": "17:45" },
+  "Saturday": { "open": "10:00", "close": "16:45" },
+  // other days of the week
+}
 
-    // Set the time picker options based on the selected date
-    if (selectedDate.getDay() == 1) { // Monday
-      timePicker.set({
-        enable: [
-          {
-            from: "14:00",
-            to: "17:45",
-            daysOfWeek: [1]
-          }
-        ]
-      });
-    } else if (selectedDate.getDay() == 5) { // Friday
-      timePicker.set({
-        enable: [
-          {
-            from: "15:00",
-            to: "17:45",
-            daysOfWeek: [5]
-          }
-        ]
-      });
-    } else if (selectedDate.getDay() == 6) { // Saturday
-      timePicker.set({
-        enable: [
-          {
-            from: "10:00",
-            to: "17:00",
-            daysOfWeek: [6]
-          }
-        ]
-      });
-    } else { // Other days
-      timePicker.set({
-        enable: [
-          {
-            from: "10:00",
-            to: "17:45"
-          }
-        ]
-      });
-    }
-  }
+document.getElementById('input-date').addEventListener('change', function() {
+  // Get the selected date
+  const selectedDate = this.value;
+  // Get the opening and closing times for the selected day
+  const { open, close } = openingTimes[selectedDate];
+  // Update the minTime and maxTime options of the time input field
+  flatpickr('#input-time', {
+    minTime: open,
+    maxTime: close
+  });
 });
