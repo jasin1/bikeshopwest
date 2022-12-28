@@ -25,9 +25,13 @@ document.getElementById('input-date').addEventListener('change', function() {
   const selectedDate = this.value;
   // Get the opening and closing times for the selected day
   const { open, close } = openingTimes[selectedDate];
+
+  const minTime = new Date(Date.parse(open));
+  const maxTime = new Date(Date.parse(close));
+
   // Update the minTime and maxTime options of the time input field
   flatpickr('#input-time', {
-    minTime: open,
-    maxTime: close
+    minTime: minTime,
+    maxTime: maxTime
   });
 });
