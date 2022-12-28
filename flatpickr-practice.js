@@ -12,8 +12,12 @@ const openingTimes = {
 
 
 flatpickr('.input-date', {
-  // other configuration options
+  dateFormat: "Y-m-d",
+  locale: {
+    firstDayOfWeek: 1,
+  }
 });
+
 
 flatpickr('.input-time', {
   enableTime: true,
@@ -25,11 +29,7 @@ flatpickr('.input-time', {
 
 document.getElementById('input-date').addEventListener('change', function() {
   // Get the selected date
-  let selectedDate = this.value;
-  // Parse the selected date into a Date object
-  selectedDate = flatpickr.parseDate(selectedDate, flatpickr.altFormat);
-  // Format the Date object into the dateFormat format
-  selectedDate = flatpickr.formatDate(selectedDate, flatpickr.dateFormat);
+  const selectedDate = this.value;
   // Check if the openingTimes object has a key for the selected date
   if (openingTimes.hasOwnProperty(selectedDate)) {
     // Get the opening and closing times for the selected day
@@ -46,20 +46,6 @@ document.getElementById('input-date').addEventListener('change', function() {
       });
     }
   }
-
-  // Create a Date object for Monday
-  const minDate = new Date();
-  minDate.setDate(minDate.getDate() - minDate.getDay() + 1);
-
-  // Create a Date object for Saturday
-  const maxDate = new Date();
-  maxDate.setDate(maxDate.getDate() - maxDate.getDay() + 6);
-
-  // Set the minDate and maxDate options of the date input field to exclude Sundays
-  flatpickr('#input-date', {
-    minDate: minDate,
-    maxDate: maxDate,
-  });
 });
 
 
