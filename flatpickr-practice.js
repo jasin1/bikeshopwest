@@ -24,18 +24,26 @@ document.querySelector('.input-date').addEventListener('change', function(event)
     case 'Monday':
       timeInput.setAttribute('minTime', '14:00');
       timeInput.setAttribute('maxTime', '17:45');
+      timeInput.setAttribute('defaultHour', 14);
+      timeInput.setAttribute('defaultMinute', 0);
       break;
     case 'Friday':
       timeInput.setAttribute('minTime', '15:00');
       timeInput.setAttribute('maxTime', '17:45');
+      timeInput.setAttribute('defaultHour', 15);
+      timeInput.setAttribute('defaultMinute', 0);
       break;
     case 'Saturday':
       timeInput.setAttribute('minTime', '10:00');
       timeInput.setAttribute('maxTime', '16:45');
+      timeInput.setAttribute('defaultHour', 10);
+      timeInput.setAttribute('defaultMinute', 0);
       break;
     default:
       timeInput.setAttribute('minTime', '10:00');
       timeInput.setAttribute('maxTime', '17:45');
+      timeInput.setAttribute('defaultHour', 10);
+      timeInput.setAttribute('defaultMinute', 0);
       break;
   }
 });
