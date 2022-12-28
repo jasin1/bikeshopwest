@@ -1,3 +1,5 @@
+import flatpickr from 'flatpickr';
+
 const inputDate = document.querySelector('#input-date');
 const inputTime = document.querySelector('#input-time');
 
