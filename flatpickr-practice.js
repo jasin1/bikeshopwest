@@ -10,10 +10,10 @@ const openingTimes = {
 }
 
 
-flatpickr('.input-date', {
+
+flatpickr('//#region input-date', {
   // other configuration options
-  minDate: "today",
-  maxDate: "Saturday",
+
   altInput: true,
   altFormat: "M j, Y",
   dateFormat: "Y-m-d",
@@ -50,10 +50,19 @@ document.getElementById('input-date').addEventListener('change', function() {
       });
     }
   }
+
+  // Create a Date object for Monday
+  const minDate = new Date();
+  minDate.setDate(minDate.getDate() - minDate.getDay() + 1);
+
+  // Create a Date object for Saturday
+  const maxDate = new Date();
+  maxDate.setDate(maxDate.getDate() - maxDate.getDay() + 6);
+
   // Set the minDate and maxDate options of the date input field to exclude Sundays
   flatpickr('#input-date', {
-    minDate: "Monday",
-    maxDate: "Saturday"
+    minDate: minDate,
+    maxDate: maxDate,
   });
 });
 
