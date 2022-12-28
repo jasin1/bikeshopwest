@@ -1,5 +1,13 @@
 console.log("flatpickr practice");
 
+//------------- Collecting inputs to send with form---------------------
+const selectedDays = document.getElementById("form-select-input");
+const dateCollected = document.querySelector(".date-colect-input");
+const priceCollected = document.querySelector(".price-colect-input");
+const timeCollected = document.querySelector(".time-colect-input");
+const DurationCollected = document.querySelector(".duration-input");
+
+
 //---------------- FlatPickr---------------------------------------
 
 let newDatum = "";
