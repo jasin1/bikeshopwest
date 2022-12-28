@@ -1,7 +1,7 @@
 console.log("faltpickr practice");
 
 
-const fp = flatpickr('.input-date', {
+flatpickr('.input-date', {
   // your options here
   minDate: "today",
   altInput: true,
@@ -9,7 +9,7 @@ const fp = flatpickr('.input-date', {
   dateFormat: "Y-m-d",
 });
 
-const tp = flatpickr('.input-time', {
+flatpickr('.input-time', {
   enableTime: true,
   noCalendar: true,
   dateFormat: "H:i",
