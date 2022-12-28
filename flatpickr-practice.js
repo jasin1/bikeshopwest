@@ -1,80 +1,40 @@
-flatpickr("#input-date", {
-  onChange: function(selectedDates, dateStr, instance) {
-    // this function will be called every time the user selects a new date
-    updateTimeField(dateStr);  // call the updateTimeField function with the selected date
+const inputDate = document.querySelector('#input-date');
+const inputTime = document.querySelector('#input-time');
+
+inputDate.addEventListener('change', (event) => {
+  const selectedDate = event.target.value;
+  const dayOfWeek = new Date(selectedDate).getDay();
+
+  let openingTime;
+  let closingTime;
+
+  switch (dayOfWeek) {
+    case 1: // Monday
+      openingTime = '14:00';
+      closingTime = '17:45';
+      break;
+    case 5: // Friday
+      openingTime = '15:00';
+      closingTime = '17:45';
+      break;
+    case 6: // Saturday
+      openingTime = '10:00';
+      closingTime = '16:45';
+      break;
+    case 0: // Sunday
+      // disable the inputTime element and exit the function
+      inputTime.setAttribute('disabled', 'disabled');
+      return;
+    default: // all other days
+      openingTime = '10:00';
+      closingTime = '17:45';
+      break;
   }
+
+  // update the default time for the inputTime element
+  inputTime.value = openingTime;
+
+  // set the minimum and maximum times that can be selected in the inputTime element
+  inputTime.setAttribute('min', openingTime);
+  inputTime.setAttribute('max', closingTime);
 });
-
-function updateTimeField(dateStr) {
-  // get the day of the week for the selected date
-  var day = new Date(dateStr).getDay();
-
-  // determine the open and closing times for the selected day
-  var openTime, closingTime;
-  switch (day) {
-    case 1:  // Monday
-      openTime = "14:00";
-      closingTime = "17:45";
-      break;
-    case 5:  // Friday
-      openTime = "15:00";
-      closingTime = "17:45";
-      break;
-    case 6:  // Saturday
-      openTime = "10:00";
-      closingTime = "16:45";
-      break;
-    case 0:  // Sunday
-      openTime = "";
-      closingTime = "";
-      break;
-    default:  // all other days
-      openTime = "10:00";
-      closingTime = "17:45";
-  }
-
-  // set the value of the "input-time" field to the open time
-  document.getElementById("input-time").value = openTime;
-
-  // enable or disable the "input-time" field based on whether the shop is open or closed
-  document.getElementById("input-time").disabled = (openTime === "");
-}
-
-function updateTimeField(dateStr) {
-  // get the day of the week for the selected date
-  var day = new Date(dateStr).getDay();
-
-  // determine the open and closing times for the selected day
-  var openTime, closingTime;
-  switch (day) {
-    case 1:  // Monday
-      openTime = "14:00";
-      closingTime = "17:45";
-      break;
-    case 5:  // Friday
-      openTime = "15:00";
-      closingTime = "17:45";
-      break;
-    case 6:  // Saturday
-      openTime = "10:00";
-      closingTime = "16:45";
-      break;
-    case 0:  // Sunday
-      openTime = "";
-      closingTime = "";
-      break;
-    default:  // all other days
-      openTime = "10:00";
-      closingTime = "17:45";
-  }
-
-  // set the value of the "input-time" field to the open time
-  document.getElementById("input-time").value = openTime;
-
-  // set the min and max attributes of the "input-time" field based on the open and closing times
-  document.getElementById("input-time").min = openTime;
-  document.getElementById("input-time").max = closingTime;
-
-  // enable or disable the "input-time" field based on whether the shop is open or closed
-  document.getElementById("input-time").disabled = (openTime === "");
-}
