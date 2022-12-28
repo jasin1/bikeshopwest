@@ -1,6 +1,13 @@
 const inputDate = document.querySelector('#input-date');
 const inputTime = document.querySelector('#input-time');
 
+flatpickr(inputDate, {
+  disable: [
+    (date) => date.getDay() === 0, // disable Sundays
+  ],
+});
+
+
 inputDate.addEventListener('change', (event) => {
   const selectedDate = event.target.value;
   const dayOfWeek = new Date(selectedDate).getDay();
