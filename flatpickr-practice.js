@@ -4,6 +4,7 @@ console.log("faltpickr practice");
 let MydayPickr = document.querySelector(".input-date");
 let MytimePickr = document.querySelector(".input-time");
 
+
 flatpickr(MydayPickr, {
   // your options here
 });
@@ -14,12 +15,12 @@ flatpickr(MytimePickr , {
   // other options here
 });
 
-document.querySelector(MytimePickr).addEventListener('change', function(event) {
+MytimePickr.addEventListener('change', function(event) {
   console.log("time change");
 
 });
 
-document.querySelector(MydayPickr).addEventListener('change', function(event) {
+MydayPickr.addEventListener('change', function(event) {
   console.log("day change");
   // Get the selected day from the event
   let day = event.target.value;
