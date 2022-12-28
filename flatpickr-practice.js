@@ -1,7 +1,7 @@
 console.log("faltpickr practice");
 
 
-flatpickr('.input-date', {
+flatpickr('#input-dag', {
   // your options here
   minDate: "today",
   altInput: true,
@@ -9,7 +9,7 @@ flatpickr('.input-date', {
   dateFormat: "Y-m-d",
 });
 
-flatpickr('.input-time', {
+flatpickr('#input-tijd', {
   enableTime: true,
   noCalendar: true,
   dateFormat: "H:i",
@@ -18,13 +18,13 @@ flatpickr('.input-time', {
   // other options here
 });
 
-document.querySelector('.input-date').addEventListener('change', function(event) {
+document.querySelector('#input-dag').addEventListener('change', function(event) {
   console.log("day change");
   // Get the selected day from the event
   let day = event.target.value;
 
   // Get the time input element
-  let timeInput = document.querySelector('.input-time');
+  let timeInput = document.querySelector('#input-tijd');
 
   // Set the minTime and maxTime options based on the selected day
   switch (day) {
