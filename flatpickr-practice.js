@@ -11,9 +11,8 @@ const openingTimes = {
 
 
 
-flatpickr('//#region input-date', {
+flatpickr('#input-date', {
   // other configuration options
-
   altInput: true,
   altFormat: "M j, Y",
   dateFormat: "Y-m-d",
