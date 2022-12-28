@@ -23,6 +23,10 @@ const fp = flatpickr('.input-date', {
 
     // Update the input-time field with the new min and max times
     flatpickr('.input-time', {
+      enableTime: true,
+      noCalendar: true,
+      dateFormat: "H:i",
+      time_24h: true,
       minTime: minTime,
       maxTime: maxTime
     });
