@@ -33,6 +33,18 @@ function getAvailableTimes(day) {
 
 
 flatpickr("#input-date", {
+
+  defaultDate: toDay,
+  minDate: "today",
+  altInput: true,
+  altFormat: "M j, Y",
+  dateFormat: "Y-m-d",
+  disable: [
+    function (date) {
+      return date.getDay() === 0 || date.getDay() === 7;
+    },
+  ],
+  
   onChange: function(selectedDates, dateStr, instance) {
     // Get the day of the week for the selected date
     let dayOfWeek = new Date(dateStr).toLocaleString("en-US", { weekday: "long" });
