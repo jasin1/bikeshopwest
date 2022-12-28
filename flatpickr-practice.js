@@ -19,6 +19,7 @@ flatpickr('.input-time', {
 });
 
 document.querySelector('.input-date').addEventListener('change', function(event) {
+  console.log("day change");
   // Get the selected day from the event
   let day = event.target.value;
 
