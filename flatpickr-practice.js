@@ -43,7 +43,7 @@ inputDate.addEventListener("change", function(event) {
   // Add a new option for each 30-minute increment
   for (let i = 0; i <= increments; i++) {
     const option = document.createElement("option");
-    option.value = startTime.toTimeString().substr(0, 5);
+    option.value = startTime.toTimeString().substring(0, 5);
     option.text = option.value;
     inputTime.add(option);
 
