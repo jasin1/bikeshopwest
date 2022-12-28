@@ -10,7 +10,16 @@ const openingTimes = {
 
 
 function getAvailableTimes(day) {
+  // Check if the day is a valid key in the openingTimes object
+  if (!openingTimes[day]) {
+    // If the day is not a valid key, return an empty array
+    return [];
+  }
+
+  // If the day is a valid key, get the open and close times for that day
   const { open, close } = openingTimes[day];
+
+  // Calculate the available times in 30 minute increments
   let startTime = new Date("1970-01-01 " + open);
   let endTime = new Date("1970-01-01 " + close);
   let availableTimes = [];
@@ -20,6 +29,7 @@ function getAvailableTimes(day) {
   }
   return availableTimes;
 }
+
 
 
 flatpickr("#input-date", {
