@@ -15,7 +15,7 @@ const fp = flatpickr('.input-day', {
       maxTime = "17:45";
     } else if (dayOfWeek == 6) {  // Saturday
       minTime = "10:00";
-      maxTime = "17:00";
+      maxTime = "16:45";
     } else {  // Other days
       minTime = "10:00";
       maxTime = "17:45";
