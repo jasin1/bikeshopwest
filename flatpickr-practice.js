@@ -35,5 +35,13 @@ inputDate.addEventListener('change', (event) => {
 });
 
 // initialize Flatpickr for both input fields
-flatpickr(inputDate, {});
-flatpickr(inputTime, {});
+flatpickr(inputDate, {
+  
+});
+
+flatpickr(inputTime, {
+  enableTime: true,
+  noCalendar: true,
+  dateFormat: "H:i",
+  time_24h: true,
+});
