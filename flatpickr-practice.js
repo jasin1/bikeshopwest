@@ -25,7 +25,7 @@ const openingHours = {
 inputDate.addEventListener("change", function(event) {
   // Get the selected date
   const selectedDate = event.target.value;
-
+  console.log(selectedDate); // Check the value of selectedDate
   // Get the opening and closing times for the selected date
   const { open, close } = openingHours[selectedDate];
 
