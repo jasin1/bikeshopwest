@@ -9,36 +9,35 @@ flatpickr(MydayPickr, {
     // Get the selected day from the data-day attribute
     let day = instance.input.getAttribute('data-day');
 
-    // Get the Flatpickr instance for the time input element
-    let timeInstance = flatpickr.getInstance(MytimePickr);
-
     // Set the minTime and maxTime options based on the selected day
+    let timeOptions = {
+      enableTime: true,
+      noCalendar: true,
+    };
     switch (day) {
       case 'Monday':
-        timeInstance.set('minTime', '14:00');
-        timeInstance.set('maxTime', '17:45');
-        timeInstance.set('defaultDate', '14:00');
+        timeOptions.minTime = '14:00';
+        timeOptions.maxTime = '17:45';
+        timeOptions.defaultDate = '14:00';
         break;
       case 'Friday':
-        timeInstance.set('minTime', '15:00');
-        timeInstance.set('maxTime', '17:45');
-        timeInstance.set('defaultDate', '15:00');
+        timeOptions.minTime = '15:00';
+        timeOptions.maxTime = '17:45';
+        timeOptions.defaultDate = '15:00';
         break;
       case 'Saturday':
-        timeInstance.set('minTime', '10:00');
-        timeInstance.set('maxTime', '16:45');
-        timeInstance.set('defaultDate', '10:00');
+        timeOptions.minTime = '10:00';
+        timeOptions.maxTime = '16:45';
+        timeOptions.defaultDate = '10:00';
         break;
       default:
-        timeInstance.set('minTime', '10:00');
-        timeInstance.set('maxTime', '17:45');
-        timeInstance.set('defaultDate', '10:00');
+        timeOptions.minTime = '10:00';
+        timeOptions.maxTime = '17:45';
+        timeOptions.defaultDate = '10:00';
         break;
     }
-  }
-});
 
-flatpickr(MytimePickr , {
-  enableTime: true,
-  noCalendar: true,
+    // Create a new Flatpickr instance for the time picker
+    flatpickr(MytimePickr , timeOptions);
+  }
 });
