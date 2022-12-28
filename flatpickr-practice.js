@@ -1,38 +1,39 @@
-// Get the input fields
 const inputDate = document.querySelector('#input-date');
 const inputTime = document.querySelector('#input-time');
 
-// Initialize Flatpickr on the input fields
-flatpickr(inputDate, {});
-flatpickr(inputTime, {
-  noCalendar: true,
-  enableTime: true
-});
-
-// Set the default minTime and maxTime options for the inputTime field
-inputTime.flatpickr.set('minTime', '10:00');
-inputTime.flatpickr.set('maxTime', '17:45');
-
-// Add an event listener for the onChange event of the inputDate field
-inputDate.addEventListener('change', (event) => {
-  // Get the selected date
-  const selectedDate = event.target.value;
-
-  // Set the minTime and maxTime options for the inputTime field based on the selected date
-  if (selectedDate) {
-    const dayOfWeek = new Date(selectedDate).getDay();
-    if (dayOfWeek === 1) {
-      inputTime.flatpickr.set('minTime', '14:00');
-      inputTime.flatpickr.set('maxTime', '17:45');
-    } else if (dayOfWeek === 5) {
-      inputTime.flatpickr.set('minTime', '15:00');
-      inputTime.flatpickr.set('maxTime', '17:45');
-    } else if (dayOfWeek === 6) {
-      inputTime.flatpickr.set('minTime', '10:00');
-      inputTime.flatpickr.set('maxTime', '16:45');
-    } else {
-      inputTime.flatpickr.set('minTime', '10:00');
-      inputTime.flatpickr.set('maxTime', '17:45');
-    }
+const openingTimes = {
+  'Monday': {
+    minDate: '14:00',
+    maxDate: '17:45'
+  },
+  'Friday': {
+    minDate: '15:00',
+    maxDate: '17:45'
+  },
+  'Saturday': {
+    minDate: '10:00',
+    maxDate: '16:45'
+  },
+  'default': {
+    minDate: '10:00',
+    maxDate: '17:45'
   }
+};
+
+const setOpeningTimes = (day) => {
+  let minDate = openingTimes[day]?.minDate || openingTimes['default'].minDate;
+  let maxDate = openingTimes[day]?.maxDate || openingTimes['default'].maxDate;
+
+  // update the minDate and maxDate properties of the inputTime Flatpickr instance
+  inputTime.flatpickr.set('minDate', minDate);
+  inputTime.flatpickr.set('maxDate', maxDate);
+};
+
+inputDate.addEventListener('change', (event) => {
+  const day = event.target.value;
+  setOpeningTimes(day);
 });
+
+// initialize Flatpickr for both input fields
+flatpickr(inputDate, {});
+flatpickr(inputTime, {});
