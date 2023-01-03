@@ -137,8 +137,6 @@ let modalContainer = document.getElementById("bike-modal-wrapper");
 let modal = document.getElementById("modal-content");
 let closeBtn = document.getElementById("modal-close-wrapper");
 
-
-
 //------------ Tabs -------------------------------------
 
 let selectedDayValue;
@@ -156,7 +154,6 @@ let totalVal = 0;
 let totalCheckedVal = 0;
 let BikeCounter = 1;
 
-
 //------------------ add-ons --------------------------------------------//
 
 const check1 = document.getElementById("check1");
@@ -164,7 +161,6 @@ const check2 = document.getElementById("check2");
 const check3 = document.getElementById("check3");
 
 const checks = [check1, check2, check3];
-
 
 const selectedCheck1 = document.querySelector(".addon-selected-helmet");
 const selectedCheck2 = document.querySelector(".addon-selected-mount");
@@ -213,7 +209,12 @@ nextBtn.forEach((btn) => {
   btn.addEventListener("click", () => {
     formStepsNum++;
     updateFormSteps();
-    if (btn == nextBtn[0] || btn == nextBtn[1] || btn == nextBtn[2] || btn == nextBtn[3]) {
+    if (
+      btn == nextBtn[0] ||
+      btn == nextBtn[1] ||
+      btn == nextBtn[2] ||
+      btn == nextBtn[3]
+    ) {
       fp.clear();
     } else {
       //console.log("not the button");
@@ -444,9 +445,8 @@ const openingTimes = {
   Thursday: { open: "10:00", close: "17:45" },
   Friday: { open: "15:00", close: "17:45" },
   Saturday: { open: "10:00", close: "16:45" },
-  Sunday: { open: "", close: "" }
+  Sunday: { open: "", close: "" },
 };
-
 
 function getAvailableTimes(day) {
   // Check if the day is a valid key in the openingTimes object
@@ -469,10 +469,7 @@ function getAvailableTimes(day) {
   return availableTimes;
 }
 
-
-
 flatpickr("#input-date", {
-
   minDate: "today",
   weekStart: 1,
   altInput: true,
@@ -483,10 +480,15 @@ flatpickr("#input-date", {
       return date.getDay() === 0 || date.getDay() === 7;
     },
   ],
+  "locale": {
+    firstDayOfWeek: 1, // start week on Monday
+  },
 
-  onChange: function(selectedDates, dateStr, instance) {
+  onChange: function (selectedDates, dateStr, instance) {
     // Get the day of the week for the selected date
-    let dayOfWeek = new Date(dateStr).toLocaleString("en-US", { weekday: "long" });
+    let dayOfWeek = new Date(dateStr).toLocaleString("en-US", {
+      weekday: "long",
+    });
 
     // Get the available times for the selected day
     let availableTimes = getAvailableTimes(dayOfWeek);
@@ -496,15 +498,14 @@ flatpickr("#input-date", {
     inputTime.innerHTML = "";
 
     // Add the available times as options in the #input-time dropdown
-    availableTimes.forEach(time => {
+    availableTimes.forEach((time) => {
       let option = document.createElement("option");
       option.value = time;
       option.text = time;
       inputTime.add(option);
     });
-  }
+  },
 });
-
 
 /*
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
