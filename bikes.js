@@ -479,11 +479,15 @@ const fp = flatpickr("#input-date", {
       return date.getDay() === 0 || date.getDay() === 7;
     },
   ],
-  "locale": {
+  locale: {
     firstDayOfWeek: 1, // start week on Monday
   },
 
   onChange: function (selectedDates, dateStr, instance) {
+    // Clear the current options in the #input-time dropdown
+    const inputTime = document.querySelector("#input-time");
+    inputTime.innerHTML = "10:00";
+
     // Get the day of the week for the selected date
     let dayOfWeek = new Date(dateStr).toLocaleString("en-US", {
       weekday: "long",
@@ -492,10 +496,6 @@ const fp = flatpickr("#input-date", {
     // Get the available times for the selected day
     let availableTimes = getAvailableTimes(dayOfWeek);
 
-    // Clear the current options in the #input-time dropdown
-    let inputTime = document.querySelector("#input-time");
-    inputTime.innerHTML = "";
-
     // Add the available times as options in the #input-time dropdown
     availableTimes.forEach((time) => {
       let option = document.createElement("option");
@@ -503,7 +503,6 @@ const fp = flatpickr("#input-date", {
       option.text = time;
       inputTime.add(option);
     });
-
   },
 });
 
