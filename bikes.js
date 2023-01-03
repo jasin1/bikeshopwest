@@ -215,7 +215,7 @@ nextBtn.forEach((btn) => {
       btn == nextBtn[2] ||
       btn == nextBtn[3]
     ) {
-      flatpickr.clear();
+      fp.clear();
     } else {
       //console.log("not the button");
     }
@@ -469,7 +469,7 @@ function getAvailableTimes(day) {
   return availableTimes;
 }
 
-flatpickr("#input-date", {
+const fp = flatpickr("#input-date", {
   minDate: "today",
   altInput: true,
   altFormat: "M j, Y",
