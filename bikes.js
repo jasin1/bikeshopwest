@@ -458,6 +458,12 @@ function getAvailableTimes(day) {
   // If the day is a valid key, get the open and close times for that day
   const { open, close } = openingTimes[day];
 
+   // Check if the open and close times are specified for the given day
+   if (!open || !close) {
+    // If the open or close time is not specified, return an empty array
+    return [];
+  }
+
   // Calculate the available times in 30 minute increments
   let startTime = new Date("1970-01-01 " + open);
   let endTime = new Date("1970-01-01 " + close);
