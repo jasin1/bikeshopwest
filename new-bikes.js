@@ -208,6 +208,7 @@ const bike_unit_price = document.getElementById("unit-price");
 
 const desk_bike_name = document.getElementById("desk-bike-name");
 
+//------------- first init flatpickr -------------------//
 const fp = flatpickr("#input-date", config);
 
 //----------------------------------------------------------------------//
