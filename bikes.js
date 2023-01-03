@@ -503,13 +503,21 @@ const fp = flatpickr("#input-date", {
       option.text = time;
       inputTime.add(option);
     });
-
     // Update the step2Time element with the "open" time of the chosen day
     step2Time.innerHTML = openingTimes[dayOfWeek].open;
     timeCollected.setAttribute("value", openingTimes[dayOfWeek].open);
   },
 });
 
+let inputTime = document.querySelector("#input-time");
+inputTime.addEventListener("change", () => {
+  step2Time.innerHTML = inputTime.value;
+  timeCollected.setAttribute("value", inputTime.value);
+});
+
+// Update the step2Time element with the "open" time of the chosen day
+// step2Time.innerHTML = openingTimes[dayOfWeek].open;
+// timeCollected.setAttribute("value", openingTimes[dayOfWeek].open);
 /*
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="https://jasin1.github.io/bikeshopwest/bikes.js"></script>
