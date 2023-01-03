@@ -471,7 +471,6 @@ function getAvailableTimes(day) {
 
 flatpickr("#input-date", {
   minDate: "today",
-  weekStart: 1,
   altInput: true,
   altFormat: "M j, Y",
   dateFormat: "Y-m-d",
