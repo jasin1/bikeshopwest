@@ -472,7 +472,7 @@ function getAvailableTimes(day) {
 
 
 
-flatpickr("#input-date", {
+const fp = flatpickr("#input-date", {
 
   minDate: "today",
   altInput: true,
