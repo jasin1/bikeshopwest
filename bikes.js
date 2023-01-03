@@ -484,10 +484,6 @@ const fp = flatpickr("#input-date", {
   },
 
   onChange: function (selectedDates, dateStr, instance) {
-    // Clear the current options in the #input-time dropdown
-    const inputTime = document.querySelector("#input-time");
-    inputTime.innerHTML = "10:00";
-
     // Get the day of the week for the selected date
     let dayOfWeek = new Date(dateStr).toLocaleString("en-US", {
       weekday: "long",
@@ -495,6 +491,10 @@ const fp = flatpickr("#input-date", {
 
     // Get the available times for the selected day
     let availableTimes = getAvailableTimes(dayOfWeek);
+
+    // Clear the current options in the #input-time dropdown
+    let inputTime = document.querySelector("#input-time");
+    inputTime.innerHTML = "10:00";
 
     // Add the available times as options in the #input-time dropdown
     availableTimes.forEach((time) => {
