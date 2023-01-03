@@ -6,10 +6,6 @@ let newTime = "";
 config = {
   defaultDate: toDay,
   minDate: "today",
-  // enableTime: false,
-  // time_24h: true,
-  // minTime:"10:30",
-  // maxTime:"17:45",
   altInput: true,
   altFormat: "M j, Y",
   dateFormat: "Y-m-d",
