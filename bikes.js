@@ -503,6 +503,11 @@ flatpickr("#input-date", {
       option.text = time;
       inputTime.add(option);
     });
+    let newchosenDate = dateStr;
+    let newfreshDate = newchosenDate.toString();
+    newTime = newfreshDate.substring(16, 21);
+    step2Time.innerText = newTime;
+    timeCollected.setAttribute("value", newTime);
   },
 });
 
