@@ -469,10 +469,6 @@ function getAvailableTimes(day) {
   return availableTimes;
 }
 
-// Clear the current options in the #input-time dropdown
-const inputTime = document.querySelector("#input-time");
-inputTime.innerHTML = "10:00";
-
 const fp = flatpickr("#input-date", {
   minDate: "today",
   altInput: true,
@@ -488,6 +484,10 @@ const fp = flatpickr("#input-date", {
   },
 
   onChange: function (selectedDates, dateStr, instance) {
+    // Clear the current options in the #input-time dropdown
+    const inputTime = document.querySelector("#input-time");
+    inputTime.innerHTML = "10:00";
+
     // Get the day of the week for the selected date
     let dayOfWeek = new Date(dateStr).toLocaleString("en-US", {
       weekday: "long",
