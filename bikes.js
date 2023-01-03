@@ -526,11 +526,5 @@ https://jasin1.github.io/bikeshopwest/bikes.js
 
 https://cdn.jsdelivr.net/gh/jasin1/bikeshopwest@6f584ffc5bb0815273c8e5a363de2b6fe2bff685/bikes.js
 
-    let newchosenDate = dateStr;
-    let newfreshDate = newchosenDate.toString();
-    newTime = newfreshDate.substring(16, 21);
-    const selectedTime = inputTime.value;
-    step2Time.innerText = selectedTime;
-    timeCollected.setAttribute("value", selectedTime);
 
 */
