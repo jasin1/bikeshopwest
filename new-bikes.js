@@ -208,6 +208,8 @@ const bike_unit_price = document.getElementById("unit-price");
 
 const desk_bike_name = document.getElementById("desk-bike-name");
 
+const fp = flatpickr("#input-date", config);
+
 //----------------------------------------------------------------------//
 
 nextBtn.forEach((btn) => {
@@ -471,7 +473,7 @@ function getAvailableTimes(day) {
 }
 
 
-flatpickr("#input-date", {
+config = {
 
   minDate: "today",
   altInput: true,
@@ -502,4 +504,4 @@ flatpickr("#input-date", {
       inputTime.add(option);
     });
   }
-});
+};
