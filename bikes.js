@@ -438,46 +438,13 @@ selectedDays.addEventListener("change", function () {
 
 //---------------- FlatPickr---------------------------------------
 
-const openingTimes = {
-  Monday: { open: "14:00", close: "17:45" },
-  Tuesday: { open: "10:00", close: "17:45" },
-  Wednesday: { open: "10:00", close: "17:45" },
-  Thursday: { open: "10:00", close: "17:45" },
-  Friday: { open: "15:00", close: "17:45" },
-  Saturday: { open: "10:00", close: "16:45" },
-  Sunday: { open: "", close: "" },
-};
+//---------------- FlatPickr---------------------------------------
 
-function getAvailableTimes(day) {
-  // Check if the day is a valid key in the openingTimes object
-  if (!openingTimes[day]) {
-    // If the day is not a valid key, return an empty array
-    return [];
-  }
+let newDatum = "";
+let newTime = "";
 
-  // If the day is a valid key, get the open and close times for that day
-  const { open, close } = openingTimes[day];
-
-   // Check if the open and close times are specified for the given day
-   if (!open || !close) {
-    // If the open or close time is not specified, return an empty array
-    return [];
-  }
-
-  // Calculate the available times in 30 minute increments
-  let startTime = new Date("1970-01-01 " + open);
-  let endTime = new Date("1970-01-01 " + close);
-  let availableTimes = [];
-  while (startTime <= endTime) {
-    availableTimes.push(startTime.toTimeString().substring(0, 5));
-    startTime.setMinutes(startTime.getMinutes() + 30);
-  }
-  return availableTimes;
-}
-
-
-
-const fp = flatpickr("#input-date", {
+config = {
+  defaultDate: toDay,
   minDate: "today",
   altInput: true,
   altFormat: "M j, Y",
@@ -488,39 +455,42 @@ const fp = flatpickr("#input-date", {
     },
   ],
   locale: {
-    firstDayOfWeek: 1, // start week on Monday
+    firstDayOfWeek: 1,
   },
-
-  onChange: function (selectedDates, dateStr, instance) {
-    // Get the day of the week for the selected date
-    let dayOfWeek = new Date(dateStr).toLocaleString("en-US", {
-      weekday: "long",
-    });
-
-    // Get the available times for the selected day
-    let availableTimes = getAvailableTimes(dayOfWeek);
-
-    // Clear the current options in the #input-time dropdown
-    let inputTime = document.querySelector("#input-time");
-    //inputTime.innerHTML = "";
-
-    // Add the available times as options in the #input-time dropdown
-    availableTimes.forEach((time) => {
-      let option = document.createElement("option");
-      option.value = time;
-      option.text = time;
-      inputTime.add(option);
-    });
-    // Update the step2Time element with the "open" time of the chosen day
-    step2Time.innerHTML = openingTimes[dayOfWeek].open;
-    timeCollected.setAttribute("value", openingTimes[dayOfWeek].open);
+  onChange: function (dateStr) {
+    let chosenDate = dateStr;
+    let freshDate = chosenDate.toString();
+    newDatum = freshDate.substring(0, 15);
+    //newTime = freshDate.substring(16,21);
+    //console.log("time is ", newTime);
+    //console.log(dateStr);
+    stepTwoDate.innerText = newDatum;
+    //step2Time.innerText = newTime;
+    dateCollected.setAttribute("value", newDatum);
+    // timeCollected.setAttribute('value', newTime);
+    //console.log(dateCollected.value);
+    //priceCollected
+    //timeCollected
   },
-});
+};
 
-let inputTime = document.querySelector("#input-time");
-inputTime.addEventListener("change", () => {
-  step2Time.innerHTML = inputTime.value;
-  timeCollected.setAttribute("value", inputTime.value);
+const fp = flatpickr(".input-date", config);
+
+const tp = flatpickr(".input-time", {
+  enableTime: true,
+  noCalendar: true,
+  dateFormat: "H:i",
+  time_24h: true,
+  minTime: "10:30",
+  maxTime: "17:45",
+  disableMobile: "true",
+  onChange: function (dateStr) {
+    let newchosenDate = dateStr;
+    let newfreshDate = newchosenDate.toString();
+    newTime = newfreshDate.substring(16, 21);
+    step2Time.innerText = newTime;
+    timeCollected.setAttribute("value", newTime);
+  },
 });
 
 // Update the step2Time element with the "open" time of the chosen day
