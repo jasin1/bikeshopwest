@@ -215,7 +215,7 @@ nextBtn.forEach((btn) => {
       btn == nextBtn[2] ||
       btn == nextBtn[3]
     ) {
-      fp.clear();
+      flatpickr.clear();
     } else {
       //console.log("not the button");
     }
