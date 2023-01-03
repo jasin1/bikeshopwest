@@ -494,7 +494,7 @@ const fp = flatpickr("#input-date", {
 
     // Clear the current options in the #input-time dropdown
     let inputTime = document.querySelector("#input-time");
-    inputTime.innerHTML = "Pick a time";
+    inputTime.innerHTML = "";
 
     // Add the available times as options in the #input-time dropdown
     availableTimes.forEach((time) => {
@@ -503,13 +503,14 @@ const fp = flatpickr("#input-date", {
       option.text = time;
       inputTime.add(option);
     });
-    let newchosenDate = dateStr;
-    let newfreshDate = newchosenDate.toString();
-    newTime = newfreshDate.substring(16, 21);
-    const selectedTime = inputTime.value;
-    step2Time.innerText = selectedTime;
-    timeCollected.setAttribute("value", selectedTime);
+
   },
+});
+
+let inputTime = document.querySelector("#input-time");
+inputTime.addEventListener("change", () => {
+  step2Time.innerHTML = inputTime.value;
+  timeCollected.setAttribute("value", inputTime.value);
 });
 
 /*
@@ -519,5 +520,12 @@ const fp = flatpickr("#input-date", {
 https://jasin1.github.io/bikeshopwest/bikes.js
 
 https://cdn.jsdelivr.net/gh/jasin1/bikeshopwest@6f584ffc5bb0815273c8e5a363de2b6fe2bff685/bikes.js
+
+    let newchosenDate = dateStr;
+    let newfreshDate = newchosenDate.toString();
+    newTime = newfreshDate.substring(16, 21);
+    const selectedTime = inputTime.value;
+    step2Time.innerText = selectedTime;
+    timeCollected.setAttribute("value", selectedTime);
 
 */
