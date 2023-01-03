@@ -503,6 +503,8 @@ const fp = flatpickr("#input-date", {
       option.text = time;
       inputTime.add(option);
     });
+    // Set the initial text of the #input-time dropdown to "Select a time"
+    inputTime.innerHTML = '<option value="" selected>Select a time</option>';
     // Update the step2Time element with the "open" time of the chosen day
     step2Time.innerHTML = openingTimes[dayOfWeek].open;
     timeCollected.setAttribute("value", openingTimes[dayOfWeek].open);
