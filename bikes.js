@@ -506,8 +506,8 @@ const fp = flatpickr("#input-date", {
     let newchosenDate = dateStr;
     let newfreshDate = newchosenDate.toString();
     newTime = newfreshDate.substring(16, 21);
-    step2Time.innerText = inputTime;
-    timeCollected.setAttribute("value", inputTime);
+    step2Time.innerText = inputTime.innerText;
+    timeCollected.setAttribute("value", inputTime.innerText);
   },
 });
 
