@@ -208,8 +208,7 @@ const bike_unit_price = document.getElementById("unit-price");
 
 const desk_bike_name = document.getElementById("desk-bike-name");
 
-//------------- first init flatpickr -------------------//
-const fp = flatpickr("#input-date", config);
+
 
 //----------------------------------------------------------------------//
 
@@ -218,7 +217,8 @@ nextBtn.forEach((btn) => {
     formStepsNum++;
     updateFormSteps();
     if (btn == nextBtn[0] || btn == nextBtn[1] || btn == nextBtn[2] || btn == nextBtn[3]) {
-      fp.clear();
+      //fp.clear();
+      console.log('clear fields here');
     } else {
       //console.log("not the button");
     }
@@ -474,7 +474,7 @@ function getAvailableTimes(day) {
 }
 
 
-config = {
+flatpickr("#input-date",  {
 
   minDate: "today",
   altInput: true,
@@ -505,4 +505,4 @@ config = {
       inputTime.add(option);
     });
   }
-};
+});
