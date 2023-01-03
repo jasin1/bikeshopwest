@@ -469,8 +469,7 @@ function getAvailableTimes(day) {
   return availableTimes;
 }
 
-let inputTime = document.querySelector("#input-time");
-inputTime.innerHTML = "Select a time";
+
 
 const fp = flatpickr("#input-date", {
   minDate: "today",
@@ -496,7 +495,7 @@ const fp = flatpickr("#input-date", {
     let availableTimes = getAvailableTimes(dayOfWeek);
 
     // Clear the current options in the #input-time dropdown
-
+    let inputTime = document.querySelector("#input-time");
     inputTime.innerHTML = "";
 
     // Add the available times as options in the #input-time dropdown
@@ -512,7 +511,7 @@ const fp = flatpickr("#input-date", {
   },
 });
 
-
+let inputTime = document.querySelector("#input-time");
 inputTime.addEventListener("change", () => {
   step2Time.innerHTML = inputTime.value;
   timeCollected.setAttribute("value", inputTime.value);
