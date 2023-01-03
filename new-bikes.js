@@ -218,7 +218,7 @@ nextBtn.forEach((btn) => {
     updateFormSteps();
     if (btn == nextBtn[0] || btn == nextBtn[1] || btn == nextBtn[2] || btn == nextBtn[3]) {
       //fp.clear();
-      console.log('clear fields here');
+      console.log('clear fields')
     } else {
       //console.log("not the button");
     }
