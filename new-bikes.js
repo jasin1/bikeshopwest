@@ -503,8 +503,9 @@ flatpickr("#input-date",  {
       option.value = time;
       option.text = time;
       inputTime.add(option);
+      
     });
-    step2Time.innerText = inputTime.value;
-    timeCollected.setAttribute("value", inputTime.value);
+    step2Time.innerText = inputTime.innerText;
+    timeCollected.setAttribute("value", inputTime.innerText);
   }
 });
