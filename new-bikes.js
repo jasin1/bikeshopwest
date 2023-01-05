@@ -504,6 +504,6 @@ flatpickr("#input-date",  {
       option.text = time;
       inputTime.add(option);
     });
-    console.log(inputTime[0]);
+    console.log(inputTime.value);
   }
 });
