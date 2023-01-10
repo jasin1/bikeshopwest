@@ -138,8 +138,6 @@ let modalContainer = document.getElementById("bike-modal-wrapper");
 let modal = document.getElementById("modal-content");
 let closeBtn = document.getElementById("modal-close-wrapper");
 
-
-
 //------------ Tabs -------------------------------------
 
 let selectedDayValue;
@@ -157,7 +155,6 @@ let totalVal = 0;
 let totalCheckedVal = 0;
 let BikeCounter = 1;
 
-
 //------------------ add-ons --------------------------------------------//
 
 const check1 = document.getElementById("check1");
@@ -165,7 +162,6 @@ const check2 = document.getElementById("check2");
 const check3 = document.getElementById("check3");
 
 const checks = [check1, check2, check3];
-
 
 const selectedCheck1 = document.querySelector(".addon-selected-helmet");
 const selectedCheck2 = document.querySelector(".addon-selected-mount");
@@ -208,19 +204,20 @@ const bike_unit_price = document.getElementById("unit-price");
 
 const desk_bike_name = document.getElementById("desk-bike-name");
 
-
-
 //----------------------------------------------------------------------//
-
-
 
 nextBtn.forEach((btn) => {
   btn.addEventListener("click", () => {
     formStepsNum++;
     updateFormSteps();
-    if (btn == nextBtn[0] || btn == nextBtn[1] || btn == nextBtn[2] || btn == nextBtn[3]) {
+    if (
+      btn == nextBtn[0] ||
+      btn == nextBtn[1] ||
+      btn == nextBtn[2] ||
+      btn == nextBtn[3]
+    ) {
       //fp.clear();
-      console.log('clear fields')
+      console.log("clear fields");
     } else {
       //console.log("not the button");
     }
@@ -450,9 +447,8 @@ const openingTimes = {
   Thursday: { open: "10:00", close: "17:45" },
   Friday: { open: "15:00", close: "17:45" },
   Saturday: { open: "10:00", close: "16:45" },
-  Sunday: { open: "", close: "" }
+  Sunday: { open: "", close: "" },
 };
-
 
 function getAvailableTimes(day) {
   // Check if the day is a valid key in the openingTimes object
@@ -501,12 +497,19 @@ flatpickr("#input-date", {
     let availableTimes = getAvailableTimes(dayOfWeek);
 
     // Clear the current options in the #input-time dropdown
+    // Clear out any options already present in the inputTime dropdown
+    inputTime.options.length = 0;
 
-    inputTime.innerHTML = "";
-    let option;
+    // Add the initial "Select a time" option
+    let initialOption = document.createElement("option");
+    initialOption.value = "";
+    initialOption.text = "Select a time";
+    initialOption.disabled = true;
+    initialOption.selected = true;
+    inputTime.add(initialOption);
     // Add the available times as options in the #input-time dropdown
     availableTimes.forEach((time) => {
-      option = document.createElement("option");
+      let option = document.createElement("option");
       option.value = time;
       option.text = time;
       inputTime.add(option);
@@ -515,7 +518,6 @@ flatpickr("#input-date", {
     //timeCollected.setAttribute("value", inputTime.value);
     // Update the step2Time element and timeCollected element when the
     // selected time in the inputTime element is changed
-
   },
 });
 
@@ -524,4 +526,3 @@ inputTime.addEventListener("change", function () {
   step2Time.innerHTML = inputTime.value;
   timeCollected.setAttribute("value", inputTime.value);
 });
-
