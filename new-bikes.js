@@ -476,8 +476,7 @@ function getAvailableTimes(day) {
 }
 
 
-flatpickr("#input-date",  {
-
+flatpickr("#input-date", {
   minDate: "today",
   altInput: true,
   altFormat: "M j, Y",
@@ -488,12 +487,14 @@ flatpickr("#input-date",  {
     },
   ],
 
-  onChange: function(selectedDates, dateStr, instance) {
+  onChange: function (selectedDates, dateStr, instance) {
     // Update the stepTwoDate element with the selected date
     stepTwoDate.innerHTML = dateStr;
     selectedDate.innerHTML = dateStr;
     // Get the day of the week for the selected date
-    let dayOfWeek = new Date(dateStr).toLocaleString("en-US", { weekday: "long" });
+    let dayOfWeek = new Date(dateStr).toLocaleString("en-US", {
+      weekday: "long",
+    });
 
     // Get the available times for the selected day
     let availableTimes = getAvailableTimes(dayOfWeek);
@@ -503,7 +504,7 @@ flatpickr("#input-date",  {
     inputTime.innerHTML = "";
     let option;
     // Add the available times as options in the #input-time dropdown
-    availableTimes.forEach(time => {
+    availableTimes.forEach((time) => {
       option = document.createElement("option");
       option.value = time;
       option.text = time;
@@ -513,11 +514,13 @@ flatpickr("#input-date",  {
     //timeCollected.setAttribute("value", inputTime.value);
     // Update the step2Time element and timeCollected element when the
     // selected time in the inputTime element is changed
-    inputTime.addEventListener('change', function() {
-      console.log("Time selected");
-      step2Time.innerHTML = inputTime.value;
-      timeCollected.setAttribute("value", inputTime.value);
-    });
-  }
+
+  },
+});
+
+inputTime.addEventListener("change", function () {
+  console.log("Time selected");
+  step2Time.innerHTML = inputTime.value;
+  timeCollected.setAttribute("value", inputTime.value);
 });
 
