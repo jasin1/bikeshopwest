@@ -212,14 +212,14 @@ const desk_bike_name = document.getElementById("desk-bike-name");
 
 //----------------------------------------------------------------------//
 
-let fp = flatpickr("#input-date");
+
 
 nextBtn.forEach((btn) => {
   btn.addEventListener("click", () => {
     formStepsNum++;
     updateFormSteps();
     if (btn == nextBtn[0] || btn == nextBtn[1] || btn == nextBtn[2] || btn == nextBtn[3]) {
-      fp.clear();
+      //fp.clear();
       console.log('clear fields')
     } else {
       //console.log("not the button");
