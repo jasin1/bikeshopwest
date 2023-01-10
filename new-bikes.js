@@ -507,9 +507,11 @@ flatpickr("#input-date", {
     initialOption.disabled = true;
     initialOption.selected = true;
     inputTime.add(initialOption);
+
+    let option;
     // Add the available times as options in the #input-time dropdown
     availableTimes.forEach((time) => {
-      let option = document.createElement("option");
+      option = document.createElement("option");
       option.value = time;
       option.text = time;
       inputTime.add(option);
