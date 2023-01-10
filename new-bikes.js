@@ -507,8 +507,8 @@ flatpickr("#input-date",  {
       inputTime.add(option);
     });
     console.log("selected option is "+option.value);
-    step2Time.innerHTML = inputTime.value;
-    timeCollected.setAttribute("value", inputTime.value);
-    //console.log("time collected is " + timeCollected.value);
+    step2Time.innerHTML = option.value;
+    timeCollected.setAttribute("value", option.value);
+
   }
 });
