@@ -500,18 +500,13 @@ flatpickr("#input-date", {
     // Clear out any options already present in the inputTime dropdown
     inputTime.options.length = 0;
 
-    // Add the initial "Select a time" option
-    let initialOption = document.createElement("option");
-    initialOption.value = "";
-    initialOption.text = "Select a time";
-    initialOption.disabled = true;
-    initialOption.selected = true;
-    inputTime.add(initialOption);
-
-    let option;
+    // Clear out any options already present in the inputTime dropdown, but leave the initial option "Select a time"
+    for (let i = inputTime.options.length - 1; i > 0; i--) {
+      inputTime.options[i] = null;
+    }
     // Add the available times as options in the #input-time dropdown
     availableTimes.forEach((time) => {
-      option = document.createElement("option");
+      let option = document.createElement("option");
       option.value = time;
       option.text = time;
       inputTime.add(option);
