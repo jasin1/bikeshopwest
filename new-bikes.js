@@ -439,8 +439,6 @@ selectedDays.addEventListener("change", function () {
 //--------------------------------------------------------------------------------------------
 
 //---------------- FlatPickr---------------------------------------
-
-let newDatum = "";
 const openingTimes = {
   Monday: { open: "14:00", close: "17:45" },
   Tuesday: { open: "10:00", close: "17:45" },
@@ -448,10 +446,35 @@ const openingTimes = {
   Thursday: { open: "10:00", close: "17:45" },
   Friday: { open: "15:00", close: "17:45" },
   Saturday: { open: "10:00", close: "16:45" },
-  Sunday: { open: "", close: "" },
+  Sunday: { open: "", close: "" }
 };
-config = {
-  defaultDate: toDay,
+
+
+function getAvailableTimes(day) {
+  // Check if the day is a valid key in the openingTimes object
+  if (!openingTimes[day]) {
+    // If the day is not a valid key, return an empty array
+    return [];
+  }
+
+  // If the day is a valid key, get the open and close times for that day
+  const { open, close } = openingTimes[day];
+
+  // Calculate the available times in 30 minute increments
+  let startTime = new Date("1970-01-01 " + open);
+  let endTime = new Date("1970-01-01 " + close);
+  let availableTimes = [];
+  while (startTime <= endTime) {
+    availableTimes.push(startTime.toTimeString().substring(0, 5));
+    startTime.setMinutes(startTime.getMinutes() + 30);
+  }
+  return availableTimes;
+}
+
+
+
+flatpickr("#input-date", {
+
   minDate: "today",
   altInput: true,
   altFormat: "M j, Y",
@@ -461,44 +484,24 @@ config = {
       return date.getDay() === 0 || date.getDay() === 7;
     },
   ],
-  locale: {
-    firstDayOfWeek: 1,
-  },
-  onChange: function (dateStr) {
-    let chosenDate = dateStr;
-    let freshDate = chosenDate.toString();
-    newDatum = freshDate.substring(0, 15);
-    let day = chosenDate.toString().split(' ')[0];
-    let openTime = openingTimes[day]?.open || '';
-    let closeTime = openingTimes[day]?.close || '';
-    if(openTime !== "" && closeTime !== ""){
-      let select = document.getElementById("input-time");
-      let options = select.options;
-      let start = new Date();
-      start.setHours(parseInt(openTime.split(':')[0]));
-      start.setMinutes(parseInt(openTime.split(':')[1]));
-      let end = new Date();
-      end.setHours(parseInt(closeTime.split(':')[0]));
-      end.setMinutes(parseInt(closeTime.split(':')[1]));
-      for(let i=0; i < options.length; i++) {
-        let option = options[i];
-        let optionTime = option.value;
-        if(!optionTime) {
-          continue;
-        }
-        let optionTimeInMinutes = new Date();
-        optionTimeInMinutes.setHours(parseInt(optionTime.split(':')[0]));
-        optionTimeInMinutes.setMinutes(parseInt(optionTime.split(':')[1]));
-        if(optionTimeInMinutes >= start && optionTimeInMinutes <= end) {
-          option.disabled = false;
-        } else {
-          option.disabled = true;
-        }
-      }
-    }
-  stepTwoDate.innerText = newDatum;
-  dateCollected.setAttribute("value", newDatum);
-},
-};
-const fp = flatpickr(".input-date", config);
 
+  onChange: function(selectedDates, dateStr, instance) {
+    // Get the day of the week for the selected date
+    let dayOfWeek = new Date(dateStr).toLocaleString("en-US", { weekday: "long" });
+
+    // Get the available times for the selected day
+    let availableTimes = getAvailableTimes(dayOfWeek);
+
+    // Clear the current options in the #input-time dropdown
+    let inputTime = document.querySelector("#input-time");
+    inputTime.innerHTML = "";
+
+    // Add the available times as options in the #input-time dropdown
+    availableTimes.forEach(time => {
+      let option = document.createElement("option");
+      option.value = time;
+      option.text = time;
+      inputTime.add(option);
+    });
+  }
+});
