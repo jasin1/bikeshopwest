@@ -469,53 +469,35 @@ config = {
     let freshDate = chosenDate.toString();
     newDatum = freshDate.substring(0, 15);
     let day = chosenDate.toString().split(' ')[0];
-    let openTime = openingTimes[day].open;
-    let closeTime = openingTimes[day].close;
-    let times = [];
-    let hour = parseInt(openTime.split(':')[0]);
-    let min = parseInt(openTime.split(':')[1]);
-    let closeHour = parseInt(closeTime.split(':')[0]);
-    let closeMin = parseInt(closeTime.split(':')[1]);
-    while (hour < closeHour || (hour === closeHour && min <= closeMin)) {
-        let time = `${hour < 10 ? '0' + hour : hour}:${min < 10 ? '0' + min : min}`;
-        times.push(time);
-        min += 30;
-        if (min >= 60) {
-            min = 0;
-            hour++;
-        }
-    }
-    let select = document.getElementById("input-time");
-    select.innerHTML = "";
-    times.forEach(function (time) {
+    let openTime = openingTimes[day]?.open || '';
+    let closeTime = openingTimes[day]?.close || '';
+    if(openTime !== "" && closeTime !== ""){
+      let times = [];
+      let hour = parseInt(openTime.split(':')[0]);
+      let min = parseInt(openTime.split(':')[1]);
+      let closeHour = parseInt(closeTime.split(':')[0]);
+      let closeMin = parseInt(closeTime.split(':')[1]);
+      while (hour < closeHour || (hour === closeHour && min <= closeMin)) {
+         let time = `${hour < 10 ? '0' + hour : hour}:${min < 10 ? '0' + min : min}`;
+         times.push(time);
+         min += 30;
+         if (min >= 60) {
+           min = 0;
+           hour++;
+         }
+      }
+      let select = document.getElementById("input-time");
+      select.innerHTML = "";
+      times.forEach(function (time) {
         var opt = document.createElement("option");
         opt.value = time;
         opt.innerHTML = time;
         select.appendChild(opt);
-    });
-    select.value = null;
-    select.options[0].disabled = true;
-    select.options[0].selected = true;
-    while (hour < closeHour || (hour === closeHour && min <= closeMin)) {
-      let time = `${hour < 10 ? '0' + hour : hour}:${min < 10 ? '0' + min : min}`;
-      times.push(time);
-      min += 30;
-      if (min >= 60) {
-          min = 0;
-          hour++;
-      }
-  }
-
-  select.innerHTML = "";
-  times.forEach(function (time) {
-      var opt = document.createElement("option");
-      opt.value = time;
-      opt.innerHTML = time;
-      select.appendChild(opt);
-  });
-  select.value = null;
-  select.options[0].disabled = true;
-  select.options[0].selected = true;
+      });
+      select.value = null;
+      select.options[0].disabled = true;
+      select.options[0].selected = true;
+    }
 
   stepTwoDate.innerText = newDatum;
   dateCollected.setAttribute("value", newDatum);
