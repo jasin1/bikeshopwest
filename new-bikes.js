@@ -440,6 +440,8 @@ selectedDays.addEventListener("change", function () {
 
 //---------------- FlatPickr---------------------------------------
 
+let newDatum = "";
+let newTime = "";
 const openingTimes = {
   Monday: { open: "14:00", close: "17:45" },
   Tuesday: { open: "10:00", close: "17:45" },
@@ -449,31 +451,8 @@ const openingTimes = {
   Saturday: { open: "10:00", close: "16:45" },
   Sunday: { open: "", close: "" },
 };
-
-function getAvailableTimes(day) {
-  // Check if the day is a valid key in the openingTimes object
-  if (!openingTimes[day]) {
-    // If the day is not a valid key, return an empty array
-    return [];
-  }
-
-  // If the day is a valid key, get the open and close times for that day
-  const { open, close } = openingTimes[day];
-
-  // Calculate the available times in 30 minute increments
-  let startTime = new Date("1970-01-01 " + open);
-  let endTime = new Date("1970-01-01 " + close);
-  let availableTimes = [];
-  while (startTime <= endTime) {
-    availableTimes.push(startTime.toTimeString().substring(0, 5));
-    startTime.setMinutes(startTime.getMinutes() + 30);
-  }
-  return availableTimes;
-}
-
-let inputTime = document.querySelector("#input-time");
-
-flatpickr("#input-date", {
+config = {
+  defaultDate: toDay,
   minDate: "today",
   altInput: true,
   altFormat: "M j, Y",
@@ -483,39 +462,38 @@ flatpickr("#input-date", {
       return date.getDay() === 0 || date.getDay() === 7;
     },
   ],
-
-  onChange: function (selectedDates, dateStr, instance) {
-    // Update the stepTwoDate element with the selected date
-    stepTwoDate.innerHTML = dateStr;
-    selectedDate.innerHTML = dateStr;
-    // Get the day of the week for the selected date
-    let dayOfWeek = new Date(dateStr).toLocaleString("en-US", {
-      weekday: "long",
-    });
-
-    // Get the available times for the selected day
-    let availableTimes = getAvailableTimes(dayOfWeek);
-
-    // Clear the current options in the #input-time dropdown
-    // Clear out any options already present in the inputTime dropdown
-    inputTime.options.length = 0;
-
-    // Clear out any options already present in the inputTime dropdown, but leave the initial option "Select a time"
-    for (let i = inputTime.options.length - 1; i > 0; i--) {
-      inputTime.options[i] = null;
-    }
-    // Add the available times as options in the #input-time dropdown
-    availableTimes.forEach((time) => {
-      let option = document.createElement("option");
-      option.value = time;
-      option.text = time;
-      inputTime.add(option);
-    });
-
-    inputTime.addEventListener("change", function () {
-      console.log("Time selected");
-      step2Time.innerHTML = inputTime.value;
-      timeCollected.setAttribute("value", inputTime.value);
-    });
+  locale: {
+    firstDayOfWeek: 1,
   },
-});
+  onChange: function (dateStr) {
+    let chosenDate = dateStr;
+    let freshDate = chosenDate.toString();
+    newDatum = freshDate.substring(0, 15);
+    let day = chosenDate.toString().split(' ')[0];
+    let minTime = openingTimes[day].open;
+    let maxTime = openingTimes[day].close;
+    let times = [];
+    for (let i = minTime; i < maxTime;) {
+        let time = i.split(":");
+        i = (parseInt(time[0]) + 1) + ":" + time[1];
+        times.push(i);
+        i = (parseInt(time[0]) + 1) + ":" + time[1];
+    }
+
+    let select = document.getElementById("input-time");
+    select.innerHTML = "";
+    times.forEach(function (time) {
+        var opt = document.createElement("option");
+        opt.value = time;
+        opt.innerHTML = time;
+        select.appendChild(opt);
+    });
+    select.value = null;
+    select.options[0].disabled = true;
+    select.options[0].selected = true;
+    stepTwoDate.innerText = newDatum;
+    dateCollected.setAttribute("value", newDatum);
+  },
+};
+
+const fp = flatpickr(".input-date", config);
