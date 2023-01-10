@@ -506,9 +506,12 @@ flatpickr("#input-date",  {
       option.text = time;
       inputTime.add(option);
     });
+    step2Time.innerHTML = inputTime.value;
+    timeCollected.setAttribute("value", inputTime.value);
     // Update the step2Time element and timeCollected element when the
     // selected time in the inputTime element is changed
     inputTime.addEventListener('change', function() {
+      console.log("Time selected");
       step2Time.innerHTML = inputTime.value;
       timeCollected.setAttribute("value", inputTime.value);
     });
