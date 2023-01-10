@@ -441,7 +441,6 @@ selectedDays.addEventListener("change", function () {
 //---------------- FlatPickr---------------------------------------
 
 let newDatum = "";
-let newTime = "";
 const openingTimes = {
   Monday: { open: "14:00", close: "17:45" },
   Tuesday: { open: "10:00", close: "17:45" },
@@ -456,7 +455,7 @@ config = {
   minDate: "today",
   altInput: true,
   altFormat: "M j, Y",
-  dateFormat: "d-m-Y",
+  dateFormat: "Y-m-d",
   disable: [
     function (date) {
       return date.getDay() === 0 || date.getDay() === 7;
@@ -470,16 +469,22 @@ config = {
     let freshDate = chosenDate.toString();
     newDatum = freshDate.substring(0, 15);
     let day = chosenDate.toString().split(' ')[0];
-    let minTime = openingTimes[day].open;
-    let maxTime = openingTimes[day].close;
+    let openTime = openingTimes[day].open;
+    let closeTime = openingTimes[day].close;
     let times = [];
-    for (let i = minTime; i < maxTime;) {
-        let time = i.split(":");
-        i = (parseInt(time[0]) + 1) + ":" + time[1];
-        times.push(i);
-        i = (parseInt(time[0]) + 1) + ":" + time[1];
+    let hour = parseInt(openTime.split(':')[0]);
+    let min = parseInt(openTime.split(':')[1]);
+    let closeHour = parseInt(closeTime.split(':')[0]);
+    let closeMin = parseInt(closeTime.split(':')[1]);
+    while (hour < closeHour || (hour === closeHour && min <= closeMin)) {
+        let time = `${hour < 10 ? '0' + hour : hour}:${min < 10 ? '0' + min : min}`;
+        times.push(time);
+        min += 30;
+        if (min >= 60) {
+            min = 0;
+            hour++;
+        }
     }
-
     let select = document.getElementById("input-time");
     select.innerHTML = "";
     times.forEach(function (time) {
@@ -491,9 +496,30 @@ config = {
     select.value = null;
     select.options[0].disabled = true;
     select.options[0].selected = true;
-    stepTwoDate.innerText = newDatum;
-    dateCollected.setAttribute("value", newDatum);
-  },
-};
+    while (hour < closeHour || (hour === closeHour && min <= closeMin)) {
+      let time = `${hour < 10 ? '0' + hour : hour}:${min < 10 ? '0' + min : min}`;
+      times.push(time);
+      min += 30;
+      if (min >= 60) {
+          min = 0;
+          hour++;
+      }
+  }
 
+  select.innerHTML = "";
+  times.forEach(function (time) {
+      var opt = document.createElement("option");
+      opt.value = time;
+      opt.innerHTML = time;
+      select.appendChild(opt);
+  });
+  select.value = null;
+  select.options[0].disabled = true;
+  select.options[0].selected = true;
+
+  stepTwoDate.innerText = newDatum;
+  dateCollected.setAttribute("value", newDatum);
+},
+};
 const fp = flatpickr(".input-date", config);
+
