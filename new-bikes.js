@@ -497,14 +497,14 @@ flatpickr("#input-date", {
     //-------------------------------------------
 
     // Get the day of the week for the selected date
-    let dayOfWeek = new Date(dateStr).toLocaleString("en-US", {
-      weekday: "long",
-    });
+    // let dayOfWeek = new Date(dateStr).toLocaleString("en-US", {
+    //   weekday: "long",
+    // });
 
-    console.log(dayOfWeek);
+    // console.log(dayOfWeek);
 
     // Get the available times for the selected day
-    let availableTimes = getAvailableTimes(dayOfWeek);
+    let availableTimes = getAvailableTimes(selDayName);
     console.log(availableTimes);
 
     // Clear the current options in the #input-time dropdown
