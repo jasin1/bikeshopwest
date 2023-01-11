@@ -437,7 +437,7 @@ selectedDays.addEventListener("change", function () {
 });
 
 //--------------------------------------------------------------------------------------------
-
+//"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
 //---------------- FlatPickr---------------------------------------
 const openingTimes = {
   Monday: { open: "14:00", close: "17:45" },
@@ -488,9 +488,13 @@ flatpickr("#input-date", {
     stepTwoDate.innerHTML = dateStr;
     selectedDate.innerHTML = dateStr;
 
+    //which day is it?---------------------------
     const selDate = instance.latestSelectedDateObj;
     const myDay = selDate.getDay();
-    console.log("dag is "+ myDay);
+    const myWeekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    const selDayName = myWeekdays[myDay];
+    console.log(selDayName);
+    //-------------------------------------------
 
     // Get the day of the week for the selected date
     let dayOfWeek = new Date(dateStr).toLocaleString("en-US", {
