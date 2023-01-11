@@ -484,7 +484,6 @@ flatpickr("#input-date", {
   ],
 
   onChange: function (selectedDates, dateStr, instance) {
-
     stepTwoDate.innerText = dateStr;
     dateCollected.setAttribute("value", dateStr);
 
