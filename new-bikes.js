@@ -446,9 +446,8 @@ const openingTimes = {
   Thursday: { open: "10:00", close: "17:45" },
   Friday: { open: "15:00", close: "17:45" },
   Saturday: { open: "10:00", close: "16:45" },
-  Sunday: { open: "", close: "" }
+  Sunday: { open: "", close: "" },
 };
-
 
 function getAvailableTimes(day) {
   // Check if the day is a valid key in the openingTimes object
@@ -473,22 +472,22 @@ function getAvailableTimes(day) {
 
 let inputTime = document.querySelector("#input-time");
 
-
 flatpickr("#input-date", {
-
   minDate: "today",
   altInput: true,
   altFormat: "M j, Y",
-  dateFormat: "Y-m-d",
+  dateFormat: "d-m-Y",
   disable: [
     function (date) {
       return date.getDay() === 0 || date.getDay() === 7;
     },
   ],
 
-  onChange: function(selectedDates, dateStr, instance) {
+  onChange: function (selectedDates, dateStr, instance) {
     // Get the day of the week for the selected date
-    let dayOfWeek = new Date(dateStr).toLocaleString("en-US", { weekday: "long" });
+    let dayOfWeek = new Date(dateStr).toLocaleString("en-US", {
+      weekday: "long",
+    });
 
     // Get the available times for the selected day
     let availableTimes = getAvailableTimes(dayOfWeek);
@@ -498,17 +497,17 @@ flatpickr("#input-date", {
     inputTime.innerHTML = "";
 
     // Add the available times as options in the #input-time dropdown
-    availableTimes.forEach(time => {
+    availableTimes.forEach((time) => {
       let option = document.createElement("option");
       option.value = time;
       option.text = time;
       inputTime.add(option);
     });
+  },
+});
 
-    // inputTime.addEventListener("change", function () {
-    //   console.log("Time selected");
-    //   step2Time.innerHTML = inputTime.value;
-    //   timeCollected.setAttribute("value", inputTime.value);
-    // });
-  }
+inputTime.addEventListener("change", function () {
+  console.log("Time selected");
+  step2Time.innerHTML = inputTime.value;
+  timeCollected.setAttribute("value", inputTime.value);
 });
