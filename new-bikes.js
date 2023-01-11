@@ -478,7 +478,7 @@ flatpickr("#input-date", {
   minDate: "today",
   altInput: true,
   altFormat: "M j, Y",
-  dateFormat: "d-m-Y",
+  dateFormat: "Y-m-d",
   disable: [
     function (date) {
       return date.getDay() === 0 || date.getDay() === 7;
@@ -486,10 +486,6 @@ flatpickr("#input-date", {
   ],
 
   onChange: function(selectedDates, dateStr, instance) {
-    console.log(dateStr);
-    // stepTwoDate.innerHTML = dateStr;
-    // selectedDate.innerHTML = dateStr;
-
     // Get the day of the week for the selected date
     let dayOfWeek = new Date(dateStr).toLocaleString("en-US", { weekday: "long" });
 
@@ -515,5 +511,3 @@ flatpickr("#input-date", {
     });
   }
 });
-
-// stepTwoDate.innerText = newDatum;
