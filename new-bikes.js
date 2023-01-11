@@ -478,7 +478,7 @@ flatpickr("#input-date", {
   minDate: "today",
   altInput: true,
   altFormat: "M j, Y",
-  dateFormat: "Y-m-d",
+  dateFormat: "d-m-Y",
   disable: [
     function (date) {
       return date.getDay() === 0 || date.getDay() === 7;
