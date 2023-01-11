@@ -500,6 +500,9 @@ flatpickr("#input-date", {
     // Clear the current options in the #input-time dropdown
     let inputTime = document.querySelector("#input-time");
     inputTime.innerHTML = "";
+    //setting initial time?
+    step2Time.innerHTML = inputTime.value;
+    timeCollected.setAttribute("value", inputTime.value);
 
     // Add the available times as options in the #input-time dropdown
     availableTimes.forEach(time => {
