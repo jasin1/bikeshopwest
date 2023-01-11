@@ -506,8 +506,8 @@ flatpickr("#input-date", {
   },
 });
 
-inputTime.addEventListener("change", function () {
-  console.log("Time selected");
-  step2Time.innerHTML = inputTime.value;
-  timeCollected.setAttribute("value", inputTime.value);
-});
+// inputTime.addEventListener("change", function () {
+//   console.log("Time selected");
+//   step2Time.innerHTML = inputTime.value;
+//   timeCollected.setAttribute("value", inputTime.value);
+// });
