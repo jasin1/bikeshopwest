@@ -493,6 +493,8 @@ flatpickr("#input-date", {
       weekday: "long",
     });
 
+    console.log(dayOfWeek);
+
     // Get the available times for the selected day
     let availableTimes = getAvailableTimes(dayOfWeek);
     console.log(availableTimes);
