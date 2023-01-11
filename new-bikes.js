@@ -506,6 +506,7 @@ flatpickr("#input-date", {
     // Get the available times for the selected day
     let availableTimes = getAvailableTimes(selDayName);
     console.log(availableTimes);
+    console.log(availableTimes[0]);
 
     // Clear the current options in the #input-time dropdown
     //let inputTime = document.querySelector("#input-time");
