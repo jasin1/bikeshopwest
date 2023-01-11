@@ -508,6 +508,9 @@ flatpickr("#input-date", {
     console.log(availableTimes);
     console.log(availableTimes[0]);
 
+    //set initial time 
+    step2Time.innerHTML = availableTimes[0];
+    timeCollected.setAttribute("value", availableTimes[0]);
     // Clear the current options in the #input-time dropdown
     //let inputTime = document.querySelector("#input-time");
     inputTime.innerHTML = "";
