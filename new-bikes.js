@@ -507,7 +507,7 @@ flatpickr("#input-date", {
       option.value = time;
       option.text = time;
       inputTime.add(option);
-      console.log("innitial time "+ inputTime.options[inputTime.selectedIndex].value);
+      //console.log("innitial time "+ inputTime.options[inputTime.selectedIndex].value);
     });
 
     inputTime.addEventListener("change", function () {
