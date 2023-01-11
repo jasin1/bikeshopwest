@@ -471,7 +471,7 @@ function getAvailableTimes(day) {
 }
 
 let inputTime = document.querySelector("#input-time");
-inputTime.innerHTML = "";
+//inputTime.innerHTML = "";
 
 flatpickr("#input-date", {
   minDate: "today",
