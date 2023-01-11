@@ -486,6 +486,11 @@ flatpickr("#input-date", {
   ],
 
   onChange: function(selectedDates, dateStr, instance) {
+    //handling date part
+    let chosenDate = dateStr;
+    let freshDate = chosenDate.toString();
+    newDatum = freshDate.substring(0, 15);
+    stepTwoDate.innerText = newDatum;
     // Get the day of the week for the selected date
     let dayOfWeek = new Date(dateStr).toLocaleString("en-US", { weekday: "long" });
 
@@ -511,3 +516,5 @@ flatpickr("#input-date", {
     });
   }
 });
+
+// stepTwoDate.innerText = newDatum;
