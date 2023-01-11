@@ -506,3 +506,9 @@ https://cdn.jsdelivr.net/gh/jasin1/bikeshopwest@6f584ffc5bb0815273c8e5a363de2b6f
 
 
 */
+
+
+// let chosenDate = dateStr;
+// let freshDate = chosenDate.toString();
+// newDatum = freshDate.substring(0, 15);
+// stepTwoDate.innerText = newDatum;
