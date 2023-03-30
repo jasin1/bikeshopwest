@@ -88,9 +88,9 @@ let bikeItemsData = [
   {
     id: "bike02",
     name: "Electric Bike",
-    price1: 35,
-    price2: 30,
-    dif: 5,
+    price1: 28,
+    price2: 24,
+    dif: 4,
     descShort: "Duis cursus, mi quis viverra ornare",
     descLong:
       "Electric bike adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
@@ -532,3 +532,14 @@ flatpickr("#input-date", {
 });
 
 
+/* JS Deliver
+
+original die werkte toen nog in porductie
+<script defer src="https://jasin1.github.io/bikeshopwest/new-bikes.js"></script>
+
+Nieuw via JS Deliver:
+https://cdn.jsdelivr.net/gh/jasin1/bikeshopwest@271826f7aa1a01b6d07d1ce8dda7051d9da41038/new-bikes.js
+
+
+
+*/
