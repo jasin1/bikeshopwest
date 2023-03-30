@@ -491,7 +491,15 @@ flatpickr("#input-date", {
     //which day is it?---------------------------
     const selDate = instance.latestSelectedDateObj;
     const myDay = selDate.getDay();
-    const myWeekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    const myWeekdays = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
     const selDayName = myWeekdays[myDay];
     console.log(selDayName);
     //-------------------------------------------
@@ -508,7 +516,7 @@ flatpickr("#input-date", {
     console.log(availableTimes);
     console.log(availableTimes[0]);
 
-    //set initial time 
+    //set initial time
     step2Time.innerHTML = availableTimes[0];
     timeCollected.setAttribute("value", availableTimes[0]);
     // Clear the current options in the #input-time dropdown
@@ -530,7 +538,6 @@ flatpickr("#input-date", {
     });
   },
 });
-
 
 /* JS Deliver
 
