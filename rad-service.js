@@ -61,14 +61,13 @@ function generateTimeSlots(selectedDay) {
 function updateAvailableTimeSlots() {
   console.log("updating available time slots");
   const calendarInput = document.getElementById("rad-calendar");
-  if (calendarInput.ariaValueMax === null) {
+  const instance = flatpickr(calendarInput);
+
+  if(!selectedDate){
     return;
   }
 
-  const selectedDate = calendarInput.ariaValueMax
-    .split("-")
-    .reverse()
-    .join("-");
+
   const selectedDay = moment(selectedDate).format("dddd");
   const timeSlots = generateTimeSlots(selectedDay);
 
@@ -76,6 +75,7 @@ function updateAvailableTimeSlots() {
   console.log("timeSlotWrapper is " + timeSlotsWrapper);
 
   console.log("Before while loop:", timeSlotsWrapper.childNodes);
+  
   while (timeSlotsWrapper.firstChild) {
     timeSlotsWrapper.removeChild(timeSlotsWrapper.firstChild);
   }
