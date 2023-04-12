@@ -69,10 +69,12 @@ function updateAvailableTimeSlots() {
   const timeSlots = generateTimeSlots(selectedDay);
 
   // Clear any existing time slots
+  console.log("timeSlotWrapper is "+timeSlotsWrapper);
+
   while (timeSlotsWrapper.firstChild) {
     timeSlotsWrapper.removeChild(timeSlotsWrapper.firstChild);
   }
-
+  console.log("TimeSlots are "+timeSlots);
   // Create a time slot element for each time slot and append it to the timeSlotsWrapper
   timeSlots.forEach((timeSlot) => {
     const timeSlotElement = document.createElement("div");
