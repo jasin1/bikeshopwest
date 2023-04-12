@@ -35,6 +35,24 @@ function showStep(stepIndex){
 
 
 //------------ flatpickr --------------------//
+
+const openingTimes = {
+  Monday: { open: "14:00", close: "17:45" },
+  Tuesday: { open: "10:00", close: "17:45" },
+  Wednesday: { open: "10:00", close: "17:45" },
+  Thursday: { open: "10:00", close: "17:45" },
+  Friday: { open: "15:00", close: "17:45" },
+  Saturday: { open: "10:00", close: "16:45" },
+  Sunday: { open: "", close: "" },
+};
+
+const testTimes = {
+  Tuesday: { open: "12:00", close: "14:00" },
+  Thursday: { open: "12:00", close: "14:00" },
+  Saturday: { open: "11:00", close: "15:00" },
+  Sunday: { open: "", close: "" },
+}
+
 flatpickr(calendarInput,{
   mode: "multiple",
   enableTime: false,
