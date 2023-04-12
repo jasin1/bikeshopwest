@@ -28,29 +28,6 @@ const testTimes = {
   Sunday: { open: "", close: "" },
 };
 
-//---------------------------------------------
-
-let radCurrentStep = 0;
-let radSelection = "";
-
-const state = {
-  choice: null,
-};
-
-serviceButton.addEventListener("click", function () {
-  showStep(1);
-  radSelection = "service";
-  state.choice = "service";
-  updateAvailableTimeSlots();
-});
-
-testButton.addEventListener("click", function () {
-  showStep(1);
-  radSelection = "test-ride";
-  state.choice = "test ride";
-  updateAvailableTimeSlots();
-});
-
 function generateTimeSlots(selectedDay) {
   let openingTimesObj, selectedTimesObj;
   if (radSelection === "service") {
@@ -104,6 +81,31 @@ function updateAvailableTimeSlots() {
     timeSlotsWrapper.appendChild(timeSlotElement);
   });
 }
+
+
+//---------------------------------------------
+
+let radCurrentStep = 0;
+let radSelection = "";
+
+const state = {
+  choice: null,
+};
+
+serviceButton.addEventListener("click", function () {
+  showStep(1);
+  radSelection = "service";
+  state.choice = "service";
+  updateAvailableTimeSlots();
+});
+
+testButton.addEventListener("click", function () {
+  showStep(1);
+  radSelection = "test-ride";
+  state.choice = "test ride";
+  updateAvailableTimeSlots();
+});
+
 
 function showStep(stepIndex) {
   radFormFields[radCurrentStep].classList.remove("active");
