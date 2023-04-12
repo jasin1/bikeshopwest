@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
     dateFormat: "d-m-Y",
     minDate: "today",
     inline: true,
-    altInput: true,
+    //altInput: true,
     altFormat: "",
     onChange: function(selectedDates, dateStr, instance) {
       // Code that updates time slots based on selected date goes here
