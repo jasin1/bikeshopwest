@@ -26,8 +26,7 @@ const testTimes = {
   Thursday: { open: "12:00", close: "14:00" },
   Saturday: { open: "11:00", close: "15:00" },
   Sunday: { open: "", close: "" },
-}
-
+};
 
 //---------------------------------------------
 
@@ -35,41 +34,43 @@ let radCurrentStep = 0;
 let radSelection = "";
 
 const state = {
-  choice: null
+  choice: null,
 };
 
-serviceButton.addEventListener("click", function(){
+serviceButton.addEventListener("click", function () {
   showStep(1);
   radSelection = "service";
   state.choice = "service";
   updateAvailableTimeSlots();
 });
 
-testButton.addEventListener("click", function(){
+testButton.addEventListener("click", function () {
   showStep(1);
   radSelection = "test-ride";
   state.choice = "test ride";
   updateAvailableTimeSlots();
 });
 
-function generateTimeSlots(selectedDay){
+function generateTimeSlots(selectedDay) {
   let openingTimesObj, selectedTimesObj;
-  if(radSelection === "service"){
+  if (radSelection === "service") {
     openingTimesObj = radOpeningTimes;
     selectedTimesObj = radOpeningTimes[selectedDay];
-  }else if(radSelection === "test-ride"){
+  } else if (radSelection === "test-ride") {
     openingTimesObj = testTimes;
     selectedTimesObj = testTimes[selectedDay];
   }
 
-  const openingTime = selectedTimesObj.open || openingTimesObj[selectedDay].open;
-  const closingTime = selectedTimesObj.close || openingTimesObj[selectedDay].close;
+  const openingTime =
+    selectedTimesObj.open || openingTimesObj[selectedDay].open;
+  const closingTime =
+    selectedTimesObj.close || openingTimesObj[selectedDay].close;
 
   const timeSlots = [];
   let currentTime = moment(openingTime, "HH:mm");
   const closingMoment = moment(closingTime, "HH:mm");
 
-  while (currentTime.isBefore(closingMoment)){
+  while (currentTime.isBefore(closingMoment)) {
     timeSlots.push(currentTime.format("HH:mm"));
     currentTime.add(30, "minutes");
   }
@@ -77,42 +78,37 @@ function generateTimeSlots(selectedDay){
   return timeSlots;
 }
 
-function updateAvailableTimeSlots(){
+function updateAvailableTimeSlots() {
   const calendarInput = document.getElementById("rad-calendar");
-  const selectedDate = calendarInput.ariaValueMax.split("-").reverse().join("-");
+  const selectedDate = calendarInput.ariaValueMax
+    .split("-")
+    .reverse()
+    .join("-");
   const selectedDay = moment(selectedDate).format("dddd");
   const timeSlots = generateTimeSlots(selectedDay);
 
-   // Clear any existing time slots
-  while(timeSlotsWrapper.firstChild){
+  // Clear any existing time slots
+  while (timeSlotsWrapper.firstChild) {
     timeSlotsWrapper.removeChild(timeSlotsWrapper.firstChild);
   }
 
   // Create a time slot element for each time slot and append it to the timeSlotsWrapper
-  timeSlots.forEach((timeSlot) =>{
+  timeSlots.forEach((timeSlot) => {
     const timeSlotElement = document.createElement("div");
     timeSlotElement.classList.add("rad-timeslot");
     timeSlotElement.textContent = timeSlot;
     timeSlotsWrapper.appendChild(timeSlotElement);
   });
-
 }
 
-
-
-
-function showStep(stepIndex){
-  radSelection[radCurrentStep].classList.remove("active");
-  radSelection[stepIndex].classList.add("active");
-};
-
+function showStep(stepIndex) {
+  radFormFields[radCurrentStep].classList.remove("active");
+  radFormFields[stepIndex].classList.add("active");
+}
 
 //------------ flatpickr --------------------//
 
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   const calendarInput = document.getElementById("rad-calendar");
 
   flatpickr(calendarInput, {
@@ -124,11 +120,8 @@ document.addEventListener('DOMContentLoaded', function() {
     //altInput: true,
     firstDayOfWeek: 1,
     altFormat: "",
-    onChange: function(selectedDates, dateStr, instance) {
+    onChange: function (selectedDates, dateStr, instance) {
       // Code that updates time slots based on selected date goes here
-    }
+    },
   });
 });
-
-
-
