@@ -23,9 +23,9 @@ testButton.addEventListener("click", function(){
   radSelection = "test-ride";
 });
 
-backButton.addEventListener("click",function(){
-  showStep(radCurrentStep - 1);
-});
+// backButton.addEventListener("click",function(){
+//   showStep(radCurrentStep - 1);
+// });
 
 
 function showStep(stepIndex){
