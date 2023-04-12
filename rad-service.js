@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     minDate: "today",
     inline: true,
     //altInput: true,
+    firstDayOfWeek: 1,
     altFormat: "",
     onChange: function(selectedDates, dateStr, instance) {
       // Code that updates time slots based on selected date goes here
