@@ -11,7 +11,7 @@ const radFormFields = document.querySelectorAll(".form-field-wrapper");
 const backButton = document.querySelectorAll(".rad-back-btn");
 const timeSlotsWrapper = document.querySelector(".rad-timeslots-wrapper");
 
-const openingTimes = {
+const radOpeningTimes = {
   Monday: { open: "14:00", close: "17:45" },
   Tuesday: { open: "10:00", close: "17:45" },
   Wednesday: { open: "10:00", close: "17:45" },
@@ -55,8 +55,8 @@ testButton.addEventListener("click", function(){
 function generateTimeSlots(selectedDay){
   let openingTimesObj, selectedTimesObj;
   if(radSelection === "service"){
-    openingTimesObj = openingTimes;
-    selectedTimesObj = openingTimes[selectedDay];
+    openingTimesObj = radOpeningTimes;
+    selectedTimesObj = radOpeningTimes[selectedDay];
   }else if(radSelection === "test-ride"){
     openingTimesObj = testTimes;
     selectedTimesObj = testTimes[selectedDay];
