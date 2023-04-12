@@ -97,6 +97,7 @@ serviceButton.addEventListener("click", function () {
   radSelection = "service";
   state.choice = "service";
   updateAvailableTimeSlots();
+  console.log("Service button clicked");
 });
 
 testButton.addEventListener("click", function () {
@@ -104,6 +105,7 @@ testButton.addEventListener("click", function () {
   radSelection = "test-ride";
   state.choice = "test ride";
   updateAvailableTimeSlots();
+  console.log("Test button clicked");
 });
 
 
