@@ -80,6 +80,10 @@ function generateTimeSlots(selectedDay) {
 
 function updateAvailableTimeSlots() {
   const calendarInput = document.getElementById("rad-calendar");
+  if(calendarInput.ariaValueMax === null){
+    return;
+  }
+
   const selectedDate = calendarInput.ariaValueMax
     .split("-")
     .reverse()
