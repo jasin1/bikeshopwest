@@ -89,6 +89,7 @@ function updateAvailableTimeSlots() {
     timeSlotElement.textContent = timeSlot;
     timeSlotsWrapper.appendChild(timeSlotElement);
   });
+  console.log(timeSlots.length);
 }
 
 //---------------------------------------------
