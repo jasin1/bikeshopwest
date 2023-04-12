@@ -11,6 +11,8 @@ const radFormFields = document.querySelectorAll(".form-field-wrapper");
 const backButton = document.querySelectorAll(".rad-back-btn");
 const timeSlotsWrapper = document.querySelector(".rad-timeslots-wrapper");
 
+let radSelection = "";
+
 const radOpeningTimes = {
   Monday: { open: "14:00", close: "17:45" },
   Tuesday: { open: "10:00", close: "17:45" },
@@ -90,14 +92,14 @@ function updateAvailableTimeSlots() {
 //---------------------------------------------
 
 // let radCurrentStep = 0;
-let radSelection = "";
+
 
 const state = {
   choice: null,
 };
 
 serviceButton.addEventListener("click", function () {
-  showStep(1);
+  //showStep(1);
   radSelection = "service";
   state.choice = "service";
   console.log("Service button clicked");
@@ -105,7 +107,7 @@ serviceButton.addEventListener("click", function () {
 });
 
 testButton.addEventListener("click", function () {
-  showStep(1);
+  //showStep(1);
   radSelection = "test-ride";
   state.choice = "test ride";
   console.log("Test button clicked");
