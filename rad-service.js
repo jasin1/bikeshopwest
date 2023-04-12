@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
     altFormat: "",
     onChange: function (selectedDates, dateStr, instance) {
       // Code that updates time slots based on selected date goes here
-      selectedDate = selectedDate[0];
+      selectedDate = selectedDates[0];
       updateAvailableTimeSlots();
     },
   });
