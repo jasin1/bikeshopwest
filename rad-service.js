@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const calendarInput = document.getElementById("rad-calendar");
 
   flatpickr(calendarInput, {
-    mode: "multiple",
+    mode: "single",
     enableTime: false,
     dateFormat: "d-m-Y",
     minDate: "today",
