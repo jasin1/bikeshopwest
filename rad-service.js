@@ -89,33 +89,33 @@ function updateAvailableTimeSlots() {
 
 //---------------------------------------------
 
-let radCurrentStep = 0;
-let radSelection = "";
+// let radCurrentStep = 0;
+// let radSelection = "";
 
-const state = {
-  choice: null,
-};
+// const state = {
+//   choice: null,
+// };
 
-serviceButton.addEventListener("click", function () {
-  showStep(1);
-  radSelection = "service";
-  state.choice = "service";
-  console.log("Service button clicked");
-  updateAvailableTimeSlots();
-});
+// serviceButton.addEventListener("click", function () {
+//   showStep(1);
+//   radSelection = "service";
+//   state.choice = "service";
+//   console.log("Service button clicked");
+//   updateAvailableTimeSlots();
+// });
 
-testButton.addEventListener("click", function () {
-  showStep(1);
-  radSelection = "test-ride";
-  state.choice = "test ride";
-  console.log("Test button clicked");
-  updateAvailableTimeSlots();
-});
+// testButton.addEventListener("click", function () {
+//   showStep(1);
+//   radSelection = "test-ride";
+//   state.choice = "test ride";
+//   console.log("Test button clicked");
+//   updateAvailableTimeSlots();
+// });
 
-function showStep(stepIndex) {
-  radFormFields[radCurrentStep].classList.remove("active");
-  radFormFields[stepIndex].classList.add("active");
-}
+// function showStep(stepIndex) {
+//   radFormFields[radCurrentStep].classList.remove("active");
+//   radFormFields[stepIndex].classList.add("active");
+// }
 
 //------------ flatpickr --------------------//
 
