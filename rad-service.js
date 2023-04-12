@@ -33,6 +33,14 @@ const testTimes = {
 
 function generateTimeSlots(selectedDay) {
   console.log("generating time slots");
+
+  if(!(firstDayOfWeek in radOpeningTimes)){
+    console.error(`Invalid day of week: ${dayOfWeek}`);
+    return [];
+  }
+
+
+
   let openingTimesObj, selectedTimesObj;
   if (radSelection === "service") {
     openingTimesObj = radOpeningTimes;
@@ -42,10 +50,10 @@ function generateTimeSlots(selectedDay) {
     selectedTimesObj = testTimes[selectedDay];
   }
 
-  const openingTime =
-    selectedTimesObj.open || openingTimesObj[selectedDay].open;
-  const closingTime =
-    selectedTimesObj.close || openingTimesObj[selectedDay].close;
+  const openingTime = selectedTimesObj.open.split(":");
+
+  const closingTime = selectedTimesObj.close.split(":");
+
 
   const timeSlots = [];
   let currentTime = moment(openingTime, "HH:mm");
