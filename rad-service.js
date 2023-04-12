@@ -31,6 +31,7 @@ const testTimes = {
 };
 
 function generateTimeSlots(selectedDay) {
+  console.log("generating time slots");
   let openingTimesObj, selectedTimesObj;
   if (radSelection === "service") {
     openingTimesObj = radOpeningTimes;
@@ -58,6 +59,7 @@ function generateTimeSlots(selectedDay) {
 }
 
 function updateAvailableTimeSlots() {
+  console.log("updating available time slots");
   const calendarInput = document.getElementById("rad-calendar");
   if (calendarInput.ariaValueMax === null) {
     return;
