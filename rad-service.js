@@ -57,7 +57,7 @@ function generateTimeSlots(selectedDay) {
 
 function updateAvailableTimeSlots() {
   const calendarInput = document.getElementById("rad-calendar");
-  if(calendarInput.ariaValueMax === null){
+  if (calendarInput.ariaValueMax === null) {
     return;
   }
 
@@ -69,12 +69,12 @@ function updateAvailableTimeSlots() {
   const timeSlots = generateTimeSlots(selectedDay);
 
   // Clear any existing time slots
-  console.log("timeSlotWrapper is "+timeSlotsWrapper);
+  console.log("timeSlotWrapper is " + timeSlotsWrapper);
 
   while (timeSlotsWrapper.firstChild) {
     timeSlotsWrapper.removeChild(timeSlotsWrapper.firstChild);
   }
-  console.log("TimeSlots are "+timeSlots);
+  console.log("TimeSlots are " + timeSlots);
   // Create a time slot element for each time slot and append it to the timeSlotsWrapper
   timeSlots.forEach((timeSlot) => {
     const timeSlotElement = document.createElement("div");
@@ -83,7 +83,6 @@ function updateAvailableTimeSlots() {
     timeSlotsWrapper.appendChild(timeSlotElement);
   });
 }
-
 
 //---------------------------------------------
 
@@ -98,18 +97,17 @@ serviceButton.addEventListener("click", function () {
   showStep(1);
   radSelection = "service";
   state.choice = "service";
-  updateAvailableTimeSlots();
   console.log("Service button clicked");
+  updateAvailableTimeSlots();
 });
 
 testButton.addEventListener("click", function () {
   showStep(1);
   radSelection = "test-ride";
   state.choice = "test ride";
-  updateAvailableTimeSlots();
   console.log("Test button clicked");
+  updateAvailableTimeSlots();
 });
-
 
 function showStep(stepIndex) {
   radFormFields[radCurrentStep].classList.remove("active");
