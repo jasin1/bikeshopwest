@@ -71,9 +71,12 @@ function updateAvailableTimeSlots() {
   // Clear any existing time slots
   console.log("timeSlotWrapper is " + timeSlotsWrapper);
 
+  console.log("Before while loop:", timeSlotsWrapper.childNodes);
   while (timeSlotsWrapper.firstChild) {
     timeSlotsWrapper.removeChild(timeSlotsWrapper.firstChild);
   }
+  console.log("After while loop:", timeSlotsWrapper.childNodes);
+
   console.log("TimeSlots are " + timeSlots);
   // Create a time slot element for each time slot and append it to the timeSlotsWrapper
   timeSlots.forEach((timeSlot) => {
