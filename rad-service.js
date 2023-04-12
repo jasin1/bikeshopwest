@@ -12,6 +12,7 @@ const backButton = document.querySelectorAll(".rad-back-btn");
 const timeSlotsWrapper = document.querySelector(".rad-timeslots-wrapper");
 
 let radSelection = "";
+let selectedDate = null;
 
 const radOpeningTimes = {
   Monday: { open: "14:00", close: "17:45" },
@@ -68,6 +69,7 @@ function updateAvailableTimeSlots() {
   }
 
 
+
   const selectedDay = moment(selectedDate).format("dddd");
   const timeSlots = generateTimeSlots(selectedDay);
 
@@ -75,7 +77,6 @@ function updateAvailableTimeSlots() {
   console.log("timeSlotWrapper is " + timeSlotsWrapper);
 
   console.log("Before while loop:", timeSlotsWrapper.childNodes);
-  
   while (timeSlotsWrapper.firstChild) {
     timeSlotsWrapper.removeChild(timeSlotsWrapper.firstChild);
   }
@@ -124,6 +125,8 @@ testButton.addEventListener("click", function () {
 
 //------------ flatpickr --------------------//
 
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const calendarInput = document.getElementById("rad-calendar");
 
@@ -138,6 +141,8 @@ document.addEventListener("DOMContentLoaded", function () {
     altFormat: "",
     onChange: function (selectedDates, dateStr, instance) {
       // Code that updates time slots based on selected date goes here
+      selectedDate = selectedDate[0];
+      updateAvailableTimeSlots();
     },
   });
 });
