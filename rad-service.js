@@ -51,7 +51,7 @@ function initFlatpickr() {
     disable: getDisabledDates(),
     enableTimes: false,
     dateFormat: "d.m.Y",
-    mode: "single",
+    //mode: "single",
     minDate: "today",
     inline: true,
     maxDate: new Date().fp_incr(90),
