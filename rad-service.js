@@ -11,10 +11,6 @@ const radFormFields = document.querySelectorAll(".form-field-wrapper");
 const backButton = document.querySelectorAll(".rad-back-btn");
 const timeSlotsWrapper = document.querySelector(".rad-timeslots-wrapper");
 
-
-
-
-
 const radOpeningTimes = {
   Monday: { open: "14:00", close: "17:45" },
   Tuesday: { open: "10:00", close: "17:45" },
@@ -32,6 +28,17 @@ const testTimes = {
   Sunday: { open: "", close: "" },
 };
 
+//------------- make a choice in step 1 ---------------//
+
+serviceButton.addEventListener("click", function() {
+  serviceButton.classList.add("active");
+  testButton.classList.remove("active");
+});
+
+testButton.addEventListener("click", function() {
+  testButton.classList.add("active");
+  serviceButton.classList.remove("active");
+});
 
 //-------------------- flatpickr ---------------------------//
 
@@ -39,9 +46,9 @@ const calendarInput = document.getElementById("rad-calendar2");
 
 let radFp;
 
-function initFlatpickr(){
-  radFp = flatpickr(calendarInput,{
-    disable:getDisabledDates(),
+function initFlatpickr() {
+  radFp = flatpickr(calendarInput, {
+    disable: getDisabledDates(),
     enableTimes: false,
     dateFormat: "d.m.Y",
     mode: "single",
@@ -49,9 +56,9 @@ function initFlatpickr(){
     maxDate: new Date().fp_incr(90),
     onChange: onSelectDate,
   });
-};
+}
 
-function onSelectDate(onSelectDates){
+function onSelectDate(onSelectDates) {
   const onSelectDate = onSelectDates[0];
   const availableTimeSlots = getAvailableTimeSlots(onSelectDate);
   renderTimeSlots(availableTimeSlots);
@@ -81,7 +88,6 @@ function getChosenOption() {
   }
 }
 
-
 function getAvailableTimeSlots(selectedDate) {
   const availableTimes = [];
   const dayOfWeek = selectedDate.toLocaleDateString("en-US", {
@@ -102,7 +108,6 @@ function getAvailableTimeSlots(selectedDate) {
   return availableTimes;
 }
 
-
 function getOpeningTime(dayOfWeek) {
   return radOpeningTimes[dayOfWeek].open;
 }
@@ -114,12 +119,12 @@ function getClosingTime(dayOfWeek) {
 function renderTimeSlots(availableTimeSlots) {
   let timeSlotsHTML = "";
   availableTimeSlots.forEach((timeSlot) => {
-    timeSlotsHTML += `<button type="button" class="rad-time-slot">${timeSlot}</button>`;
+    timeSlotsHTML += `<button type="button" class="rad-timeslot">${timeSlot}</button>`;
   });
 
   timeSlotsWrapper.innerHTML = timeSlotsHTML;
 
-  const timeSlotButtons = document.querySelectorAll(".rad-time-slot");
+  const timeSlotButtons = document.querySelectorAll(".rad-timeslot");
 
   timeSlotButtons.forEach((button) => {
     button.addEventListener("click", () => {
