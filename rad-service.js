@@ -11,10 +11,9 @@ const radFormFields = document.querySelectorAll(".form-field-wrapper");
 const backButton = document.querySelectorAll(".rad-back-btn");
 const timeSlotsWrapper = document.querySelector(".rad-timeslots-wrapper");
 
-const calendarInput = document.getElementById("rad-calendar2");
 
-let radSelection = "";
-let selectedDate = null;
+
+
 
 const radOpeningTimes = {
   Monday: { open: "14:00", close: "17:45" },
@@ -32,3 +31,102 @@ const testTimes = {
   Saturday: { open: "11:00", close: "15:00" },
   Sunday: { open: "", close: "" },
 };
+
+
+//-------------------- flatpickr ---------------------------//
+
+const calendarInput = document.getElementById("rad-calendar2");
+
+let radFp;
+
+function initFlatpickr(){
+  radFp = flatpickr(calendarInput,{
+    disable:getDisabledDates(),
+    enableTimes: false,
+    dateFormat: "d.m.Y",
+    mode: "single",
+    minDate: "today",
+    maxDate: new Date().fp_incr(90),
+    onChange: onSelectDate,
+  });
+};
+
+function onSelectDate(onSelectDates){
+  const onSelectDate = onSelectDates[0];
+  const availableTimeSlots = getAvailableTimeSlots(onSelectDate);
+  renderTimeSlots(availableTimeSlots);
+}
+
+function getDisabledDates() {
+  const chosenOption = getChosenOption();
+  const disabledDates = [];
+
+  for (const day in radOpeningTimes) {
+    if (
+      (chosenOption === "book a service" && day === "Sunday") ||
+      (chosenOption === "book a test ride" && !(day in testTimes))
+    ) {
+      disabledDates.push(day);
+    }
+  }
+
+  return disabledDates;
+}
+
+function getChosenOption() {
+  if (serviceButton.classList.contains("active")) {
+    return "book a service";
+  } else if (testButton.classList.contains("active")) {
+    return "book a test ride";
+  }
+}
+
+
+function getAvailableTimeSlots(selectedDate) {
+  const availableTimes = [];
+  const dayOfWeek = selectedDate.toLocaleDateString("en-US", {
+    weekday: "long",
+  });
+  const openingTime = getOpeningTime(dayOfWeek);
+  const closingTime = getClosingTime(dayOfWeek);
+
+  for (const timeSlot in timeSlots) {
+    if (
+      timeSlots[timeSlot] >= openingTime &&
+      timeSlots[timeSlot] <= closingTime
+    ) {
+      availableTimes.push(timeSlots[timeSlot]);
+    }
+  }
+
+  return availableTimes;
+}
+
+
+function getOpeningTime(dayOfWeek) {
+  return radOpeningTimes[dayOfWeek].open;
+}
+
+function getClosingTime(dayOfWeek) {
+  return radOpeningTimes[dayOfWeek].close;
+}
+
+function renderTimeSlots(availableTimeSlots) {
+  let timeSlotsHTML = "";
+  availableTimeSlots.forEach((timeSlot) => {
+    timeSlotsHTML += `<button type="button" class="rad-time-slot">${timeSlot}</button>`;
+  });
+
+  timeSlotsWrapper.innerHTML = timeSlotsHTML;
+
+  const timeSlotButtons = document.querySelectorAll(".rad-time-slot");
+
+  timeSlotButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      timeSlotButtons.forEach((button) => {
+        button.classList.remove("selected");
+      });
+      button.classList.add("selected");
+    });
+  });
+}
