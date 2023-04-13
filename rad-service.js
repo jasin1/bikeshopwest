@@ -136,7 +136,7 @@ testButton.addEventListener("click", function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  const calendarInput = document.getElementById("rad-calendar");
+  const calendarInput = document.getElementById("rad-calendar2");
 
   flatpickr(calendarInput, {
     mode: "single",
