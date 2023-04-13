@@ -42,7 +42,7 @@ testButton.addEventListener("click", function() {
 
 //-------------------- flatpickr ---------------------------//
 
-const calendarInput = document.getElementById("rad-calendar2");
+const calendarInput = document.getElementById("rad-calendar");
 
 let radFp;
 
@@ -53,6 +53,7 @@ function initFlatpickr() {
     dateFormat: "d.m.Y",
     mode: "single",
     minDate: "today",
+    inline: true,
     maxDate: new Date().fp_incr(90),
     onChange: onSelectDate,
   });
