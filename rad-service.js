@@ -50,7 +50,7 @@ function initFlatpickr() {
   console.log('initFlatpickr called');
   radFp = flatpickr(calendarInput, {
     disable: getDisabledDates(),
-    enableTimes: true,
+    enableTimes: false,
     dateFormat: "d.m.Y",
     //mode: "single",
     minDate: "today",
