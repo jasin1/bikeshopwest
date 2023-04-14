@@ -30,37 +30,39 @@ const testTimes = {
 
 //------------- make a choice in step 1 ---------------//
 
-serviceButton.addEventListener("click", function() {
+serviceButton.addEventListener("click", function () {
   serviceButton.classList.add("active");
   testButton.classList.remove("active");
 });
 
-testButton.addEventListener("click", function() {
+testButton.addEventListener("click", function () {
   testButton.classList.add("active");
   serviceButton.classList.remove("active");
 });
 
 //-------------------- flatpickr ---------------------------//
 
-const calendarInput = document.getElementById("rad-calendar");
+window.addEventListener("load", function () {
+  const calendarInput = document.getElementById("rad-calendar");
 
-let radFp;
+  let radFp;
 
-function initFlatpickr() {
-  console.log('initFlatpickr called');
-  radFp = flatpickr(calendarInput, {
-    disable: getDisabledDates(),
-    enableTimes: false,
-    dateFormat: "d.m.Y",
-    //mode: "single",
-    minDate: "today",
-    inline: true,
-    maxDate: new Date().fp_incr(90),
-    onChange: onSelectDate,
-  });
-}
+  function initFlatpickr() {
+    console.log("initFlatpickr called");
+    radFp = flatpickr(calendarInput, {
+      disable: getDisabledDates(),
+      enableTimes: false,
+      dateFormat: "d.m.Y",
+      //mode: "single",
+      minDate: "today",
+      inline: true,
+      maxDate: new Date().fp_incr(90),
+      onChange: onSelectDate,
+    });
+  }
 
-initFlatpickr();
+  initFlatpickr();
+});
 
 function onSelectDate(onSelectDates) {
   const onSelectDate = onSelectDates[0];
