@@ -1,12 +1,6 @@
-console.log("this is rad service");
-
-//------- selectors ------------//
-
 const radDescription = document.querySelector(".rad-step-description");
-
 const serviceButton = document.getElementById("rad-service-btn");
 const testButton = document.getElementById("rad-test-btn");
-//const calendarInput = document.getElementById("rad-calendar");
 const radFormFields = document.querySelectorAll(".form-field-wrapper");
 const backButton = document.querySelectorAll(".rad-back-btn");
 const timeSlotsWrapper = document.querySelector(".rad-timeslots-wrapper");
@@ -20,7 +14,6 @@ const radOpeningTimes = {
   Saturday: { open: "10:00", close: "16:45" },
   Sunday: { open: "", close: "" },
 };
-
 const testTimes = {
   Tuesday: { open: "12:00", close: "14:00" },
   Thursday: { open: "12:00", close: "14:00" },
@@ -41,14 +34,10 @@ testButton.addEventListener("click", function () {
   testButton.classList.add("active");
   serviceButton.classList.remove("active");
 });
-
 //-------------------- flatpickr ---------------------------//
-
 window.addEventListener("load", function () {
   const calendarInput = document.getElementById("rad-calendar");
-
   let radFp;
-
   function initFlatpickr() {
     console.log("initFlatpickr called");
     radFp = flatpickr(calendarInput, {
@@ -62,22 +51,18 @@ window.addEventListener("load", function () {
       onChange: onSelectDate,
     });
   }
-
   initFlatpickr();
 });
-
 function onSelectDate(onSelectDates) {
   const onSelectDate = onSelectDates[0];
   const chosenOption = getChosenOption();
   const availableTimeSlots = getAvailableTimeSlots(onSelectDate, chosenOption);
   renderTimeSlots(availableTimeSlots);
 }
-
 function getDisabledDates() {
   console.log("Get disabled dates function");
   const chosenOption = getChosenOption();
   const disabledDates = [];
-
   for (const day in radOpeningTimes) {
     if (
       (chosenOption === "book a service" && day === "Sunday") ||
@@ -86,10 +71,8 @@ function getDisabledDates() {
       disabledDates.push(day);
     }
   }
-  //console.log(disabledDates);
   return disabledDates;
 }
-
 function getChosenOption() {
   if (serviceButton.classList.contains("active")) {
     return "book a service";
@@ -97,7 +80,6 @@ function getChosenOption() {
     return "book a test ride";
   }
 }
-
 function generateTimeSlots(openingTime, closingTime) {
   const timeSlots = [];
   let currentTime = openingTime;
@@ -108,13 +90,11 @@ function generateTimeSlots(openingTime, closingTime) {
     const date = new Date();
     date.setHours(hours);
     date.setMinutes(minutes);
-    date.setMinutes(date.getMinutes() + 15);
+    date.setMinutes(date.getMinutes() + 30);
     currentTime = date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
   }
-
   return timeSlots;
 }
-
 function getAvailableTimeSlots(selectedDate, chosenOption) {
   const availableTimes = [];
   const dayOfWeek = selectedDate.toLocaleDateString("en-US", {
@@ -130,26 +110,23 @@ function getAvailableTimeSlots(selectedDate, chosenOption) {
       availableTimes.push(timeSlot);
     }
   });
-
-
-  // for (const timeSlot in timeSlots) {
-  //   if (
-  //     timeSlots[timeSlot] >= openingTime &&
-  //     timeSlots[timeSlot] <= closingTime
-  //   ) {
-  //     availableTimes.push(timeSlots[timeSlot]);
-  //   }
-  // }
-
   return availableTimes;
 }
 
-function getOpeningTime(dayOfWeek) {
-  return radOpeningTimes[dayOfWeek].open;
+function getOpeningTime(dayOfWeek, chosenOption) {
+  if (chosenOption === "book a service") {
+    return radOpeningTimes[dayOfWeek].open;
+  } else if (chosenOption === "book a test ride") {
+    return testTimes[dayOfWeek].open;
+  }
 }
 
-function getClosingTime(dayOfWeek) {
-  return radOpeningTimes[dayOfWeek].close;
+function getClosingTime(dayOfWeek, chosenOption) {
+  if (chosenOption === "book a service") {
+    return radOpeningTimes[dayOfWeek].close;
+  } else if (chosenOption === "book a test ride") {
+    return testTimes[dayOfWeek].close;
+  }
 }
 
 function renderTimeSlots(availableTimeSlots) {
@@ -157,11 +134,8 @@ function renderTimeSlots(availableTimeSlots) {
   availableTimeSlots.forEach((timeSlot) => {
     timeSlotsHTML += `<button type="button" class="rad-timeslot">${timeSlot}</button>`;
   });
-
   timeSlotsWrapper.innerHTML = timeSlotsHTML;
-
   const timeSlotButtons = document.querySelectorAll(".rad-timeslot");
-
   timeSlotButtons.forEach((button) => {
     button.addEventListener("click", () => {
       timeSlotButtons.forEach((button) => {
