@@ -60,6 +60,8 @@ function initFlatpickr() {
   });
 }
 
+initFlatpickr();
+
 function onSelectDate(onSelectDates) {
   const onSelectDate = onSelectDates[0];
   const availableTimeSlots = getAvailableTimeSlots(onSelectDate);
