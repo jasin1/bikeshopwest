@@ -136,8 +136,9 @@ function renderTimeSlots(availableTimeSlots) {
   });
   timeSlotsWrapper.innerHTML = timeSlotsHTML;
   timeSlotsWrapper.style.display = 'flex';
-  timeSlotsWrapper.style.gap = '1rem';
-  timeSlotsWrapper.style.flexDirection = 'column';
+  timeSlotsWrapper.style.gap = '0.5rem';
+  timeSlotsWrapper.style.maxHeight = '250px';
+
   const timeSlotButtons = document.querySelectorAll(".rad-timeslot");
   timeSlotButtons.forEach((button) => {
     button.addEventListener("click", () => {
