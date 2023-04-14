@@ -47,6 +47,7 @@ const calendarInput = document.getElementById("rad-calendar");
 let radFp;
 
 function initFlatpickr() {
+  console.log('initFlatpickr called');
   radFp = flatpickr(calendarInput, {
     disable: getDisabledDates(),
     enableTimes: true,
