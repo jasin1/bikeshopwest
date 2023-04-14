@@ -31,11 +31,13 @@ const testTimes = {
 //------------- make a choice in step 1 ---------------//
 
 serviceButton.addEventListener("click", function () {
+  console.log("service btn clicked");
   serviceButton.classList.add("active");
   testButton.classList.remove("active");
 });
 
 testButton.addEventListener("click", function () {
+  console.log("test btn clicked");
   testButton.classList.add("active");
   serviceButton.classList.remove("active");
 });
@@ -71,6 +73,7 @@ function onSelectDate(onSelectDates) {
 }
 
 function getDisabledDates() {
+  console.log("Get disabled dates function");
   const chosenOption = getChosenOption();
   const disabledDates = [];
 
