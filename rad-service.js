@@ -135,6 +135,9 @@ function renderTimeSlots(availableTimeSlots) {
     timeSlotsHTML += `<button type="button" class="rad-timeslot">${timeSlot}</button>`;
   });
   timeSlotsWrapper.innerHTML = timeSlotsHTML;
+  timeSlotsWrapper.style.display = 'flex';
+  timeSlotsWrapper.style.gap = '1rem';
+  timeSlotsWrapper.style.flexDirection = 'column';
   const timeSlotButtons = document.querySelectorAll(".rad-timeslot");
   timeSlotButtons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -144,6 +147,8 @@ function renderTimeSlots(availableTimeSlots) {
       button.classList.add("selected");
     });
   });
+
+
   console.log("Available time slots "+availableTimeSlots);
 }
 
