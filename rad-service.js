@@ -98,6 +98,8 @@ function getChosenOption() {
   }
 }
 
+let timeSlots = [];
+
 function getAvailableTimeSlots(selectedDate, chosenOption) {
   const availableTimes = [];
   const dayOfWeek = selectedDate.toLocaleDateString("en-US", {
@@ -106,14 +108,21 @@ function getAvailableTimeSlots(selectedDate, chosenOption) {
   const openingTime = getOpeningTime(dayOfWeek, chosenOption);
   const closingTime = getClosingTime(dayOfWeek, chosenOption);
 
-  for (const timeSlot in timeSlots) {
-    if (
-      timeSlots[timeSlot] >= openingTime &&
-      timeSlots[timeSlot] <= closingTime
-    ) {
-      availableTimes.push(timeSlots[timeSlot]);
+  timeSlots.forEach((timeSlot) => {
+    if (timeSlot >= openingTime && timeSlot <= closingTime) {
+      availableTimes.push(timeSlot);
     }
-  }
+  });
+
+
+  // for (const timeSlot in timeSlots) {
+  //   if (
+  //     timeSlots[timeSlot] >= openingTime &&
+  //     timeSlots[timeSlot] <= closingTime
+  //   ) {
+  //     availableTimes.push(timeSlots[timeSlot]);
+  //   }
+  // }
 
   return availableTimes;
 }
@@ -144,4 +153,6 @@ function renderTimeSlots(availableTimeSlots) {
       button.classList.add("selected");
     });
   });
+  console.log("Available time slots "+availableTimeSlots);
 }
+
