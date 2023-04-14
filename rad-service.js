@@ -85,7 +85,7 @@ function getDisabledDates() {
       disabledDates.push(day);
     }
   }
-
+  console.log(disabledDates);
   return disabledDates;
 }
 
