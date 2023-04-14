@@ -68,7 +68,8 @@ window.addEventListener("load", function () {
 
 function onSelectDate(onSelectDates) {
   const onSelectDate = onSelectDates[0];
-  const availableTimeSlots = getAvailableTimeSlots(onSelectDate);
+  const chosenOption = getChosenOption();
+  const availableTimeSlots = getAvailableTimeSlots(onSelectDate, chosenOption);
   renderTimeSlots(availableTimeSlots);
 }
 
@@ -85,7 +86,7 @@ function getDisabledDates() {
       disabledDates.push(day);
     }
   }
-  console.log(disabledDates);
+  //console.log(disabledDates);
   return disabledDates;
 }
 
@@ -97,13 +98,13 @@ function getChosenOption() {
   }
 }
 
-function getAvailableTimeSlots(selectedDate) {
+function getAvailableTimeSlots(selectedDate, chosenOption) {
   const availableTimes = [];
   const dayOfWeek = selectedDate.toLocaleDateString("en-US", {
     weekday: "long",
   });
-  const openingTime = getOpeningTime(dayOfWeek);
-  const closingTime = getClosingTime(dayOfWeek);
+  const openingTime = getOpeningTime(dayOfWeek, chosenOption);
+  const closingTime = getClosingTime(dayOfWeek, chosenOption);
 
   for (const timeSlot in timeSlots) {
     if (
