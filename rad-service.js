@@ -31,15 +31,30 @@ let notTheseDays = {
   test: ["Sunday", "Monday", "Wednesday", "Friday"],
 };
 
-function setDisabledDates() {
-  if (radFp) {
-    const chosenOption = getChosenOption();
-    if (chosenOption === "service") {
-      radFp.set("disable", notTheseDays.service);
-    } else if (chosenOption === "test") {
-      radFp.set("disable", notTheseDays.test);
-    }
-  }
+// function setDisabledDates() {
+//   if (radFp) {
+//     const chosenOption = getChosenOption();
+//     if (chosenOption === "service") {
+//       radFp.set("disable", notTheseDays.service);
+//     } else if (chosenOption === "test") {
+//       radFp.set("disable", notTheseDays.test);
+//     }
+//   }
+// }
+
+function getDisabledDates(instance) {
+  console.log("getDisabledDates called");
+  const mode = instance.config.mode;
+  const notThese = notTheseDays[mode];
+  console.log("notThese:", notThese);
+  const allDates = getAllDatesInMonth(instance.currentMonth, instance.currentYear);
+  console.log("allDates:", allDates);
+  const radDisabledDates = allDates.filter((date) => {
+    const day = date.getDay();
+    return notThese.includes(getDayName(day));
+  });
+  console.log("radDisabledDates:", radDisabledDates);
+  return radDisabledDates;
 }
 
 // function getDisabledDates(instance) {
