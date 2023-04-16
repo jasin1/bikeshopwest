@@ -60,7 +60,8 @@ window.addEventListener("load", function () {
       disableMobile: "true",
     });
   }
-
+  initFlatpickr();
+  
   function getDisabledDates() {
     console.log("Get disabled dates function");
     const chosenOption = getChosenOption();
@@ -92,7 +93,7 @@ window.addEventListener("load", function () {
     return disabledDates;
   }
 
-  initFlatpickr();
+
   function onSelectDate(onSelectDates) {
     const onSelectDate = onSelectDates[0];
     const chosenOption = getChosenOption();
