@@ -132,7 +132,7 @@ function getClosingTime(dayOfWeek, chosenOption) {
 function renderTimeSlots(availableTimeSlots) {
   let timeSlotsHTML = "";
   availableTimeSlots.forEach((timeSlot) => {
-    timeSlotsHTML += `<button type="button" class="rad-timeslot" style="padding: 9px 15px;">${timeSlot}</button>`;
+    timeSlotsHTML += `<button type="button" class="rad-timeslot" style="padding: 9px 15px; box-sizing: border-box;">${timeSlot}</button>`;
   });
   timeSlotsWrapper.innerHTML = timeSlotsHTML;
   timeSlotsWrapper.style.display = 'flex';
