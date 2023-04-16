@@ -49,7 +49,6 @@ window.addEventListener("load", function () {
   function initFlatpickr() {
     console.log("initFlatpickr called");
     radFp = flatpickr(calendarInput, {
-      disable: getDisabledDates(),
       enableTimes: false,
       dateFormat: "d.m.Y",
       //mode: "single",
@@ -58,10 +57,14 @@ window.addEventListener("load", function () {
       maxDate: new Date().fp_incr(90),
       onChange: onSelectDate,
       disableMobile: "true",
+      onReady: function(selectedDates, dateStr, instance){
+        const radDisabledDates = getDisabledDates(instance.days);
+        instance.set("disable", radDisabledDates);
+      }
     });
   }
-  initFlatpickr();
-  
+
+
   function getDisabledDates() {
     console.log("Get disabled dates function");
     const chosenOption = getChosenOption();
@@ -129,7 +132,10 @@ window.addEventListener("load", function () {
       return "book a test ride";
     }
   }
+  initFlatpickr();
 });
+
+
 
 function generateTimeSlots(openingTime, closingTime) {
   const timeSlots = [];
