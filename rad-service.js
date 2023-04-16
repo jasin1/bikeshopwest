@@ -57,6 +57,29 @@ function getDisabledDates(instance) {
   }
   return disabledDates;
 }
+function getNextDate(day) {
+  const today = new Date();
+  const dayIndex = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ].indexOf(day);
+  const nextDate = new Date(today);
+  nextDate.setDate(today.getDate() + ((7 + dayIndex - today.getDay()) % 7) + 1); // add days until the next day
+  return nextDate;
+}
+
+function getChosenOption() {
+  if (serviceButton.classList.contains("active")) {
+    return "book a service";
+  } else if (testButton.classList.contains("active")) {
+    return "book a test ride";
+  }
+}
 
 serviceButton.addEventListener("click", function () {
   console.log("service btn clicked");
@@ -105,33 +128,10 @@ window.addEventListener("load", function () {
     renderTimeSlots(availableTimeSlots);
   }
 
-  function getNextDate(day) {
-    const today = new Date();
-    const dayIndex = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ].indexOf(day);
-    const nextDate = new Date(today);
-    nextDate.setDate(
-      today.getDate() + ((7 + dayIndex - today.getDay()) % 7) + 1,
-    ); // add days until the next day
-    return nextDate;
-  }
-
-  function getChosenOption() {
-    if (serviceButton.classList.contains("active")) {
-      return "book a service";
-    } else if (testButton.classList.contains("active")) {
-      return "book a test ride";
-    }
-  }
   initFlatpickr();
 });
+
+//-------------------- TimeSlots ---------------------//
 
 function generateTimeSlots(openingTime, closingTime) {
   const timeSlots = [];
