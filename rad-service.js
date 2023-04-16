@@ -58,6 +58,36 @@ window.addEventListener("load", function () {
       onChange: onSelectDate,
       disableMobile: "true",
     });
+    function getDisabledDates() {
+      console.log("Get disabled dates function");
+      const chosenOption = getChosenOption();
+      const disabledDates = [];
+      const days = radFp.days;
+
+      for (const day in radOpeningTimes) {
+        if (
+          (chosenOption === "book a service" && day === "Sunday") ||
+          (chosenOption === "book a test ride" && !(day in testTimes))
+        ) {
+          const date = getNextDate(day);
+          const dateObj = new Date(
+            date.getFullYear(),
+            date.getMonth(),
+            date.getDate(),
+          );
+          disabledDates.push(dateObj);
+
+          // find the day element and add the disabled class
+          for (const dayE1 of days) {
+            if (dayE1.dateObj.getTime() === dateObj.getTime()) {
+              dayE1.classList.add("disabled");
+              break;
+            }
+          }
+        }
+      }
+      return disabledDates;
+    }
   }
   initFlatpickr();
 });
@@ -69,42 +99,21 @@ function onSelectDate(onSelectDates) {
   renderTimeSlots(availableTimeSlots);
 }
 
-function getDisabledDates() {
-  console.log("Get disabled dates function");
-  const chosenOption = getChosenOption();
-  const disabledDates = [];
-  const days = radFp.days;
-
-  for (const day in radOpeningTimes) {
-    if (
-      (chosenOption === "book a service" && day === "Sunday") ||
-      (chosenOption === "book a test ride" && !(day in testTimes))
-    ) {
-      const date = getNextDate(day);
-      const dateObj = new Date(date.getFullYear(), date.getMonth(), date.getDate());
-      disabledDates.push(dateObj);
-
-      // find the day element and add the disabled class
-      for (const dayE1 of days){
-        if(dayE1.dateObj.getTime()===dateObj.getTime()){
-          dayE1.classList.add("disabled");
-          break;
-        }
-      }
-
-    }
-  }
-  return disabledDates;
-}
-
-function getNextDate(day){
+function getNextDate(day) {
   const today = new Date();
-  const dayIndex = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"].indexOf(day);
+  const dayIndex = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ].indexOf(day);
   const nextDate = new Date(today);
-  nextDate.setDate(today.getDate() + (7 + dayIndex - today.getDay()) % 7 + 1); // add days until the next day
-  return nextDate.toLocaleDateString("en-GB");
+  nextDate.setDate(today.getDate() + ((7 + dayIndex - today.getDay()) % 7) + 1); // add days until the next day
+  return nextDate;
 }
-
 
 function getChosenOption() {
   if (serviceButton.classList.contains("active")) {
