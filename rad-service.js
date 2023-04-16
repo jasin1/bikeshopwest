@@ -31,36 +31,61 @@ let notTheseDays = {
   test:["Sunday", "Monday", "Wednesday", "Friday"],
 };
 
+// function getDisabledDates(instance) {
+//   console.log("Get disabled dates function");
+//   const chosenOption = getChosenOption();
+//   const disabledDays = notTheseDays[chosenOption];
+//   const disabledDates = [];
+//   //const days = instance.days;
+
+//   for (const day in disabledDays) {
+//     if (
+//       (chosenOption === "book a service" && day === "Sunday") ||
+//       (chosenOption === "book a test ride" && !(day in testTimes))
+//     ) {
+//       const date = getNextDate(day);
+//       const dateObj = new Date(
+//         date.getFullYear(),
+//         date.getMonth(),
+//         date.getDate(),
+//       );
+//       disabledDates.push(dateObj);
+
+//       // find the day element and add the disabled class
+//       for (const dayE1 of days) {
+//         if (dayE1.dateObj.getTime() === dateObj.getTime()) {
+//           dayE1.classList.add("disabled");
+//           break;
+//         }
+//       }
+//     }
+//   }
+//   return disabledDates;
+// }
+
 function getDisabledDates(instance) {
   console.log("Get disabled dates function");
   const chosenOption = getChosenOption();
+  const disabledDays = notTheseDays[chosenOption];
   const disabledDates = [];
-  const days = instance.days;
 
-  for (const day in radOpeningTimes) {
-    if (
-      (chosenOption === "book a service" && day === "Sunday") ||
-      (chosenOption === "book a test ride" && !(day in testTimes))
-    ) {
-      const date = getNextDate(day);
-      const dateObj = new Date(
-        date.getFullYear(),
-        date.getMonth(),
-        date.getDate(),
-      );
-      disabledDates.push(dateObj);
+  for (const day of disabledDays) {
+    const date = getNextDate(day);
+    const dateObj = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    disabledDates.push(dateObj);
 
-      // find the day element and add the disabled class
-      for (const dayE1 of days) {
-        if (dayE1.dateObj.getTime() === dateObj.getTime()) {
-          dayE1.classList.add("disabled");
-          break;
-        }
+    // find the day element and add the disabled class
+    for (const dayE1 of instance.days) {
+      if (dayE1.dateObj.getTime() === dateObj.getTime()) {
+        dayE1.classList.add("disabled");
+        break;
       }
     }
   }
+
   return disabledDates;
 }
+
 function getNextDate(day) {
   const today = new Date();
   const dayIndex = [
@@ -115,7 +140,7 @@ window.addEventListener("load", function () {
       onChange: onSelectDate,
       disableMobile: "true",
       onReady: function (selectedDates, dateStr, instance) {
-        const radDisabledDates = getDisabledDates(instance.days);
+        const radDisabledDates = getDisabledDates(instance);
         instance.set("disable", radDisabledDates);
       },
     });
