@@ -57,6 +57,14 @@ function getDisabledDates(instance) {
   return radDisabledDates;
 }
 
+function radOnReady(selectedDates, dateStr, instance, notThese){
+  console.log("onReady called");
+  const disabledDates = getDisabledDates(instance, notThese);
+  instance.set("disable", disabledDates);
+}
+
+
+
 // function getDisabledDates(instance) {
 //   console.log("Get disabled dates function");
 //   const chosenOption = getChosenOption();
@@ -159,16 +167,15 @@ window.addEventListener("load", function () {
     radFp = flatpickr(calendarInput, {
       enableTimes: false,
       dateFormat: "d.m.Y",
-      //mode: "single",
       minDate: "today",
       inline: true,
       maxDate: new Date().fp_incr(90),
-      onChange: onSelectDate,
+      onChange: function (selectedDates, dateStr, instance) {
+        radOnReady(selectedDates, dateStr, instance, notThese);
+      },
       disableMobile: "true",
       onReady: function (selectedDates, dateStr, instance) {
-        const radDisabledDates = getDisabledDates(instance);
-        instance.set("disable", radDisabledDates);
-        setDisabledDates();
+        radOnReady(selectedDates, dateStr, instance, notThese);
       },
     });
   }
