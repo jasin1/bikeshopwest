@@ -19,6 +19,9 @@ const testTimes = {
   Thursday: { open: "12:00", close: "14:00" },
   Saturday: { open: "11:00", close: "15:00" },
   Sunday: { open: "", close: "" },
+  Monday: { open: "", close: "" },
+  Wednesday: { open: "", close: "" },
+  Friday: { open: "", close: "" },
 };
 
 //------------- make a choice in step 1 ---------------//
