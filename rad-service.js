@@ -153,6 +153,5 @@ function renderTimeSlots(availableTimeSlots) {
 
 
   console.log("Available time slots "+availableTimeSlots);
-  console.log("timeslot value "+ timeSlotButtons[0])
 }
 
