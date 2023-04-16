@@ -26,6 +26,10 @@ const testTimes = {
 
 //------------- make a choice in step 1 ---------------//
 let radFp;
+let notTheseDays = {
+  service:["Sunday"],
+  test:["Sunday", "Monday", "Wednesday", "Friday"],
+};
 
 function getDisabledDates(instance) {
   console.log("Get disabled dates function");
@@ -85,15 +89,14 @@ serviceButton.addEventListener("click", function () {
   console.log("service btn clicked");
   serviceButton.classList.add("active");
   testButton.classList.remove("active");
+  radFp.set("disable", notTheseDays.service);
 });
 
 testButton.addEventListener("click", function () {
   console.log("test btn clicked");
   testButton.classList.add("active");
   serviceButton.classList.remove("active");
-
-  const testDisabledDates = getDisabledDates(radFp);
-  radFp.set("disable", testDisabledDates);
+  radFp.set("disable", notTheseDays.test);
 });
 //-------------------- flatpickr ---------------------------//
 
