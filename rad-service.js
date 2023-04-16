@@ -31,16 +31,16 @@ let notTheseDays = {
   test: ["Sunday", "Monday", "Wednesday", "Friday"],
 };
 
-// function setDisabledDates() {
-//   if (radFp) {
-//     const chosenOption = getChosenOption();
-//     if (chosenOption === "service") {
-//       radFp.set("disable", notTheseDays.service);
-//     } else if (chosenOption === "test") {
-//       radFp.set("disable", notTheseDays.test);
-//     }
-//   }
-// }
+function setDisabledDates() {
+  if (radFp) {
+    const chosenOption = getChosenOption();
+    if (chosenOption === "service") {
+      radFp.set("disable", notTheseDays.service);
+    } else if (chosenOption === "test") {
+      radFp.set("disable", notTheseDays.test);
+    }
+  }
+}
 
 function getDisabledDates(instance) {
   console.log("getDisabledDates called");
@@ -63,39 +63,6 @@ function radOnReady(selectedDates, dateStr, instance, notThese){
   instance.set("disable", disabledDates);
 }
 
-
-
-// function getDisabledDates(instance) {
-//   console.log("Get disabled dates function");
-//   const chosenOption = getChosenOption();
-//   const disabledDays = notTheseDays[chosenOption];
-//   const disabledDates = [];
-//   //const days = instance.days;
-
-//   for (const day in disabledDays) {
-//     if (
-//       (chosenOption === "book a service" && day === "Sunday") ||
-//       (chosenOption === "book a test ride" && !(day in testTimes))
-//     ) {
-//       const date = getNextDate(day);
-//       const dateObj = new Date(
-//         date.getFullYear(),
-//         date.getMonth(),
-//         date.getDate(),
-//       );
-//       disabledDates.push(dateObj);
-
-//       // find the day element and add the disabled class
-//       for (const dayE1 of days) {
-//         if (dayE1.dateObj.getTime() === dateObj.getTime()) {
-//           dayE1.classList.add("disabled");
-//           break;
-//         }
-//       }
-//     }
-//   }
-//   return disabledDates;
-// }
 
 function getDisabledDates(instance) {
   console.log("Get disabled dates function");
