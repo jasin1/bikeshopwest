@@ -27,9 +27,20 @@ const testTimes = {
 //------------- make a choice in step 1 ---------------//
 let radFp;
 let notTheseDays = {
-  service:["Sunday"],
-  test:["Sunday", "Monday", "Wednesday", "Friday"],
+  service: ["Sunday"],
+  test: ["Sunday", "Monday", "Wednesday", "Friday"],
 };
+
+function setDisabledDates() {
+  if (radFp) {
+    const chosenOption = getChosenOption();
+    if (chosenOption === "service") {
+      radFp.set("disable", notTheseDays.service);
+    } else if (chosenOption === "test") {
+      radFp.set("disable", notTheseDays.test);
+    }
+  }
+}
 
 // function getDisabledDates(instance) {
 //   console.log("Get disabled dates function");
@@ -73,7 +84,11 @@ function getDisabledDates(instance) {
 
   for (const day of disabledDays) {
     const date = getNextDate(day);
-    const dateObj = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    const dateObj = new Date(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getDate(),
+    );
     disabledDates.push(dateObj);
 
     // find the day element and add the disabled class
@@ -105,7 +120,10 @@ function getNextDate(day) {
 }
 
 function getChosenOption() {
-  console.log("serviceButton active:", serviceButton.classList.contains("active"));
+  console.log(
+    "serviceButton active:",
+    serviceButton.classList.contains("active"),
+  );
   console.log("testButton active:", testButton.classList.contains("active"));
   if (serviceButton.classList.contains("active")) {
     return "book a service";
@@ -116,19 +134,6 @@ function getChosenOption() {
   return undefined;
 }
 
-serviceButton.addEventListener("click", function () {
-  console.log("service btn clicked");
-  serviceButton.classList.add("active");
-  testButton.classList.remove("active");
-  radFp.set("disable", notTheseDays.service);
-});
-
-testButton.addEventListener("click", function () {
-  console.log("test btn clicked");
-  testButton.classList.add("active");
-  serviceButton.classList.remove("active");
-  radFp.set("disable", notTheseDays.test);
-});
 //-------------------- flatpickr ---------------------------//
 
 window.addEventListener("load", function () {
@@ -148,6 +153,7 @@ window.addEventListener("load", function () {
       onReady: function (selectedDates, dateStr, instance) {
         const radDisabledDates = getDisabledDates(instance);
         instance.set("disable", radDisabledDates);
+        setDisabledDates();
       },
     });
   }
@@ -163,6 +169,20 @@ window.addEventListener("load", function () {
   }
 
   initFlatpickr();
+});
+
+serviceButton.addEventListener("click", function () {
+  console.log("service btn clicked");
+  serviceButton.classList.add("active");
+  testButton.classList.remove("active");
+  setDisabledDates();
+});
+
+testButton.addEventListener("click", function () {
+  console.log("test btn clicked");
+  testButton.classList.add("active");
+  serviceButton.classList.remove("active");
+  setDisabledDates();
 });
 
 //-------------------- TimeSlots ---------------------//
@@ -185,7 +205,6 @@ function generateTimeSlots(openingTime, closingTime) {
   }
   return timeSlots;
 }
-
 
 function getAvailableTimeSlots(selectedDate, chosenOption) {
   const availableTimes = [];
