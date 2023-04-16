@@ -105,11 +105,15 @@ function getNextDate(day) {
 }
 
 function getChosenOption() {
+  console.log("serviceButton active:", serviceButton.classList.contains("active"));
+  console.log("testButton active:", testButton.classList.contains("active"));
   if (serviceButton.classList.contains("active")) {
     return "book a service";
   } else if (testButton.classList.contains("active")) {
     return "book a test ride";
   }
+  console.log("No button active");
+  return undefined;
 }
 
 serviceButton.addEventListener("click", function () {
