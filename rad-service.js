@@ -56,6 +56,7 @@ window.addEventListener("load", function () {
       inline: true,
       maxDate: new Date().fp_incr(90),
       onChange: onSelectDate,
+      disableMobile: "true",
     });
   }
   initFlatpickr();
@@ -67,6 +68,7 @@ function onSelectDate(onSelectDates) {
   const availableTimeSlots = getAvailableTimeSlots(onSelectDate, chosenOption);
   renderTimeSlots(availableTimeSlots);
 }
+
 function getDisabledDates() {
   console.log("Get disabled dates function");
   const chosenOption = getChosenOption();
@@ -76,11 +78,22 @@ function getDisabledDates() {
       (chosenOption === "book a service" && day === "Sunday") ||
       (chosenOption === "book a test ride" && !(day in testTimes))
     ) {
-      disabledDates.push(day);
+      const date = getNextDate(day);
+      disabledDates.push(new Date(date.getFullYear(), date.getMonth(), date.getDate()));
     }
   }
   return disabledDates;
 }
+
+function getNextDate(day){
+  const today = new Date();
+  const dayIndex = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"].indexOf(day);
+  const nextDate = new Date(today);
+  nextDate.setDate(today.getDate() + (7 + dayIndex - today.getDay()) % 7 + 1); // add days until the next day
+  return nextDate.toLocaleDateString("en-GB");
+}
+
+
 function getChosenOption() {
   if (serviceButton.classList.contains("active")) {
     return "book a service";
