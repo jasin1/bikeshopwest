@@ -66,7 +66,7 @@ let notTheseDays = {
 function getDisabledDates(instance) {
   console.log("Get disabled dates function");
   const chosenOption = getChosenOption();
-  const disabledDays = notTheseDays[chosenOption];
+  let disabledDays = notTheseDays[chosenOption];
   const disabledDates = [];
 
   for (const day of disabledDays) {
@@ -179,6 +179,8 @@ function generateTimeSlots(openingTime, closingTime) {
   }
   return timeSlots;
 }
+
+
 function getAvailableTimeSlots(selectedDate, chosenOption) {
   const availableTimes = [];
   const dayOfWeek = selectedDate.toLocaleDateString("en-US", {
