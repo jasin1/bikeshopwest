@@ -132,12 +132,13 @@ function getClosingTime(dayOfWeek, chosenOption) {
 function renderTimeSlots(availableTimeSlots) {
   let timeSlotsHTML = "";
   availableTimeSlots.forEach((timeSlot) => {
-    timeSlotsHTML += `<button type="button" class="rad-timeslot">${timeSlot}</button>`;
+    timeSlotsHTML += `<button type="button" class="rad-timeslot" style="padding: 9px 15px;">${timeSlot}</button>`;
   });
   timeSlotsWrapper.innerHTML = timeSlotsHTML;
   timeSlotsWrapper.style.display = 'flex';
   timeSlotsWrapper.style.gap = '0.5rem';
-  timeSlotsWrapper.style.maxHeight = '250px';
+  timeSlotsWrapper.style.overflowY = 'auto';
+  timeSlotsWrapper.style.maxHeight = "calc(100vh - 296px)";
 
   const timeSlotButtons = document.querySelectorAll(".rad-timeslot");
   timeSlotButtons.forEach((button) => {
