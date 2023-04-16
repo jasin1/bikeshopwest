@@ -136,7 +136,7 @@ function renderTimeSlots(availableTimeSlots) {
   });
   timeSlotsWrapper.innerHTML = timeSlotsHTML;
   timeSlotsWrapper.style.display = 'flex';
-  timeSlotsWrapper.style.gap = '0.5rem';
+  //timeSlotsWrapper.style.gap = '0.5rem';
   timeSlotsWrapper.style.overflowY = 'auto';
   timeSlotsWrapper.style.maxHeight = "calc(100vh - 296px)";
 
