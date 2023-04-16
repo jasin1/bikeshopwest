@@ -27,6 +27,37 @@ const testTimes = {
 //------------- make a choice in step 1 ---------------//
 let radFp;
 
+function getDisabledDates(instance) {
+  console.log("Get disabled dates function");
+  const chosenOption = getChosenOption();
+  const disabledDates = [];
+  const days = instance.days;
+
+  for (const day in radOpeningTimes) {
+    if (
+      (chosenOption === "book a service" && day === "Sunday") ||
+      (chosenOption === "book a test ride" && !(day in testTimes))
+    ) {
+      const date = getNextDate(day);
+      const dateObj = new Date(
+        date.getFullYear(),
+        date.getMonth(),
+        date.getDate(),
+      );
+      disabledDates.push(dateObj);
+
+      // find the day element and add the disabled class
+      for (const dayE1 of days) {
+        if (dayE1.dateObj.getTime() === dateObj.getTime()) {
+          dayE1.classList.add("disabled");
+          break;
+        }
+      }
+    }
+  }
+  return disabledDates;
+}
+
 serviceButton.addEventListener("click", function () {
   console.log("service btn clicked");
   serviceButton.classList.add("active");
@@ -38,7 +69,7 @@ testButton.addEventListener("click", function () {
   testButton.classList.add("active");
   serviceButton.classList.remove("active");
 
-  const testDisabledDates = getDisabledDates();
+  const testDisabledDates = getDisabledDates(radFp);
   radFp.set("disable", testDisabledDates);
 });
 //-------------------- flatpickr ---------------------------//
@@ -57,45 +88,12 @@ window.addEventListener("load", function () {
       maxDate: new Date().fp_incr(90),
       onChange: onSelectDate,
       disableMobile: "true",
-      onReady: function(selectedDates, dateStr, instance){
+      onReady: function (selectedDates, dateStr, instance) {
         const radDisabledDates = getDisabledDates(instance.days);
         instance.set("disable", radDisabledDates);
-      }
+      },
     });
   }
-
-
-  function getDisabledDates() {
-    console.log("Get disabled dates function");
-    const chosenOption = getChosenOption();
-    const disabledDates = [];
-    const days = radFp.days;
-
-    for (const day in radOpeningTimes) {
-      if (
-        (chosenOption === "book a service" && day === "Sunday") ||
-        (chosenOption === "book a test ride" && !(day in testTimes))
-      ) {
-        const date = getNextDate(day);
-        const dateObj = new Date(
-          date.getFullYear(),
-          date.getMonth(),
-          date.getDate(),
-        );
-        disabledDates.push(dateObj);
-
-        // find the day element and add the disabled class
-        for (const dayE1 of days) {
-          if (dayE1.dateObj.getTime() === dateObj.getTime()) {
-            dayE1.classList.add("disabled");
-            break;
-          }
-        }
-      }
-    }
-    return disabledDates;
-  }
-
 
   function onSelectDate(onSelectDates) {
     const onSelectDate = onSelectDates[0];
@@ -134,8 +132,6 @@ window.addEventListener("load", function () {
   }
   initFlatpickr();
 });
-
-
 
 function generateTimeSlots(openingTime, closingTime) {
   const timeSlots = [];
