@@ -73,13 +73,25 @@ function getDisabledDates() {
   console.log("Get disabled dates function");
   const chosenOption = getChosenOption();
   const disabledDates = [];
+  const days = radFp.days;
+
   for (const day in radOpeningTimes) {
     if (
       (chosenOption === "book a service" && day === "Sunday") ||
       (chosenOption === "book a test ride" && !(day in testTimes))
     ) {
       const date = getNextDate(day);
-      disabledDates.push(new Date(date.getFullYear(), date.getMonth(), date.getDate()));
+      const dateObj = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+      disabledDates.push(dateObj);
+
+      // find the day element and add the disabled class
+      for (const dayE1 of days){
+        if(dayE1.dateObj.getTime()===dateObj.getTime()){
+          dayE1.classList.add("disabled");
+          break;
+        }
+      }
+
     }
   }
   return disabledDates;
