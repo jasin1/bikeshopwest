@@ -67,7 +67,7 @@ function getDisabledDates(instance) {
   console.log("Get disabled dates function");
   const chosenOption = getChosenOption();
   console.log("chosenOption:", chosenOption);
-  const disabledDays = notTheseDays[chosenOption];
+  let disabledDays = notTheseDays[chosenOption];
   console.log("disabledDays:", disabledDays);
   const disabledDates = [];
 
