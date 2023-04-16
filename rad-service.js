@@ -146,10 +146,13 @@ function renderTimeSlots(availableTimeSlots) {
         button.classList.remove("selected");
       });
       button.classList.add("selected");
+      const selectedTimeSlot = button.value;
+      console.log("timeSlot value "+ selectedTimeSlot);
     });
   });
 
 
   console.log("Available time slots "+availableTimeSlots);
+  console.log("timeslot value "+ timeSlotButtons[0])
 }
 
