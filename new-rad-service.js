@@ -1,6 +1,8 @@
-console.log("Rad start over");
+
 
 window.addEventListener("load", function () {
+  console.log("Rad start over");
+  
   const radDescription = document.querySelector(".rad-step-description");
   const serviceButton = document.getElementById("rad-service-btn");
   const testButton = document.getElementById("rad-test-btn");
