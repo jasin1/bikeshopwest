@@ -33,6 +33,9 @@ testButton.addEventListener("click", function () {
   console.log("test btn clicked");
   testButton.classList.add("active");
   serviceButton.classList.remove("active");
+
+  const testDisabledDates = getDisabledDates();
+  radFp.set("disable", testDisabledDates);
 });
 //-------------------- flatpickr ---------------------------//
 window.addEventListener("load", function () {
@@ -53,6 +56,8 @@ window.addEventListener("load", function () {
   }
   initFlatpickr();
 });
+
+
 function onSelectDate(onSelectDates) {
   const onSelectDate = onSelectDates[0];
   const chosenOption = getChosenOption();
@@ -80,6 +85,7 @@ function getChosenOption() {
     return "book a test ride";
   }
 }
+
 function generateTimeSlots(openingTime, closingTime) {
   const timeSlots = [];
   let currentTime = openingTime;
@@ -91,7 +97,10 @@ function generateTimeSlots(openingTime, closingTime) {
     date.setHours(hours);
     date.setMinutes(minutes);
     date.setMinutes(date.getMinutes() + 30);
-    currentTime = date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+    currentTime = date.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
   }
   return timeSlots;
 }
@@ -135,9 +144,9 @@ function renderTimeSlots(availableTimeSlots) {
     timeSlotsHTML += `<button type="button" class="rad-timeslot" style="padding: 9px 15px; box-sizing: border-box;">${timeSlot}</button>`;
   });
   timeSlotsWrapper.innerHTML = timeSlotsHTML;
-  timeSlotsWrapper.style.display = 'flex';
+  timeSlotsWrapper.style.display = "flex";
   //timeSlotsWrapper.style.gap = '0.5rem';
-  timeSlotsWrapper.style.overflowY = 'auto';
+  timeSlotsWrapper.style.overflowY = "auto";
   timeSlotsWrapper.style.maxHeight = "calc(100vh - 296px)";
 
   const timeSlotButtons = document.querySelectorAll(".rad-timeslot");
@@ -148,11 +157,9 @@ function renderTimeSlots(availableTimeSlots) {
       });
       button.classList.add("selected");
       const selectedTimeSlot = button.value;
-      console.log("timeSlot value "+ selectedTimeSlot);
+      console.log("timeSlot value " + selectedTimeSlot);
     });
   });
 
-
-  console.log("Available time slots "+availableTimeSlots);
+  console.log("Available time slots " + availableTimeSlots);
 }
-
