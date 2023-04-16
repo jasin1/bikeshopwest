@@ -22,6 +22,7 @@ const testTimes = {
 };
 
 //------------- make a choice in step 1 ---------------//
+let radFp;
 
 serviceButton.addEventListener("click", function () {
   console.log("service btn clicked");
@@ -40,7 +41,7 @@ testButton.addEventListener("click", function () {
 //-------------------- flatpickr ---------------------------//
 window.addEventListener("load", function () {
   const calendarInput = document.getElementById("rad-calendar");
-  let radFp;
+
   function initFlatpickr() {
     console.log("initFlatpickr called");
     radFp = flatpickr(calendarInput, {
@@ -56,7 +57,6 @@ window.addEventListener("load", function () {
   }
   initFlatpickr();
 });
-
 
 function onSelectDate(onSelectDates) {
   const onSelectDate = onSelectDates[0];
