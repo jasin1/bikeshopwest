@@ -147,7 +147,7 @@ window.addEventListener("load", function () {
       );
       currentTime.setTime(currentTime.getTime() + 30 * 60000);
     }
- 
+
     timeSlots.forEach((time) => {
       const button = document.createElement("button");
       button.classList.add("rad-timeslot");
@@ -159,18 +159,26 @@ window.addEventListener("load", function () {
         event.preventDefault();
         // Remove the selected class from all buttons
         const buttons = timeSlotsWrapper.querySelectorAll(".rad-timeslot");
-        buttons.forEach((btn) => btn.classList.remove("selected"));
-        // Add the selected class to the clicked button
-        button.classList.add("selected");
-        button.style.color = "#fff";
-        button.style.backgroundColor = "#ed1e24";
-        const selectedTimeInput = document.getElementById("selected-time-slot");
-        selectedTimeInput.value = time;
-        console.log("selected time is "+selectedTimeInput.value);
-  
+        buttons.forEach((btn) => {
+          if (btn !== button) {
+            btn.classList.remove("selected");
+            btn.style.color = "#242424";
+            btn.style.backgroundColor = "#fff";
+          } else {
+            btn.classList.add("selected");
+            btn.style.color = "#fff";
+            btn.style.backgroundColor = "#ed1e24";
+            const selectedTimeInput =
+              document.getElementById("selected-time-slot");
+            selectedTimeInput.value = time;
+            console.log("selected time is " + selectedTimeInput.value);
+          }
+        });
       });
 
       timeSlotsWrapper.appendChild(button);
     });
   }
 });
+
+//#242424
