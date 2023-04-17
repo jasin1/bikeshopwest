@@ -162,6 +162,8 @@ window.addEventListener("load", function () {
         buttons.forEach((btn) => btn.classList.remove("selected"));
         // Add the selected class to the clicked button
         button.classList.add("selected");
+        button.style.color = "#fff";
+        button.style.backgroundColor = "#ed1e24";
         const selectedTimeInput = document.getElementById("selected-time-slot");
         selectedTimeInput.value = time;
         console.log("selected time is "+selectedTimeInput.value);
