@@ -56,7 +56,7 @@ window.addEventListener("load", function () {
     radFlatP.destroy();
   }
  let radSelectedDate = new Date();
- 
+
   const formatDate = (date) => {
     const options = {
       weekday: "long",
@@ -80,6 +80,7 @@ window.addEventListener("load", function () {
       generateRadTimeSlots();
       if (radSelectedDate) {
         console.log("selected date is " + formatDate(radSelectedDate));
+        selectedDay.value = formatDate(radSelectedDate);
       }
     },
   });
