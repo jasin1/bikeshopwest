@@ -142,6 +142,7 @@ window.addEventListener("load", function () {
         currentTime.toLocaleTimeString("en-US", {
           hour: "numeric",
           minute: "2-digit",
+          hour12: false,
         }),
       );
       currentTime.setTime(currentTime.getTime() + 30 * 60000);
