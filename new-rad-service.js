@@ -1,8 +1,6 @@
-
-
 window.addEventListener("load", function () {
   console.log("Rad start over");
-  
+
   const radDescription = document.querySelector(".rad-step-description");
   const serviceButton = document.getElementById("rad-service-btn");
   const testButton = document.getElementById("rad-test-btn");
@@ -33,12 +31,14 @@ window.addEventListener("load", function () {
   //------------- make a choice in step 1 ---------------//
 
   let notTheseDays = {
-    service: [0],// Sunday
-    test: [0, 1, 3, 5],// Sunday, Monday, Wednesday, Friday
+    service: [0], // Sunday
+    test: [0, 1, 3, 5], // Sunday, Monday, Wednesday, Friday
   };
 
+  let selectedButton = "";
+
   let radFlatP;
-  
+
   //Before creating a new flatpickr instance, destroy the old one if it exists
   if (radFlatP) {
     radFlatP.destroy();
@@ -51,12 +51,16 @@ window.addEventListener("load", function () {
     inline: true,
     maxDate: new Date().fp_incr(90),
     disable: [],
+    onValueUpdate: function (selectedDates, dateStr, instance) {
+      generateRadTimeSlots();
+    },
   });
 
   serviceButton.addEventListener("click", function () {
     console.log("service btn clicked");
     serviceButton.classList.add("active");
     testButton.classList.remove("active");
+    selectedButton = "service";
     radFlatP.set("disable", [
       function (date) {
         const dayOfWeek = date.getDay();
@@ -70,6 +74,7 @@ window.addEventListener("load", function () {
     console.log("test btn clicked");
     testButton.classList.add("active");
     serviceButton.classList.remove("active");
+    selectedButton = "test";
     radFlatP.set("disable", [
       function (date) {
         const dayOfWeek = date.getDay();
@@ -78,4 +83,44 @@ window.addEventListener("load", function () {
     ]);
     //radFlatP.redraw();
   });
+
+  //-------------------- TimeSlots ---------------------//
+
+  function generateRadTimeSlots() {
+    // Get the selected date from the flatpickr instance
+    const selectedDate = radFlatP.selectedDates[0];
+
+    // Get the selected day of the week (0 for Sunday, 1 for Monday, etc.)
+    const selectedDayOfWeek = selectedDate.getDay();
+
+    // Get the open and close times for the selected day from the appropriate object based on the selected button
+    const times =
+      selectedButton === "service"
+        ? radServiceTimes[daysOfWeek[selectedDayOfWeek]]
+        : radTestTimes[daysOfWeek[selectedDayOfWeek]];
+
+    // Clear the time slots wrapper
+    timeSlotsWrapper.innerHTML = "";
+
+    const startTime = new Date(`1/1/2021 ${times.open}`);
+    const endTime = new Date(`1/1/2021 ${times.close}`);
+    const timeSlots = [];
+    while (startTime <= endTime) {
+      timeSlots.push(
+        startTime.toLocaleTimeString("en-US", {
+          hour: "numeric",
+          minute: "2-digit",
+        }),
+      );
+      startTime.setTime(startTime.getTime() + 30 * 60000);
+
+      // Create a button for each time slot and add it to the time slots wrapper
+      timeSlots.forEach((time) => {
+        const button = document.createElement("button");
+        button.classList.add("rad-timeslot");
+        button.textContent = time;
+        timeSlotsWrapper.appendChild(button);
+      });
+    }
+  }
 });
