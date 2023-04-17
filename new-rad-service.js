@@ -8,6 +8,7 @@ window.addEventListener("load", function () {
   const backButton = document.querySelectorAll(".rad-back-btn");
   const timeSlotsWrapper = document.querySelector(".rad-timeslots-wrapper");
   const calendarInput = document.getElementById("rad-calendar");
+  const selectedDay = document.getElementById("selected-day");
 
   const radServiceTimes = {
     Monday: { open: "14:00", close: "17:45" },
@@ -64,6 +65,7 @@ window.addEventListener("load", function () {
     disable: [],
     onValueUpdate: function (selectedDates, dateStr, instance) {
       radSelectedDate = selectedDates[0];
+      selectedDay.value = radSelectedDate;
       generateRadTimeSlots();
       console.log("selected date is "+ radSelectedDate);
     },
