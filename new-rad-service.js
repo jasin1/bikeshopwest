@@ -77,7 +77,9 @@ window.addEventListener("load", function () {
   });
 
   step3BackButton.addEventListener("click", () => {
+    radSteps[2].classList.remove("active");
     showStep(3, 2);
+
   });
 
   //------------- make a choice in step 1 ---------------//
