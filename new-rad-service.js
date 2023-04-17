@@ -155,6 +155,7 @@ window.addEventListener("load", function () {
       button.style.fontFamily = "Work Sans";
       // Add click event listener to the button
       button.addEventListener("click", () => {
+        event.preventDefault();
         // Remove the selected class from all buttons
         const buttons = timeSlotsWrapper.querySelectorAll(".rad-timeslot");
         buttons.forEach((btn) => btn.classList.remove("selected"));
