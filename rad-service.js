@@ -161,6 +161,7 @@ window.addEventListener("load", function () {
     );
     renderTimeSlots(availableTimeSlots);
   }
+  
 
   initFlatpickr();
 

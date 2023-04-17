@@ -33,8 +33,8 @@ window.addEventListener("load", function () {
   //------------- make a choice in step 1 ---------------//
 
   let notTheseDays = {
-    service: ["Sunday"],
-    test: ["Sunday", "Monday", "Wednesday", "Friday"],
+    service: [0],// Sunday
+    test: [0, 1, 3, 5],// Sunday, Monday, Wednesday, Friday
   };
 
   const radFlatP = flatpickr(calendarInput, {
