@@ -50,19 +50,19 @@ window.addEventListener("load", function () {
     minDate: "today",
     inline: true,
     maxDate: new Date().fp_incr(90),
-    disable: [
-      function(date){
-        const dayOfWeek = date.getDay();
-        return notTheseDays.test.includes(dayOfWeek);
-      }
-    ],
+    disable: [],
   });
 
   serviceButton.addEventListener("click", function () {
     console.log("service btn clicked");
     serviceButton.classList.add("active");
     testButton.classList.remove("active");
-    // radFlatP.set("disable", notTheseDays.service);
+    radFlatP.set("disable", [
+      function (date) {
+        const dayOfWeek = date.getDay();
+        return notTheseDays.service.includes(dayOfWeek);
+      },
+    ]);
     //radFlatP.redraw();
   });
 
@@ -70,7 +70,12 @@ window.addEventListener("load", function () {
     console.log("test btn clicked");
     testButton.classList.add("active");
     serviceButton.classList.remove("active");
-    // radFlatP.set("disable", notTheseDays.test);
+    radFlatP.set("disable", [
+      function (date) {
+        const dayOfWeek = date.getDay();
+        return notTheseDays.test.includes(dayOfWeek);
+      },
+    ]);
     //radFlatP.redraw();
   });
 });
