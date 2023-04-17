@@ -61,7 +61,6 @@ window.addEventListener("load", function () {
     inline: true,
     maxDate: new Date().fp_incr(90),
     disable: [],
-    wrap: true,
     onValueUpdate: function (selectedDates, dateStr, instance) {
       generateRadTimeSlots();
     },
