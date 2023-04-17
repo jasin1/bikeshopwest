@@ -36,13 +36,13 @@ window.addEventListener("load", function () {
     service: [0],// Sunday
     test: [0, 1, 3, 5],// Sunday, Monday, Wednesday, Friday
   };
-  
-  // Before creating a new flatpickr instance, destroy the old one if it exists
-  if (radFlatP) {
-    radFlatP.destroy();
-  }
 
-  const radFlatP = flatpickr(calendarInput, {
+  // Before creating a new flatpickr instance, destroy the old one if it exists
+  // if (radFlatP) {
+  //   radFlatP.destroy();
+  // }
+
+  let radFlatP = flatpickr(calendarInput, {
     enableTimes: false,
     dateFormat: "d.m.Y",
     minDate: "today",
@@ -55,7 +55,7 @@ window.addEventListener("load", function () {
     console.log("service btn clicked");
     serviceButton.classList.add("active");
     testButton.classList.remove("active");
-    //radFlatP.set("disable", notTheseDays.service);
+    // radFlatP.set("disable", notTheseDays.service);
     //radFlatP.redraw();
   });
 
@@ -63,7 +63,7 @@ window.addEventListener("load", function () {
     console.log("test btn clicked");
     testButton.classList.add("active");
     serviceButton.classList.remove("active");
-    //radFlatP.set("disable", notTheseDays.test);
+    // radFlatP.set("disable", notTheseDays.test);
     //radFlatP.redraw();
   });
 });
