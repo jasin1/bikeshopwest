@@ -88,7 +88,11 @@ window.addEventListener("load", function () {
 
   function generateRadTimeSlots() {
     // Get the selected date from the flatpickr instance
-    const selectedDate = radFlatP.selectedDates[0];
+    const selectedDates = radFlatP.selectedDates;
+    if(selectedDates.length === 0){
+      return;
+    }
+    const selectedDate = selectedDates[0];
 
     // Get the selected day of the week (0 for Sunday, 1 for Monday, etc.)
     const selectedDayOfWeek = selectedDate.getDay();
