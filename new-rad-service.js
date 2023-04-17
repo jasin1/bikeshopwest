@@ -28,8 +28,15 @@ window.addEventListener("load", function () {
     Friday: { open: "", close: "" },
   };
 
-  const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
+  const daysOfWeek = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
 
   //------------- make a choice in step 1 ---------------//
 
@@ -92,7 +99,7 @@ window.addEventListener("load", function () {
   function generateRadTimeSlots() {
     // Get the selected date from the flatpickr instance
     const selectedDates = radFlatP.selectedDates;
-    if(selectedDates.length === 0){
+    if (selectedDates.length === 0) {
       return;
     }
     const selectedDate = selectedDates[0];
@@ -106,30 +113,44 @@ window.addEventListener("load", function () {
         ? radServiceTimes[daysOfWeek[selectedDayOfWeek]]
         : radTestTimes[daysOfWeek[selectedDayOfWeek]];
 
-    console.log("chosen times "+ times);
+    // Get the start and end times for the day
+    const startDate = new Date(selectedDate);
+    startDate.setHours(
+      times.open.split(":")[0],
+      times.open.split(":")[1],
+      0,
+      0,
+    );
+    const endDate = new Date(selectedDate);
+    endDate.setHours(
+      times.close.split(":")[0],
+      times.close.split(":")[1],
+      0,
+      0,
+    );
 
     // Clear the time slots wrapper
     timeSlotsWrapper.innerHTML = "";
 
-    const startTime = new Date(`1/1/2021 ${times.open}`);
-    const endTime = new Date(`1/1/2021 ${times.close}`);
+    // const startTime = new Date(`1/1/2021 ${times.open}`);
+    // const endTime = new Date(`1/1/2021 ${times.close}`);
+    // Generate time slots that fall within the start and end times for the day
     const timeSlots = [];
-    while (startTime <= endTime) {
+    let currentTime = startDate;
+    while (currentTime < endDate) {
       timeSlots.push(
-        startTime.toLocaleTimeString("en-US", {
+        currentTime.toLocaleTimeString("en-US", {
           hour: "numeric",
           minute: "2-digit",
         }),
       );
-      startTime.setTime(startTime.getTime() + 30 * 60000);
-
-      // Create a button for each time slot and add it to the time slots wrapper
-      timeSlots.forEach((time) => {
-        const button = document.createElement("button");
-        button.classList.add("rad-timeslot");
-        button.textContent = time;
-        timeSlotsWrapper.appendChild(button);
-      });
+      currentTime.setTime(currentTime.getTime() + 30 * 60000);
     }
+    timeSlots.forEach((time) => {
+      const button = document.createElement("button");
+      button.classList.add("rad-timeslot");
+      button.textContent = time;
+      timeSlotsWrapper.appendChild(button);
+    });
   }
 });
