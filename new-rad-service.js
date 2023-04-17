@@ -50,7 +50,12 @@ window.addEventListener("load", function () {
     minDate: "today",
     inline: true,
     maxDate: new Date().fp_incr(90),
-    disable: [0, 1, 3, 5],
+    disable: [
+      function(date){
+        const dayOfWeek = date.getDay();
+        return notTheseDays.test.includes(dayOfWeek);
+      }
+    ],
   });
 
   serviceButton.addEventListener("click", function () {
