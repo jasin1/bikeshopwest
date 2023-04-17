@@ -28,6 +28,9 @@ window.addEventListener("load", function () {
     Friday: { open: "", close: "" },
   };
 
+  const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+
   //------------- make a choice in step 1 ---------------//
 
   let notTheseDays = {
