@@ -36,7 +36,11 @@ window.addEventListener("load", function () {
     service: [0],// Sunday
     test: [0, 1, 3, 5],// Sunday, Monday, Wednesday, Friday
   };
-  //ding
+  
+  // Before creating a new flatpickr instance, destroy the old one if it exists
+  if (radFlatP) {
+    radFlatP.destroy();
+  }
 
   const radFlatP = flatpickr(calendarInput, {
     enableTimes: false,
