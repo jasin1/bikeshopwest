@@ -48,6 +48,7 @@ window.addEventListener("load", function () {
   let selectedButton = "";
 
   let radFlatP;
+  let radSelectedDate = new date();
 
   //Before creating a new flatpickr instance, destroy the old one if it exists
   if (radFlatP) {
@@ -62,7 +63,9 @@ window.addEventListener("load", function () {
     maxDate: new Date().fp_incr(90),
     disable: [],
     onValueUpdate: function (selectedDates, dateStr, instance) {
+      radSelectedDate = selectedDates[0];
       generateRadTimeSlots();
+      console.log("selected date is "+ radSelectedDate);
     },
   });
 
@@ -182,3 +185,4 @@ window.addEventListener("load", function () {
 });
 
 //#242424
+//<input type="text" id="rad-calendar" placeholder="Select a Date" type="date" data-input>
