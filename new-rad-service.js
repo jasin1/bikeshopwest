@@ -151,6 +151,18 @@ window.addEventListener("load", function () {
       const button = document.createElement("button");
       button.classList.add("rad-timeslot");
       button.textContent = time;
+      button.style.padding = "9px 15px";
+      button.style.fontFamily = "Work Sans";
+      // Add click event listener to the button
+      button.addEventListener("click", () => {
+        // Remove the selected class from all buttons
+        const buttons = timeSlotsWrapper.querySelectorAll(".rad-timeslot");
+        buttons.forEach((btn) => btn.classList.remove("selected"));
+
+        // Add the selected class to the clicked button
+        button.classList.add("selected");
+      });
+
       timeSlotsWrapper.appendChild(button);
     });
   }
