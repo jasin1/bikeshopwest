@@ -71,6 +71,7 @@ window.addEventListener("load", function () {
   });
 
   step2NextButton.addEventListener("click", () => {
+    console.log(step2NextButton);
     showStep(2, 3);
   });
 
