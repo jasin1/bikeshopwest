@@ -52,6 +52,7 @@ window.addEventListener("load", function () {
     serviceButton.classList.add("active");
     testButton.classList.remove("active");
     radFlatP.set("disable", notTheseDays.service);
+    radFlatP.redraw();
   });
 
   testButton.addEventListener("click", function () {
@@ -59,5 +60,6 @@ window.addEventListener("load", function () {
     testButton.classList.add("active");
     serviceButton.classList.remove("active");
     radFlatP.set("disable", notTheseDays.test);
+    radFlatP.redraw();
   });
 });
