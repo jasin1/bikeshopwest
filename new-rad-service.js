@@ -72,13 +72,15 @@ window.addEventListener("load", function () {
 
   step2NextButton.addEventListener("click", () => {
     console.log("step2NextButton");
+    radSteps[1].classList.remove("active");
     radSteps[2].classList.add("active");
     // showStep(2, 3);
   });
 
   step3BackButton.addEventListener("click", () => {
     radSteps[2].classList.remove("active");
-    showStep(3, 2);
+    radSteps[1].classList.add("active");
+    //showStep(3, 2);
 
   });
 
