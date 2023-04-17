@@ -49,18 +49,23 @@ window.addEventListener("load", function () {
   let selectedButton = "";
 
   let radFlatP;
-  let radSelectedDate = new Date();
+ 
 
   //Before creating a new flatpickr instance, destroy the old one if it exists
   if (radFlatP) {
     radFlatP.destroy();
   }
-
+ let radSelectedDate = new Date();
+ 
   const formatDate = (date) => {
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    return date.toLocaleDateString('en-US', options);
-  }
-
+    const options = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    };
+    return date.toLocaleDateString("en-US", options);
+  };
 
   radFlatP = flatpickr(calendarInput, {
     enableTimes: false,
@@ -73,7 +78,9 @@ window.addEventListener("load", function () {
       radSelectedDate = selectedDates[0];
       //selectedDay.value = radSelectedDate;
       generateRadTimeSlots();
-      console.log("selected date is "+ formatDate(radSelectedDate));
+      if (radSelectedDate) {
+        console.log("selected date is " + formatDate(radSelectedDate));
+      }
     },
   });
 
