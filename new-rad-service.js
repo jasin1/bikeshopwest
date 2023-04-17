@@ -36,6 +36,7 @@ window.addEventListener("load", function () {
     service: [0],// Sunday
     test: [0, 1, 3, 5],// Sunday, Monday, Wednesday, Friday
   };
+  //ding
 
   const radFlatP = flatpickr(calendarInput, {
     enableTimes: false,
