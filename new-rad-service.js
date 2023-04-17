@@ -41,7 +41,7 @@ window.addEventListener("load", function () {
 
   //------------- Steps logic -------------------------------------//
   const step2BackButton = document.getElementById("step-2-back-btn");
-  const step2NextButton = document.getElementById("step-2-next-btn");
+  const step2NextBtn = document.getElementById("step-2-next-btn");
   const step3BackButton = document.getElementById("step-3-back-btn");
   const radSteps = document.querySelectorAll(".rad-selection");
   //let currentRadStep = 0;
@@ -70,8 +70,8 @@ window.addEventListener("load", function () {
     showStep(2, 1);
   });
 
-  step2NextButton.addEventListener("click", () => {
-    console.log("step2NextButton");
+  step2NextBtn.addEventListener("click", () => {
+    console.log("Next btn");
     radSteps[1].classList.remove("active");
     radSteps[2].classList.add("active");
     // showStep(2, 3);
