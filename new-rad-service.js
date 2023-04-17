@@ -49,7 +49,7 @@ window.addEventListener("load", function () {
   let selectedButton = "";
 
   let radFlatP;
-  let radSelectedDate = new date();
+  let radSelectedDate = new Date();
 
   //Before creating a new flatpickr instance, destroy the old one if it exists
   if (radFlatP) {
