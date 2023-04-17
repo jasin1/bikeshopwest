@@ -56,6 +56,12 @@ window.addEventListener("load", function () {
     radFlatP.destroy();
   }
 
+  const formatDate = (date) => {
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+  }
+
+
   radFlatP = flatpickr(calendarInput, {
     enableTimes: false,
     dateFormat: "d.m.Y",
@@ -67,7 +73,7 @@ window.addEventListener("load", function () {
       radSelectedDate = selectedDates[0];
       //selectedDay.value = radSelectedDate;
       generateRadTimeSlots();
-      console.log("selected date is "+ radSelectedDate);
+      console.log("selected date is "+ formatDate(radSelectedDate));
     },
   });
 
