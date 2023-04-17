@@ -147,6 +147,7 @@ window.addEventListener("load", function () {
       );
       currentTime.setTime(currentTime.getTime() + 30 * 60000);
     }
+ 
     timeSlots.forEach((time) => {
       const button = document.createElement("button");
       button.classList.add("rad-timeslot");
@@ -159,9 +160,12 @@ window.addEventListener("load", function () {
         // Remove the selected class from all buttons
         const buttons = timeSlotsWrapper.querySelectorAll(".rad-timeslot");
         buttons.forEach((btn) => btn.classList.remove("selected"));
-
         // Add the selected class to the clicked button
         button.classList.add("selected");
+        const selectedTimeInput = document.getElementById("selected-time-slot");
+        selectedTimeInput.value = time;
+        console.log("selected time is "+selectedTimeInput.value);
+  
       });
 
       timeSlotsWrapper.appendChild(button);
