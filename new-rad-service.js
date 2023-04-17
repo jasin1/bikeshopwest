@@ -44,22 +44,22 @@ window.addEventListener("load", function () {
     minDate: "today",
     inline: true,
     maxDate: new Date().fp_incr(90),
-    disable: [],
+    disable: [0, 1, 3, 5],
   });
 
   serviceButton.addEventListener("click", function () {
     console.log("service btn clicked");
     serviceButton.classList.add("active");
     testButton.classList.remove("active");
-    radFlatP.set("disable", notTheseDays.service);
-    radFlatP.redraw();
+    //radFlatP.set("disable", notTheseDays.service);
+    //radFlatP.redraw();
   });
 
   testButton.addEventListener("click", function () {
     console.log("test btn clicked");
     testButton.classList.add("active");
     serviceButton.classList.remove("active");
-    radFlatP.set("disable", notTheseDays.test);
-    radFlatP.redraw();
+    //radFlatP.set("disable", notTheseDays.test);
+    //radFlatP.redraw();
   });
 });
