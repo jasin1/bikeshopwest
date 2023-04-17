@@ -74,7 +74,7 @@ window.addEventListener("load", function () {
   });
 
   step2NextButton.addEventListener("click", () => {
-    console.log(step2NextButton);
+    console.log("step2NextButton");
     showStep(2, 3);
   });
 
@@ -251,6 +251,3 @@ window.addEventListener("load", function () {
     });
   }
 });
-
-//#242424
-//<input type="text" id="rad-calendar" placeholder="Select a Date" type="date" data-input>
