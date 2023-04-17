@@ -106,6 +106,8 @@ window.addEventListener("load", function () {
         ? radServiceTimes[daysOfWeek[selectedDayOfWeek]]
         : radTestTimes[daysOfWeek[selectedDayOfWeek]];
 
+    console.log("chosen times "+ times);
+
     // Clear the time slots wrapper
     timeSlotsWrapper.innerHTML = "";
 
