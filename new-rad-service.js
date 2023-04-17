@@ -65,7 +65,7 @@ window.addEventListener("load", function () {
     disable: [],
     onValueUpdate: function (selectedDates, dateStr, instance) {
       radSelectedDate = selectedDates[0];
-      selectedDay.value = radSelectedDate;
+      //selectedDay.value = radSelectedDate;
       generateRadTimeSlots();
       console.log("selected date is "+ radSelectedDate);
     },
