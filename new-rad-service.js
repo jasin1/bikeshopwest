@@ -11,7 +11,7 @@ window.addEventListener("load", function () {
   const timeSlotsWrapper = document.querySelector(".rad-timeslots-wrapper");
   const calendarInput = document.getElementById("rad-calendar");
 
-  const radOpeningTimes = {
+  const radServiceTimes = {
     Monday: { open: "14:00", close: "17:45" },
     Tuesday: { open: "10:00", close: "17:45" },
     Wednesday: { open: "10:00", close: "17:45" },
@@ -20,7 +20,7 @@ window.addEventListener("load", function () {
     Saturday: { open: "10:00", close: "16:45" },
     Sunday: { open: "", close: "" },
   };
-  const testTimes = {
+  const radTestTimes = {
     Tuesday: { open: "12:00", close: "14:00" },
     Thursday: { open: "12:00", close: "14:00" },
     Saturday: { open: "11:00", close: "15:00" },
