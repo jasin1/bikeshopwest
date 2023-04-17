@@ -154,7 +154,7 @@ window.addEventListener("load", function () {
       button.style.padding = "9px 15px";
       button.style.fontFamily = "Work Sans";
       // Add click event listener to the button
-      button.addEventListener("click", () => {
+      button.addEventListener("click", (event) => {
         event.preventDefault();
         // Remove the selected class from all buttons
         const buttons = timeSlotsWrapper.querySelectorAll(".rad-timeslot");
