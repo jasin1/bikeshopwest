@@ -39,6 +39,45 @@ window.addEventListener("load", function () {
     "Saturday",
   ];
 
+  //------------- Steps logic -------------------------------------//
+  const step2BackButton = document.getElementById("step-2-back-btn");
+  const step2NextButton = document.getElementById("step-2-next-btn");
+  const step3BackButton = document.getElementById("step-3-back-btn");
+  const radSteps = document.querySelectorAll(".rad-selection");
+  //let currentRadStep = 0;
+
+  radSteps.forEach((step, index) => {
+    if (index != 0) {
+      step.style.display = "none";
+    }
+  });
+
+  function showStep(currentStep, nextStep) {
+    const currentStepElement = document.getElementById(
+      `rad-form-step-${currentStep}`,
+    );
+    const nextStepElement = document.getElementById(
+      `rad-form-step-${nextStep}`,
+    );
+
+    currentStepElement.classList.remove("active");
+    currentStepElement.style.display = "none";
+    nextStepElement.classList.add("active");
+    nextStepElement.style.display = "block";
+  }
+
+  step2BackButton.addEventListener("click", () => {
+    showStep(2, 1);
+  });
+
+  step2NextButton.addEventListener("click", () => {
+    showStep(2, 3);
+  });
+
+  step3BackButton.addEventListener("click", () => {
+    showStep(3, 2);
+  });
+
   //------------- make a choice in step 1 ---------------//
 
   let notTheseDays = {
@@ -49,13 +88,12 @@ window.addEventListener("load", function () {
   let selectedButton = "";
 
   let radFlatP;
- 
 
   //Before creating a new flatpickr instance, destroy the old one if it exists
   if (radFlatP) {
     radFlatP.destroy();
   }
- let radSelectedDate = new Date();
+  let radSelectedDate = new Date();
 
   const formatDate = (date) => {
     const options = {
@@ -87,12 +125,13 @@ window.addEventListener("load", function () {
 
   serviceButton.addEventListener("click", function () {
     console.log("service btn clicked");
+    showStep(1, 2);
     serviceButton.classList.add("active");
     testButton.classList.remove("active");
     selectedButton = "service";
 
-    document.getElementById("rad-bike-select").style.display= "none";
-    document.getElementById("rad-service-select").style.display= "block";
+    document.getElementById("rad-bike-select").style.display = "none";
+    document.getElementById("rad-service-select").style.display = "block";
 
     radFlatP.set("disable", [
       function (date) {
@@ -105,12 +144,13 @@ window.addEventListener("load", function () {
 
   testButton.addEventListener("click", function () {
     console.log("test btn clicked");
+    showStep(1, 2);
     testButton.classList.add("active");
     serviceButton.classList.remove("active");
     selectedButton = "test";
 
-    document.getElementById("rad-bike-select").style.display= "block";
-    document.getElementById("rad-service-select").style.display= "none";    
+    document.getElementById("rad-bike-select").style.display = "block";
+    document.getElementById("rad-service-select").style.display = "none";
 
     radFlatP.set("disable", [
       function (date) {
