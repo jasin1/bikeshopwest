@@ -65,8 +65,7 @@ window.addEventListener("load", function () {
     nextStepElement.classList.add("active");
     nextStepElement.style.display = "block";
 
-    console.log(`currentStepElement: ${currentStepElement.outerHTML}`);
-    console.log(`nextStepElement: ${nextStepElement.outerHTML}`);
+
   }
 
   step2BackButton.addEventListener("click", () => {
