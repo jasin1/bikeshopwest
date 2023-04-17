@@ -90,6 +90,10 @@ window.addEventListener("load", function () {
     serviceButton.classList.add("active");
     testButton.classList.remove("active");
     selectedButton = "service";
+
+    document.getElementById("rad-bike-select").style.display= "none";
+    document.getElementById("rad-service-select").style.display= "block";
+
     radFlatP.set("disable", [
       function (date) {
         const dayOfWeek = date.getDay();
@@ -104,6 +108,10 @@ window.addEventListener("load", function () {
     testButton.classList.add("active");
     serviceButton.classList.remove("active");
     selectedButton = "test";
+
+    document.getElementById("rad-bike-select").style.display= "block";
+    document.getElementById("rad-service-select").style.display= "none";    
+
     radFlatP.set("disable", [
       function (date) {
         const dayOfWeek = date.getDay();
