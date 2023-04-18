@@ -10,6 +10,9 @@ window.addEventListener("load", function () {
   const calendarInput = document.getElementById("rad-calendar");
   const selectedDay = document.getElementById("selected-day");
 
+  const radResultsTime = document.querySelector(".rad-results-time");
+  const radResultsDay = document.querySelector(".rad-results-day");
+
   const radServiceTimes = {
     Monday: { open: "14:00", close: "17:45" },
     Tuesday: { open: "10:00", close: "17:45" },
@@ -126,6 +129,7 @@ window.addEventListener("load", function () {
       if (radSelectedDate) {
         console.log("selected date is " + formatDate(radSelectedDate));
         selectedDay.value = formatDate(radSelectedDate);
+        radResultsDay.value = formatDate(radSelectedDate);
       }
     },
   });
@@ -245,6 +249,7 @@ window.addEventListener("load", function () {
             const selectedTimeInput =
               document.getElementById("selected-time-slot-2");
             selectedTimeInput.value = time;
+            radResultsTime.value = time;
             console.log("selected time is " + selectedTimeInput.value);
           }
         });
