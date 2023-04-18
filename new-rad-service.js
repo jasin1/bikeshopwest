@@ -217,6 +217,7 @@ window.addEventListener("load", function () {
 
     // Clear the time slots wrapper
     timeSlotsWrapper.innerHTML = "";
+    timeSlotsWrapper.style.border = "1px solid #cacaca";
 
     // const startTime = new Date(`1/1/2021 ${times.open}`);
     // const endTime = new Date(`1/1/2021 ${times.close}`);
