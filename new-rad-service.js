@@ -243,6 +243,7 @@ window.addEventListener("load", function () {
       // Add click event listener to the button
       button.addEventListener("click", (event) => {
         event.preventDefault();
+        step2NextBtn.style.visibility = 'visible';
         // Remove the selected class from all buttons
         const buttons = timeSlotsWrapper.querySelectorAll(".rad-timeslot");
         buttons.forEach((btn) => {
@@ -265,7 +266,7 @@ window.addEventListener("load", function () {
       });
 
       timeSlotsWrapper.appendChild(button);
-      step2NextBtn.style.visibility = 'visible';
+      
     });
   }
 });
