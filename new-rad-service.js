@@ -241,6 +241,7 @@ window.addEventListener("load", function () {
       button.textContent = time;
       button.style.padding = "9px 15px";
       button.style.fontFamily = "Work Sans";
+      button.style.fontSize = "14px";
       // Add click event listener to the button
       button.addEventListener("click", (event) => {
         event.preventDefault();
