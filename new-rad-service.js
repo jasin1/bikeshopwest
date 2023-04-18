@@ -79,8 +79,8 @@ window.addEventListener("load", function () {
   });
 
   step3BackButton.addEventListener("click", () => {
-    radSteps[2].classList.remove("active");
-    radSteps[1].classList.add("active");
+    radSteps[2].style.display = "none";
+    radSteps[1].style.display = "block";
     //showStep(3, 2);
 
   });
