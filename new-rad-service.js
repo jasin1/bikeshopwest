@@ -252,10 +252,12 @@ window.addEventListener("load", function () {
             btn.classList.remove("selected");
             btn.style.color = "#242424";
             btn.style.backgroundColor = "#fff";
+            btn.style.borderBottom = '1px solid #cacaca';
           } else {
             btn.classList.add("selected");
             btn.style.color = "#fff";
             btn.style.backgroundColor = "#569ff7";
+            btn.style.borderBottom = '';
             const selectedTimeInput = document.getElementById(
               "selected-time-slot-2",
             );
