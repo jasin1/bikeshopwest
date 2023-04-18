@@ -74,6 +74,7 @@ window.addEventListener("load", function () {
     console.log("Next btn");
     radSteps[1].classList.remove("active");
     radSteps[2].classList.add("active");
+    console.log(radSteps[2].id);
     // showStep(2, 3);
   });
 
