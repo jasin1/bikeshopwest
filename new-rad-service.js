@@ -71,6 +71,7 @@ window.addEventListener("load", function () {
 
   step2BackButton.addEventListener("click", () => {
     showStep(2, 1);
+    radDescription.textContent = "Please select an option to proceed";
   });
 
   step2NextBtn.addEventListener("click", () => {
@@ -78,11 +79,13 @@ window.addEventListener("load", function () {
     radSteps[1].style.display = "none";
     radSteps[2].style.display = "block";
     console.log(radSteps[2].id);
+    radDescription.textContent = "Please fill out the form below";
   });
 
   step3BackButton.addEventListener("click", () => {
     radSteps[2].style.display = "none";
     radSteps[1].style.display = "block";
+    radDescription.textContent = "Please select a date an time";
     //showStep(3, 2);
   });
 
