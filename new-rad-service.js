@@ -243,7 +243,7 @@ window.addEventListener("load", function () {
             btn.style.color = "#fff";
             btn.style.backgroundColor = "#569ff7";
             const selectedTimeInput =
-              document.getElementById("selected-time-slot");
+              document.getElementById("selected-time-slot-2");
             selectedTimeInput.value = time;
             console.log("selected time is " + selectedTimeInput.value);
           }
