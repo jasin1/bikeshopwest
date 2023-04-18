@@ -129,7 +129,7 @@ window.addEventListener("load", function () {
       if (radSelectedDate) {
         console.log("selected date is " + formatDate(radSelectedDate));
         selectedDay.value = formatDate(radSelectedDate);
-        radResultsDay.value = formatDate(radSelectedDate);
+        radResultsDay.textContent = formatDate(radSelectedDate);
       }
     },
   });
@@ -249,7 +249,7 @@ window.addEventListener("load", function () {
             const selectedTimeInput =
               document.getElementById("selected-time-slot-2");
             selectedTimeInput.value = time;
-            radResultsTime.value = time;
+            radResultsTime.textContent = time;
             console.log("selected time is " + selectedTimeInput.value);
           }
         });
