@@ -47,6 +47,8 @@ window.addEventListener("load", function () {
   const step2NextBtn = document.getElementById("step-2-next-btn");
   const step3BackButton = document.getElementById("step-3-back-btn");
   const radSteps = document.querySelectorAll(".rad-selection");
+
+  step2NextBtn.style.visibility = 'hidden';
   //let currentRadStep = 0;
 
   radSteps.forEach((step, index) => {
@@ -137,7 +139,7 @@ window.addEventListener("load", function () {
 
   serviceButton.addEventListener("click", function () {
     console.log("service btn clicked");
-    step2NextBtn.style.display = "none";
+    step2NextBtn.style.visibility = 'hidden';
     radDescription.textContent = "Please select a date an time";
     showStep(1, 2);
     serviceButton.classList.add("active");
@@ -158,7 +160,7 @@ window.addEventListener("load", function () {
 
   testButton.addEventListener("click", function () {
     console.log("test btn clicked");
-    step2NextBtn.style.display = "none";
+    step2NextBtn.style.visibility = 'hidden';
     radDescription.textContent = "Please select a date an time";
     showStep(1, 2);
     testButton.classList.add("active");
@@ -181,7 +183,7 @@ window.addEventListener("load", function () {
 
   function generateRadTimeSlots() {
     // Get the selected date from the flatpickr instance
-    step2NextBtn.style.display = "block";
+  
     const selectedDates = radFlatP.selectedDates;
     if (selectedDates.length === 0) {
       return;
@@ -263,6 +265,7 @@ window.addEventListener("load", function () {
       });
 
       timeSlotsWrapper.appendChild(button);
+      step2NextBtn.style.visibility = 'visible';
     });
   }
 });
