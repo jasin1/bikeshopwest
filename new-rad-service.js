@@ -240,7 +240,7 @@ window.addEventListener("load", function () {
           } else {
             btn.classList.add("selected");
             btn.style.color = "#fff";
-            btn.style.backgroundColor = "#ed1e24";
+            btn.style.backgroundColor = "#569ff7";
             const selectedTimeInput =
               document.getElementById("selected-time-slot");
             selectedTimeInput.value = time;
@@ -253,3 +253,8 @@ window.addEventListener("load", function () {
     });
   }
 });
+
+
+//#569ff7
+
+//#ed1e24
