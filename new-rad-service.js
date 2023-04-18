@@ -48,7 +48,7 @@ window.addEventListener("load", function () {
   const step3BackButton = document.getElementById("step-3-back-btn");
   const radSteps = document.querySelectorAll(".rad-selection");
 
-  step2NextBtn.style.visibility = 'hidden';
+  step2NextBtn.style.visibility = "hidden";
   //let currentRadStep = 0;
 
   radSteps.forEach((step, index) => {
@@ -135,11 +135,15 @@ window.addEventListener("load", function () {
         radResultsDay.textContent = formatDate(radSelectedDate);
       }
     },
+    onOpen : function (selectedDates, dateStr, instance){
+      const radFpWrapper = instance.calendarContainer;
+      radFpWrapper.style.fontFamily = "Work Sans";
+    },
   });
 
   serviceButton.addEventListener("click", function () {
     console.log("service btn clicked");
-    step2NextBtn.style.visibility = 'hidden';
+    step2NextBtn.style.visibility = "hidden";
     radDescription.textContent = "Please select a date an time";
     showStep(1, 2);
     serviceButton.classList.add("active");
@@ -160,7 +164,7 @@ window.addEventListener("load", function () {
 
   testButton.addEventListener("click", function () {
     console.log("test btn clicked");
-    step2NextBtn.style.visibility = 'hidden';
+    step2NextBtn.style.visibility = "hidden";
     radDescription.textContent = "Please select a date and time";
     showStep(1, 2);
     testButton.classList.add("active");
@@ -183,7 +187,7 @@ window.addEventListener("load", function () {
 
   function generateRadTimeSlots() {
     // Get the selected date from the flatpickr instance
-  
+
     const selectedDates = radFlatP.selectedDates;
     if (selectedDates.length === 0) {
       return;
@@ -245,7 +249,7 @@ window.addEventListener("load", function () {
       // Add click event listener to the button
       button.addEventListener("click", (event) => {
         event.preventDefault();
-        step2NextBtn.style.visibility = 'visible';
+        step2NextBtn.style.visibility = "visible";
         // Remove the selected class from all buttons
         const buttons = timeSlotsWrapper.querySelectorAll(".rad-timeslot");
         buttons.forEach((btn) => {
@@ -253,12 +257,12 @@ window.addEventListener("load", function () {
             btn.classList.remove("selected");
             btn.style.color = "#242424";
             btn.style.backgroundColor = "#fff";
-            btn.style.borderBottom = '1px solid #cacaca';
+            btn.style.borderBottom = "1px solid #cacaca";
           } else {
             btn.classList.add("selected");
             btn.style.color = "#fff";
             btn.style.backgroundColor = "#569ff7";
-            btn.style.borderBottom = '';
+            btn.style.borderBottom = "";
             const selectedTimeInput = document.getElementById(
               "selected-time-slot-2",
             );
@@ -270,7 +274,6 @@ window.addEventListener("load", function () {
       });
 
       timeSlotsWrapper.appendChild(button);
-      
     });
   }
 });
