@@ -179,6 +179,7 @@ window.addEventListener("load", function () {
 
   function generateRadTimeSlots() {
     // Get the selected date from the flatpickr instance
+    step2NextBtn.style.display = "block";
     const selectedDates = radFlatP.selectedDates;
     if (selectedDates.length === 0) {
       return;
