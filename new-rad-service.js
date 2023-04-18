@@ -121,7 +121,7 @@ window.addEventListener("load", function () {
     dateFormat: "d.m.Y",
     minDate: "today",
     inline: true,
-    maxDate: new Date().fp_incr(90),
+    //maxDate: new Date().fp_incr(90),
     disable: [],
     onValueUpdate: function (selectedDates, dateStr, instance) {
       radSelectedDate = selectedDates[0];
