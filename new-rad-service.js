@@ -78,14 +78,12 @@ window.addEventListener("load", function () {
     radSteps[1].style.display = "none";
     radSteps[2].style.display = "block";
     console.log(radSteps[2].id);
-
   });
 
   step3BackButton.addEventListener("click", () => {
     radSteps[2].style.display = "none";
     radSteps[1].style.display = "block";
     //showStep(3, 2);
-
   });
 
   //------------- make a choice in step 1 ---------------//
@@ -136,6 +134,7 @@ window.addEventListener("load", function () {
 
   serviceButton.addEventListener("click", function () {
     console.log("service btn clicked");
+    radDescription.textContent = "Please select a date an time";
     showStep(1, 2);
     serviceButton.classList.add("active");
     testButton.classList.remove("active");
@@ -155,6 +154,7 @@ window.addEventListener("load", function () {
 
   testButton.addEventListener("click", function () {
     console.log("test btn clicked");
+    radDescription.textContent = "Please select a date an time";
     showStep(1, 2);
     testButton.classList.add("active");
     serviceButton.classList.remove("active");
@@ -246,8 +246,9 @@ window.addEventListener("load", function () {
             btn.classList.add("selected");
             btn.style.color = "#fff";
             btn.style.backgroundColor = "#569ff7";
-            const selectedTimeInput =
-              document.getElementById("selected-time-slot-2");
+            const selectedTimeInput = document.getElementById(
+              "selected-time-slot-2",
+            );
             selectedTimeInput.value = time;
             radResultsTime.textContent = time;
             console.log("selected time is " + selectedTimeInput.value);
@@ -259,7 +260,6 @@ window.addEventListener("load", function () {
     });
   }
 });
-
 
 //#569ff7
 
