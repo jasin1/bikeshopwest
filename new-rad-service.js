@@ -161,7 +161,7 @@ window.addEventListener("load", function () {
   testButton.addEventListener("click", function () {
     console.log("test btn clicked");
     step2NextBtn.style.visibility = 'hidden';
-    radDescription.textContent = "Please select a date an time";
+    radDescription.textContent = "Please select a date and time";
     showStep(1, 2);
     testButton.classList.add("active");
     serviceButton.classList.remove("active");
