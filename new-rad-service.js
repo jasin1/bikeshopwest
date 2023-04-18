@@ -137,6 +137,7 @@ window.addEventListener("load", function () {
 
   serviceButton.addEventListener("click", function () {
     console.log("service btn clicked");
+    step2NextBtn.style.display = "none";
     radDescription.textContent = "Please select a date an time";
     showStep(1, 2);
     serviceButton.classList.add("active");
@@ -157,6 +158,7 @@ window.addEventListener("load", function () {
 
   testButton.addEventListener("click", function () {
     console.log("test btn clicked");
+    step2NextBtn.style.display = "none";
     radDescription.textContent = "Please select a date an time";
     showStep(1, 2);
     testButton.classList.add("active");
