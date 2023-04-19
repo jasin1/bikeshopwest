@@ -297,7 +297,3 @@ window.addEventListener("load", function () {
   });
 
 });
-
-//#569ff7
-
-//#ed1e24
