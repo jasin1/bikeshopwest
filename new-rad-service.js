@@ -293,7 +293,6 @@ window.addEventListener("load", function () {
   const radSubmit = document.getElementById("rad-submit");
 
   radSubmit.addEventListener("click", ()=>{
-    console.log("Form submitted");
     radDescription.style.display = "none";   
   });
 
