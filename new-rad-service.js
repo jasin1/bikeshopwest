@@ -173,10 +173,10 @@ window.addEventListener("load", function () {
     //radChoiceStep1.value = "Service";
     //console.log("rad choice "+ radChoiceStep1.value);
 
-    radOptionWrapper.style.display = "none";
-    radServiceWrapper.style.display = "block";
-    radService.setAttribute("required", "");
-    radOption.removeAttribute("required");
+    // radOptionWrapper.style.display = "none";
+    // radServiceWrapper.style.display = "block";
+    // radService.setAttribute("required", "");
+    // radOption.removeAttribute("required");
 
     radFlatP.set("disable", [
       function (date) {
@@ -218,10 +218,10 @@ window.addEventListener("load", function () {
     //radChoiceStep1.value = "Test a Rad Bike";
     //console.log("rad choice "+ radChoiceStep1.value);
 
-    radOptionWrapper.style.display = "block";
-    radServiceWrapper.style.display = "none";
-    radService.removeAttribute("required");
-    radOption.setAttribute("required", "");
+    // radOptionWrapper.style.display = "block";
+    // radServiceWrapper.style.display = "none";
+    // radService.removeAttribute("required");
+    // radOption.setAttribute("required", "");
 
     radFlatP.set("disable", [
       function (date) {
