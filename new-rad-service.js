@@ -141,6 +141,11 @@ window.addEventListener("load", function () {
     },
   });
 
+  //---------- form selection boxes -----------
+  const radOption = document.getElementById("rad-bike-select");
+  const radService = document.getElementById("rad-service-select");
+  //------------
+
   serviceButton.addEventListener("click", function () {
     console.log("service btn clicked");
     step2NextBtn.style.visibility = "hidden";
@@ -150,8 +155,10 @@ window.addEventListener("load", function () {
     testButton.classList.remove("active");
     selectedButton = "service";
 
-    document.getElementById("rad-bike-select").style.display = "none";
-    document.getElementById("rad-service-select").style.display = "block";
+    radOption.style.display = "none";
+    radService.style.display = "block";
+    radService.setAttribute('required', '');
+    radOption.removeAttribute('required');
 
     radFlatP.set("disable", [
       function (date) {
@@ -171,8 +178,10 @@ window.addEventListener("load", function () {
     serviceButton.classList.remove("active");
     selectedButton = "test";
 
-    document.getElementById("rad-bike-select").style.display = "block";
-    document.getElementById("rad-service-select").style.display = "none";
+    radOption.style.display = "block";
+    radService.style.display = "none";
+    radService.removeAttribute('required');
+    radOption.setAttribute('required', '');
 
     radFlatP.set("disable", [
       function (date) {
@@ -251,7 +260,6 @@ window.addEventListener("load", function () {
         if (!event.target.matches('[type="submit"]')) {
           event.preventDefault();
         }
-
         step2NextBtn.style.visibility = "visible";
         // Remove the selected class from all buttons
         const buttons = timeSlotsWrapper.querySelectorAll(".rad-timeslot");
