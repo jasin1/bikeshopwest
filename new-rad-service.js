@@ -192,7 +192,7 @@ window.addEventListener("load", function () {
     // Add a placeholder option
     const placeholderOption = document.createElement("option");
     placeholderOption.value = "";
-    placeholderOption.text = "Select a service new";
+    placeholderOption.text = "Select a service";
     placeholderOption.disabled = true;
     placeholderOption.selected = true;
     radChoice.add(placeholderOption);
@@ -237,7 +237,7 @@ window.addEventListener("load", function () {
     // Add a placeholder option
     const placeholderOption = document.createElement("option");
     placeholderOption.value = "";
-    placeholderOption.text = "Select your bike new";
+    placeholderOption.text = "Select your bike";
     placeholderOption.disabled = true;
     placeholderOption.selected = true;
     radChoice.add(placeholderOption);
