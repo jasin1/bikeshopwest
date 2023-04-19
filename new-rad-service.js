@@ -135,7 +135,7 @@ window.addEventListener("load", function () {
         radResultsDay.textContent = formatDate(radSelectedDate);
       }
     },
-    onOpen : function (selectedDates, dateStr, instance){
+    onOpen: function (selectedDates, dateStr, instance) {
       const radFpWrapper = instance.calendarContainer;
       radFpWrapper.style.fontFamily = "Work Sans";
     },
@@ -248,7 +248,10 @@ window.addEventListener("load", function () {
       button.style.fontSize = "14px";
       // Add click event listener to the button
       button.addEventListener("click", (event) => {
-        event.preventDefault();
+        if (!event.target.matches('[type="submit"]')) {
+          event.preventDefault();
+        }
+
         step2NextBtn.style.visibility = "visible";
         // Remove the selected class from all buttons
         const buttons = timeSlotsWrapper.querySelectorAll(".rad-timeslot");
