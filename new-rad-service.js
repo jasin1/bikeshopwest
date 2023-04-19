@@ -10,9 +10,10 @@ window.addEventListener("load", function () {
   const calendarInput = document.getElementById("rad-calendar");
   const selectedDay = document.getElementById("selected-day");
 
-  const radChoiceStep1 = document.getElementById("rad-choice-step-1");
 
+  const radChoiceStep1 = document.getElementById("rad-choice-step-1");
   const radChoice = document.getElementById("rad-choice");
+  const radChosenBike = document.getElementById("rad-chosen-bike");
 
   const radServiceOptions = ["Maintenance", "Repair", "Warranty"];
 
@@ -169,8 +170,8 @@ window.addEventListener("load", function () {
     serviceButton.classList.add("active");
     testButton.classList.remove("active");
     selectedButton = "service";
-    radChoiceStep1.value = "Service";
-    console.log("rad choice "+ radChoiceStep1.value);
+    //radChoiceStep1.value = "Service";
+    //console.log("rad choice "+ radChoiceStep1.value);
 
     radOptionWrapper.style.display = "none";
     radServiceWrapper.style.display = "block";
@@ -214,8 +215,8 @@ window.addEventListener("load", function () {
     testButton.classList.add("active");
     serviceButton.classList.remove("active");
     selectedButton = "test";
-    radChoiceStep1.value = "Test a Rad Bike";
-    console.log("rad choice "+ radChoiceStep1.value);
+    //radChoiceStep1.value = "Test a Rad Bike";
+    //console.log("rad choice "+ radChoiceStep1.value);
 
     radOptionWrapper.style.display = "block";
     radServiceWrapper.style.display = "none";
