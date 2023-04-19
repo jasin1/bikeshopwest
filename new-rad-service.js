@@ -289,6 +289,13 @@ window.addEventListener("load", function () {
       timeSlotsWrapper.appendChild(button);
     });
   }
+
+  const radSubmit = document.getElementById("rad-submit");
+
+  radSubmit.addEventListener("click", ()=>{
+    console.log("Form submitted");
+  });
+
 });
 
 //#569ff7
