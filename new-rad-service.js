@@ -169,7 +169,7 @@ window.addEventListener("load", function () {
     serviceButton.classList.add("active");
     testButton.classList.remove("active");
     selectedButton = "service";
-    radChoiceStep1.value = selectedButton;
+    radChoiceStep1.value = "Service";
     console.log("rad choice "+ radChoiceStep1.value);
 
     radOptionWrapper.style.display = "none";
@@ -214,7 +214,7 @@ window.addEventListener("load", function () {
     testButton.classList.add("active");
     serviceButton.classList.remove("active");
     selectedButton = "test";
-    radChoiceStep1.value = selectedButton;
+    radChoiceStep1.value = "Test a Rad Bike";
     console.log("rad choice "+ radChoiceStep1.value);
 
     radOptionWrapper.style.display = "block";
