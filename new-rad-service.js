@@ -294,6 +294,7 @@ window.addEventListener("load", function () {
 
   radSubmit.addEventListener("click", ()=>{
     console.log("Form submitted");
+    radDescription.style.display = "none";   
   });
 
 });
