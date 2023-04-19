@@ -353,4 +353,8 @@ window.addEventListener("load", function () {
   radSubmit.addEventListener("click", () => {
     radDescription.style.display = "none";
   });
+
+  radChoice.addEventListener('change', () => {
+    console.log("rad choice "+radChoice.value);
+  });
 });
