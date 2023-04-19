@@ -142,8 +142,10 @@ window.addEventListener("load", function () {
   });
 
   //---------- form selection boxes -----------
-  const radOption = document.getElementById("rad-bike-select");
-  const radService = document.getElementById("rad-service-select");
+  const radOptionWrapper = document.getElementById("rad-bike-select");
+  const radServiceWrapper = document.getElementById("rad-service-select");
+  const radOption = document.getElementById("rad-bikes-select");
+  const radService = document.getElementById("rad-service-select-2");
   //------------
 
   serviceButton.addEventListener("click", function () {
@@ -155,8 +157,8 @@ window.addEventListener("load", function () {
     testButton.classList.remove("active");
     selectedButton = "service";
 
-    radOption.style.display = "none";
-    radService.style.display = "block";
+    radOptionWrapper.style.display = "none";
+    radServiceWrapper.style.display = "block";
     radService.setAttribute('required', '');
     radOption.removeAttribute('required');
 
@@ -178,8 +180,8 @@ window.addEventListener("load", function () {
     serviceButton.classList.remove("active");
     selectedButton = "test";
 
-    radOption.style.display = "block";
-    radService.style.display = "none";
+    radOptionWrapper.style.display = "block";
+    radServiceWrapper.style.display = "none";
     radService.removeAttribute('required');
     radOption.setAttribute('required', '');
 
