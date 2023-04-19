@@ -12,7 +12,7 @@ window.addEventListener("load", function () {
 
 
   const radChoiceStep1 = document.getElementById("rad-choice-step-1");
-  const radChoice = document.getElementById("rad-choice");
+  const radChoice = document.getElementById("rad-choice-option");
   const radChosenBike = document.getElementById("rad-chosen-bike");
 
   const radServiceOptions = ["Maintenance", "Repair", "Warranty"];
