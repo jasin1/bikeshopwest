@@ -10,6 +10,19 @@ window.addEventListener("load", function () {
   const calendarInput = document.getElementById("rad-calendar");
   const selectedDay = document.getElementById("selected-day");
 
+  const radChoiceStep1 = document.getElementById("rad-choice-step-1");
+
+  const radChoice = document.getElementById("rad-choice");
+
+  const radServiceOptions = ["Maintenance", "Repair", "Warranty"];
+
+  const radBikeOptions = [
+    "RadRhino 6 Plus",
+    "RadRunner 2",
+    "RadRunner 3 Plus",
+    "RadWagon 4",
+  ];
+
   const radResultsTime = document.querySelector(".rad-results-time");
   const radResultsDay = document.querySelector(".rad-results-day");
 
@@ -156,11 +169,13 @@ window.addEventListener("load", function () {
     serviceButton.classList.add("active");
     testButton.classList.remove("active");
     selectedButton = "service";
+    radChoiceStep1.value = selectedButton;
+    console.log("rad choice "+ radChoiceStep1.value);
 
     radOptionWrapper.style.display = "none";
     radServiceWrapper.style.display = "block";
-    radService.setAttribute('required', '');
-    radOption.removeAttribute('required');
+    radService.setAttribute("required", "");
+    radOption.removeAttribute("required");
 
     radFlatP.set("disable", [
       function (date) {
@@ -168,7 +183,27 @@ window.addEventListener("load", function () {
         return notTheseDays.service.includes(dayOfWeek);
       },
     ]);
-    //radFlatP.redraw();
+    //--------------- populating radChoice--------------------
+    // Clear the select options
+    radChoice.innerHTML = "";
+    // Add a placeholder option
+    const placeholderOption = document.createElement("option");
+    placeholderOption.value = "";
+    placeholderOption.text = "Select a service new";
+    placeholderOption.disabled = true;
+    placeholderOption.selected = true;
+    radChoice.add(placeholderOption);
+
+    // Add service options to the select element
+    radServiceOptions.forEach((option) => {
+      const serviceOption = document.createElement("option");
+      serviceOption.value = option;
+      serviceOption.text = option;
+      radChoice.add(serviceOption);
+    });
+
+    // Add required attribute to the select element
+    radChoice.required = true;
   });
 
   testButton.addEventListener("click", function () {
@@ -179,11 +214,13 @@ window.addEventListener("load", function () {
     testButton.classList.add("active");
     serviceButton.classList.remove("active");
     selectedButton = "test";
+    radChoiceStep1.value = selectedButton;
+    console.log("rad choice "+ radChoiceStep1.value);
 
     radOptionWrapper.style.display = "block";
     radServiceWrapper.style.display = "none";
-    radService.removeAttribute('required');
-    radOption.setAttribute('required', '');
+    radService.removeAttribute("required");
+    radOption.setAttribute("required", "");
 
     radFlatP.set("disable", [
       function (date) {
@@ -191,7 +228,27 @@ window.addEventListener("load", function () {
         return notTheseDays.test.includes(dayOfWeek);
       },
     ]);
-    //radFlatP.redraw();
+    //--------------- populating radChoice--------------------
+    // Clear the select options
+    radChoice.innerHTML = "";
+    // Add a placeholder option
+    const placeholderOption = document.createElement("option");
+    placeholderOption.value = "";
+    placeholderOption.text = "Select your bike new";
+    placeholderOption.disabled = true;
+    placeholderOption.selected = true;
+    radChoice.add(placeholderOption);
+
+    // Add bike options to the select element
+    radBikeOptions.forEach((option) => {
+      const bikeOption = document.createElement("option");
+      bikeOption.value = option;
+      bikeOption.text = option;
+      radChoice.add(bikeOption);
+    });
+
+    // Add required attribute to the select element
+    radChoice.required = true;
   });
 
   //-------------------- TimeSlots ---------------------//
@@ -292,8 +349,7 @@ window.addEventListener("load", function () {
 
   const radSubmit = document.getElementById("rad-submit");
 
-  radSubmit.addEventListener("click", ()=>{
-    radDescription.style.display = "none";   
+  radSubmit.addEventListener("click", () => {
+    radDescription.style.display = "none";
   });
-
 });
