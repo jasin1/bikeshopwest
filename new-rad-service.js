@@ -15,6 +15,8 @@ window.addEventListener("load", function () {
   const radChoice = document.getElementById("rad-choice-option");
   const radChosenBike = document.getElementById("rad-chosen-bike");
 
+  const radChoiceSelected = document.getElementById("rad-choice-selected");
+
   const radServiceOptions = ["Maintenance", "Repair", "Warranty"];
 
   const radBikeOptions = [
@@ -355,6 +357,7 @@ window.addEventListener("load", function () {
   });
 
   radChoice.addEventListener('change', () => {
-    console.log("rad choice "+radChoice.value);
+    radChoiceSelected.value = radChoice.value;
+    console.log("rad choice "+radChoiceSelected.value);
   });
 });
