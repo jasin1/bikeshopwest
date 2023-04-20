@@ -30,12 +30,12 @@ window.addEventListener("load", function () {
   const radResultsDay = document.querySelector(".rad-results-day");
 
   const radServiceTimes = {
-    Monday: { open: "14:00", close: "17:45" },
-    Tuesday: { open: "10:00", close: "17:45" },
-    Wednesday: { open: "10:00", close: "17:45" },
-    Thursday: { open: "10:00", close: "17:45" },
-    Friday: { open: "15:00", close: "17:45" },
-    Saturday: { open: "10:00", close: "16:45" },
+    Monday: { open: "15:00", close: "17:45" },
+    Tuesday: { open: "11:00", close: "17:45" },
+    Wednesday: { open: "11:00", close: "17:45" },
+    Thursday: { open: "11:00", close: "17:45" },
+    Friday: { open: "16:00", close: "17:45" },
+    Saturday: { open: "11:00", close: "16:45" },
     Sunday: { open: "", close: "" },
   };
   const radTestTimes = {
