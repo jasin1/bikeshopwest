@@ -480,7 +480,7 @@ flatpickr("#input-date", {
   dateFormat: "d-m-Y",
   disable: [
     function (date) {
-      return date.getDay() === 0 || date.getDay() === 5 || date.getDay() === 6;
+      return date.getDay() === 0 || date.getDay() === 5;
     },
   ],
 
