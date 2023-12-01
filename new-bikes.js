@@ -444,7 +444,7 @@ const openingTimes = {
   Tuesday: { open: "10:00", close: "17:45" },
   Wednesday: { open: "10:00", close: "17:45" },
   Thursday: { open: "10:00", close: "17:45" },
-  Friday: { open: "15:00", close: "17:45" },
+  Friday: { open: "", close: "" },
   Saturday: { open: "10:00", close: "16:45" },
   Sunday: { open: "", close: "" },
 };
