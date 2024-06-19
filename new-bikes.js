@@ -548,5 +548,5 @@ Nieuw via JS Deliver:
 https://cdn.jsdelivr.net/gh/jasin1/bikeshopwest@271826f7aa1a01b6d07d1ce8dda7051d9da41038/new-bikes.js
 
 
-
+Just a test
 */
